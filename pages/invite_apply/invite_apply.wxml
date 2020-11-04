@@ -1,0 +1,81 @@
+<view class='container'>
+  <i-cell-group class='cell_line'>
+
+    <i-cell data-type='1'  data-cate='apply_name' data-title="请输入姓名"  bind:click="input" required="{{true}}"  is-link title="姓名" border="{{true}}" value="{{apply_name}}"/>
+    
+<picker bindchange="apply_sex" value="{{sex_index}}" range="{{sexArr}}">
+    <i-cell data-type='1' data-cate='apply_sex' data-title="请输入性别" is-link title="性别" border="{{true}}" value="{{sexArr[sex_index]}}"/>
+ </picker>
+
+    <i-cell data-type='1' data-cate='apply_age' data-title="请输入年龄" bind:click="input"  is-link title="年龄" border="{{true}}" value="{{apply_age}}"/>
+
+<picker bindchange="field" value="{{field_index}}" range="{{field_type_arr}}" range-key='type'>
+      <i-cell data-type='1' data-cate='field' data-title="请输入授课领域"  required="{{true}}" is-link title="授课领域" border="{{true}}" value="{{field_type_arr[field_index].type}}" />
+</picker>
+
+
+    <i-cell data-type='1' data-cate='apply_tea_age' data-title="请输入教龄" bind:click="input" is-link title="教龄" border="{{true}}" value="{{apply_tea_age}}"/>
+
+      <i-cell data-type='1' data-cate='apply_agency' data-title="请输入所属机构" bind:click="input" is-link title="所属机构" border="{{true}}" value="{{apply_agency}}"/>
+
+
+    <i-cell data-type='2' data-cate='apply_honer' data-title="请输入荣誉成就" bind:click="input" is-link title="荣誉成就" border="{{true}}" value="{{apply_honer}}"/>
+
+  </i-cell-group>
+  <i-cell-group class='cell_line'>
+
+    <i-cell data-type='2' data-cate='apply_intro' data-title="请输入个人简介" bind:click="input"  is-link title="个人简介" border="{{true}}" value="{{apply_intro}}"/>
+
+        <i-cell data-type='5' data-cate='apply_contact'  data-title="请输入联系方式" bind:click="input"  is-link title="联系方式" border="{{true}}" value="{{apply_contact}}"/>
+
+  </i-cell-group>
+
+
+ <view class="weui-uploader">
+    <view class="weui-uploader__hd">
+       <view class="weui-uploader__title">附件（最多三张）</view>  
+    </view>
+    <view class="weui-uploader__bd">
+      <view class="weui-uploader__files" id="uploaderFiles">
+        <block wx:for="{{apply_img}}" wx:key="*this">
+          <view class="weui-uploader__file" data-imgidx='{{index}}' bindtap="previewImage" id="{{item}}" bindlongpress="deleteImg">
+            <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+          </view>
+        </block>
+      </view>
+      <view class="weui-uploader__input-box" hidden='{{apply_img.length==3}}'>
+        <view class="weui-uploader__input" bindtap="chooseImage"></view>
+      </view>
+    </view>
+  </view>
+
+   <i-cell-group class='cell_line'>
+   
+  </i-cell-group>
+
+  <view class='agree'>
+  <checkbox-group bindchange="bindAgreeChange">
+            <label class="weui-agree" for="weuiAgree">
+                <view class="weui-agree__text">
+                    <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+                    <view class="weui-agree__checkbox-icon">
+                        <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+                    </view>
+                    阅读并同意<navigator hover-class='none' url="../agree/agree" class="weui-agree__link">《用户协议》</navigator>
+                </view>
+            </label>
+        </checkbox-group>
+ </view>
+
+ <form bindsubmit="apply" report-submit >
+ <view class="apply_btn">
+  <button class="save_btn" form-type="submit"  >提交申请</button>
+ </view>
+</form>
+
+<view class='home' bindtap='home' >
+  <image src='../../img/home.png'></image>
+  <text>首页</text>
+</view>
+
+</view>

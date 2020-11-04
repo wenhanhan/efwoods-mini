@@ -1,0 +1,69 @@
+<view class="container">
+  <!-- 佣金总额 -->
+  <view class="top_bk">
+    <view class="brokerage">
+      <text style="font-size:26rpx;font-weight:500">当前佣金</text>
+      <text>{{brokerage}}</text>
+      <view class="rule">
+        <view class="rule_des" bindtap="open">
+          <icon class='iconfont_rule icon-guize'></icon>
+          <text>规则说明</text>
+        </view>
+        <navigator url="../cash_notes/cash_notes?cash_sum={{cash_sum}}" hover-class="none" class="note">
+          <icon class='iconfont_note icon-jilu'></icon>
+          <text>提现记录</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- 提现金额 -->
+  <view class="cash">
+    <view class="cash_title">
+      <icon class='iconfont_tixian icon-tixian1'></icon>
+      <text>累计已提</text>
+    </view>
+    <view class="cash_sum">
+      {{cash_sum}}元
+    </view>
+    <navigator url="../spread_cash/spread_cash?brokerage={{brokerage}}" hover-class="none" class="cash_btn">
+      <text>提现</text>
+    </navigator>
+  </view>
+
+  <!-- 佣金操作 -->
+  <view class="cash_option">
+    <navigator url="../spread_card/spread_card" hover-class="none" class="option_box">
+      <icon class='iconfont_spread icon-erweimamingpian'></icon>
+      <text>推广名片</text>
+    </navigator>
+    <navigator url="../spread_notes/spread_notes" hover-class="none" class="option_box">
+      <icon class='iconfont_note1 icon-tongji'></icon>
+      <text>推广记录</text>
+    </navigator>
+    <navigator url="../spread_detail/spread_detail" hover-class="none" class="option_box">
+      <icon class='iconfont_mingxi icon-yongjin'></icon>
+      <text>佣金明细</text>
+    </navigator>
+    <navigator url="../spread_order/spread_order" hover-class="none" class="option_box">
+      <icon class='iconfont_order icon-dingdan'></icon>
+      <text>推广人订单</text>
+    </navigator>
+  </view>
+
+  <!-- 规则说明遮罩 -->
+  <view hidden="{{hidden}}" catchtouchmove="ture" class="mask" bindtap="close">
+    <view class="jifen_mask_tips">
+      <view class="jifen_tips_title">
+        <text>推广规则</text>
+      </view>
+      <icon bindtap="close" style="position:absolute;top:10rpx;right:10rpx;display:flex;" class='iconfont_guanbi icon-guanbi'></icon>
+      <view class="jifen_des_box">
+        <view class='mask_rule_des'>
+          <text style="line-height:50rpx;">{{rule}}</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-action-sheet": "../../dist/action-sheet/index"
+  },
+  "navigationBarBackgroundColor": "#FFDD2B",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "评测结果",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

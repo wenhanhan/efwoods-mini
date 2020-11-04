@@ -1,0 +1,116 @@
+<view class="container">
+  <view class="top_bk">
+    <!-- 步骤条 -->
+    <view class="circle_box">
+      <view class="circle">
+        <view class="circle_txt">
+          <icon class='iconfont_duihao icon-duihao'></icon>
+        </view>
+        <view class="progress_txt">提交资质</view>
+      </view>
+      <view class="line" style="background:white;"></view>
+      <view class="circle">
+        <view class="circle_txt">
+          <icon class='iconfont_duihao icon-duihao'></icon>
+        </view>
+        <view class="progress_txt">开通VIP</view>
+      </view>
+      <view class="line" style="background:white;"></view>
+      <view class="circle">
+        <view class="circle_txt">
+          <icon class='iconfont_duihao icon-duihao'></icon>
+        </view>
+        <view class="progress_txt">审核通过</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="info_box">
+
+      <!-- 切换栏 -->
+      <view class="tab">
+        <view class="tab1" bindtap="tab1">
+          <text style="color: {{current=='tab1'?'#FF4C63':''}}">成功入驻</text>
+          <text style="background: {{current=='tab1'?'#FF4C63':''}}" class="tab_line"></text>
+        </view>
+        <view class="tab2" bindtap="tab2">
+          <text style="color: {{current=='tab2'?'#FF4C63':''}}">教练员</text>
+          <text style="background: {{current=='tab2'?'#FF4C63':''}}" class="tab_line" class="tab_line"></text>
+        </view>
+      </view>
+      <view class="tab_box" wx:if="{{current=='tab1'}}">
+          <view class="pay_icon">
+            <icon class='iconfont_paid icon-shenhetongguo1'></icon>
+          </view>
+          <view class="settled_des">
+            <view class="pay_state">恭喜您，机构入驻成功！</view>
+            <view class="checking_des">
+              <view class="tip">
+                <view class="tip_circle"></view>
+                <view class="tip_des">现在您可以进入机构/私教模块查看入驻信息。</view>
+              </view>
+
+              <view class="tip">
+                <view class="tip_circle"></view>
+                <view class="tip_des">请慎重<text bindtap="modify" style="color:#e93323;text-decoration:underline;">修改</text>机构信息，机构信息修改需平台审核。</view>
+              </view>
+
+              <view class="tip">
+                <view class="tip_circle"></view>
+                <view class="tip_des">如有疑问可拨打客服电话021-58879166进行咨询。</view>
+              </view>
+
+            </view>
+          </view>
+          
+      </view> 
+
+      <view class="tab_box" wx:if="{{current=='tab2'}}">
+        <view class="apply_item" wx:for="{{teacher}}">
+          <view class="headimg" bindtap="tea_des" data-teaid="{{item.teaid}}">
+           <image mode="aspectFill" src="{{item.teaImg}}"></image> 
+          </view>
+          <view class="tea_info">
+            <view class="tea_name">
+              <text>{{item.name}}</text>
+            </view>
+            <view class="sign_times">
+              <text>{{item.join_time}}</text>
+            </view>
+          </view>
+          <view class="pass_btn" data-idx="{{index}}" data-teaopenid="{{item.tea_openid}}" data-agencyid="{{item.agency_id}}" data-state="{{item.is_pass}}" bindtap="agree">
+            <text wx:if="{{item.is_pass!=1}}">同意</text>
+            <text wx:if="{{item.is_pass==1}}">已同意</text>
+          </view>
+          <view class="refuse_btn" data-idx="{{index}}" data-teaopenid="{{item.tea_openid}}" data-agencyid="{{item.agency_id}}" data-state="{{item.is_pass}}" bindtap="refuse">
+            <text wx:if="{{item.is_pass!=2}}">拒绝</text>
+            <text wx:if="{{item.is_pass==2}}">已拒绝</text>
+          </view>
+          <view class="refuse">
+            <text></text>
+          </view> 
+        </view>
+
+        <view class='nodata' wx:if="{{teacher.length===0&&current=='tab2'}}">
+          <icon  class='iconfont_nocheck icon-shenhe'></icon>
+            <view class='tips'>
+              <text>暂无申请数据</text>
+            </view>
+        </view>
+      </view>
+  
+  </view>
+
+  <view wx:if="{{home_state}}" class='home' bindtap='home'>
+    <image src='../../img/home.png'></image>
+    <text>首页</text>
+  </view>
+
+  <view class="bottom_bk" hidden="{{current=='tab2'}}">
+    <view class="logo">
+      <image mode="aspectFill" src="/img/gray_logo.png"></image>
+      <text>由eFIREWOODS提供技术支持</text>
+    </view>
+  </view>
+
+</view>

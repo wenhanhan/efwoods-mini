@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "tabbar": "../../tabbarComponent/tabbar",
+    "i-spin": "../../dist/spin/index",
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index",
+    "i-load-more": "../../dist/load-more/index"
+  },
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "教练秀",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": true
+}

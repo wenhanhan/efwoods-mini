@@ -1,0 +1,33 @@
+/* pages/agree/agree.wxss */
+.box{
+  width: 98%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title{
+  font-size: 30rpx;
+  font-weight: 500;
+}
+.notice{
+  font-size: 26rpx;
+  text-indent: 2em;
+  margin-bottom: 10rpx; 
+}
+.tip{
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  font-size: 26rpx;
+  font-weight: 600;
+  padding: 10rpx 0;
+}
+.content{
+  width: 100%;
+  height: auto;
+ font-size: 26rpx;
+  text-indent: 2em;
+  margin-bottom: 10rpx; 
+}

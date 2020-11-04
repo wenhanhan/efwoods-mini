@@ -1,0 +1,305 @@
+/* pages/myset/jifen/jifen.wxss */
+@import '/icon/jifen.wxss';
+@import '/icon/right_daohang.wxss';
+@import '/icon/shop_daohang.wxss';
+@import '/icon/jifen_tips.wxss';
+@import '/icon/close.wxss';
+.container{
+  overflow-x: hidden;
+}
+.top_box{
+  width: 100%;
+  height: 330rpx;
+  background: #e93323;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.jifen_title{
+  font-size: 28rpx;
+  color: white;
+  margin-top:15rpx;
+}
+.jifen_sum_box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rpx;
+  margin-bottom: 15rpx;
+}
+.jifen_sum{
+  font-size: 42rpx;
+  color: white;
+  font-weight: 500;
+  margin-left: 4rpx;
+}
+.jifen_shop{
+  width: 220rpx;
+  height: 50rpx;
+  border:1px solid white;
+  border-radius: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: white;
+}
+.jifen_tips{
+  width: 128rpx;
+  height: 56rpx;
+  background: white;
+  border-top-left-radius: 28rpx;
+  border-bottom-left-radius: 28rpx;
+  font-size: 26rpx;
+  color: #FC484C;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 70rpx;
+}
+.jifen_record{
+  width: 100%;
+  height: 150rpx;
+  float: left;
+  position: relative;
+  border-bottom: 1px solid #eeeeee;
+}
+.record_title{
+  width: 100%;
+  height: 60%;
+  font-size: 26rpx;
+  color: #444343;
+  display: flex;
+  padding-left: 50rpx;
+  align-items: flex-end;
+}
+.record_time{
+  width: 100%;
+  height: 40%;
+  font-size: 20rpx;
+  color: #717070;
+  display: flex;
+  padding-left: 50rpx;
+  align-items: flex-end;
+}
+
+.jifen_num{
+  width: auto;
+  height: auto;
+  display: flex;
+  font-size: 32rpx;
+  top: 80rpx;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 80rpx;
+  right: 68rpx;
+  z-index: 1;
+  color: #EC5A5A;
+}
+
+.jifen_rule{
+  width: 100%;
+  height: auto;
+  display: flex;
+  /* border:1px dashed #EC5A5A; */
+  border-radius: 15rpx;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 20rpx;
+}
+.rule_des{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: center; */
+  margin: 12rpx;
+  font-size: 26rpx;
+  color: #666666;
+  flex-direction: column;
+}
+.line_left{
+  width: 23%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: #666666;
+}
+.line_right{
+  width: 77%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+  color: #403E3E;
+}
+/* 遮罩层 */
+.mask{
+  width: 100%;
+  height:100%;
+  position:fixed;
+  /* background-color:#999; */
+  z-index:999;
+  background: rgba(0, 0, 0, 0.6);
+  top:0;
+  left:0;
+}
+.jifen_mask_tips{
+  width: 74%;
+  height: 530rpx;
+  background: white;
+  display:flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  left: 13%;
+  top: 280rpx;
+  border-radius: 10rpx;
+}
+.jifen_tips_title{
+  width: 90%;
+  height: auto;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #6d6d6d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20rpx;
+  padding-bottom: 8rpx;
+  border-bottom: 1px solid #c1bfbf;
+}
+.jifen_des_box{
+  width: 95%;
+  height: auto;
+  overflow: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+  position: absolute;
+  top: 95rpx;
+}
+.rule_line{
+  margin: 10rpx 0;
+}
+.jifen_shop_box{
+  width: 100%;
+  height: 210rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+}
+.shop_left{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shop_left image{
+  width: 160rpx;
+  height: 160rpx;
+}
+.shop_right{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.goods_title{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #434343;
+}
+.goods_money{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 32rpx;
+  color: #FC484C;
+}
+.goods_jifen{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #FC484C;
+}
+.goods_count{
+  font-size: 26rpx;
+  color: #5E5D5D;
+  position: absolute;
+  right: 23rpx;
+}
+.jifen_right{
+  width: 95%;
+  height: 160rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rpx;
+  background-image: linear-gradient(to right,#fff7e7 0%,#fffdf9 100%);
+  margin: 20rpx 0;
+  position: relative;
+}
+.jifen_img{
+  width: 72rpx;
+  height: 120rpx;
+  position: absolute;
+  bottom: 0;
+  left: 30rpx;
+}
+.jifen_img image{
+  width: 100%;
+  height: 100%;
+}
+.jifen_title_right{
+  width: 50%;
+  height: 100%;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #c8a86b;
+  display: flex;
+  align-items: center;
+}
+.jifen_btn{
+font-size: 26rpx;
+color: #c8a86b;
+border: 2rpx solid #c8a86b;
+text-align: center;
+line-height: 52rpx;
+height: 52rpx;
+width: 160rpx;
+border-radius: 50rpx;
+position: absolute;
+right: 20rpx;
+}
+navigator{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

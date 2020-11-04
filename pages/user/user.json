@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-progress": "../../dist/progress/index"
+  },
+  "navigationBarBackgroundColor": "#e93323",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "会员中心",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

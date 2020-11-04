@@ -1,0 +1,135 @@
+<view class='container'>
+<!-- 个人中心头部 -->
+  <view class='user_top_box'>
+    <view class='user_top'>
+      <view class='user_headimg'>
+        <image src='/img/head.jpg'></image>
+      </view>
+      <view class='user_info'>
+        <view class='use_info_top'>
+          <view class='userNick'>
+            <text>学钢琴的小清新</text>
+          </view>
+          <view class='usersex'>
+            <icon class='iconfont_man icon-nan'></icon>
+          </view>
+        </view>
+        <view class='user_info_bot'>
+          <view class='user_tags'>
+            <text>24岁</text>
+          </view>
+          <view class='user_tags2'>
+            <text>石家庄市</text>
+          </view>
+          <view class='user_tags2'>
+            <text>双子座</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='base_info'>
+      <view class='base_info_child'>
+        <view class='child_tags'>
+          <text>喜欢</text>
+        </view>
+        <view class='child_num'>
+          <text>3254</text>
+        </view>
+      </view>
+      <view class='base_info_line'></view>
+      <view class='base_info_child'>
+        <view class='child_tags'>
+          <text>评价</text>
+        </view>
+        <view class='child_num'>
+          <text>724</text>
+        </view>
+      </view>
+      <view class='base_info_line'></view>
+      <view class='base_info_child'>
+        <view class='child_tags'>
+          <text>签到</text>
+        </view>
+        <view class='child_num'>
+          <text>12次</text>
+        </view>
+      </view>
+      <view class='base_info_line'></view>
+      <view class='base_info_child'>
+        <view class='child_tags'>
+          <text>级别</text>
+        </view>
+        <view class='child_num'>
+          <text>T1</text>
+        </view>
+      </view>
+    </view>
+  </view>
+<!--个人中心 中间区域  -->
+  <view class='user_set_box'>
+
+  <navigator url='../sign/sign'>
+    <view class='set_box_line' style='margin-top:10rpx;'>
+      <view class='set_icon'>
+        <image src='/img/user/sign.png'></image>
+      </view>
+      <view class='set_sign'>我的签到</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+  </navigator>
+
+  <navigator url='../mycoupon/mycoupon'>
+    <view class='set_box_line'>
+      <view class='set_icon'>
+        <image src='/img/user/ticket.png'></image>
+      </view>
+      <view class='set_sign'>我的优惠券</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+  </navigator>
+
+  <navigator url='../favor/favor'>
+    <view class='set_box_line'>
+      <view class='set_icon'>
+        <image src='/img/user/favor.png'></image>
+      </view>
+      <view class='set_sign'>我的收藏</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+  </navigator>
+
+  <navigator url='../jifen/jifen'>
+    <view class='set_box_line'>
+      <view class='set_icon'>
+        <image src='/img/user/point.png'></image>
+      </view>
+      <view class='set_sign'>我的积分</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+  </navigator>
+
+  <navigator url='../personal/personal'>
+    <view class='set_box_line'>
+      <view class='set_icon'>
+        <image src='/img/user/my.png'></image>
+      </view>
+      <view class='set_sign'>个人信息</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+  </navigator>
+  
+  </view>
+  <view class='user_set_box'>
+  <navigator url='../../apply/apply'>
+    <view class='set_box_line'>
+      <view class='set_icon'>
+        <image src='/img/user/apply.png'></image>
+      </view>
+      <view class='set_sign'>申请成为教师</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+  </navigator>
+  </view>
+
+</view>

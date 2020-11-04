@@ -1,0 +1,237 @@
+/* pages/myset/spread/spread.wxss */
+@import '/icon/yongjin_rule.wxss';
+@import '/icon/yongjin_note.wxss';
+@import '/icon/tixian.wxss';
+@import '/icon/spread_cart.wxss';
+@import '/icon/spread_note.wxss';
+@import '/icon/spread_mingxi.wxss';
+@import '/icon/spread_order.wxss';
+page{
+  background: #eeeeee;
+}
+.top_bk{
+  width: 100%;
+  height: 280rpx;
+  position: relative;
+  background: #FF1C2A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.brokerage{
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 60rpx;
+  color: white;
+  font-weight: 500;
+}
+.rule{
+  width: 95%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+  color: white;
+  position: absolute;
+  bottom: 0
+}
+.rule_des,.note{
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cash{
+  width: 100%;
+  height: 150rpx;
+  position: relative;
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+.cash_title{
+  width: 95%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  color: #3F3F3F;
+  font-size: 26rpx;
+}
+.cash_sum{
+  width: 95%;
+  height: 50%;
+  font-size: 52rpx;
+  color: #1A1919;
+  display: flex;
+  align-items: center;
+}
+.cash_btn{
+  width: 160rpx;
+  height: 60rpx;
+  border-radius: 6rpx;
+  background: #FF4C63;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 28rpx;
+  position: absolute;
+  right: 30rpx;
+  bottom: 20rpx;
+}
+.cash_option{
+  width: 92%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* background: red; */
+}
+.option_box{
+  width: 320rpx;
+  height: 220rpx;
+  margin-top: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  border-radius: 16rpx;
+  font-size: 26rpx;
+  color: #3F3F3F;
+}
+
+/* 遮罩层 */
+
+.mask_rule_des{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: center; */
+  margin: 12rpx;
+  font-size: 26rpx;
+  color: #666666;
+  flex-direction: column;
+}
+.mask{
+  width: 100%;
+  height:100%;
+  position:fixed;
+  /* background-color:#999; */
+  z-index:999;
+  background: rgba(0, 0, 0, 0.6);
+  top:0;
+  left:0;
+}
+.jifen_mask_tips{
+  width: 74%;
+  height: 530rpx;
+  background: white;
+  display:flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  left: 13%;
+  top: 280rpx;
+  border-radius: 10rpx;
+}
+.jifen_tips_title{
+  width: 90%;
+  height: auto;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #6d6d6d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20rpx;
+  padding-bottom: 8rpx;
+  border-bottom: 1px solid #c1bfbf;
+}
+.jifen_des_box{
+  width: 95%;
+  height: auto;
+  overflow: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+  position: absolute;
+  top: 95rpx;
+  flex-direction: column;
+}
+.rule_line{
+  margin: 10rpx 0;
+}
+.jifen_shop_box{
+  width: 100%;
+  height: 210rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+}
+.shop_left{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shop_left image{
+  width: 160rpx;
+  height: 160rpx;
+}
+.shop_right{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.goods_title{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #434343;
+}
+.goods_money{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 32rpx;
+  color: #FC484C;
+}
+.goods_jifen{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #FC484C;
+}
+.goods_count{
+  font-size: 26rpx;
+  color: #5E5D5D;
+  position: absolute;
+  right: 23rpx;
+}

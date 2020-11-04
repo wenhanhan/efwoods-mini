@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../../dist/tabs/index",
+    "i-tab": "../../../dist/tab/index"
+  },
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "我的订阅",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

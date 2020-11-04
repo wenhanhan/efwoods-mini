@@ -1,0 +1,91 @@
+<view class="container">
+  <view style='width:100%;position:fixed;top:0;z-index:10'>
+    <i-tabs current="{{ current }}" color="#f759ab" bindchange="handleChange">
+      <i-tab key="tab1" title="进行中"></i-tab>
+      <i-tab key="tab2" title="已完成"></i-tab>
+      <i-tab key="tab3" title="已取消"></i-tab>
+    </i-tabs>
+  </view>
+  <!-- 预约内容 -->
+  <view class="jinxing" wx:if="{{current=='tab1'}}">
+    <block wx:for="{{yuyue}}" wx:key="id">
+      <view class="jinxing_item" wx:for="{{item.yuyue_info}}" wx:for-index="idx" wx:for-item="day" wx:key="id">
+        <view class="item_top" bindtap="yuyue_des" data-parentidx="{{index}}" data-childidx="{{idx}}">
+            <view class="cour_address">
+              <view class="shenglue">上课地点：{{item.courAddressName}}</view>
+            </view>
+            <view class="name">
+              <view class="shenglue">课程名称：{{item.courName}}</view>
+            </view>
+            <view class="time">
+              <view class="shenglue">开课时间：{{day.date}} {{day.clock}}</view>
+            </view>
+        </view>
+        <view class="item_bottom" >
+          <view data-parentidx="{{index}}" data-childidx="{{idx}}" data-id="{{item.Id}}" data-clock="{{day.clock}}" data-date="{{day.date}}" data-forbid="{{item.forbid_cancel_time}}" bindtap="cancel" class="cancel_btn">取消</view>
+        </view>
+      </view>
+    </block>
+    <view class='nodata' style="height:1000rpx;" wx:if="{{yuyue.length==0}}">
+      <icon class='iconfont_lost icon-Null-data'></icon>
+      <view class='tips' style="color:#d1cfcf">
+        <text>暂无预约信息～</text>
+      </view>
+    </view> 
+
+    <!-- <i-load-more  wx:if="{{noMoreData&&page!=1&&yuyue.length>6}}" style="width:100%;position:relative;bottom:0;" tip="我是有底线的~" loading="{{ false }}" /> -->
+  </view>
+  <view class="wancheng" wx:if="{{current=='tab2'}}">
+    <block wx:for="{{yuyue}}" wx:key="id">
+      <view class="wancheng_item" wx:for="{{item.yuyue_info}}" wx:for-item="day" wx:for-index="idx" wx:key="id" bindtap="yuyue_des" data-parentidx="{{index}}" data-childidx="{{idx}}">
+            <view class="cour_address">
+              <view class="shenglue">上课地点：{{item.courAddressName}}</view>
+            </view>
+            <view class="name">
+              <view class="shenglue">课程名称：{{item.courName}}</view>
+            </view>
+            <view class="time">
+              <view class="shenglue">开课时间：{{day.date}} {{day.clock}}</view>
+            </view>
+            <view class="pingjia_btn" data-courid="{{item.cour_id}}" catchtap="judge">
+              <text>评价</text>
+            </view>
+            <view class="wancheng_icon">
+              <icon class='iconfont_finish icon-yiwancheng'></icon>
+            </view>
+      </view>
+    </block>
+    <view class='nodata' style="height:1000rpx;" wx:if="{{yuyue.length==0}}">
+      <icon class='iconfont_lost icon-Null-data'></icon>
+      <view class='tips' style="color:#d1cfcf">
+        <text>暂无预约信息～</text>
+      </view>
+    </view> 
+    <!-- <i-load-more  wx:if="{{noMoreData&&page!=1&&yuyue.length>6}}" style="width:100%;position:relative;bottom:0;" tip="我是有底线的~" loading="{{ false }}" /> -->
+  </view>
+  <view class="cancel" wx:if="{{current=='tab3'}}">
+    <block wx:for="{{yuyue}}" wx:key="id">
+        <view class="wancheng_item" wx:for="{{item.yuyue_info}}" wx:for-item="day" wx:for-index="idx" wx:key="id"  bindtap="yuyue_des" data-parentidx="{{index}}" data-childidx="{{idx}}">
+              <view class="cour_address">
+                <view class="shenglue">上课地点：{{item.courAddressName}}</view>
+              </view>
+              <view class="name">
+                <view class="shenglue">课程名称：{{item.courName}}</view>
+              </view>
+              <view class="time">
+                <view class="shenglue">开课时间：{{day.date}} {{day.clock}}</view>
+              </view>
+              <view class="wancheng_icon">
+                <icon class='iconfont_cancel icon-yiquxiao'></icon>
+              </view>
+        </view>
+    </block> 
+    <view class='nodata' style="height:1000rpx;" wx:if="{{yuyue.length==0}}">
+      <icon class='iconfont_lost icon-Null-data'></icon>
+      <view class='tips' style="color:#d1cfcf">
+        <text>暂无预约信息～</text>
+      </view>
+    </view> 
+    <!-- <i-load-more  wx:if="{{noMoreData&&page!=1&&yuyue.length>6}}" style="width:100%;position:relative;bottom:0;" tip="我是有底线的~" loading="{{ false }}" /> -->
+  </view>
+</view>

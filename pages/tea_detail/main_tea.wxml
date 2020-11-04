@@ -1,0 +1,48 @@
+<!-- 推荐课程列表数据渲染 -->
+<block wx:for="{{main_tea}}">
+ <navigator hover-class='none' url='../cour_detail/cour_detail?cour_img={{item.courImg}}&cour_id={{item.Id}}&cour_name={{item.courName}}&star={{item.star}}&address={{item.courAddressName}}&address_des={{item.courAddressDes}}&cour_contact={{item.courContact}}&cour_hour={{item.courHour}}&cour_tag={{item.courTags}}&cour_tool={{item.courTools}}&distance={{item.distance}}&start_time={{item.startTime}}&end_time={{item.endTime}}&teaId={{item.teaId}}&cour_tw={{item.courDes}}&cour_method={{item.Methods}}&judge_num={{item.judgeNum}}&cour_type={{item.courType}}'>
+  <view class='course_list'>
+    <view class='course_list_left'>
+      <view class='course_img_box'>
+      <image mode='aspectFill' src='https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}}'></image>
+      </view>
+    </view>
+    <view class='course_list_right'>
+      <view class='course_name'>
+        <text>{{item.courName}}</text>
+        <!-- <text class='distance'>{{item.distance}}</text> -->
+      </view>
+      <view class='course_des'>
+
+         <view class='course_judge'>
+          <block wx:for="{{item.star}}">
+            <icon  class='iconfont_star icon-xingji3'></icon>
+          </block>
+          <block wx:for="{{5-item.star}}">
+            <icon  class='iconfont_star icon-xingji4'></icon>
+          </block>
+          <!-- <text class='course_judge_num'>评价{{item.judgeNum}}</text> -->
+        </view>
+      </view>
+
+      <view class='course_price'>
+        <text class='price_left'>¥</text>
+        <text class='price_middle'>{{item.price}}</text>
+        <text class='price_right'>起</text>
+      </view>
+      <view class='course_address'>
+        <text>{{item.courAddressName}}/{{item.courTags}}</text>
+      </view>
+      <!-- <button class='view_btn'>点击查看</button> -->
+      <view class='distance'>{{item.distance}}</view>
+    </view>
+  </view>
+  </navigator>
+  </block>
+
+  <view class='nodata' style='height:400rpx;' wx:if="{{main_tea.length===0}}">
+    <icon class='iconfont_lost icon-Null-data'></icon>
+    <view class='tips'>
+      <text>该教师还未发布课程～</text>
+    </view>
+  </view>

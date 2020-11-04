@@ -1,0 +1,26 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1549340543585'); /* IE9 */
+  src: url('iconfont.eot?t=1549340543585#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPYAAsAAAAACHQAAAOLAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqDYIMTATYCJAMUCwwABCAFhG0HeRtQBxEVnOXIfhymW4xbM2fGp1N/in0HD//fmfcN0slkaVdStqQ/BX/2JAAW12x7IKMi1JGcffLocyXIfZqO/ueY6aJtYPlta5esoo32BjhKoIFFXzRek93htSjfB2zofm6HAHR8iEIUlVQ1Q0PB3CYA0a93z85oGQtKQ71AQ2CoOFVBLEBFk2ZKV4H5wfuLLyQIDSRUGfNQXY/ibuS9U9+3k80Ws4dAOp0L4M8CGYgCFBBDKj39kKNMFDK6+ncKeYCOhoT0Tn3n9z7lfTuLRVMcSKdb//BAQkEggzBg1loBkEdZBd6pDhMSvPNjQoH3KUwIeN9Oy/Oi1c06YALmAIcI6+XWEBZJGD/Mzd3T3r6nbj47+3zjuVlnOkfP0tbuyE0vZe21ZOvmW4OXb3dtaX38hq+67nY78xbdatYWp2Ytlm1jL7tNqI27Xe2X7mTslbtZ5+6X3L3b7N69aJsreOls1+0PWu6/0v37XXsun73T7NRtySyXHssad892Huojllu6Ly0RJh/oGrE5zzMxNTElKTXJ14N91r998xrbGZ219mbjiAFW/hvSR3Xu7Whurzkb22ljrSOsPUxRI9t3HdJzhNFkMvY724RfyLsQbkNUYeCG7sm5uc5lN/SR5q6WhlEY3XVpw/CftzO/BHyJ/HWbipdGdRWF0rCafVhe1NaudA90n9mlyy6fXa5qZnJkJQsmtGjR0+m704ievUaiagTeswdpAFheyhfkQAB5upQBlv/SdVn6sb/Dcf+3vTvaZv3TTAoADyfGTQw6LA8U5Ej4O1o6S3+jtGOfoslNq6oo3Y5EWaVSiwaAxI/owM8LOPB8Gp1zZzIInXMCEk3wBhmNIKSCjQIVE0lgQCMXdCIpPduEI0OQEYoRiGAqgMCO/SBhw3mQseMaUsE+AxUXvoEBOyGDTgvheEkTIYIWXl7ZoBgN6wWComptu7yE9V/G9YyclgeUP8MtxGEepnz+01TDUxxoR7eIWLBMBT7gbiZngo0pGiWDF9kO42irXmlQVHYvvLJBMRrWCwRF1XrD5aXw9l/G9Yzc0FMV/DPcwvwwD1MH5Kemduq5lfu0o1tELFimAh/gMtnKEGzVq6JRMvgBqe0w0iDbVTMsryvveAbQMZ9GFZKQhSJUYeBxUKgu9/rUPHWF1d2fA2ZcxFtEV9+x/gesp6rQhXqMleJbzyEtCjyXsKLqPIJ5twMA') format('woff2'),
+  url('iconfont.woff?t=1549340543585') format('woff'),
+  url('iconfont.ttf?t=1549340543585') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1549340543585#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont_zan {
+  font-family: "iconfont" !important;
+  font-size: 32rpx;
+  font-style: normal;
+  color: #f21b1b;
+  display: flex;
+  margin-left: 36rpx;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shoucang:before {
+  content: "\e505";
+}
+
+
+

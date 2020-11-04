@@ -1,0 +1,59 @@
+<view class="container">
+  <!-- 顶部区域 -->
+  <view class="top_bk">
+    <view class="brokerage_title">
+      <view class="title">累计推广订单</view>
+      <view class="brokerage_sum">
+        <text>{{order_num}}</text>
+        <text style="font-size:28rpx;margin-left:6rpx;">单</text>
+      </view>
+      <view class="brokerage_icon">
+        <icon style="color:white;font-size:100rpx;" class='iconfont_order icon-dingdan'></icon>
+      </view>
+    </view>
+  </view>
+  <!-- 推广人订单 -->
+  <view class="spread_order">
+    <block wx:for="{{order}}">
+          <view class="month_item">
+            <view class="order_month_des">
+              <view class="order_month">{{item.months}}</view>
+              <view class="order_sum">
+                本月累计推广订单:<text style="margin-left:10rpx;">{{item.month_order_num}}</text>单
+              </view>
+            </view>
+            <block wx:for="{{item.detail}}" wx:for-item="child" >
+              <view class="order_person" >
+                <view class="headimg">
+                  <image mode="aspectFill" src="{{child.avatarUrl}}"></image>
+                  <text>{{child.nickName}}</text>
+                </view>
+                <view class="order_brokerage">
+                  <text>返佣</text>
+                  <text style="color:#FF1C2A">￥{{child.brokerage}}</text>
+                </view>
+              </view>
+              <view class="order_detail">
+                <view class="order_number">
+                  订单编号:
+                  <text style="color:#3F3F3F;margin-left:10rpx;">{{child.order_id}}</text>
+                </view>
+                <view class="order_time">
+                  下单时间:
+                  <text style="color:#3F3F3F;margin-left:10rpx;">{{child.time}}</text>
+                </view>
+              </view>
+            </block>  
+          </view>
+    </block>
+
+     <!-- 暂无推广信息 -->
+  <view class='nodata' style="padding-top:100rpx;" wx:if="{{order_num==0}}">
+    <icon style="font-size:150rpx;" class='iconfont_lost icon-Null-data'></icon>
+    <view class='tips'>
+      <text>暂无推广订单记录～</text>
+    </view>
+  </view>
+  </view>
+
+</view>

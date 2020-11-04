@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+  },
+  "navigationBarBackgroundColor": "#FFDD2B",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "注意力评测",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

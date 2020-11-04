@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "i-collapse": "../../../dist/collapse/index",
+    "i-collapse-item": "../../../dist/collapse-item/index"
+  },
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "使用帮助",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

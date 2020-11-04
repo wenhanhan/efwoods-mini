@@ -1,0 +1,24 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1575816725006'); /* IE9 */
+  src: url('iconfont.eot?t=1575816725006#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOwAAsAAAAAB8wAAANiAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqDUIMOATYCJAMICwYABCAFhG0HNRu5BsguIScb6kRKlLIN06JvbOmyJP/UIrg7H/Hw/drruW/fbhAUoksUgQZUsYmKjIpwUSmQMdVVnfpaIEegUP9BuypzOQg5aVmdwNlk4SSnDkTFSt9+0QAounfnqXOfiwhL3nmRF8gINyrAJxxVAwQkBW/RY/h/bYJi9AU8ZKWq1WZMa/+fw6a3JtDY/73zAzq1uQdNoONVGtieGGVRwAUSmDeM3UR5EG8TaDQghbBdXNkIHGXgokBcaNV9wDFlk2uaQ71QldyZxS2l+nSdHgBu+O/HL3WOJGUBtO2dF6lA7tcpWAZHazilCPLxPNDuo8AcIBNHpb4dMMzNgRqdnK0RYF3Nwdfq/1S22n88gqiAxmbQJ8rOSY4Vp9qXQHbuhx/haa8yyg3XINBmnJfme6srN4nAdkBL/fb+LOXOgl/q8a3gy0ds++bmN22Bo5NycVi27Zzc0Vcud9ns9n/xiJU9dnG7/6Q7Oibf6/5v9r56tzJ509bmm0kyq3956abnzt7eEWfEQtHRldpbf8PzANpUG98/WG24SF2K5fvzT5P+G/o7fVZnfw694ATvJSK0HbhBKxAOnj08nNeW6u5orzZB3w1Cl3AbCq2X8W/NXyfAFs5aBOhhTGA6Fn8JZ+7fM9n3fSfWJio/S53d1MbllTdFndc/zyfm5jlFL8Y4xzzvxdw05d+mzn4g75LJa0h/R2mGEF8XZT/qMbs/LTfXCawDqL24i+an/Y2d3w9cz/xfL2fw3pb68kjtGbQLAPW35g9+kbzlTHaVwJ6yLS8tJY+Utz7UqBE1cqjTp76BHiD2hHpdLkJSpx8K9caQGTsHpSYLUKm3Bo1mldzfpAsFRW7AjCkBQrsrSFo9g0K7h8iM/QilXp+h0h6ERifh88QmE2mdCyju41iF+keQVjSbCHJy56C5HqsHDH00qeTsZkyZNonkElm2WIJNmI5xDRtUKzgniFCzERUL78MGgxlZqFmHRS7RcG5Jl0pJ2SdJRLMRONtCYX04TAXpNwLREpmZELqec879fD1MbYBBH1oz1RFuhlGM9uiInISsBbJEZ2o1dS0fYQapKXAcgRCUmRFSLHgwA8yZIZby03QwESeh6ZGxSCeVFpG2Osn8BuPT3YBGwJwC3lhoutIM9JlGMBkYGgAAAAA=') format('woff2'),
+  url('iconfont.woff?t=1575816725006') format('woff'),
+  url('iconfont.ttf?t=1575816725006') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1575816725006#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont_sijiao {
+  font-family: "iconfont" !important;
+  font-size: 65rpx;
+  font-style: normal;
+  display: flex;
+  padding-left: 30rpx;
+  color: #ff3700;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sijiao:before {
+  content: "\e628";
+}
+

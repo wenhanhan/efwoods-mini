@@ -1,0 +1,83 @@
+page{
+ background: -webkit-linear-gradient(#EC5A5A, #FFEDCF); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#EC5A5A, #FFEDCF); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#EC5A5A, #FFEDCF); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#EC5A5A,#FFEDCF); /* 标准的语法 */
+}
+.container{
+  font-family: Microsoft YaHei;
+}
+.banner{
+  width: 100%;
+  height: 340rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner image{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 80rpx;
+}
+.form_box{
+  width: 92%;
+  height: 770rpx;
+  background: white;
+  float: left;
+  position: relative;
+  border-radius: 20rpx;
+}
+.username{
+  width: 85%;
+  height: 88rpx;
+  border-radius: 44rpx;
+  background: #D8D8D8;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 96rpx;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.username input{
+  text-align: center;
+  font-size: 26rpx;
+}
+.placeholder{
+  font-size: 26rpx;
+  color: 393838;
+  text-align: center;
+}
+.password{
+  width: 85%;
+  height: 88rpx;
+  border-radius: 44rpx;
+  background: #D8D8D8;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 52rpx;
+  justify-content: center;
+  align-items: center;
+}
+.password input{
+  text-align: center;
+  font-size: 26rpx;
+}
+
+.login{
+  width: 85%;
+  height: 88rpx;
+  font-size: 30rpx;
+  color: white;
+  text-align: center;
+  border-radius: 44rpx;
+  background: #F83939;
+  opacity: 0.6;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 120rpx;
+  justify-content: center;
+  align-items: center;
+}

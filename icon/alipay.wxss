@@ -1,0 +1,24 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1575093744945'); /* IE9 */
+  src: url('iconfont.eot?t=1575093744945#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAO8AAsAAAAAB8wAAANuAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqDLIMYATYCJAMMCwgABCAFhG0HPhvmBlGUDUaY7MeB4zpwPDZNFDFIPz3r/xbd4uG//f63z8xc+a5JNYoClSQa8ZBIr4LHBKGQiKzuJbz7n9uGWEn3Oh5Jpkn75P7mt3e7Ic1bJiVChNAY0st7eSqJy9fCqPnbCZ54Sbp6gycdHDNdNA4oz7Z2ygiPpPHENtCK7wR5kG+QB/Ifxq68iLMJ9FpUp19P1zutojAWBeK15xhaJWVWampDK9QlO4v4otKmt+k7Pvu/H/8dREtSZcbK208nttb/tfBrPXe6HY9cBMl4TrB9ZGzRFOJJqfuefJjekterqAv1pbUipLFi3S6+WNXWK/3HS0TNqO4HazCT+LVgMwl+rWcknL+Hmo/1AT9GeEaStJzvYMePncIhSYoJgnuAkhGKJAjxKglx3G+NVOFTeBQu5pqY5PEAD3CvgiK3IGSsEN7CA6RKX8a9RMekBmWbwGoJoBR2DdNxHOYRmB8h7khD+2KCkCELAB9x+tbzCEJllvTpxSFCK7xF9+giuhdoD7BxD9LsUff/8LC+9nILm4rJBDnUqlxmKDu3ZIIVxMhW/lJW8Frt1dn3ejJ6Sgf9gpSyH/1/rzO5Arvk1xzVZVOeSkTEzcWbY1S5CklvV+9c4+srhDrAlfoIPCMiPMCJH4jAQJAE+EdCX3ByI8bkRJsBDdbJRq5hM7HZuZSafEaYXH7pFDuYlaP0bSIVMKBz6PNq8JoB6ndSKoABnwvFcpuEg2adYcP76Dy6a0JzgpvthU+XZoCmlbf9axDo09DtFLnzE//G7J7ka6Lo+KvtK+Bnu/LqS9t5aW/RE/wyScueosoMSy6y2Bbr3uxWT2cCCrnGj6qHUb/+2onW1YTWRAxJYwGy1hKyYLeg0ucIaq0zY68jkcL9fcawvCg92PACEIa9IRn0DbJhH2TBfqEy6Q+14cjQ606MHbHPSryoXTEagjaYF/AsipVlk1pQu0EnCw1OynzKATn1YtAxNs3mZhgjj7EmPTpdEQWKKYIpOB+GIUHC5KMlTVck6bVMMspeqWlRpNVcYcggkA2YLoDHQmLKHS1quZ/fQI5MyMA1DRXBA8RS3uSgo6ndAjlTx60aruU+qSNHlxAKUBiJgClwotBME5CUT/Mhi2hyeyQTPS00SLVVN+fXRg9QxFowLpAjRY6ifeN6KjMNqgaujqYBAAA=') format('woff2'),
+  url('iconfont.woff?t=1575093744945') format('woff'),
+  url('iconfont.ttf?t=1575093744945') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1575093744945#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont_alipay {
+  font-family: "iconfont" !important;
+  font-size: 40rpx;
+  color: #108ee9;
+  margin-right: 18rpx;
+  display: flex;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zhifubao:before {
+  content: "\e629";
+}
+

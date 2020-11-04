@@ -1,0 +1,319 @@
+/* pages/online/online.wxss */
+@import '/icon/noresource.wxss';
+@import '/icon/duiyuan.wxss';
+page{
+  background: #F4F4F4;
+  height: 100%;
+}
+.nav_fix {
+  width: 100%;
+  height: 84rpx;
+  position: fixed;
+  z-index: 999;
+}
+
+.teacher{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 120rpx;
+  position: relative;
+}
+.card{
+  width: 100%;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 50rpx; */
+  flex-direction: column;
+  background: #F4F4F4;
+}
+/* 轮播样式 */
+swiper{
+  width: 100%;
+  height: 95%;
+  display: block; 
+  position: relative;
+  /* background: white; */
+  /* border: 1px solid red; */
+  overflow: hidden;
+}
+.scroll_index{
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #808080;
+  margin-top: 12rpx;
+}
+swiper-item{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  /* background: white; */
+}
+.swiper_box{
+  width: 80%;
+  height: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.top_bk{
+  width: 120%;
+  height: 340rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background: black;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+.top_bk image{
+  width: 84%;
+  height: 100%;
+  position: relative;
+  border-top-right-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+}
+.tea_info{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  position: absolute;
+  top: 265rpx;
+}
+.tea_info image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  border: 8rpx solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tea_name{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #515151;
+  font-weight: 500;
+  margin-top: 15rpx;
+}
+.tea_career{
+  width: 70%;
+  height: auto;
+  /* display: flex; */
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 22rpx;
+  color: #7E7E7E;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 12rpx;
+}
+.line{
+  width: 120rpx;
+  height: 8rpx;
+  background: #FF5400;
+  border-radius: 7rpx;
+  margin-top: 64rpx;
+}
+.tea_topic{
+  width: 80%;
+  height: auto;
+  text-align: center;
+  font-size: 30rpx;
+  color: #515151;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 40rpx;
+}
+.sub_num{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 26rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20rpx;
+  color: #C4C4C4;
+}
+.is_dingyue{
+  width: 90rpx;
+  height: 40rpx;
+  background: #FF5B00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 50rpx;
+  font-size: 19rpx;
+  color: white;
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+}
+/* 音频课程 */
+.all_teacher{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 84rpx;
+  padding-top: 30rpx;
+}
+.all_teacher_item{
+  width: 90%;
+  height: 360rpx;
+  border-radius: 18rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.item_top{
+  width: 100%;
+  height: 280rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* background: red; */
+  background: linear-gradient(to right,#ADC5DE,#DBE7F3);
+}
+.item_bottom{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: white;
+}
+
+.item_top_title{
+  width: 70%;
+  height: auto;
+  font-size: 38rpx;
+  color: #384E64;
+  font-weight: 500;
+  position: absolute;
+  top: 45rpx;
+  left: 48rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.item_top_info{
+  width: 50%;
+  height: auto;
+  position: absolute;
+  left: 48rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  top: 190rpx;
+}
+.item_top_author{
+  width: 100%;
+  height: auto;
+  font-size: 24rpx;
+  color: #384E64;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.item_top_intro{
+  width: 100%;
+  height: auto;
+  font-size: 20rpx;
+  color: #384E64;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.item_bottom_left{
+  width: 75%;
+  height: 45%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 20rpx;
+  color: #C4C4C4;
+  padding-left: 40rpx;
+  border-right: 1px solid #979797;
+}
+.item_bottom_right{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20rpx;
+  color: #C4C4C4;
+  padding-left: 80rpx;
+}
+.item_top_img{
+  width: 230rpx;
+  height: 230rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 40rpx;
+  right: 4rpx;
+}
+.item_top_img image{
+  width: 100%;
+  height: 100%;
+}
+.item_top_dingyue{
+  width: 90rpx;
+  height: 36rpx;
+  background: #FF5B00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 20rpx;
+  color: white;
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+}

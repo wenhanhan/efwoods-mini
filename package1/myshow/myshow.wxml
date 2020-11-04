@@ -1,0 +1,35 @@
+<view class="container">
+  <view class='home_show_video'>
+    <view class='child_video_box'>
+    <block wx:for="{{video}}">
+      <view class='home_video_box'>
+          <image mode='aspectFill' data-idx='{{index}}' bindtap='play' src='{{item.cover}}' ></image>
+          <view class='video_des'>
+            <view class='video_title'>
+              <text>{{item.title}}</text>
+            </view>
+            <view class='video_play_times'>
+            <icon class='iconfont_play icon-play'></icon>
+            <text style='margin-right:20rpx;margin-left:4rpx;'>{{item.play}}</text>
+
+            <icon class='iconfont_video icon-video-star'></icon>
+            <text>{{item.favor}}</text>
+            </view>
+          </view>
+          <view class="dele_video" data-idx='{{index}}' data-id="{{item.Id}}"  bindtap="dele">
+            <icon class='iconfont_dele icon-dele'></icon>
+          </view>
+      </view>
+    </block>
+    </view>
+  </view>
+
+  <!-- 暂无收藏提示信息 --> 
+  <view class='nodata' style="padding-top:250rpx;" wx:if="{{video.length==0}}">
+    <icon style="font-size:150rpx;" class='iconfont_resource icon-meiyouneirong'></icon>
+    <view class='tips' style="color:#d1cfcf">
+      <text>您还未发布任何视频～</text>
+    </view>
+  </view>
+
+</view>

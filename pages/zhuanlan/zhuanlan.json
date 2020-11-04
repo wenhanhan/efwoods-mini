@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index",
+    "i-toast": "../../dist/toast/index",
+    "i-action-sheet": "../../dist/action-sheet/index"
+  },
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "专栏详情",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+} 

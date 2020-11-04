@@ -1,0 +1,102 @@
+<!-- 教师列表数据渲染 -->
+<view class="content" style="top:{{agency.length==0&&top_agency.length==0?'545rpx':'545rpx'}};">
+<view class='tea_box' style="padding-bottom:{{isIphoneX?'42rpx':'0rpx'}};">
+  <block wx:for="{{teacher}}">
+ <navigator hover-class='none' url='../tea_detail/tea_detail?tea_id={{item.Id}}'>
+    <view class='tea_list'>
+      <view class='tea_list_left'> 
+        <view class='tea_img_box'>
+          <image mode='aspectFill' src='{{item.teaImg}}'></image>
+        </view>
+      </view>
+      <view class='tea_list_right'>
+        <!-- 排名展示 -->
+        <view wx:if="{{index==0&&paixu_index==0}}" class="tea_rank">
+          <image src="/img/level/first.png"></image>
+        </view>
+        <view wx:elif="{{index==1&&paixu_index==0}}" class="tea_rank">
+          <image src="/img/level/second.png"></image>
+        </view>
+        <view wx:elif="{{index==2&&paixu_index==0}}" class="tea_rank">
+          <image src="/img/level/third.png"></image>
+        </view>
+        <view wx:else hidden="{{paixu_index!=0}}" class="tea_rank" style="width:44rpx;height:64rpx;">
+          <image src="/img/level/rank_bk.png"></image>
+          <text class="rank_txt">{{index+1}}</text>
+        </view>
+
+        <view class='tea_name'>
+          <text class="tea_name_shenglue">{{item.name}}</text>
+          <!-- <text class='distance'>{{item.distance}}</text> -->
+        </view>
+        <view class='teacher_des'>
+
+          <view class='tea_judge'>
+            <!-- <icon class='iconfont_judge icon-pinglun'></icon> -->
+            <icon class='iconfont_jiaoling icon-jiaoling'></icon>
+            <text class='judge_num'>{{item.teaAge}}年</text>
+          </view>
+
+          <view class='tea_zan'>
+            <icon class='iconfont_zan icon-shoucang'></icon>
+            <text class='zan_num'>{{item.favorNum}}</text>
+          </view>
+
+          <view class='tea_level'>
+            <view class='gold_img'>
+              <icon wx:if="{{item.level==1}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level1 icon-lv1'></icon>
+        <icon wx:elif="{{item.level==2}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level2 icon-lv2'></icon>
+        <icon wx:elif="{{item.level==3}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level3 icon-lv3'></icon>
+        <icon wx:elif="{{item.level==4}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level4 icon-lv4'></icon>
+        <icon wx:elif="{{item.level==5}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level5 icon-lv5'></icon>
+        <icon wx:else="{{item.level==6}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level6 icon-lv6'></icon>
+            </view>
+          </view>
+
+        </view>
+        <!-- 不要价格 -->
+        <!-- <view class='tea_price'>
+        <text class='price_left'>¥</text>
+        <text class='price_middle'>{{item.price}}</text>
+        <text class='price_right'>起</text>
+      </view> -->
+        <view class='tea_address'>
+          <i-tag wx:if="{{item.tag1}}" class="i-tags" name="标签一" type="border" color="red"> {{item.tag1}}</i-tag>
+          <i-tag wx:if="{{item.tag2}}" class="i-tags" name="标签一" color="green" type="border">{{item.tag2}}</i-tag>
+          <i-tag wx:if="{{item.tag3}}" class="i-tags" name="标签一" color="blue" type="border">{{item.tag3}}</i-tag>
+          <!-- <i-tag class="i-tags" name="标签一" color="yellow" type="border">{{item.sex==0?'女':'男'}}</i-tag> -->
+        </view>
+       <view class='distance'>{{item.distance}}</view>
+        <!-- <button class='view_btn'>点击查看</button> -->
+      </view>
+    </view>
+  </navigator>
+  </block>
+
+  <view class='nodata' wx:if="{{shaixuan_state==false&&teacher.length===0}}">
+     <icon bindtap='qiehuan' class='iconfont_qiehuan icon-ditu'></icon>
+    <view class='tips'>
+      <text>换个区域，发现更多</text>
+    </view>
+  </view>
+ <!-- 暂无更多数据 -->
+  <view class="noMoreData" wx:if="{{noMoreData&&teacher.length!=0}}">
+    <view class="no_line"></view>
+    <view style="margin:0 6rpx;">暂无更多~</view>
+    <view class="no_line"></view>
+  </view>
+   <!-- 加载动效 -->
+<view class="jiazai" wx:if="{{!noMoreData&&teacher.length!=0}}">
+  <i-spin fix></i-spin>
+  <view>加载中</view>
+</view>
+
+  <view class='nodata' wx:if="{{shaixuan_state==true&&teacher.length===0}}">
+    <icon class='iconfont_notea icon-empty'></icon>
+    <view class='tips'>
+      <text>暂无发现教练信息～</text>
+    </view>
+  </view>
+
+</view>
+</view>

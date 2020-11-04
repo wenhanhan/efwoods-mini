@@ -1,0 +1,50 @@
+<view class="container">
+  <view class="top_bk">
+    <!-- 步骤条 -->
+    <view class="circle_box">
+      <view class="circle">
+        <view class="circle_txt">
+          <icon class='iconfont_duihao icon-duihao'></icon>
+        </view>
+        <view class="progress_txt">提交资质</view>
+      </view>
+      <view class="line" style="background:white;"></view>
+      <view class="circle">
+        <view class="circle_txt">2</view>
+        <view class="progress_txt">开通VIP</view>
+      </view>
+      <view class="line"></view>
+      <view class="circle">
+        <view class="circle_txt">3</view>
+        <view class="progress_txt">等待审核</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="info_box">
+    <view class="pay_icon">
+      <icon class='iconfont_fail_pay icon-weizhifu-yichang'></icon>
+    </view>
+
+    <view class="settled_des">
+      <view class="pay_state">未支付</view>
+      <view class="checking_des" hidden="{{type==2}}">
+        机构入驻资料已成功提交，点击下方支付按钮，开通VIP会员。入驻审核将在支付完成后开启。
+      </view>
+      <view class="checking_des" hidden="{{type==1}}">
+        教练入驻资料已成功提交，点击下方支付按钮，开通VIP会员。入驻审核将在支付完成后开启。
+      </view>
+    </view>
+
+    <view class="btn" bindtap="pay" data-fee="{{fee}}" data-type="{{type}}">
+      <text>确认支付￥{{fee}}</text>
+    </view>
+  </view>
+  <view class="bottom_bk" hidden="{{current=='tab2'}}">
+    <!-- <image src="https://cdn.icloudapi.cn/share_bk.png"></image> -->
+    <view class="logo">
+      <image mode="aspectFill" src="/img/gray_logo.png"></image>
+      <text>由eFIREWOODS提供技术支持</text>
+    </view>
+  </view>
+</view>

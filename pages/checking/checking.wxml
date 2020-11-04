@@ -1,0 +1,65 @@
+<view class="container">
+  <view class="top_bk">
+    <!-- 步骤条 -->
+    <view class="circle_box">
+      <view class="circle">
+        <view class="circle_txt">
+          <icon class='iconfont_duihao icon-duihao'></icon>
+        </view>
+        <view class="progress_txt">提交资质</view>
+      </view>
+      <view class="line" style="background:white;"></view>
+      <view class="circle">
+        <view class="circle_txt">
+          <icon class='iconfont_duihao icon-duihao'></icon>
+        </view>
+        <view class="progress_txt">开通VIP</view>
+      </view>
+      <view class="line" style="background:white;"></view>
+      <view class="circle">
+        <view class="circle_txt">3</view>
+        <view class="progress_txt">等待审核</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="info_box">
+    <view class="pay_icon">
+      <icon class='iconfont_checking icon-icon-test-copy'></icon>
+    </view>
+
+    <view class="settled_des">
+      <view class="pay_state">正在审核，请耐心等待</view>
+      <view class="checking_des">
+        <view class="tip">
+          <view class="tip_circle"></view>
+          <view class="tip_des">我们将在三个工作日内（不包含国家法定节假日）完成审核，并将以微信消息的方式提醒您；</view>
+        </view>
+        <view class="tip">
+          <view class="tip_circle"></view>
+          <view class="tip_des">您也可以登录小程序，进入个人中心及时查看审核进度；</view>
+        </view>
+
+        <view class="tip">
+          <view class="tip_circle"></view>
+          <view class="tip_des">如审核未通过，可检查修改审核信息并重新提交，期间无需支付入驻费用；</view>
+        </view>
+
+        <view class="tip">
+          <view class="tip_circle"></view>
+          <view class="tip_des">如有疑问可拨打客服电话021-58879166进行咨询。</view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom_bk" >
+    <!-- <image src="https://cdn.icloudapi.cn/share_bk.png"></image> -->
+    <view class="logo">
+      <image mode="aspectFill" src="/img/gray_logo.png"></image>
+      <text>由eFIREWOODS提供技术支持</text>
+    </view>
+  </view>
+
+</view>

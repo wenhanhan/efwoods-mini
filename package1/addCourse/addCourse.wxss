@@ -1,0 +1,106 @@
+page{
+  background-color: #eeeeee;
+}
+.cell_line{
+  width: 100%;
+  float: left;
+  position: relative;
+  margin-top: 20rpx;
+}
+.save_btn{
+  width: 90%;
+  height: 80rpx;
+  border-radius: 50rpx;
+  background: black;
+  color: #f2d11b;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  position: relative;
+  margin:0 auto;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.btn_box{
+  width: 100%;
+  height: auto;
+  float: left;
+  position: relative;
+  background: white;
+  border-top: 1px solid #eeeeee;
+}
+
+.valid_time{
+  width:auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.valid_line{
+  width: 70%;
+  height: 90rpx;
+  text-align: center;
+  margin: 0 auto;
+  /* background: red; */
+  position: absolute;
+  bottom:0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  left: 20%;
+}
+.start_time{
+  font-size: 26rpx;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  /* background: green; */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.end_time{
+  font-size: 26rpx;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  /* background: green; */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+/* 上传框样式 */
+
+.weui-uploader{
+  width: 100%;
+  float: left;
+  position: relative;
+  background: white;
+  border-top: 1px solid #eeeeee;
+  font-size: 28rpx;
+}
+.weui-uploader__hd{
+  padding-bottom: 0;
+  padding-left: 15px;
+  padding-top: 12px;
+}
+.weui-uploader__bd{
+  margin-left:30rpx;
+  margin-top:30rpx;
+}
+.delete{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.weui-uploader__file{
+  position: relative;
+}
+form{
+  width: 100%;
+  position: relative;
+}

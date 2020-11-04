@@ -1,0 +1,126 @@
+<view class="container">
+  <view class='video_box' wx:if="{{!is_checking}}">
+    <video objectFit='fill' src='{{video}}' controls="{{true}}" autoplay="{{true}}" ></video>
+  </view>
+  <view class="video_box" style="height:auto" wx:else>
+    <image src="{{cover}}" mode="widthFix"></image>
+  </view>
+
+  <view class='video_title'>
+    <text>{{title}}</text>
+  </view>
+
+  <view class="dizhi" hidden="{{type!=1}}">
+      <view class="video_address" bindtap="chooseLocation">
+        <icon class='iconfont_location icon-dizhi'></icon>
+        <text class="address_over">{{address}}{{distance}}</text>
+      </view>
+  </view> 
+
+  <view class='author_des'>
+    <view class='head' bindtap='teades'>
+      <image src='{{headimg}}'></image>
+      <!-- <image class="animate" mode="aspectFit"  src="{{imgurl}}"></image> -->
+    </view>
+    <view class='author'>
+      <view class='author_name'>
+        <text>{{name}}</text>
+      </view>
+      <view class='video_des'>
+        <text>{{videoNum?videoNum:share_videoNum}}个视频·{{renqi?renqi:share_renqi}}人气</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='video_set'>
+    <!-- 分享页面进入 点击获取信息 -->
+    <!-- <button wx:if='{{home_state}}' hover-class='none' open-type='getUserInfo' class='favor_box' bindgetuserinfo="bindGetUserInfo" bindtap='favor'>
+      <icon class='iconfont_video icon-video-star' style="font-size:45rpx;color:{{isFavor?'red':''}}"></icon>
+      <text style='margin-left:36rpx;'>{{favor}}</text>
+    </button> -->
+    <!--普通区域 -->
+
+    <button  class='favor_box' bindtap='favor' hover-class="none">
+      <icon class='iconfont_video icon-video-star' style="font-size:45rpx;color:{{isFavor?'red':''}}"></icon>
+      <text style='margin-left:36rpx;'>{{favor<0?0:favor}}</text>
+    </button>
+
+    <button hover-class='none' open-type='share' class='share_box'>
+      <icon class='iconfont_video_share icon-fenxiang' style='font-size:45rpx;'></icon>
+      <text style='margin-left:36rpx;'>分享</text>
+    </button>
+  </view>
+
+  <view class='divide'> </view>
+  <!-- 视频评论 -->
+  <view class='video_judge' style="{{isIphoneX?'padding-bottom:30rpx':''}}">
+    <view class='judge_head'>
+      <view class='line'></view>
+      <text style='margin:0 28rpx;'>学员评论</text>
+      <view class='line'></view>
+    </view>
+
+    <block wx:for="{{judge}}"> 
+      <view class='judge_line'>
+        <view class='judge_left'>
+          <image src='{{item.avatarUrl}}'></image>
+        </view>
+
+        <view class='judge_right'>
+          <view class='judge_user_name'>
+            <text>{{item.nickName}}</text>
+          </view>
+          <view class="judge_user_time">
+            <text>{{item.time}}</text>
+          </view>
+          <view class='judge_user_text'>
+            <text>{{item.content}}</text>
+          </view>
+        </view>
+        <!-- <button wx:if="{{home_state}}" hover-class='none' class='judge_love' data-judgeid='{{item.Id}}' catchtap='like' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">
+          <icon class='iconfont_zan icon-shoucang' style="color:{{item.isLike==200?'#F13838':'#B6B4B4'}};margin-left:0"></icon>
+          <text style='margin-left:5rpx'>{{item.likeNum}}</text>
+        </button> -->
+        <view  class='judge_love' data-judgeid='{{item.Id}}' catchtap='like' >
+          <icon class='iconfont_zan icon-shoucang' style="color:{{item.isLike==200?'#F13838':'#B6B4B4'}};margin-left:0"></icon>
+          <text style='margin-left:5rpx'>{{item.likeNum}}</text>
+        </view>
+      </view>
+    </block>
+
+    <view class='nodata' style='height:auto;padding-top:100rpx;' wx:if="{{judge.length===0}}">
+      <icon class='iconfont_nojudge icon-wupinglun'></icon>
+      <view class='tips'>
+        <text>暂无评论～</text>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 底部评价输入框 -->
+  <!-- <button hover-class='none' open-type='getUserInfo' bindgetuserinfo="getUserInfo" class='judge_input'  wx:if='{{!isjudge&&home_state}}' style="bottom:{{keyboard_height}}px;{{isIphoneX?'padding-bottom:30rpx':''}}">
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <view class='input_box'>添加评论</view>
+    <view>发送</view>
+  </button> -->
+
+    <!-- <view  class='judge_input' bindtap='judge' style="bottom:{{keyboard_height}}px;{{isIphoneX?'padding-bottom:30rpx':''}}">
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <view class='input_box'>添加评论</view>
+    <view>发送</view>
+  </view> -->
+
+  <view class='judge_input' bindtap="judge" style="bottom:{{keyboard_height}}px;{{isIphoneX?'padding-bottom:30rpx':''}}">
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <input focus='{{focus}}' value="{{content}}" disabled="{{!userInfo}}" maxlength='-1' bindconfirm='send' bindinput="judgeTxt" adjust-position="{{false}}" bindblur='cancel' bindfocus='focus' placeholder="添加评论"></input>
+    <view bindtap='send'>发送</view>
+  </view>
+
+  <!-- 暂无评论 --> 
+  <view wx:if="{{home_state}}" class='home' bindtap='home' data-courid='{{cour_id}}'>
+    <image src='../../img/home.png'></image>
+    <text>首页</text>
+  </view>
+
+
+</view>

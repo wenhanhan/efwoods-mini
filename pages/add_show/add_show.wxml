@@ -1,0 +1,75 @@
+<view class="container">
+  <view class='top_line'></view>
+
+  <view class='video'>
+    <text>视频</text>
+  </view>
+  <!-- 视频 -->
+  <view class="weui-uploader" style='margin-bottom:30rpx;'>
+    <view class="weui-uploader__bd">
+      <view class="weui-uploader__files" id="uploaderFiles">
+        <block wx:for="{{video}}" wx:key="*this">
+        <!-- 预览照片 -->
+          <!-- <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+            <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+          </view> -->
+        <!-- 视频显示 -->
+          <view class="weui-uploader__file" bindtap="previewVideo" bindlongpress="deleteVideo" id="{{item}}" data-type='tea'  data-videoidx="{{index}}">
+            <video  id="video{{index}}" data-type='tea'  bindended="closefullscreen"  class="weui-uploader__img" src="{{item}}" />
+          </view>
+        
+        </block>
+      </view>
+      <view class="weui-uploader__input-box" hidden='{{video.length==1}}'>
+      <!-- 选择照片 -->
+        <!-- <view class="weui-uploader__input" bindtap="chooseImage"></view> -->
+      <!-- 选择视频 -->
+        <view class="weui-uploader__input" bindtap="chooseVideo"></view>
+      </view>
+    </view>
+
+    <!-- 视频上传进度 -->
+  <view class="progress-item" hidden='{{progress_state}}'>
+    <i-progress percent="{{percent}}" status="active"></i-progress>
+  </view>
+  <!-- 视频上传进度 -->
+  </view>
+
+  
+   <view class='video'>
+    <text>视频标题</text>
+   </view>
+
+</view>
+
+<view  class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea  class="weui-textarea" bindinput="input" bindfocus="inputFocus" placeholder-class="placeholder" placeholder="合适的话题，有助于更多人观看～" style="height: 5.3em;font-size:26rpx;" />
+      <view class="weui-textarea-counter"></view>
+    </view>
+  </view>
+</view>
+
+<view class='video'>
+      <text>视频分类</text>
+  </view>
+  <view class="video_category">
+    <view wx:for="{{category}}" style="margin-left:{{index==0?'0':''}}" bindtap="select_cate" class="{{idx==index?'active':'cate_item'}}"  data-idx="{{index}}" data-type="{{item.type}}">
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+
+   <view class='add_address' bindtap="select_address">
+      <icon class='iconfont_show icon-dizhi'></icon>
+      <text class="show_address {{address?'act':''}}">{{show_address}}</text>
+      <icon style="position:absolute;right:28rpx;" class='iconfont_right_bar icon-iconfontyoujiantou-copy'></icon>
+  </view>
+
+<view class='container'>
+  <button hover-class='none' disabled='{{btn_state}}' class='add_btn' bindtap='upload' >
+    <view>
+      <text>发布</text>
+    </view>
+  </button>
+</view>

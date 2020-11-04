@@ -1,0 +1,91 @@
+<view class='container'>
+
+  <view style='width:100%'>
+    <i-tabs current="{{ current }}" color="#f759ab" bindchange="handleChange">
+      <i-tab key="tab1" title="优惠券列表"></i-tab>
+      <i-tab key="tab2" title="核销记录"></i-tab>
+    </i-tabs>
+   </view>
+
+
+<!-- 优惠券列表 -->
+<view class='tick_list_box' wx:if="{{tick}}">
+ <block wx:for='{{tick_list}}'>
+  <view class='tick_list' style="{{index==idx&&isdown==1?'margin-bottom:0':''}}" >
+    <view class='tick_list_left'>
+      <view class='tick_money'>
+        <view style='font-size:22rpx;color:#333333;'>￥</view>
+        <view style='font-size:30rpx;color:#333333;font-weight:600'>{{item.money}}</view>
+      </view>
+      <view class='tick_type'>
+       <text>抵用券</text>
+      </view>
+    </view>
+    <view class='divide'></view>
+
+    <view class='tick_list_right'>
+      <view class='tick_title'>
+        {{item.courName}}
+      </view>
+      <view class='tick_des'>
+        <view class='tick_state'>
+        总数:<text style='color:#ff0000;margin-right:4rpx;'>{{item.num}}</text> 
+        已领取:<text style='color:#ff0000;margin-right:4rpx;'>{{item.used}}</text>
+         已核销:<text style='color:#ff0000;margin-right:4rpx;'>{{item.checked}}</text></view>
+        <view class='deadline'>有效期至{{item.deadline}}</view>
+      </view>
+    </view>
+    <button class='state_btn' bindtap='editCoupon' data-couponid='{{item.Id}}'>编辑</button>
+  </view>
+  </block>
+</view>
+
+
+<!-- 核销记录 -->
+<view class='tick_list_box' wx:if="{{!tick}}">
+ 
+<block wx:for='{{tick_list}}'>
+  <view class='tick_list' style="{{index==idx&&isdown==1?'margin-bottom:0':''}}" >
+    <view class='tick_list_left'>
+      <view class='tick_money'>
+        <view style='font-size:22rpx;color:#333333;'>￥</view>
+        <view style='font-size:30rpx;color:#333333;font-weight:600'>{{item.money}}</view>
+      </view>
+      <view class='tick_type'>
+       <text>抵用券</text>
+      </view>
+    </view>
+    <view class='divide'></view>
+
+    <view class='tick_list_right'>
+      <view class='tick_title'>
+        {{item.courName}}
+      </view>
+      <view class='tick_des'>
+        <view class='tick_state'>
+        总数:<text style='color:#ff0000;margin-right:4rpx;'>{{item.num}}</text>
+        已领取:<text style='color:#ff0000;margin-right:4rpx;'>{{item.used}}</text>
+        已核销:<text style='color:#ff0000;margin-right:4rpx;'>{{item.checked}}</text></view>
+        <view class='deadline'>有效期至{{item.deadline}}</view>
+      </view>
+    </view>
+  <navigator hover-class='none' url='../checkRecord/checkRecord?money={{item.money}}&courName={{item.courName}}&num={{item.num}}&used={{item.used}}&checked={{item.checked}}&tickId={{item.Id}}&deadline={{item.deadline}}'>
+    <button class='state_btn' >查看记录</button>
+    </navigator>
+  </view>
+  </block>
+
+</view>
+
+
+<!-- 核销优惠券 -->
+<view class='check' bindtap='check'>
+  <!-- <image src='../../../img/scan.png'></image> -->
+  <icon class='iconfont_scan icon-saomiao'></icon>
+</view>
+<!-- 增加优惠券 -->
+<view class='add' bindtap='add'>
+  <icon class='iconfont_add icon-pingoutouxiang'></icon>
+</view>
+
+</view>

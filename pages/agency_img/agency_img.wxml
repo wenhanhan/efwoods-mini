@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="img_box">
+    <block wx:for="{{agency_img}}">
+    <image bindtap="preview" data-src="{{item}}" mode="aspectFill" src="{{item}}"></image>
+    </block>
+  </view>
+  <!-- 暂无收藏提示信息 --> 
+  <view class='nodata' style="padding-top:250rpx;" wx:if="{{agency_img.length==0}}">
+    <icon style="font-size:150rpx;" class='iconfont_resource icon-meiyouneirong'></icon>
+    <view class='tips' style="color:#d1cfcf">
+      <text>该机构未添加展示图片～</text>
+    </view>
+  </view>
+</view>

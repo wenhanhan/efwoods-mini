@@ -1,0 +1,64 @@
+<view class='container'>
+  <view class='tick_title'>
+    <text>优惠券详情</text>
+  </view>
+  <view class='tick_des_box'>
+    
+    <view class='tick_line'>
+      <view class='tick_line_left'>
+      <text>券名称</text>
+      </view>
+      <view class='tick_line_right'>
+        <text>{{courName}}</text>
+      </view>
+    </view>
+
+    <view class='tick_line'>
+      <view class='tick_line_left'>
+       <text>发券教师</text>
+      </view>
+      <view class='tick_line_right'>
+        <text>{{teaName}}</text>
+      </view>
+    </view>
+
+    <view class='tick_line'>
+      <view class='tick_line_left'>
+       <text>有效期至</text>
+      </view>
+      <view class='tick_line_right'>
+        <text>{{deadline}}</text>
+      </view>
+    </view>
+
+    <view class='tick_line'>
+      <view class='tick_line_left'>
+      <text>状态</text>
+      </view>
+      <view class='tick_line_right'>
+        <text>{{state==0?'未核销':'已核销'}}</text>
+      </view>
+    </view>
+
+     <view class='tick_line' wx:if="{{state==0&&used==0}}">
+      <view class='tick_line_left'>
+      <text>备注</text>
+      </view>
+      <view class='tick_line_right'>
+        <text style='color:red'>须创建本课程优惠券的教师核销</text>
+      </view>
+    </view>
+
+    <view class='tick_line' wx:if="{{state==0&&used==0}}">
+      <view class='tick_line_left'>
+       <text>核销二维码</text>
+      </view>
+      <view class='tick_line_right'>
+    <view bindtap='previewImg'>
+      <canvas hidden="{{canvasHidden}}" style="width: 320rpx;height: 320rpx;" canvas-id="mycanvas" />
+    </view>
+      </view>
+    </view>
+
+  </view>
+</view>

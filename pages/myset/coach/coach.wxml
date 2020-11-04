@@ -1,0 +1,296 @@
+<view class='container' style="padding-bottom:{{isIphoneX?'130rpx':'98rpx'}}">
+  <!-- 个人中心头部 -->
+  <view class="{{identity==1?'tea_top_box':'user_top_box'}}" bindtap="login">
+    <view class='user_top'>
+      <view class='user_headimg'>
+        <image src='{{headimg}}'></image>
+      </view>
+      <view class='user_info'>
+        <view class='use_info_top'>
+          <view class='userNick'>
+            <text>{{nickname}}</text>
+          </view> 
+          <view class='usersex' wx:if="{{login}}">
+            <icon class='iconfont_man icon-nan' wx:if="{{sex==1}}"></icon>
+            <icon class='iconfont_nv icon-nv' wx:else></icon>
+          </view>
+          <icon hidden='{{identity!=1}}' wx:if="{{level==1&&login}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level1 icon-lv1'></icon>
+          <icon hidden='{{identity!=1}}' wx:elif="{{level==2&&login}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level2 icon-lv2'></icon>
+          <icon hidden='{{identity!=1}}' wx:elif="{{level==3&&login}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level3 icon-lv3'></icon>
+          <icon hidden='{{identity!=1}}' wx:elif="{{level==4&&login}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level4 icon-lv4'></icon>
+          <icon hidden='{{identity!=1}}' wx:elif="{{level==5&&login}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level5 icon-lv5'></icon>
+          <icon hidden='{{identity!=1}}' wx:elif="{{level==6&&login}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level6 icon-lv6'></icon>
+
+        </view>
+        <view class='user_info_bot' wx:if="{{identity==1&&login}}">
+          <view hidden='{{!tag1}}' class='user_tags'>
+            <text>{{tag1}}</text>
+          </view>
+          <view hidden='{{!tag2}}' class='user_tags2'>
+            <text>{{tag2}}</text>
+          </view>
+          <view hidden='{{!tag3}}' class='user_tags2'>
+            <text>{{tag3}}</text>
+          </view>
+        </view>
+        <view class='user_info_bot' style="margin-top:15rpx;" wx:if="{{identity==0&&login}}">
+          <view class="jifen">
+            <icon class='iconfont_jifen icon-jifenduihuan'></icon>
+            <text style="margin-left:10rpx;">{{jifen_sum}}</text>
+          </view>
+        </view>
+    <navigator wx:if="{{identity==1&&login}}" url="../../user/user" hover-class="none" class="user_exp">
+            <view class="user_exp_left">
+              <icon class='iconfont_jingyan icon-jingyanzhi'></icon>
+            </view>
+            <text>{{exp}}</text>
+          </navigator>
+      </view>
+    </view>
+
+    <view class='base_info' wx:if="{{identity==1&&login}}">
+      <view class='base_info_child'>
+        <view class='child_tags'>
+          <text>课程</text>
+        </view>
+        <view class='child_num'>
+          <text>{{course_num}}</text>
+        </view>
+      </view>
+      <view class='base_info_line'></view>
+      <view class='base_info_child'>
+        <view class='child_tags'>
+          <text>评价</text>
+        </view>
+        <view class='child_num'>
+          <text>{{judge_num}}</text>
+        </view>
+      </view>
+      <view class='base_info_line'></view>
+      <view class='base_info_child'>
+        <view class='child_tags'>
+          <text>粉丝</text>
+        </view>
+        <view class='child_num'>
+          <text>{{favor_num}}</text>
+        </view>
+      </view>
+      <view class='base_info_line'></view>
+      <view class='base_info_child'>
+        <view class='child_tags'>
+          <text>级别</text>
+        </view>
+        <view class='child_num'>
+          <text>Lv{{level}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--学员个人中心 中间区域  -->
+  <view class='user_set_box'>
+    <i-message id="message" />
+    <!-- <navigator hover-class='none' url='../sign/sign'> -->
+    <view class='set_box_line' style='margin-top:10rpx;' bindtap="mysign">
+      <view class='set_icon'>
+        <image src='/img/user/sign.png'></image>
+      </view>
+      <view class='set_sign'>我的签到</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+    <!-- </navigator> -->
+
+    <!-- <navigator hover-class='none' url='../mycoupon/mycoupon'> -->
+    <view class='set_box_line' bindtap="mycoupon">
+      <view class='set_icon'>
+        <image src='/img/user/ticket.png'></image>
+      </view>
+      <view class='set_sign'>我的优惠券</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+    <!-- </navigator> -->
+
+    <!-- <navigator hover-class='none' url='../favor/favor'> -->
+    <view class='set_box_line' bindtap="myfavor">
+      <view class='set_icon'>
+        <image src='/img/user/favor.png'></image>
+      </view>
+      <view class='set_sign'>我的收藏</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+    <!-- </navigator> -->
+
+    <!-- <navigator hover-class='none' url='../jifen/jifen'> -->
+    <view class='set_box_line' bindtap="myjifen">
+      <view class='set_icon'>
+        <image src='/img/user/point.png'></image>
+      </view>
+      <view class='set_sign'>我的积分</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+
+     <view class='set_box_line' bindtap="myyuyue">
+      <view class='set_icon'>
+        <image src='/img/user/yuyue.png'></image>
+      </view>
+      <view class='set_sign'>我的预约</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+
+    <!-- </navigator> -->
+    <!-- 我的订阅 -->
+    <view class='set_box_line' bindtap="mydingyue">
+      <view class='set_icon'>
+        <image src='/img/user/dingyue.png'></image>
+      </view>
+      <view class='set_sign'>我的订阅</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+
+    <!-- <navigator hover-class='none' url='../personal/personal'> -->
+    <view class='set_box_line' bindtap="personal">
+      <view class='set_icon'>
+        <image src='/img/user/my.png'></image>
+      </view>
+      <view wx:if="{{identity==1}}" class='set_sign'>授课信息</view>
+      <view wx:else class='set_sign'>个人信息</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+    <!-- </navigator> -->
+
+  </view>
+
+
+  <!-- 申请成为教师 -->
+  <view class='user_set_box' hidden='{{identity==1}}'>
+    <view class='set_box_line' bindtap="teacher_apply">
+      <view class='set_icon'>
+        <image src='/img/user/apply.png'></image>
+      </view>
+      <view class='set_sign'>申请成为教师</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+  </view>
+
+  <!-- 教师功能栏目 -->
+  <view class='user_set_box' style='margin-bottom:20rpx;' hidden='{{identity!=1}}' bindtap="login">
+
+    <!-- <navigator wx:if="{{code==200}}" hover-class='none' url='../mycourse/mycourse'> -->
+    <view class='set_box_line' wx:if="{{code==200}}" style='margin-top:10rpx;' bindtap="mycourse">
+      <view class='set_icon'>
+        <image src='/img/user/course.png'></image>
+      </view>
+      <view class='set_sign'>课程发布与管理</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+    <!-- </navigator> -->
+
+    <navigator wx:if="{{code==404}}" hover-class='none' bindtap="handleDefault">
+      <view class='set_box_line' style='margin-top:10rpx;'>
+        <view class='set_icon'>
+          <image src='/img/user/course.png'></image>
+        </view>
+        <view class='set_sign'>课程发布与管理</view>
+        <icon class='iconfont_right icon-right_daohang'></icon>
+      </view>
+    </navigator>
+
+    <!-- <navigator wx:if="{{code==200}}" hover-class='none' url='../setCoupon/setCoupon'> -->
+    <view class='set_box_line' wx:if="{{code==200}}" bindtap="setCoupon">
+      <view class='set_icon'>
+        <image src='/img/user/set_tic.png'></image> 
+      </view>
+      <view class='set_sign'>优惠券发布与管理</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+    <!-- </navigator> -->
+
+    <navigator wx:if="{{code==404}}" hover-class='none' bindtap="handleDefault">
+      <view class='set_box_line'>
+        <view class='set_icon'>
+          <image src='/img/user/set_tic.png'></image>
+        </view>
+        <view class='set_sign'>优惠券发布与管理</view>
+        <icon class='iconfont_right icon-right_daohang'></icon>
+      </view>
+    </navigator>
+
+    <!-- <navigator hover-class='none' url='../signSet/signSet'> -->
+    <view class='set_box_line' bindtap="signSet">
+      <view class='set_icon'>
+        <image src='/img/user/set_sign.png'></image>
+      </view>
+      <view class='set_sign'>签到管理</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+    <!-- </navigator> -->
+
+    <view class='set_box_line' bindtap="yuyueSet">
+      <view class='set_icon'>
+        <image src='/img/user/set_yuyue.png'></image>
+      </view>
+      <view class='set_sign'>预约管理</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+
+    <!-- <navigator url='../myshow/myshow' hover-class="none"> -->
+    <view class='set_box_line' bindtap="myshow">
+      <view class='set_icon'>
+        <image src='/img/user/set_show.png'></image>
+      </view>
+      <view class='set_sign'>教练秀管理</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+    <!-- </navigator> -->
+  </view>
+
+  <!-- 我的邀请码 -->
+  <view class="user_set_box"> 
+    <view class='set_box_line' bindtap="invite" hidden='{{identity==0&&vvip==0}}'>
+      <view class='set_icon'>
+        <image src='/img/user/invite.png'></image>
+      </view>
+      <view class='set_sign'>推广中心</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+  </view> 
+
+
+  <!-- 机构入驻 -->
+  <view class="user_set_box">
+    <view class='set_box_line' bindtap="agency_apply">
+      <view class='set_icon'>
+        <image src='/img/user/agency.png'></image>
+      </view>
+      <view class='set_sign'>{{agency_code==200?'机构管理':'机构入驻'}}</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+  </view>
+
+  <!-- 使用帮助 -->
+  <view class='user_set_box'>
+    <navigator hover-class='none' url='../help/help'>
+      <view class='set_box_line'>
+        <view class='set_icon'>
+          <image src='/img/user/help.png'></image>
+        </view>
+        <view class='set_sign'>使用帮助</view>
+        <icon class='iconfont_right icon-right_daohang'></icon>
+      </view>
+    </navigator>
+  </view>
+
+  <!-- 管理员入口 -->
+  <view class='user_set_box' style='margin-bottom:20rpx;'>
+    <navigator hover-class='none' url='../../../package2/adminLogin/adminLogin'>
+      <view class='set_box_line'>
+        <view class='set_icon'>
+          <image src='/img/user/admin.png'></image>
+        </view>
+        <view class='set_sign'>管理入口</view>
+        <icon class='iconfont_right icon-right_daohang'></icon>
+      </view>
+    </navigator>
+  </view>
+
+  <tabbar tabbar="{{tabbar}}"></tabbar>
+</view>

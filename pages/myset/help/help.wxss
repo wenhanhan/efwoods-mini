@@ -1,0 +1,53 @@
+/* pages/myset/help/help.wxss */
+.top_box{
+  width: 100%;
+  height: 250rpx;
+  background: #EC5A5A;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.hello{
+  font-size: 40rpx;
+  color: white;
+  margin-left: 20rpx;
+  font-weight: 400;
+}
+.ask_title{
+  width: 100%;
+  height: 125rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 38rpx;
+  color: black;
+  font-weight: 500;
+  border-bottom: 1px solid #eeeeee;
+}
+.caption-wrap{
+  width: 100%;
+  height: auto;
+  font-size: 28rpx;
+}
+.save_btn{
+  width: 90%;
+  height: 80rpx;
+  border-radius: 50rpx;
+  background: black;
+  color: #f2d11b;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  position: relative;
+  margin:0 auto;
+  margin-top: 90rpx;
+  margin-bottom: 20rpx;
+}
+.btn_box{
+  width: 100%;
+  height: auto;
+  float: left;
+  position: relative;
+  background: white;
+  border-top: 1px solid #eeeeee;
+}

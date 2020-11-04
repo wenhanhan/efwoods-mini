@@ -1,0 +1,130 @@
+/* pages/myset/spread_order/spread_order.wxss */
+@import '/icon/spread_order.wxss';
+@import '/icon/lost.wxss';
+.top_bk{
+  width: 100%;
+  height: 280rpx;
+  position: relative;
+  background-image:url('https://cdn.icloudapi.cn/spread_top_bg.png'); 
+  background-repeat:no-repeat;background-size:100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.brokerage_title{
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content:center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.brokerage_title .title{
+  font-size: 28rpx;
+  height: 50%;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.brokerage_sum{
+  font-size: 52rpx;
+  color: white;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.brokerage_icon{
+  width: auto;
+  height: auto;
+  position: absolute;
+  right: 52rpx;
+  bottom: 70rpx;
+}
+.spread_order,.month_item{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.order_month_des{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #eeeeee;
+  padding-left: 5%;
+}
+.order_month{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #6A6A6A;
+}
+.order_sum{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 22rpx;
+  color: #919191;
+}
+.order_person{
+  width: 95%;
+  height: 88rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+}
+.headimg{
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #3F3F3F;
+}
+.headimg image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  margin-right: 18rpx;
+}
+.order_brokerage{
+  width: auto;
+  height: 100%;
+  font-size: 26rpx;
+  color: #3F3F3F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order_detail{
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 4px solid #eeeeee;
+  padding-left: 5%;
+}
+.order_number,.order_time{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+  color: #717171;
+}

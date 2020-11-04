@@ -1,0 +1,113 @@
+
+
+<!-- 瀑布流布局 -->
+
+<!-- <view class="container" style="padding-bottom:{{isIphoneX?'130rpx':'98rpx'}}"> -->
+<view class="container" style='padding-bottom:238rpx'>
+
+  <!-- 重新布局 -->
+  <view class="tab_box">
+    <view class="search" bindtap="search">
+      <view>
+        <icon class='iconfont icon-sousuo'></icon>
+      </view>
+      <view>搜索感兴趣的内容</view>
+    </view>
+    <view class="tab">
+      <block wx:for="{{category}}" wx:key="id">
+        <view class="cur_item" data-idx="{{index}}" bindtap="handleChange">
+          <text class="{{index==idx?'selected':''}}">{{item}}</text>
+          <text hidden="{{index!=idx}}" class="cur_line"></text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="fresh" hidden="{{!fresh}}">
+    <i-spin fix></i-spin>
+  </view>
+
+
+  <!--瀑布流懒加载 --> 
+  <view style="display:none">
+    <image wx:for="{{images}}" wx:key="id" data-idx="{{index}}"  data-id="{{item.id}}" src="{{item.cover}}" bindload="onImageLoad"></image>
+  </view>
+
+
+
+  <view class="video_box" hidden="{{video.length==0&&page_num==1}}"  >
+    <view class="img_item">
+      <view class='img_box' bindtap='play' data-idx='{{item.Id}}' wx:for="{{col1}}" wx:key="id">
+        <image mode="aspectFill" src="{{item.cover}}" style="width:100%;height:{{item.height}}px;"></image>
+        <view class="video_des">
+            <view class='headimg_box' catchtap='teades' data-openid='{{item.openid}}' >
+              <image class='headimg' src='{{item.avatarUrl}}'></image>
+            </view>
+            <view class='name'>{{item.nickName}}</view>
+            <view class='video_title'>{{item.title}}</view>
+            <view class="video_hot" style="margin-top:{{item.title?'14rpx':0}}">
+              <view class="video_favor" hidden="{{item.favorPerson.length==0}}">
+                <block wx:for="{{item.favorPerson}}" wx:key="id" wx:for-item="head" wx:for-index="idx">
+                    <image style="left:{{idx>0?idx*24:0}}rpx" hidden="{{idx>2}}" src="{{head.avatarUrl}}"></image>
+                </block>
+                <text class="favor_num" style="left:{{item.favorPerson.length>3?82:24*item.favorPerson.length+14}}rpx">{{item.favorPerson.length}}人喜欢</text>
+              </view>
+              <view class='play'>
+                <image class='img' src='/img/show/play.png'></image>
+                <view class='play_times'>{{item.play}}</view>
+              </view>
+            </view>
+        </view>
+      </view>
+    </view> 
+
+    <view class="img_item">
+      <view class='img_box' bindtap='play' data-idx='{{item.Id}}' wx:for="{{col2}}" wx:key="id">
+        <image mode="aspectFill" src="{{item.cover}}" style="width:100%;height:{{item.height}}px;"></image>
+        <view class="video_des">
+            <view class='headimg_box' catchtap='teades' data-openid='{{item.openid}}' >
+              <image class='headimg' src='{{item.avatarUrl}}'></image>
+            </view>
+            <view class='name'>{{item.nickName}}</view>
+            <view class='video_title'>{{item.title}}</view>
+            <view class="video_hot" style="margin-top:{{item.title?'14rpx':0}}">
+              <view class="video_favor" hidden="{{item.favorPerson.length==0}}">
+                <block wx:for="{{item.favorPerson}}" wx:key="id" wx:for-item="head" wx:for-index="idx">
+                    <image style="left:{{idx>0?idx*24:0}}rpx" hidden="{{idx>2}}" src="{{head.avatarUrl}}"></image>
+                </block>
+                <text class="favor_num" style="left:{{item.favorPerson.length>3?82:24*item.favorPerson.length+14}}rpx">{{item.favorPerson.length}}人喜欢</text>
+              </view>
+              <view class='play'>
+                <image class='img' src='/img/show/play.png'></image>
+                <view class='play_times'>{{item.play}}</view>
+              </view>
+            </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 暂无更多数据 -->
+  <view class="noMoreData" wx:if="{{noMoreData}}">
+    <view class="line"></view>
+    <view style="margin:0 6rpx;">暂无更多~</view>
+    <view class="line"></view>
+  </view>
+
+  </view>
+
+<!-- 刷新按钮 -->
+  <view class="fresh_btn" bindtap="fresh">
+    <icon class='iconfont_fresh icon-caozuo-shuaxin'></icon>
+  </view>
+    <!-- 没有任何视频 -->
+  <view class='nodata' style="top:280rpx;" wx:if="{{novideo}}">
+    <icon class='iconfont_video icon-zanwushipin'></icon>
+    <view class='tips'>
+      <text>暂无教练秀信息～</text>
+    </view>
+  </view>
+
+  <view wx:if="{{identity==1}}" class='show_btn' catchtap='add'>
+    <image src='/img/show/show.png'></image>
+  </view>
+  <tabbar tabbar="{{tabbar}}"></tabbar>
+</view>

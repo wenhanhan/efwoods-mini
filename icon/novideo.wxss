@@ -1,0 +1,23 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1574751142477'); /* IE9 */
+  src: url('iconfont.eot?t=1574751142477#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAO0AAsAAAAAB/QAAANlAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqDeIMWATYCJAMICwYABCAFhG0HNRvBBhHVm8PIfh7YzlMKCUlSYSsbhzRJ+ebYGNtz3+Pha7/fuW8X1SSa4CeGLtpMQiKRiHQyhELIeGaYTjRLYiHzP3r5Ty6t9CogqcARGjbi7dAqBsDmZugaFaFYkvPgf/mOtJuRhvF/3Dv9o8TnA8ppjkWTugDjgALbE9uaUAEFxnsYu4nyILYTqNalJKacPAKgUgb6BWIrOTEaKlMquSY7VArlJVMzxD6QVBaN+H0Ae/zx8QN6QQWFsgQgb2HTMQ7G3pdhHAH9R8MoAuzxDNBmkVBCJlZKTXNSGCpJqp1Q1se6soP35f9/ylrtC48gygFk1oIOkXVObMw51WcWIKMRBwDOe9lpzMAhwZLkMAOFQk+dpFRfUSdQ3VIFcRZ1iGkSEu7dUBaeGRLunxfs7YUegX5hwRkB0dEzY9+kMPJy4X6oFEpqJL9Sj0yrS+I2SQQVmFdGFBwzq9ye1gy75axyP25YqC8xkI6wMErnc9E/Y+CwpRh6z4IA1GygiwxW8zKOwEaweUa/IDKLKgT0CPXM4RKEfQWc/AV99HOQ4MHgEjubDFtMaMdsJz6FzUOWmRDXDzgZ49KzdUJZRMLKm5LytSKyed5KnHNKVoSTZwEyJ/r7SFCGrGuLm/JXMDa9KW3v8m3H05QEtgX3ENd65qZFRJREkqGlAr9evjFddJonKsAzNEgQWVBcTP8UipAbqZpy5M6A8CbHNs3LLeTosXfYw5xo1no825KN1mDuNAU65pbXcWzFDi4eTBxIShxMgDHAky7xLz/uOa4fVFUjORavlTVEgAf87xxXZO0soPL2zMFvYresyi4XqItss0tjhQPguf2CatX4l9XN1pAJbcSGUKmzRShU6ISk0gCaiSUoU2MEylUahWpDZmfXaLEtiUwDBu0KEBodQqHeBSSNrtBMfIYy7f6gXGMQoNpa8C9ZQ1SKZGFPKBkNqD8Eva0WaVkE2S90Z5aU5HLSD6kGLwxtn40uuCKNMaJebmS2YGkrMAu7Yc4b7LRF1Nx65n3qOlt2pVZvpRHsCSWjAeoPgt5WS+uzyN3/he7MkmoqOvQ/pBqaB4NW3wJdRGurimvZp15uxGyBpa2AWTBghqEN7OWdImpu+R6BfdJJtWxbUTu/pDzdBqgG5EXAsQljR673WX3Yw9o0AAAA') format('woff2'),
+  url('iconfont.woff?t=1574751142477') format('woff'),
+  url('iconfont.ttf?t=1574751142477') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1574751142477#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont_video {
+  font-family: "iconfont" !important;
+  font-size: 150rpx;
+  display: flex;
+  color: #d1cfcf;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zanwushipin:before {
+  content: "\e6ab";
+}
+

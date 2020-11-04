@@ -1,0 +1,42 @@
+/* pages/myset/spread_card/spread_card.wxss */
+/* 生成海报 */
+.imagePathBox{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+.shengcheng{
+  width: 80%;
+  height: 80%;
+  position: fixed;
+  top: 100rpx;
+  left: 50%;
+  margin-left: -40%;
+  z-index: 1001;
+}
+.baocun{
+  /* display: block; */
+  width: 80%;
+  height: 70rpx;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 30rpx;
+  left: 10%;
+  background-image: linear-gradient(to bottom,#BFA24B , rgb(236, 220, 161));
+  color: white;
+  font-size: 26rpx;
+  border-radius: 44rpx;
+  z-index: 1001;
+}
+button[class="baocun"]::after{
+  border: 0;
+}

@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "i-card": "../../../dist/card/index",
+    "i-tag": "../../../dist/tag/index"
+  },
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "教师资料",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false 
+}

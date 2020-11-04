@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "i-badge": "../../dist/badge/index",
+    "i-load-more": "../../dist/load-more/index"
+  },
+  "navigationBarBackgroundColor": "#FF4E4D",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "消息中心",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

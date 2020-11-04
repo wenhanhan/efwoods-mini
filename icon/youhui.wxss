@@ -1,0 +1,23 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1574843686140'); /* IE9 */
+  src: url('iconfont.eot?t=1574843686140#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPUAAsAAAAAB+gAAAOFAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqDdIMyATYCJAMICwYABCAFhG0HLRvVBsgOJcHGiADgAYFAPHy/3//WPvdcmfO+eBKTJJoNC5FEKDRCgxA19B+ZXyrT8dA50qkny/gKwzuI/DKwrBQIDTgVEKbyRBPw1I6d8z+X07urPMD538tzmnNTL8A4oID2xijK0rSADowbxq68iNsEimlZqJuWriGQyoxFgXijUsyDNKWVawpDJzQlOzPEBxDp0l7BG+C9//v4qyCkIKkrMEruXzcvQd0PPzOF3rKyxZSLAG88M9g+KmwCmXhRar1Fh9FNtKJEhebBugqDH34rKy53tX88gmjAyO8Dk5B7Tjybf6p4JpDR4BHAU693p1mN1AkzNXnmQbTdvdUV5rqfQm19Uhp46xHA17sRFscWb6jzXjJseYgC9j2mJu99kH98X8Y/GOjF/Y9bP1UGghJ+4xaK2mpnmP32sDCbKywjyhZut1tka+iw2BqELlwIj3ZTtjgy5GxEliUkxMIk7z8DyiwA70IQ2ueVMYzdarXAFjliAQvEBuwBIwhZwkrg6xjGSoVvRWE2tAgoBBQDZSJwqOP6hr/yfxuudwx58XmocB57h9Y83/BO/nTgOTvolZ+XV9jMuScdpd2CqsSxn7TltX3ekVQNqqyPdmz/3JbftvSn8qMsSrhWvC2+lnyl9cTo9LWxhwkv+rfzo/ltG6ix58EpudL97Nht8/2BsxtSft5qCQlNlBxhAs6G08hHlCdt9WsCxHT/XFtUBB3g3yEeEdNSoa9/FBKX+iBkPLIlgIlgmI7rEn8BhQtEC2dW569OQL58qGP4qz/p42/Ex/FB+tFZ/5P/HSME+C4cSfHVWTs76G7WFvw0XsuurAoMXcoyrzSZPIL4ZTQUBf9h54gvfe3jIDaHjvMgJK0pqHQW0UzahFrPITQ651BsaN3fM4pDiywD1u0EEIZcgWTAN6gMeYtm0meoTfgHjaGgoXgVoyf2LIcKXXNknidLeGEtVi0a9Kxl4FFQOEAUy9p5LinwKSOEM6sCOD8nL5toJXrCjbHGvEpRwPMsZjmDDreA+4hWa8BGzqAmi3yOkueNFbm5bNmTchYNOkCucYh5PGIJtmAtTGWRgR7r9ueh3PcHEArLtOZxNR0V1hEEx0w1PJYvR14LtFWqb9VxLY+YraJQgMdjYSyOgQ7WAsyE1owaYMbyaWrEIl4OZY+wUYVc1IttK82ZX657ugNQGKoUZgUN1VulCQAAAAA=') format('woff2'),
+  url('iconfont.woff?t=1574843686140') format('woff'),
+  url('iconfont.ttf?t=1574843686140') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1574843686140#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont_youhui {
+  font-family: "iconfont" !important;
+  font-size: 34rpx;
+  display: flex;
+  color:#2F2F2F;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-yhq:before {
+  content: "\e60e";
+}
+

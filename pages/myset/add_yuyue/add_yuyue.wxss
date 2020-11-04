@@ -1,0 +1,154 @@
+/* pages/myset/add_yuyue/add_yuyue.wxss */
+@import '/icon/yuyue_daohang.wxss';
+@import '/icon/time_set.wxss';
+@import '/icon/add_time.wxss';
+@import '/icon/clock_xiala.wxss';
+@import '/icon/yuyue_duigou.wxss';
+.container{
+  padding-bottom: 100rpx;
+}
+.set_top{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.item{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: #333333;
+  border-bottom: 1px solid #eeeeee;
+}
+.item_child{
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item_daohang{
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #575757;
+  font-size: 26rpx;
+}
+.course_time{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.time_set_title{
+  width: 95%;
+  height: 90rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #333333;
+  /* border-bottom: 1px solid #eeeeee; */
+}
+.add_time{
+  width: 95%;
+  height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #333333;
+}
+.time_box{
+  width: 95%;
+  /* height: 240rpx; */
+  height: auto;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid #EEEEEE;
+  border-radius: 4rpx;
+  padding:20rpx 0;
+  margin-bottom: 20rpx;
+}
+.week_title{
+  width: 95%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+  color:#333333;
+}
+.week_box{
+  width: 95%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  font-size: 20rpx;
+  padding: 20rpx 0;
+}
+.date_item{
+  width: 80rpx;
+  height: 40rpx;
+  border-radius: 6rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:#EAEAEA;
+  color:#131313;
+  position: relative;
+}
+.selected{
+  /* background:#FF4500; */
+  color:#131313;
+  background:white;
+  border: 1px solid #FF4500;
+  overflow:hidden;
+  box-sizing: border-box;
+}
+.clock{
+  width: 240rpx;
+  height: 44rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  border: 1px solid #FF4500;
+  border-radius: 4rpx;
+  margin-left: 10rpx;
+}
+.save_btn{
+  width: 560rpx;
+  height: 70rpx;
+  border-radius: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #181818;
+  font-size: 30rpx;
+  color: #F2D11B;
+  position: fixed;
+  bottom: 30rpx;
+}
+.duigou{
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid #FF4500;
+  border-left: 14px solid transparent;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

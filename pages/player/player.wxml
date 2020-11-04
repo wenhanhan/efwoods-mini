@@ -1,0 +1,58 @@
+<view class="container">
+  <view class="top_bk">
+    <image src="{{tea_img}}"></image>
+  </view>
+  <view class="mp3_info">
+    <view class="title">
+      <text class="cut_title">{{zhuanlan[index].title}}</text>
+    </view>
+    <view class="author">
+      <text class="cut_author">{{author}}</text>
+    </view>
+  </view>
+  <view class="jindu">
+    <view class="left_time">
+      <text>{{current_time}}</text>
+    </view>
+    <slider bindchange="sliderChange" backgroundColor="#CFCFCF" block-color="#F36308"  block-size="12px" step="1" value="{{current}}" max="{{duration}}" selected-color="#F36308" />
+    <view class="right_time">
+      <text>{{zhuanlan[index].max_time}}</text>
+    </view>
+  </view>
+  <view class="control">
+    <view class="left" bindtap="left">
+      <icon class='iconfont_prev icon-play-next-copy'></icon>
+    </view>
+    <view class="middle">
+      <view class="middle_circle" bindtap="play">
+        <icon hidden="{{!play}}" class='iconfont_stop icon-zanting'></icon>
+        <icon hidden="{{play}}" class='iconfont_bofang icon-bofang'></icon>
+      </view>
+    </view> 
+    <view class="right" bindtap="right">
+      <icon class='iconfont_next icon-play-next'></icon>
+    </view>
+  </view>
+
+  <view class="bottom_btn">
+    <view class="share_box">
+      <icon bindtap="like" style="color:{{is_like==1?'#FF5B00':''}}" class='iconfont_mp3_love icon-xihuan'></icon>
+    </view>
+    <view class="share_box">
+       <icon bindtap="judge" class='iconfont_mp3_judge icon-pinglunpt-wangyiicon'></icon>
+    </view>
+    <button hover-class='none' bindtap="handleOpen1" class='share_box'>
+      <icon bindtap="share" class='iconfont_mp3_share icon-fenxiang'></icon>
+    </button>
+  </view>
+    <i-toast id="toast" />
+    <i-action-sheet visible="{{ visible1 }}" actions="{{ actions1 }}" show-cancel bind:cancel="handleCancel1" bind:click="handleClickItem1" />
+    <!-- 生成海报 -->
+  <view class='imagePathBox' bindtap="hide" hidden="{{maskHidden == false}}">
+    <image src="{{imagePath}}" mode='aspectFit' class='shengcheng'></image>
+    <button hidden="{{!save_btn}}" class='baocun' bindtap='baocun'>保存分享卡片</button>
+  </view>
+  <view class="canvas-box">
+    <canvas style="width: {{canvas_width}}px;height: {{canvas_height}}px;position:fixed;top:9999px" canvas-id="mycanvas" />
+  </view>
+</view>

@@ -1,0 +1,189 @@
+<view class="container"  >
+  <view class="class_top_info">
+    <view class="class_pic">
+      <image src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{cour_info.cour_pic}}"></image>
+    </view>
+    <view class="class_title">
+      <view class="class_tit">{{cour_info.cour_name}}</view>
+      <view style="color:#FF0000;font-size:28rpx;" class="class_price">￥{{cour_info.price}}/节</view>
+    </view>
+  </view>
+  <!-- 授课教师 -->
+  <view class="sijiao">
+    <view class="sijiao_img">
+      <image src="{{tea_img}}"></image>
+    </view>
+    <view class="sijiao_prop">
+      <view class="sijiao_name">
+        <text>{{tea_name}}</text>
+      </view>
+      <view class="sijiao_tag">
+        <view style="background:red" class="tag_box" hidden="{{!tag1}}">
+          <text>{{tag1}}</text>
+        </view>
+        <view class="tag_box" hidden="{{!tag2}}">
+          <text>{{tag2}}</text>
+        </view> 
+      </view>
+      <view class="guanzhu" bindtap="favor" data-tea_id='{{cour_info.tea_id}}'>
+        <text wx:if="{{favor_state==0}}">+关注</text>
+        <text wx:if="{{favor_state==1}}">已关注</text>
+      </view>
+    </view>
+  </view>
+  <!-- 预约信息字段 -->
+  <view class="yuyue_info1">
+    <view class="yuyue_info_line">
+      <view class="yuyue_icon" style="padding-bottom:10rpx">
+        <icon class='iconfont_address icon-tubiao102'></icon>
+      </view>
+      <view class="yuyue_icon_text" bindtap="chooseLocation">
+        <text>地点：{{cour_info.address}}</text>
+        <icon class='iconfont_daohang icon-xiangyou-daohang'></icon>
+      </view>
+    </view>
+    <view class="yuyue_info_line">
+      <view class="yuyue_icon" style="padding-bottom:10rpx">
+        <icon class='iconfont_time icon-shijian'></icon>
+      </view>
+      <view wx:for="{{yuyue_info}}" wx:if="{{index==0}}" class="yuyue_icon_text" bindtap="more_clock">
+        <text>时间：{{item.date}} {{item.clock}}</text>
+        <icon  class='iconfont_shenglue icon-shenglve'></icon>
+      </view>
+    </view>
+    <view class="yuyue_info_line">
+      <view class="yuyue_icon" style="padding-bottom:10rpx">
+        <icon class='iconfont_shichang icon-shichang'></icon>
+      </view>
+      <view class="yuyue_icon_text">
+        <text>时长：{{cour_info.duration}}分钟</text>
+      </view>
+    </view>
+    <view class="yuyue_info_line">
+      <view class="yuyue_icon">
+        <icon class='iconfont_phone icon-dianhua2'></icon>
+      </view>
+      <view class="yuyue_icon_text">
+        <text>电话：{{cour_info.phone}}</text>
+      </view>
+    </view>
+    <view class="yuyue_info_line" hidden="{{cour_info.is_coupon==0||cour_info.is_pay==0}}" bindtap="select_coupon">
+      <view class="yuyue_icon">
+        <icon class='iconfont_tickets icon-youhuiquan'></icon>
+      </view>
+      <view class="yuyue_icon_text">
+        <text>优惠券</text>
+        <view style="display:flex;width:auto;height:100%; align-items: center;">
+          <text wx:if="{{!is_use_coupon}}">请选择</text>
+          <text wx:else>已选择</text>
+          <icon class='iconfont_daohang icon-xiangyou-daohang'></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 同意条款 -->
+  <view class="agree">
+      <checkbox-group bindchange="bindAgreeChange">
+            <label class="weui-agree" for="weuiAgree">
+                <view class="weui-agree__text">
+                    <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+                    <view class="weui-agree__checkbox-icon">
+                        <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+                    </view>
+                    我已阅读并同意<navigator url="../yuyue_agree/yuyue_agree" class="weui-agree__link">《课程服务协议》</navigator>
+                </view>
+            </label>
+      </checkbox-group>
+  </view>
+  <!-- 预约按钮 -->
+  <view class="yuyue_bottom" style="{{isIphoneX?'bottom:30rpx':''}}">
+    <view class="sum_price">
+      合计:<text style="color:#FF4500;">￥{{total}}</text>
+    </view>
+    <view class="yuyue_btn">
+      <button hover-class="none" open-type="getPhoneNumber" bindgetphonenumber="yuyue">
+        <text>确认预约</text>
+      </button>
+    </view>
+  </view>
+
+   <!-- 查看更多预约时刻弹窗 -->
+  <view  class="dialog {{clockShowDialog?'clock_dialog_show':''}}">
+    <view class="clock_dialog_mask" bindtap="clock_disapear"></view> 
+    <view class="clock_box">
+      <view class="clock_title">预约时间</view>
+      <view class="clock_item_box">
+        <view class="scroll_box">
+          <view class="clock_item" wx:for="{{yuyue_info}}">
+            <icon class='iconfont_xuanzhong icon-xuanzhong'></icon>
+            <text style="margin-left:16rpx">{{item.date}} {{item.clock}}  {{item.week}}</text>
+          </view>
+        </view>
+        <view class="clock_btn" bindtap="clock_disapear">确定</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 优惠券弹窗 -->
+ <view  class="dialog {{showDialog?'dialog_show':''}}">
+    <view class="dialog_mask" bindtap="disapear"></view> 
+      <view class="coupon_box" style="height:{{hasCoupon?'350rpx':'400rpx'}}">
+        <view class="coupon_title">
+          优惠券
+        </view>
+        <view class="coupon">
+          <icon hidden="{{hasCoupon}}" class='iconfont_coupon icon-wuyouhuiquan'></icon>
+          <!-- 优惠券样式 -->
+          <view class="my_coupon_box" hidden="{{!hasCoupon}}">
+            <view style="top:-36rpx" class="div_circle"></view>
+            <view style="bottom:-36rpx" class="div_circle"></view>
+            <view class="div_line"></view>
+            <view class="my_coupon_left">
+              <view class="coupon_price">
+                ￥<text style="font-size: 48rpx;font-size: 500;">{{coupon.money}}</text>
+              </view>
+              <view class="coupon_type">
+                <text>抵用券</text>
+              </view>
+            </view>
+            <view class="my_coupon_right">
+              <view class="my_coupon_title">
+                {{coupon.courName}}
+              </view>
+              <view class="coupon_deadline">
+                有效期至：{{coupon.deadline}}
+              </view>
+            </view>
+            <view class="{{is_use_coupon?'donot_use_btn':'use_btn'}}" bindtap="useCoupon">
+              <text wx:if="{{!is_use_coupon}}">使用</text>
+              <text wx:else>不使用</text>
+            </view>
+          </view>
+        </view>
+        <view hidden="{{hasCoupon}}" class="tip">
+          <text>暂无可用优惠券</text>
+        </view>
+      </view>
+ </view>
+ <!-- 预约成功 -->
+ <view class="yuyue_mask" wx:if="{{success_yuyue}}" ></view> 
+ <view class="yuyue_success" wx:if="{{success_yuyue}}">
+    <view class="yuyue_dialog">
+      <image mode="aspectFill" src="/img/yuyue_dialog.png"></image>
+    </view>
+    <view class="success_icon">
+      <icon class='iconfont_success icon-yuyuechenggong'></icon>
+    </view>
+    <view class="success_title">
+      预约成功
+    </view>
+    <view class="news_option">
+      <view class="news_tip">
+        打开消息通知，开课提醒不错过~
+      </view>
+      <view class="news_btn" bindtap="news_tip">
+        {{news_tip?'返回':'马上开启'}}
+      </view>
+    </view>
+ </view>
+</view>

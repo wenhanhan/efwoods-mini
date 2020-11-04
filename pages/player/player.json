@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-toast": "../../dist/toast/index",
+    "i-action-sheet": "../../dist/action-sheet/index"
+  },
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "正在播放",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

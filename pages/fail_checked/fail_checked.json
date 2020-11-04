@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-input": "../../dist/input/index"
+  },
+  "navigationBarBackgroundColor": "#e93323",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "审核未通过",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

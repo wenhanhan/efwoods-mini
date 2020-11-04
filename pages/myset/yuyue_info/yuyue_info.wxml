@@ -1,0 +1,71 @@
+<view class="container">
+  <navigator url="../../cour_detail/cour_detail?cour_id={{yuyue.cour_id}}" hover-class="none" class="class_top_info">
+    <view class="class_pic">
+      <image src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{yuyue.cour_pic}}"></image>
+    </view>
+    <view class="class_title">
+      <view class="class_tit">{{yuyue.cour_name}}</view>
+      <view style="color:#FF0000;font-size:28rpx;" class="class_price">￥{{yuyue.price}}/节</view>
+    </view>
+  </navigator>
+   <!-- 课程信息 -->
+   <view class="course_info_box">
+    <view class="course_info_head">
+      <text>课程信息</text>
+    </view>
+    <view class="course_info">
+      <view class="course_info_left">
+        <view class="left_item">上课地点</view>
+        <view class="left_item">上课时间</view>
+        <view class="left_item">授课教师</view>
+        <view class="left_item">电话</view>
+      </view>
+      <view class="course_info_right">
+        <view class="right_item" bindtap="chooseLocation">
+         <text class="shenglue">{{yuyue.cour_address}}</text>
+        <icon style="position:absolute;right:30rpx" class='iconfont_daohang icon-xiangyou-daohang'></icon>
+        </view>
+        <view class="right_item">{{yuyue.date}} {{yuyue.clock}}</view>
+        <view class="right_item">
+          <text class="shenglue">{{yuyue.tea_name}}</text>
+        </view>
+        <view class="right_item">{{yuyue.cour_phone}}</view>
+      </view>
+    </view>
+   </view> 
+   <!-- 订单信息 -->
+   <view class="order_info_box">
+      <view class="order_info_head">
+        <text>订单信息</text>
+      </view>
+      <view class="order_info">
+        <view class="order_info_left">
+          <view class="left_item">支付金额</view>
+          <view class="left_item">状态</view>
+          <view class="left_item">下单时间</view>
+        </view>
+
+        <view class="order_info_right" wx:if="{{yuyue.tab_state==0}}">
+          <view class="right_item">￥{{yuyue.pay_total?yuyue.pay_total:'0.00'}}</view>
+          <view class="right_item">正常</view>
+          <view class="right_item">{{yuyue.order_time}}</view>
+        </view>
+
+        <view class="order_info_right" wx:if="{{yuyue.tab_state==1}}">
+          <view class="right_item">￥{{yuyue.pay_total?yuyue.pay_total:'0.00'}}</view>
+          <view class="right_item" wx:if="{{yuyue.state==0}}">未签到</view>
+          <view class="right_item" wx:else>已签到</view>
+          <view class="right_item">{{yuyue.order_time}}</view>
+        </view>
+
+        <view class="order_info_right" wx:if="{{yuyue.tab_state==2}}">
+          <view class="right_item">￥{{yuyue.pay_total?yuyue.pay_total:'0.00'}}</view>
+          <view class="right_item" wx:if="{{yuyue.order_id=='null'}}">正常</view>
+          <view class="right_item" wx:if="{{yuyue.state==2&&yuyue.order_id!='null'}}">待退款</view>
+          <view class="right_item" wx:if="{{yuyue.state==3&&yuyue.order_id!='null'}}">已退款</view>
+          <view class="right_item">{{yuyue.order_time}}</view>
+        </view>
+
+      </view>
+   </view>
+</view>

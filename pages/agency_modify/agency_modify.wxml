@@ -1,0 +1,178 @@
+<view class="container">
+  <view class="top_bk">
+    <!-- 步骤条 -->
+    <view class="circle_box">
+      <view class="circle">
+        <view class="circle_txt">
+          <icon class='iconfont_duihao icon-duihao'></icon>
+        </view>
+        <view class="progress_txt">提交资质</view>
+      </view>
+      <view class="line" style="background:white;"></view>
+      <view class="circle">
+        <view class="circle_txt">
+          <icon class='iconfont_duihao icon-duihao'></icon>
+        </view>
+        <view class="progress_txt">开通VIP</view>
+      </view>
+      <view class="line" style="background:white;"></view>
+      <view class="circle">
+        <view class="circle_txt">
+          <icon class='iconfont_duihao icon-duihao'></icon>
+        </view>
+        <view class="progress_txt">审核通过</view>
+      </view>
+    </view>
+  </view>
+  <view class="info_box">
+    <view class="input_box">
+      <view class="input_left">
+        <text>机构名称</text>
+      </view>
+      <view class="input_right">
+        <input value="{{agency_name}}"  placeholder="请输入机构名称" maxlength="20" placeholder-class="placeholder" bindinput="agency_name"  />
+      </view>
+    </view>
+
+    <view class="input_box">
+      <view class="input_left">
+        <text>机构地址</text>
+      </view>
+      <view class="input_right" bindtap="location">
+        <input value="{{agency_address}}" disabled="true"  placeholder="请选择机构地址" maxlength="20" placeholder-class="placeholder" />
+        <icon style="display:flex;align-items:center;" class='iconfont_right icon-right_daohang'></icon>
+      </view>
+    </view>
+
+    <view class="input_box">
+      <view class="input_left">
+        <text>联系人</text>
+      </view>
+      <view class="input_right">
+        <input value="{{agency_con_user}}" bindinput="agency_con_user"  placeholder="请输入联系人姓名" maxlength="20" placeholder-class="placeholder" />
+      </view>
+    </view>
+
+    <view class="input_box">
+      <view class="input_left">
+        <text>联系电话</text>
+      </view>
+      <view class="input_right">
+        <input value="{{agency_phone}}" bindinput="agency_phone" type="number"  placeholder="请输入机构联系电话" maxlength="20" placeholder-class="placeholder" />
+      </view>
+    </view>
+
+     <view class="input_box">
+      <view class="input_left">
+        <text>所属行业</text>
+      </view>
+      
+      <picker class="input_right"  bindchange="agency_type" value="{{field_index}}" range="{{field_type_arr}}" range-key='type'>
+        <input value="{{field_type_arr[field_index].type}}" disabled="true" placeholder="请选择机构类别" maxlength="20" placeholder-class="placeholder" />
+      </picker>
+      <icon style="display:flex;align-items:center;" class='iconfont_right icon-right_daohang'></icon> 
+    </view>
+
+
+    <view class="input_box" style="height:auto;border:0;">
+      <view class="input_left">
+        <text>机构简介</text>
+      </view>
+      <view class="input_right">
+        <textarea value="{{agency_intro}}" bindinput="agency_intro" style="height: 4.5em;padding:20rpx 0 20rpx 0;margin-bottom:20rpx;" maxlength="200" placeholder-class="textarea_placeholder" />
+        <view class="text_num">{{agency.agency_intro.length}}/200</view>
+      </view>
+    </view>
+    <!-- 营业执照 -->
+    <view class="license">
+      <view class="license_title">营业执照</view>
+      <view class="license_file">
+        <view class="license_file_left">
+          <view class="square">
+          </view>
+          <view class="example">
+            <text>例</text>
+          </view>
+          <image bindtap="lic_preview" data-src="{{license}}" mode="aspectFill" src="{{license}}"></image>
+        </view>
+        <view class="license_file_right">
+          <view class="upload_des">
+            <text>请上传竖版三证合一营业执照清晰正面照（样例见左图）</text>
+          </view>
+          <view bindtap="license_upload" class="upload">上传</view>
+        </view>
+      </view>
+    </view>
+    <!-- 企业logo --> 
+
+    <view class="license" style="border-bottom:0;">
+      <view class="license_title">机构LOGO</view>
+      <view class="license_file">
+        <view class="logo_file_left">
+          <view class="square">
+          </view>
+          <view class="example">
+            <text>例</text>
+          </view>
+          <image bindtap="logo_preview" data-src="{{logo}}" mode="aspectFill" src="{{logo}}"></image>
+        </view>
+        <view class="license_file_right">
+          <view class="upload_des">
+            <text>请上传清晰完整机构LOGO（最佳尺寸710px*380px）</text>
+          </view>
+          <view bindtap="logo_upload" class="upload">上传</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="license" style="border-bottom:0;height:auto">
+      <view class="license_title">场景设施</view>
+      <view class="license_file">
+        <view class="agency_img_box">
+          <view class="agency_img" hidden="{{agency_img.length!=0}}">
+           <icon class='iconfont_img icon-tupian'></icon>
+          </view>  
+          <view class="agency_imgs" style="margin-left:{{index%3==0?'0px':'1%'}};margin-right:{{(index+1)%3==0?'0px':'1%'}}"  hidden="{{agency_img.length==0}}" wx:for="{{agency_img}}">
+            <image data-src="{{item}}" bindtap="preview" src="{{item}}"></image>
+            <view class="delete_box" data-index="{{index}}" bindtap="delete">
+              <icon style="color:red;font-size:25rpx" class='iconfont_dele icon-dele'></icon>
+            </view>
+          </view>
+          <view class="agency_imgs" style="align-items:flex-end;background:white;margin-right:0px;margin-left:0px">
+            <view bindtap="upload" class="upload">上传</view> 
+          </view>
+        </view>
+        <!-- <view class="license_file_right">
+          <view class="upload_des">
+            <text>请上传清晰完整机构LOGO（最佳尺寸710px*380px）</text>
+          </view>
+          <view bindtap="logo_upload" class="upload">上传</view>
+        </view> -->
+      </view>
+    </view>
+
+  </view>
+  <!-- 提交按钮 -->
+
+  <!-- 用户协议 -->
+  <view class='agree'>
+    <checkbox-group bindchange="bindAgreeChange">
+      <label class="weui-agree" style="padding-left:0px;" for="weuiAgree">
+        <view class="weui-agree__text">
+          <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+          <view class="weui-agree__checkbox-icon">
+            <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+          </view>
+          阅读并同意
+          <navigator hover-class='none' url="../agree/agree" class="weui-agree__link">《用户协议》</navigator>
+        </view>
+      </label>
+    </checkbox-group>
+  </view>
+<button class="btn" bindtap="submit" >
+  <text>提交</text>
+</button>
+
+<i-toast id="toast" />
+<i-toast id="success" />
+</view>

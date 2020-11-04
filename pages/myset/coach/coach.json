@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "i-message": "../../../dist/message/index",
+    "tabbar": "../../../tabbarComponent/tabbar"
+  },
+  "navigationBarBackgroundColor": "#e93323",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "个人中心",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

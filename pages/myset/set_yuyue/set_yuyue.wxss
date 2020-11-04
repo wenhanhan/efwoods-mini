@@ -1,0 +1,59 @@
+/* pages/myset/set_yuyue/set_yuyue.wxss */
+@import '/icon/tixing.wxss';
+@import '/icon/chakan.wxss';
+@import '/icon/lost.wxss';
+page{
+  background:#eeeeee;
+}
+.jinxing,.finish,.tuikuan{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 84rpx;
+  padding-bottom: 30rpx;
+}
+.jinxing_item,.finish_item,.tuikuan_item{
+  width: 95%;
+  height: 220rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background:white;
+  border-radius: 10rpx;
+  margin-top: 15rpx;
+  position: relative;
+}
+.item{
+  width: 96%;
+  height: 22%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+  color: #272727;
+}
+.tixing{
+  width: 176rpx;
+  height: 54rpx;
+  background:#FF4500;
+  color: white;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7rpx;
+  position: absolute;
+  right: 26rpx;
+  bottom: 14rpx;
+}
+.shenglue{
+    width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

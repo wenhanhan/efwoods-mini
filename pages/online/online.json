@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index"
+  },
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "名师专栏",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

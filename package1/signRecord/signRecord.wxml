@@ -1,0 +1,100 @@
+<view class='container'>
+  <view class="page__bd" style='width:100%'>
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form" style='width:100%'>
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input confirm-type='done' type="text" class="weui-search-bar__input" placeholder="搜索用户昵称或手机号" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping"  bindconfirm="search"/>
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索用户昵称或手机号</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+        
+    </view> 
+
+    <view class='record_title'>
+      <view class="record_title_left">
+        <icon class='iconfont_sign icon-sign'></icon>
+        <text style='font-size:24rpx;margin-left:10rpx'>记录列表</text>
+      </view>
+      
+        <view class="select_date">{{deadline}}</view>
+     
+      <view style="z-index:999;">
+        <picker class="weui-btn" mode="date" value="{{deadline}}" start="2018-12-01" end="2020-12-01" bindchange="bindDateChange">
+          <icon  class='iconfont_rili icon-riqi'></icon>
+        </picker> 
+      </view>
+      
+    </view>
+
+    <view class='record_item'>
+      <view class='record_head'>
+        <text>头像</text>
+      </view>
+      <view class='record_nick'>
+        <text>昵称</text>
+      </view>
+      <view class='sign_time'>
+        <text>签到时间</text>
+      </view>
+      <view class='sign_judge'>
+        <text>点评</text>
+      </view>
+    </view>
+
+   <!-- 签到人员信息 --> 
+    <block wx:for="{{sign_people}}">
+    <view class='record_des'>
+      <view class='record_head'>
+         <image src='{{item.avatarUrl}}'></image>
+      </view>
+      <view class='record_nick'>
+         <text>{{item.nickName}}</text>
+      </view>
+      <view class='sign_time'>
+        <text>{{item.time}}</text>
+      </view>
+      <view class='sign_judge'>
+        <icon wx:if="{{!item.judge}}" data-idx="{{index}}" data-signid="{{item.Id}}" data-openid='{{item.openid}}' bindtap='dianping' class='iconfont_dp icon-dianping'></icon>
+        <icon wx:if="{{item.judge}}" class='iconfont_judged icon-yidianping'></icon>
+      </view>
+    </view>
+    </block>
+
+    <!-- 当没有签到记录时 显示 -->
+<view class='nosign' wx:if="{{sign_people.length===0}}">
+  <text>暂无签到记录</text>
+</view>
+
+ <!-- 点评模态对话框 -->
+       <view class='toast-box' hidden='{{!judge}}'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-title'>
+                <text>学员点评</text>
+            </view>
+            <view class='toast-main'>
+                <view class='toast-input'>
+                    <input placeholder='给学生个鼓励吧～' placeholder-class="placeholder" bindinput='setValue'></input>
+                </view>
+            </view>
+            <view class='toast-button'>
+                <view class='button1'>
+                    <button catchtap='cancel'>取消</button>
+                </view>
+                <view class='button2'>
+                    <button catchtap='confirm'>确定</button>
+                </view>
+            </view>
+        </view>
+      </view>
+
+</view>

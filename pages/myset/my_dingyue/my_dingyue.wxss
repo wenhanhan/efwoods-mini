@@ -1,0 +1,75 @@
+/* pages/myset/my_dingyue/my_dingyue.wxss */
+@import '/icon/noresource.wxss';
+@import '/icon/player_start.wxss';
+.teacher{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.teacher_item{
+  width: 95%;
+  height: 190rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-bottom:1px solid #eeeeee;
+}
+.left{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left image{
+  width: 136rpx;
+  height: 136rpx;
+  border-radius: 50%;
+}
+.right{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: center; */
+  flex-direction: column;
+  padding-left: 28rpx;
+}
+.title{
+  width: 70%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 32rpx;
+  color: #474747;
+  font-weight: 500;
+  padding-top: 20rpx;
+}
+.author{
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 24rpx;
+  color: #384E64;
+}
+.study{
+  width: 170rpx;
+  height: 46rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #FF5B00;
+  font-size: 26rpx;
+  color: #474747;
+  border-radius: 30rpx;
+  position: absolute;
+  right: 35rpx;
+  bottom: 16rpx;
+}

@@ -1,0 +1,76 @@
+<view class='container'>
+  <!-- 顶部搜索 -->
+  <view class='top_bar_box'>
+    <view class='top_bar'>
+      <view class='top_bar_left' bindtap='select_city'>
+        <view class='address'>{{city}}</view>
+        <view class='top_xiala'>
+          <icon class='iconfont_xiala icon-xiala'></icon>
+        </view>
+      </view>
+      <view class='search_box' >
+        <input class='search_input' placeholder='搜索课程以及教师' placeholder-class="placeholderStyle" bindconfirm="search" confirm-type="search" value='{{text}}' bindinput="input">
+        </input>
+        <icon class='iconfont icon-sousuo'></icon>
+      </view>
+
+      <view class='top_bar_right'></view>
+    </view>
+  </view>
+
+  <!-- 多条件筛选 菜单组件 -->
+  <view id='menu-nav' class="{{fixedNav?'fixedNav':'menu_list'}}">
+    <view class='menu_line'>
+      <i-tabs current="{{ current }}" color="#f21b1b" i-class="{{teacher.length==0||applyTeacher.length==0?'menu_class':''}}" bindchange="handleChange">
+        <i-tab key="tab0" bindtap="diqu" title="{{diqu}}"></i-tab>
+        <view class="line"></view>
+        <i-tab key="tab1" bindtap="fenlei" title="{{fenlei}}"></i-tab>
+        <view class="line"></view>
+        <!-- <i-tab key="tab2" bindtap="level" title="{{level}}"></i-tab>
+        <view class="line"></view> -->
+        <i-tab key="tab3" bindtap="check" title="待审核" count="{{apply.length}}"></i-tab>
+      </i-tabs>
+    </view>
+  </view>
+
+  <!--地区定位-->
+  <view class="temp temp2 {{quyu_open ? 'slidown' : 'slidup'}} {{quyu_show ? 'disappear':''}} {{xiding? 'slide_fixed':''}}">
+    <view wx:for="{{cityright}}" class="quyu_line {{select3 == item?'quyu_current':''}}" bindtap='selectright' data-city="{{item}}">
+      <label>{{item}}</label>
+    </view>
+  </view>
+
+  <!-- 分类区域 -->
+
+  <view class="temp temp2 {{fenlei_open? 'slidown':'slidup' }} {{fenlei_show ? 'disappear':''}} {{xiding? 'slide_fixed':''}}">
+
+    <view wx:for="{{fenlei_item}}" class="fenlei_line {{fenlei_index==item.Id ? 'fenlei_current':''}}" bindtap='select_fenlei' data-index="{{index}}" data-type="{{item.Id}}">
+      <text>{{item.type}}</text>
+    </view>
+
+  </view>
+
+  <!-- 等级筛选 -->
+
+  <view class="temp temp2 {{level_open? 'slidown':'slidup' }} {{level_show ? 'disappear':''}} {{xiding? 'slide_fixed':''}}">
+
+    <view wx:for="{{level_item}}" class="level_line {{level_index==index ? 'level_current':''}}" bindtap='select_level' data-index="{{index}}">
+      <text>{{item}}</text>
+    </view>
+
+  </view>
+
+
+  <!-- 排序遮罩区域 -->
+  <view wx:if="{{touchmove}}" catchtouchmove="{{touchmove}}" class="fullbg {{isfull ?'fullopacity':''}}" id='fullbg' bindtap="hidebg"></view>
+
+
+  <!-- 加载课程数据 -->
+  <include src='listdata.wxml' />
+
+  <view class='home' bindtap='home'>
+    <image src='../../img/home.png'></image>
+    <text>首页</text>
+  </view>
+
+</view>

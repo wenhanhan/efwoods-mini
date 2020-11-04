@@ -1,0 +1,118 @@
+<!-- 课程列表数据渲染 -->
+<view class='course_box' wx:if="{{!tabCheck}}">
+<block wx:for="{{course}}" >
+  <view class='course_list'>
+  <navigator style='width:26%;height:100%' hover-class='none' url='../../pages/cour_detail/cour_detail?cour_img={{item.courImg}}&cour_id={{item.Id}}&cour_name={{item.courName}}&star={{item.star}}&address={{item.courAddressName}}&address_des={{item.courAddressDes}}&cour_contact={{item.courContact}}&cour_hour={{item.courHour}}&cour_tag={{item.courTags}}&cour_tool={{item.courTools}}&distance={{item.distance}}&start_time={{item.startTime}}&end_time={{item.endTime}}&teaId={{item.teaId}}&cour_tw={{item.courDes}}&cour_method={{item.Methods}}&judge_num={{item.judgeNum}}&cour_type={{item.courType}}'>
+    <view class='course_list_left' style='width:100%;height:100%'>
+      <view class='course_img_box'>
+      <image mode='aspectFill' src='https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}}'></image>
+      </view>
+    </view> 
+</navigator>
+    <view class='course_list_right'>
+      <view class='course_name'>
+        <text>{{item.courName}}</text>
+      </view>
+      <view class='course_des'>
+         <view class='course_tea'>
+          <text>教师：{{item.teaName}}</text>
+        </view>
+      </view>
+      <view class='course_des'>
+         <view class='course_time'>
+          <text>发布时间：{{item.time}}</text>
+        </view>
+      </view>
+
+       <view class='course_des'>
+        <view class='course_judge'>
+          <text>星数设置：</text>
+           <i-rate data-idx='{{index}}' data-courid='{{item.Id}}' 
+            bind:change="onChange2" 
+            value="{{index==star_index?star_num:item.star}}" 
+            size="20">
+           </i-rate>
+        </view>
+      </view>
+<i-toast id="toast" />
+
+       <button data-courid='{{item.Id}}' data-idx='{{index}}' style="background:{{item.recom==1?'#f21b1b':''}}" data-state='{{item.recom}}' bindtap='home' class='home_btn'>{{item.recom==1?'取消推荐':'推荐首页'}}</button>
+
+      <button data-courid='{{item.Id}}' data-idx='{{index}}' style="background:{{item.top==1?'#f21b1b':''}}" data-state='{{item.top}}' bindtap='top' class='top_btn'>{{item.top==1?'取消置顶':'列表置顶'}}</button>
+    </view>
+    <view class='xiajia' bindtap='xiajia' data-idx='{{index}}' data-state='{{item.cut}}' data-courid='{{item.Id}}'>
+    <text>{{item.cut==1?'已下架':'下架'}}</text>
+      <icon style="color:{{item.cut==1?'#f21b1b':''}}"  class='iconfont_xiajia icon-xiajia'></icon>
+    </view>
+  </view>
+  </block>
+<!-- 无数据显示 -->
+  <view class='nodata' wx:if="{{course.length===0}}">
+   <icon bindtap='qiehuan' class='iconfont_qiehuan icon-ditu'></icon>
+    <view class='tips'>
+      <text>换个区域，发现更多</text>
+    </view>
+  </view>
+   <!-- 暂无更多数据 -->
+  <view class="noMoreData" wx:if="{{noMoreData&&course.length!=0}}">
+    <view class="no_line"></view>
+    <view style="margin:0 6rpx;">暂无更多~</view>
+    <view class="no_line"></view>
+  </view>
+   <!-- 加载动效 -->
+<view class="jiazai" wx:if="{{!noMoreData&&course.length!=0}}">
+  <i-spin fix></i-spin>
+  <view>加载中</view>
+</view>
+  </view>
+
+
+   <!-- 审核课程申请区域1 --> 
+
+<view class='cour_apply' wx:if="{{tabCheck}}">
+<block wx:for="{{apply}}">
+  <navigator hover-class='none' url='../../pages/myset/apply_courdes/apply_courdes?cour_id={{item.Id}}'>
+  <view class='course_list'>
+    <view class='course_list_left'>
+      <view class='course_img_box'> 
+      <image mode='aspectFill' src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}}"></image>
+      </view>
+    </view>
+    <view class='course_list_right'>
+      <view class='course_name'>
+        <text>{{item.courName}}</text>
+        <text class='distance'>{{item.distance}}</text>
+      </view>
+      <view class='course_des'>
+
+      </view>
+
+      <view class='course_price'>
+        <text class='price_left'>¥</text>
+        <text class='price_middle'>{{item.price}}</text>
+        <text class='price_right'>起</text>
+      </view>
+      <view class='course_address'>
+        <text>{{item.courAddressName}}/{{item.courTags}}</text>
+      </view>
+      <!-- 操作按钮 -->
+    <button class='refuse' catchtap="refuse" data-idx="{{index}}" >
+      {{item.state==2?'已拒绝':'拒绝'}}
+    </button>
+
+    <button class='pass' catchtap="pass" data-idx="{{index}}">
+      {{item.state==1?'已同意':'同意'}}
+    </button> 
+    </view>
+  </view>
+  </navigator>
+</block>
+  <view class='nodata' wx:if="{{apply_num===0}}">
+   <icon  class='iconfont_nocheck icon-shenhe'></icon>
+    <view class='tips'>
+      <text>暂无申请数据</text>
+    </view>
+  </view>
+
+</view>
+  

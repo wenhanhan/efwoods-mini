@@ -1,0 +1,310 @@
+/* 网友点评样式 */
+/* pages/index/index.wxss */
+@import '/icon/sousuo.wxss';
+@import '/icon/xiala.wxss';
+@import '/icon/right_daohang.wxss';
+@import '/icon/judge.wxss';
+@import '/icon/zan.wxss';
+@import '/icon/gold.wxss';
+@import '/icon/star.wxss';
+@import '/icon/favor_star.wxss';
+@import '/icon/address.wxss';
+@import '/icon/phone.wxss';
+@import '/icon/clock.wxss';
+@import '/icon/riqi.wxss';
+@import '/icon/contact.wxss';
+@import '/icon/reply.wxss';
+.comment_nav{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  border-bottom: 1px solid #eeeeee;
+}
+.comment{
+  width: 85%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  position: relative;
+  /* border-bottom: 1px solid #eeeeee; */
+}
+.main_comment{
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+}
+.reply_comment{
+  width: 85%;
+  height: auto;
+  display: flex;
+  float: right;
+  border-top: 1px #eeeeee dashed;
+  justify-content: flex-start;
+  /* background: red; */
+}
+.reply_img{
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-top: 12rpx;
+}
+.replay_right{
+  width: 85%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-left: 8rpx;
+  padding-top: 8rpx;
+}
+.reply_img image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+}
+.replay_name{
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  color: #ABABAB;
+  font-size: 26rpx;
+}
+.tea_tag{
+  width: 78rpx;
+  height: 35rpx;
+  border-radius: 20rpx;
+  background: #eeeeee;
+  font-size: 20rpx;
+  color: #5F5F5F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8rpx;
+}
+.replay_time{
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  font-size: 20rpx;
+  color: #9D9EA0;
+}
+.relpay_content{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 24rpx;
+  color: #474747;
+  margin-top: 14rpx;
+}
+
+.conmment_txt{
+  font-family: Microsoft YaHei;
+  color:#333333;
+  font-size:30rpx;
+}
+.comment_num{
+  font-family: Microsoft YaHei;
+  color:#666666;
+  font-size:22rpx;
+  margin-left: 10rpx;
+}
+.comment_list{
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  border-bottom: 1px solid #eeeeee;
+}
+.comment_list_left{
+  width: 18%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+.comment_list_right{
+  width: 82%;
+  height: 100%;
+  float: left;
+  padding-bottom: 18rpx;
+  position: relative;
+}
+.comment_headimg{
+  width: 94rpx;
+  height: 94rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+.comment_headimg image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+/* 更改评论样式 */
+.comment_nickname{
+  width: 100%;
+  height: auto;
+  font-size: 26rpx;
+  font-family:  Microsoft YaHei;
+  color: #125e93;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  font-weight: 600;
+  margin-top: 35rpx;
+}
+.reply{
+  width: auto;
+  height: 100%;
+  position: absolute;
+  right: 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22rpx;
+  color: #125e93;
+}
+.comment_time{
+  width: 100%;
+  height: auto;
+  font-size: 20rpx;
+  color: #666666;
+  font-family:  Microsoft YaHei;
+  float: left;
+  position: relative;
+}
+.comment_score{
+  width: 100%;
+  height: auto;
+  font-size: 24rpx;
+  color: #666666;
+  font-family:  Microsoft YaHei;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.comment_words{
+  width: 100%;
+  height: auto;
+  font-size: 26rpx;
+  color: #333333;
+  font-family:  Microsoft YaHei;
+  float: left;
+  position: relative;
+}
+
+.comment_img{
+  width: 100%;
+  height: 120rpx;
+  float: left;
+  position: relative;
+  margin-top: 10rpx;
+}
+.comment_img image{
+  width: 120rpx;
+  float: left;
+  position: relative;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+
+.all_comment{
+  width: 85%;
+  height: 75rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  /* border-bottom: 20rpx solid #eeeeee; */
+}
+.all_comment_txt{
+  font-size: 24rpx;
+  color: #666666;
+  font-family:  Microsoft YaHei;
+}
+
+/* 评价样式 */
+.pingjia{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 48rpx;
+  background: #666666;
+  position: fixed;
+  right: 12rpx;
+  bottom: 250rpx;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8
+}
+
+/* 回复评论框样式 */
+.judge_input{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  position: fixed;
+  font-size: 24rpx;
+  background: white;
+  z-index: 999;
+  bottom: 0;
+  color: #FB5500;
+}
+.judge_input image{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+}
+.input_box{
+  width: 74%;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background: #FBFBFB;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 16rpx;
+  border: 1px solid #F0F0F0;
+  padding-left: 20rpx;
+  color: #1D1D1D;
+}
+.judge_input input{
+  width: 74%;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background: #FBFBFB;
+  line-height: 60rpx;
+  margin: 0 16rpx;
+  border: 1px solid #F0F0F0;
+  padding-left: 20rpx;
+  color: #1D1D1D;
+}
+.animate{
+  max-width: 150rpx;
+  max-height: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  opacity: 1 !important;
+}

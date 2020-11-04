@@ -1,0 +1,40 @@
+<!-- <cover-view class="tabbar_box {{isIphoneX?'iphoneX-height':''}}" style="background-color:{{tabbar.backgroundColor}}">
+  <block wx:for="{{tabbar.list}}" wx:key="{{item.pagePath}}">
+    <navigator  wx:if="{{item.isSpecial}}" class="tabbar_nav" hover-class="none" url="{{item.pagePath}}" style="color:{{item.selected ? tabbar.selectedColor : tabbar.color}}" open-type="switchTab">
+      <cover-view  class='special-wrapper'>
+        <cover-image  class="tabbar_icon" src="" ></cover-image>
+      </cover-view>
+      <cover-view class='special-text-wrapper'></cover-view>
+      <cover-view style='text-align:center'>{{item.text}}</cover-view>
+    </navigator>
+    <navigator wx:else class="tabbar_nav" hover-class="none" url="{{item.pagePath}}" style="color:{{item.selected ? tabbar.selectedColor : tabbar.color}}" open-type="switchTab">
+<cover-view>
+      <cover-image class="tabbar_icon" src="{{item.selected ? item.selectedIconPath : item.iconPath}}"></cover-image>
+      <cover-view style='text-align:center'>{{item.text}}</cover-view>
+</cover-view>
+    </navigator>
+  </block>
+</cover-view>
+
+<cover-view class='fix_box' style="bottom:{{isIphoneX?'70rpx':'40rpx'}}" >
+ <navigator style='width:100%;background:white'  hover-class="none" url="/pages/show/show"  open-type="switchTab">
+<cover-image class='fix_img' src='icon/icon_release.png'></cover-image>
+ </navigator>
+</cover-view> -->
+
+
+
+<view class="tabbar_box {{isIphoneX?'iphoneX-height':''}}" style="background-color:{{tabbar.backgroundColor}}">
+  <block wx:for="{{tabbar.list}}" wx:key="{{item.pagePath}}">
+    <navigator wx:if="{{item.isSpecial}}" class="tabbar_nav" hover-class="none" url="{{item.pagePath}}" style="color:{{item.selected ? tabbar.selectedColor : tabbar.color}}" open-type="switchTab">
+      <view class='special-wrapper'><image class="tabbar_icon" src="{{item.iconPath}}"></image></view>
+      <image class='special-text-wrapper'></image>
+      <text>{{item.text}}</text>
+    </navigator>
+    <navigator wx:else class="tabbar_nav" hover-class="none" url="{{item.pagePath}}" style="color:{{item.selected ? tabbar.selectedColor : tabbar.color}}" open-type="switchTab">
+      <image class="tabbar_icon" src="{{item.selected ? item.selectedIconPath : item.iconPath}}"></image>
+      <text>{{item.text}}</text>
+    </navigator>
+  </block>
+</view>
+

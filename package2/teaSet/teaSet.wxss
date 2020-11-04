@@ -1,0 +1,507 @@
+/* pages/course/course.wxss */
+@import '/icon/sousuo.wxss';
+@import '/icon/xiala.wxss';
+@import '/icon/right_daohang.wxss';
+@import '/icon/judge.wxss';
+@import '/icon/zan.wxss';
+@import '/icon/gold.wxss';
+@import '/icon/star.wxss';
+@import '/icon/xiajia.wxss';
+@import '/icon/set.wxss';
+@import '/icon/tuijian.wxss';
+@import '/icon/zhiding.wxss';
+@import '/icon/tea_xiajia.wxss';
+@import '/icon/dongjie.wxss';
+@import '/icon/qiehuan.wxss';
+@import '/icon/nocheck.wxss';
+swiper{
+  width: 100%;
+  height: 360rpx;
+  display: block;
+  position: relative;
+  /* 隐藏遮罩 */
+  z-index: 998;
+}
+.fixedNav{
+  width: 100%;
+  height: 75rpx;
+  line-height: 75rpx;
+  position: fixed;
+  z-index: 999;
+  top: 90rpx;
+  margin: 0 auto;
+  background-color: white;
+  /* background: red; */
+  border-top: 10rpx solid #eeeeee;
+}
+.slide_fixed{
+  position: fixed !important;
+  top: 175rpx;
+}
+.menu_list{
+  width: 100%;
+  height: 75rpx;
+  line-height: 75rpx;
+  position: fixed;
+  float: left;
+  z-index: 5;
+  margin: 0 auto;
+  background-color: white;
+  /* background: red; */
+  border-top: 10rpx solid #eeeeee;
+  top: 90rpx;
+}
+.menu_line{
+  width: 95%;
+  /* background: red; */
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  background-color: white;
+  border-bottom: 1rpx solid #eeeeee;
+}
+
+
+/* 多条件筛选区域样式 */
+
+.temp {
+  position: relative;
+  z-index: 4;
+  background: #fff;
+}
+
+.temp1 {
+  display: none;
+  width: 100%;
+  max-height: 550rpx;
+  overflow-y: scroll;
+  /* line-height: 100rpx; */
+}
+
+.temp2 {
+  display: none;
+  width: 100%;
+  max-height: 550rpx;
+  overflow-y: scroll;
+  line-height: 100rpx;
+  background: #fff;
+}
+
+.paixu_line{
+  text-align: center;
+  font-size: 26rpx;
+  border-bottom:1rpx solid #f4f4f4;
+}
+.paixu_current{
+  color: #f21b1b !important;
+}
+
+
+
+.fenlei_line{
+  text-align: center;
+  font-size: 26rpx;
+  border-bottom:1rpx solid #f4f4f4;
+}
+.fenlei_current{
+  color: #f21b1b !important;
+}
+
+.level_line{
+  text-align: center;
+  font-size: 26rpx;
+  border-bottom:1rpx solid #f4f4f4;
+}
+.level_current{
+  color: #f21b1b !important;
+}
+
+
+.quyu_line{
+  text-align: center;
+  font-size: 26rpx;
+  border-bottom:1rpx solid #f4f4f4;
+}
+.quyu_current{
+  color: #f21b1b !important;
+}
+
+.fullbg{
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgb(1, 1, 1);
+  transition: all 1.5s;
+  opacity: 0;
+}
+
+.fullopacity {
+  opacity: 0.5;
+}
+
+/* 筛选区域样式 */
+
+.shaixuan{
+  display: none;
+  width: 100%;
+  position: relative;
+  z-index: 4;
+  max-height: 750rpx;
+  overflow-y: scroll;
+  /* line-height: 145rpx; */
+  background: #fff;
+}
+
+@keyframes slidown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.slidown {
+  display: block;
+  animation: slidown 0.3s ease-in both;
+  position: fixed;
+  top: 175rpx;
+}
+
+@keyframes slidup {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.slidup {
+  display: block;
+  animation: slidup 0.3s ease-in both;
+}
+
+.disappear {
+  display: none;
+}
+
+
+.shaixuan_line{
+ text-align: center;
+  font-size: 26rpx;
+  width: 90%;
+  margin: 0 auto;
+  border-bottom:1rpx solid #f4f4f4;
+}
+.shaixuan_line_btn{
+ text-align: center;
+  font-size: 26rpx;
+  width: 70%;
+  margin: 0 auto;
+  /* border-bottom:1rpx solid #f4f4f4; */
+}
+
+.line_item{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start
+}
+
+.line_item_btn{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35rpx;
+}
+.line_title{
+  font-size: 28rpx;
+  /* float: left; */
+  margin: 15rpx 0 12rpx 8rpx;
+  display: flex;
+  justify-content: flex-start
+}
+.waijiao_btn_left{
+  width: 120rpx;
+  height: 56rpx;
+  line-height: 28rpx;
+  font-size: 22rpx;
+  border-radius: 8rpx;
+  background: white;
+  border: 1px solid black;
+  margin: 0;
+  padding: 0 20rpx;
+  margin-bottom: 15rpx;
+  word-break: break-word;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.waijiao_btn_right{
+  width: 120rpx;
+  height: 56rpx;
+  line-height: 28rpx;
+  font-size: 22rpx;
+  border-radius: 8rpx;
+  background: white;
+  border: 1px solid black;
+  margin: 0;
+  padding: 0 20rpx;
+  margin-left: 50rpx;
+  word-break: break-word;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-hover{
+  background-color: #f9e5e5;
+}
+
+/* 教师列表样式 */
+.tea_box{
+  width: 95%;
+  height: auto;
+  position: absolute;
+  top:190rpx;
+}
+.tea_list{
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30rpx;
+  border-radius: 18rpx;
+  background: #FAF3D7;
+}
+
+.list_left{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list_right{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.set_tea_img{
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+}
+.set_tea_img image{
+  width: 100%;
+  height: 100%;
+  border-radius: 48rpx;
+}
+.right_line{
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.set_tea_name,.set_tea_address,.set_tea_phone,.set_tea_level,.courNum,.set_tea_type{
+  width: 48%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 24rpx;
+  color: #252424;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+.applyTime{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 24rpx;
+  color: #252424;
+}
+.tea_set{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  right: 35rpx;
+}
+.set_txt{
+  font-size: 24rpx;
+  color: #252424;
+}
+
+/* 设置样式 */
+.set_down{
+  width: 100%;
+  height: 72rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  border-radius: 18rpx;
+  background:#eeeeee;
+  margin-top: 5rpx;
+  margin-bottom: 2rpx;
+}
+.tuijian,.zhiding,.xiajia,.dongjie{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 教师申请 */
+.tea_apply{
+  width: 95%;
+  height: auto;
+  position: absolute;
+  top:190rpx;
+}
+.apply_list{
+  width: 100%;
+  height: 180rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20rpx;
+  border-radius: 18rpx;
+  background: #FAF3D7;
+}
+.apply_list_left{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+.apply_img{
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+}
+.apply_img image{
+  width: 100%;
+  height: 100%;
+  border-radius: 48rpx;
+}
+.apply_list_right{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} 
+.apply_name{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+  color: #252424;
+  /* background: red; */
+}
+.apply_type{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+  color: #252424;
+  /* background: green; */
+}
+.apply_time{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+  color: #252424;
+  /* background: green; */
+}
+
+.refuse{
+  width: 145rpx;
+  height: 40rpx;
+  border-radius: 30rpx;
+  font-size: 22rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background-color: #f21b1b;
+  color: white;
+  position: absolute;
+  top: 36rpx;
+  right: 40rpx;
+  z-index: 1;
+}
+
+.pass{
+  width: 145rpx;
+  height: 40rpx;
+  border-radius: 30rpx;
+  font-size: 22rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background-color: #f21b1b;
+  color: white;
+  position: absolute;
+  bottom: 36rpx;
+  right: 40rpx;
+  z-index: 1;
+}
+.i-tags{
+  margin-right: 10rpx;
+}
+
+.line{
+  width: 1px;
+  height: 45%;
+  display: flex;
+  background: #eeeeee;
+}
+
+.menu_class{
+  border-bottom: 1px solid #eeeeee;
+}
+/* 暂无更多数据 */
+.noMoreData{
+  width: 100%;
+  height: 20rpx;
+  font-size: 24rpx;
+  color: #CBCCCD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+.no_line{
+  width: 180rpx;
+  background: #eeeeee;
+  height: 1px;
+}
+.shenglue{
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

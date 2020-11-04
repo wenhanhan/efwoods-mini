@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../../dist/tabs/index",
+    "i-tab": "../../../dist/tab/index"
+  },
+  "navigationBarBackgroundColor": "#e93323",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的积分",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

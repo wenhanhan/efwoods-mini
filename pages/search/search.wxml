@@ -1,0 +1,137 @@
+<view class='container'>
+  <view class='search_box'>
+    <view class='input_box'>
+      <view class='start_search_box'>
+        <view class='search_icon'>
+          <i-icon type="search" size="18" color="#797676" />
+        </view>
+        <input value='{{text}}' bindinput="input" bindconfirm="search" confirm-type="search" class='start_search' focus='{{true}}' placeholder='搜索课程、教师' placeholder-class="placeholderStyle">
+        </input>
+      </view>
+    </view>
+    <view class='cancel' bindtap='goback'>
+      <text>取消</text>
+    </view>
+  </view>
+
+  <view class='hot_search' wx:if="{{hot}}">
+    <text>热门搜索</text>
+  </view>
+  <view class='hot_btn_line' wx:if="{{hot}}">
+    <view class='hot_btn' bindtap='hot_search' data-text='钢琴'>
+      <text>钢琴</text>
+    </view>
+    <view class='hot_btn' bindtap='hot_search' data-text='小提琴'>
+      <text>小提琴</text>
+    </view>
+    <view class='hot_btn' bindtap='hot_search' data-text='高尔夫'>
+      <text>高尔夫</text>
+    </view>
+    <view class='hot_btn' bindtap='hot_search' data-text='瑜伽'>
+      <text>瑜伽</text>
+    </view>
+  </view>
+
+  <!-- 搜索内容列表 -->
+
+
+  <!-- 推荐教师 -->
+  <block wx:for="{{search_teacher}}" wx:if="{{search_teacher.length!=0}}">
+  <navigator class='search_list' url='../tea_detail/tea_detail?tea_id={{item.Id}}' hover-class="none">
+      <view class='search_list_left'>
+        <view class='search_img_box'>
+          <image mode='aspectFill' src='{{item.teaImg}}'></image>
+        </view>
+      </view>
+      <view class='search_list_right'>
+        <view class='tea_name'>
+          <text>{{item.name}}</text>
+          <!-- <text class='distance'>{{item.distance}}</text> -->
+        </view>
+        <view class='teacher_des'>
+
+          <view class='tea_judge'>
+            <!-- <icon class='iconfont_judge icon-pinglun'></icon> -->
+            <icon class='iconfont_jiaoling icon-jiaoling'></icon>
+            <text class='judge_num'>{{item.teaAge}}年</text>
+          </view>
+
+          <view class='tea_zan'>
+            <icon class='iconfont_zan icon-shoucang'></icon>
+            <text class='zan_num'>{{item.favorNum}}</text>
+          </view>
+
+          <view class='tea_level'> 
+            <view class='gold_img'>
+              <icon wx:if="{{item.level==1}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level1 icon-lv1'></icon>
+        <icon wx:elif="{{item.level==2}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level2 icon-lv2'></icon>
+        <icon wx:elif="{{item.level==3}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level3 icon-lv3'></icon>
+        <icon wx:elif="{{item.level==4}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level4 icon-lv4'></icon>
+        <icon wx:elif="{{item.level==5}}" style="margin-left:4rpx;font-size:32rpx;padding-bottom:8rpx;" class='iconfont_level5 icon-lv5'></icon>
+        <icon wx:else="{{item.level==6}}" style="margin-left:4rpx;font-size:32rpx;padding-bottom:8rpx;" class='iconfont_level6 icon-lv6'></icon>
+            </view>
+          </view>
+        </view>
+
+        <view class='tea_address'>
+          <i-tag wx:if="{{item.tag1}}" class="i-tags" name="标签一" type="border" color="red"> {{item.tag1}}</i-tag>
+          <i-tag wx:if="{{item.tag2}}" class="i-tags" name="标签一" color="green" type="border">{{item.tag2}}</i-tag>
+          <i-tag wx:if="{{item.tag3}}" class="i-tags" name="标签一" color="blue" type="border">{{item.tag3}}</i-tag>
+        </view>
+<!-- <navigator url='../tea_detail/tea_detail?tea_id={{item.Id}}'>
+        <button class='view_btn'>点击查看</button>
+     </navigator> -->
+     <view class='distance'>{{item.distance}}</view>
+      </view>
+  </navigator>
+  </block>
+  <!-- 推荐课程 -->
+  <block wx:for="{{search_course}}" wx:if="{{search_course.length!=0}}">
+  <navigator class='search_list' hover-class="none" url='../cour_detail/cour_detail?cour_img={{item.courImg}}&cour_id={{item.Id}}&cour_name={{item.courName}}&star={{item.star}}&address={{item.courAddressName}}&address_des={{item.courAddressDes}}&cour_contact={{item.courContact}}&cour_hour={{item.courHour}}&cour_tag={{item.courTags}}&cour_tool={{item.courTools}}&distance={{item.distance}}&start_time={{item.startTime}}&end_time={{item.endTime}}&teaId={{item.teaId}}&cour_tw={{item.courDes}}&cour_method={{item.Methods}}&judge_num={{item.judgeNum}}&cour_type={{item.courType}}'>
+      <view class='search_list_left'>
+        <view class='search_img_box'>
+          <image mode='aspectFill' src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}}"></image>
+        </view>
+      </view>
+      <view class='search_list_right'>
+        <view class='course_name'>
+          <text>{{item.courName}}</text>
+          <!-- <text class='distance'>{{item.distance}}</text> -->
+        </view>
+        <view class='course_des'>
+
+          <view class='course_judge'>
+            <block wx:for="{{item.star}}">
+              <icon class='iconfont_star icon-xingji3'></icon>
+            </block>
+            <block wx:for="{{5-item.star}}">
+              <icon class='iconfont_star icon-xingji4'></icon>
+            </block>
+            <text class='course_judge_num'>评价{{item.judgeNum}}</text>
+          </view>
+        </view>
+
+        <view class='course_price'>
+          <text class='price_left'>¥</text>
+          <text class='price_middle'>{{item.price}}</text>
+          <text class='price_right'>起</text>
+        </view>
+        <view class='course_address'>
+          <text>{{item.courAddressName}}/{{item.courTags}}</text>
+        </view>
+        <view class='distance'>{{item.distance}}</view>
+
+        <!-- <button class='view_btn'>点击查看</button> -->
+      </view>
+    </navigator>
+  </block>
+
+  <view class='nodata' wx:if="{{search_teacher.length===0&&search_course==0&&isnull==true}}">
+    <icon class='iconfont_lost icon-Null-data'></icon>
+    <view class='tips'>
+      <text>暂无您要找的信息哦～</text>
+    </view>
+  </view>
+
+
+</view>

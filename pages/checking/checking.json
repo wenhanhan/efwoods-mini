@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-input": "../../dist/input/index"
+  },
+  "navigationBarBackgroundColor": "#e93323",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "入驻审核",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

@@ -1,0 +1,74 @@
+<view class='container'>
+<!-- 点评列表 -->
+<block wx:for='{{judge}}'>
+
+<view class='comment_list' >
+  <!-- 主评论 -->
+  <view class="main_comment">
+    <view class='comment_list_left'>
+      <view class='comment_headimg'>
+        <image src='{{item.avatarUrl}}'></image>
+      </view>
+    </view>
+    <view class='comment_list_right'>
+      <view class='comment_nickname'>
+        <text>{{item.nickName}}</text>
+        <view class="reply" hidden="{{cour_openid!=student_openid}}" data-comid="{{item.Id}}" data-courid="{{item.courId}}" bindtap="reply">
+          <icon class='iconfont_reply icon-huifu'></icon>
+        </view>
+      </view>
+      <view class='comment_time'>
+        <text hidden="{{agency_id}}">{{item.time}}</text>
+        <text hidden="{{!agency_id}}">{{item.create_time}}</text>
+      </view>
+      <view class='comment_score'>
+        打分
+        <block wx:for="{{item.star}}">
+          <icon style='font-size:26rpx;'  class='iconfont_star icon-xingji3'></icon>
+        </block>
+        <block wx:for="{{5-item.star}}">
+          <icon style='font-size:26rpx'  class='iconfont_star icon-xingji4'></icon>
+        </block>
+      </view>
+      <view class='comment_words'>
+        <text>{{item.content}}</text>
+      </view>
+    <!-- 评价图片 -->
+      <view class='comment_img' wx:if="{{item.pic1||item.pic2||item.pic3}}">
+        <image mode='aspectFill' data-src="https://icloudapi.cn/efire/public/uploads/judge/{{item.pic1}}" bindtap="previewImage" data-index='{{index}}' wx:if="{{item.pic1}}" src='https://icloudapi.cn/efire/public/uploads/judge/{{item.pic1}}'></image>
+        <image mode='aspectFill' data-src="https://icloudapi.cn/efire/public/uploads/judge/{{item.pic2}}" bindtap="previewImage" data-index='{{index}}' wx:if="{{item.pic2}}" src='https://icloudapi.cn/efire/public/uploads/judge/{{item.pic2}}'></image>
+        <image mode='aspectFill' data-src="https://icloudapi.cn/efire/public/uploads/judge/{{item.pic3}}" bindtap="previewImage" data-index='{{index}}' wx:if="{{item.pic3}}" src='https://icloudapi.cn/efire/public/uploads/judge/{{item.pic3}}'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 回复评论 -->
+      <view class="reply_comment" wx:for="{{item.reply}}" wx:for-item="reply">
+        <view class="reply_img">
+          <image src="{{reply.avatarUrl}}"></image>
+        </view>
+        <view class="replay_right">
+          <view class="replay_name">
+          {{reply.nickName}}<view class="tea_tag">教师</view>
+            <view class="replay_time">{{reply.time}}</view>
+          </view>
+          <view class="relpay_content">
+            <text>{{reply.content}}</text>
+          </view>
+        </view>
+      </view>
+
+</view>
+</block>
+
+<view hidden='{{!cour_id}}' class='pingjia' bindtap='pingjia' data-courid='{{cour_id}}'>
+  <icon style="color:white;font-size:46rpx;" class='iconfont_reply icon-huifu'></icon>
+</view>
+
+<!-- 回复评论 -->
+  <view class='judge_input' wx:if='{{isjudge}}' style="bottom:{{keyboard_height}}px">
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <input focus='{{focus}}' maxlength='-1' bindconfirm='send' bindinput="replyTxt" adjust-position="{{false}}" bindblur='cancel' bindfocus='focus' placeholder="添加评论"></input>
+    <view bindtap='send'>发送</view>
+  </view>
+
+</view>

@@ -1,0 +1,1125 @@
+/* pages/cour_detail/cour_detail.wxss */
+@import '/icon/sousuo.wxss';
+@import '/icon/xiala.wxss';
+@import '/icon/right_daohang.wxss';
+@import '/icon/judge.wxss';
+@import '/icon/zan.wxss';
+@import '/icon/gold.wxss';
+@import '/icon/star.wxss';
+@import '/icon/favor_star.wxss';
+@import '/icon/address.wxss';
+@import '/icon/phone.wxss';
+@import '/icon/phone1.wxss';
+@import '/icon/clock.wxss';
+@import '/icon/riqi.wxss';
+@import '/icon/contact.wxss';
+@import '/icon/share.wxss';
+@import '/icon/like.wxss';
+@import '/icon/reply.wxss';
+@import '/icon/yuyue_duigou.wxss';
+.container{
+  padding-bottom: 100rpx;
+}
+.cour_detail_list{
+  width: 95%;
+  height: 260rpx;
+  margin: 0 auto;
+  position: relative;
+  border-bottom: 1px solid #eeeeee;
+}
+.cour_list_left{
+  width: 30%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+.cour_list_right{
+  width: 70%;
+  height: 100%;
+  float: left;
+  /* background: lightblue; */
+  position: relative;
+}
+.cour_list_left .cour_img{
+  width: 66%;
+  height: 54%;
+  margin-top: 40rpx;
+  margin-left: 40rpx;
+  position: relative
+}
+.cour_img image{
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+}
+
+.cour_des_title{
+  width: 100%;
+  margin-top: 30rpx;
+  font-family:Microsoft YaHei;
+  float: left;
+  position: relative;
+  font-size: 30rpx;
+}
+.cour_des_zonghe{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.cour_des_zonghe_right{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cour_score{
+  width: auto;
+  float: left;
+  position: relative;
+}
+.cour_pingjia{
+  margin-left: 45rpx;
+  margin-right: 35rpx;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.iconfont_judge{
+  font-size: 38rpx;
+  margin-bottom: 0rpx;
+}
+.iconfont_zan{
+  margin-left: 0;
+  font-size: 40rpx;
+  margin-bottom: 0;
+}
+.iconfont_star{
+  margin-bottom: 10rpx;
+}
+/* .icon-xingxing{
+  margin-bottom: 0;
+} */
+.cour_love{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100rpx;
+  position: relative;
+  /* border-left: 1px solid lightgray; */
+  /* border-right: 1px solid lightgray; */
+}
+.cour_favor{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 60rpx;
+}
+.divide{
+  width: 1px;
+  height: 26rpx;
+  border-left: 1px solid #e2e0e0;
+}
+
+.cour_des_prop{
+  width: 100%;
+  float: left;
+  position: relative;
+  font-size: 26rpx;
+  font-family:Microsoft YaHei;
+  color: #666666;
+}
+.teaview_btn{
+  width: 145rpx;
+  height: 40rpx;
+  border-radius: 30rpx;
+  font-size: 22rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background-color: black;
+  color: #f2d11b;
+  position: absolute;
+  bottom: 128rpx;
+  right: 60rpx;
+  z-index: 1;
+}
+
+/* 课程详情地址样式 */
+.cour_detail_add{
+  width: 95%;
+  height: 156rpx;
+  margin: 0 auto;
+  position: relative;
+  border-bottom: 1px solid #eeeeee;
+}
+.cour_add_left{
+  width: 80%;
+  float: left;
+  position: relative;
+  height: 100%;
+}
+.cour_add_right{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: red; */
+}
+  .cour_add_phone{
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #e2e0e0;
+    position: relative;
+  }
+
+
+.cour_address{
+  width: 86%;
+  height:auto;
+  margin: 0 auto;
+  position: relative;  
+  margin-top: 28rpx;   
+}
+.cour_address_img{
+  width: 8%;
+  height: 100%;
+  float: left;
+  position: relative;
+  background: white;
+}
+.cour_address_text{
+  width: 92%;
+  height: auto;
+  font-family: Microsoft YaHei;
+  font-size: 26rpx;
+  color: #333333;
+  float: left;
+  line-height: 34rpx;
+  position: relative;
+}
+.step_time{
+  width: 92%;
+  float: left;
+  position: relative;
+  font-family: Microsoft YaHei;
+  font-size: 22rpx;
+  color: #7a7a7a;
+  margin-left: 8%;
+  margin-top: 10rpx;
+}
+/* 课程时长属性介绍 */
+.cour_detail_prop{
+  width: 95%;
+  height: 220rpx;
+  margin: 0 auto;
+  position: relative;
+  /* border-bottom: 20rpx solid #eeeeee; */
+}
+.cour_time{
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 35rpx;
+  position: relative;
+  display: flex;
+}
+.cour_prop_img{
+  width: 30rpx;
+  height: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cour_pro_txt{
+  width: auto;
+  float: left;
+  margin-left: 14rpx;
+  font-family: Microsoft YaHei;
+  font-size: 26rpx;
+  color: #747474;
+  letter-spacing: 2rpx;
+}
+.cour_date{
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 24rpx;
+  position: relative;
+  display: flex;
+}
+.cour_contact{
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 24rpx;
+  position: relative;
+  display: flex;
+}
+.cour_detail_divide{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  border-top: 20rpx solid #eeeeee;
+}
+.cour_des_nav{
+  width: 48%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 95rpx;
+
+}
+.nav_line{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: white;
+}
+.nav_line_border{
+  width: 90%;
+  height: 50%;
+  border-bottom: 1px solid #666666;
+}
+.line_circle_box{
+  width: 12rpx;
+  height: 58%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.line_circle{
+  width: 12rpx;
+  height: 12rpx;
+  background-color: #ec5a5a;
+  border-radius: 6rpx;
+}
+
+.des_nav_title{
+  width: 50%;
+  height: 100%;
+  font-family: Microsoft YaHei;
+  font-size: 30rpx;
+  display: flex;
+  color: #333333;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 课程图文样式 */
+.cour_detail_cont{
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+}
+.cour_detail_cont .img{
+  width:  700rpx;
+  margin-bottom: 10rpx;
+}
+
+.cour_detail_cont image{
+  width: 100% !important;
+}
+
+.cour_detail_cont_txt{
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  font-family: Microsoft YaHei;
+  font-size: 26rpx;
+  color: #666666;
+  margin-bottom: 20rpx;
+  text-indent: 2em;
+}
+/* 网友点评样式 */
+.comment_nav{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  border-bottom: 1px solid #eeeeee;
+}
+.comment{
+  width: 85%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  position: relative;
+  /* border-bottom: 1px solid #eeeeee; */
+}
+.main_comment{
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+}
+.reply_comment{
+  width: 85%;
+  height: auto;
+  display: flex;
+  float: right;
+  border-top: 1px #eeeeee dashed;
+  justify-content: flex-start;
+  /* background: red; */
+}
+.reply_img{
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-top: 12rpx;
+}
+.replay_right{
+  width: 85%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-left: 8rpx;
+  padding-top: 8rpx;
+}
+.reply_img image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+}
+.replay_name{
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  color: #ABABAB;
+  font-size: 26rpx;
+}
+.tea_tag{
+  width: 78rpx;
+  height: 35rpx;
+  border-radius: 20rpx;
+  background: #eeeeee;
+  font-size: 20rpx;
+  color: #5F5F5F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8rpx;
+}
+.replay_time{
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  font-size: 20rpx;
+  color: #9D9EA0;
+}
+.relpay_content{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 24rpx;
+  color: #474747;
+  margin-top: 14rpx;
+}
+.conmment_txt{
+  font-family: Microsoft YaHei;
+  color:#333333;
+  font-size:30rpx;
+}
+.comment_num{
+  font-family: Microsoft YaHei;
+  color:#666666;
+  font-size:22rpx;
+  margin-left: 10rpx;
+}
+.comment_list{
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  border-bottom: 1px solid #eeeeee;
+}
+.comment_list_left{
+  width: 18%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+.comment_list_right{
+  width: 82%;
+  height: 100%;
+  float: left;
+  padding-bottom: 18rpx;
+  position: relative;
+}
+.comment_headimg{
+  width: 94rpx;
+  height: 94rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+.comment_headimg image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.comment_nickname{
+  width: 100%;
+  height: auto;
+  font-size: 26rpx;
+  font-family:  Microsoft YaHei;
+  color: #125e93;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  font-weight: 600;
+  margin-top: 35rpx;
+}
+.reply{
+  width: auto;
+  height: 100%;
+  position: absolute;
+  right: 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22rpx;
+  color: #125e93;
+}
+.comment_time{
+  width: 100%;
+  height: auto;
+  font-size: 20rpx;
+  color: #666666;
+  font-family:  Microsoft YaHei;
+  float: left;
+  position: relative;
+}
+.comment_score{
+  width: 100%;
+  height: auto;
+  font-size: 24rpx;
+  color: #666666;
+  font-family:  Microsoft YaHei;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.comment_words{
+  width: 100%;
+  height: auto;
+  font-size: 26rpx;
+  color: #333333;
+  font-family:  Microsoft YaHei;
+  float: left;
+  position: relative;
+}
+
+.comment_img{
+  width: 100%;
+  height: 120rpx;
+  float: left;
+  position: relative;
+  margin-top: 10rpx;
+}
+.comment_img image{
+  width: 120rpx;
+  float: left;
+  position: relative;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+
+.all_comment{
+  width: 85%;
+  height: 75rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  /* border-bottom: 20rpx solid #eeeeee; */
+}
+.all_comment_txt{
+  font-size: 24rpx;
+  color: #666666;
+  font-family:  Microsoft YaHei;
+}
+.other_recommends{
+  width: 95%;
+  height: 98rpx;
+  /* line-height: 98rpx; */
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  border-bottom: 1px solid #eeeeee;
+}
+.recommends_img{
+  width: 42rpx;
+  height: 55rpx;
+  float: left;
+  margin-left: 35rpx;
+  position: relative;
+}
+.recommends_img image{
+  width: 100%;
+  height: 100%
+}
+.recommends_txt{
+  font-size: 30rpx;
+  color: #333333;
+  margin-left: 20rpx;
+  font-family:  Microsoft YaHei;
+}
+/* 推荐课程盒子 */
+.recom_cour{
+  width: 95%;
+  height: auto;
+  position: relative;
+}
+navigator{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* 优惠券样式 */
+
+.tick_list_box{
+  width: 100%;
+  height: auto;
+  float: left;
+  background: white;
+  position: relative;
+}
+
+.tick_list{
+  width: 93%;
+  height: 150rpx;
+  border-radius: 10rpx;
+  background: #faf3e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+
+
+.tick_list_left{
+  width:18%;
+  height: 100%; 
+  /* background: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.tick_list_right{
+  width: 82%;
+  height: 100%;
+  /* background: green; */
+}
+.tick_money{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.tick_type{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 20rpx;
+  color: #333333;
+  font-weight:500
+}
+.divide{
+  width: 1px;
+  height: 38rpx;
+  background: #999999;
+}
+.tick_title{
+  width: 100%;
+  height: 50%;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-size: 32rpx;
+  display: flex;
+  color: #333333;
+  font-weight: 500;
+  margin-left: 26rpx;
+}
+.shengyu{
+  font-size: 20rpx;
+  margin-left: 10rpx;
+}
+
+.tick_des{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 22rpx;
+  color: #333333; 
+  margin-left: 26rpx;
+}
+.state_btn{
+  width: 140rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  position: absolute;
+  right: 36rpx;
+  background: #ff0000;
+  color: white;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  padding: 0;
+  bottom: 60rpx;
+}
+.used_state_btn{
+  width: 140rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  position: absolute;
+  right: 36rpx;
+  background: lightgray !important;
+  color: white;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  padding: 0;
+  bottom: 60rpx;
+}
+
+.geted_num{
+  width: 140rpx;
+  height: auto;
+  text-align: center;
+  font-size: 20rpx;
+  color: #ff0000;
+  position: absolute;
+  right: 36rpx;
+  bottom: 20rpx;
+}
+.tick_divide{
+  /* width: 1rpx; */
+  height: 70%;
+  position: absolute;
+  right: 220rpx;
+  /* background: white; */
+  border: 1px dashed white;
+}
+/* 评价样式 */
+.pingjia{
+  width: 85rpx;
+  height: 85rpx;
+  border-radius: 48rpx;
+  background: #666666;
+  position: fixed;
+  right: 12rpx;
+  bottom: 250rpx;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8
+}
+.pingjia image{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* 底部菜单预约样式 */
+.bottom_tab_bar{
+  width: 100%;
+  height: 90rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  /* justify-content: center; */
+  justify-content: space-around;
+  align-items: center;
+  background: black;
+  z-index: 2;
+}
+.cour_favor,.cour_share,.cour_judge,.cour_call{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  font-size: 16rpx;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border-right: 1px solid #f2d11b; */
+  box-sizing:border-box;
+  color: white;
+}
+.cour_favor_icon,.cour_share_icon,.cour_judge_icon,.cour_call_icon{
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button{
+  width: auto;
+  height: auto;
+  /* display: flex; */
+  background: black
+}
+
+/* 底部菜单预约样式 */
+.bottom_tab_bar{
+  width: 100%;
+  height: 130rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  z-index: 2;
+  border-top: 1px solid #eeeeee;
+}
+.tab_bar_left,.tab_bar_right{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.option_box{
+  width: 76rpx;
+  height: 76rpx;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: #eeeeee;
+}
+.yuyue_btn{
+  width: 300rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF4500;
+  font-size: 32rpx;
+  color: white;
+}
+/* 预约样式 */
+.dialog{
+  display: block;
+  width: 100%;
+}
+.dialog_show .dialog_mask {
+  display: block;
+}
+.dialog_show .yuyue_box{
+  transform: translateY(0);
+}
+.dialog_mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.yuyue_box{
+  position: fixed;
+  bottom: 0;
+  /* height: 800rpx; */
+  height: 920rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  transform: translateY(150%);
+  transition: all 0.4s ease;
+  z-index: 13;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+.yuyue_info{
+  width: 95%;
+  min-height: 130rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.yuyue_info_top{
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position:relative;
+  padding: 10rpx 0;
+}
+.yuyue_info_bottom{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position:relative;
+  font-size: 26rpx;
+  color: #525252;
+}
+.yuyue_title{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #121212;
+}
+.yuyue_price{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 32rpx;
+  color: #FF0000;
+}
+.yuyue_date{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30rpx;
+}
+.date{
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.time{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+}
+.date_title{
+  width: 95%;
+  height: 20%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 32rpx;
+  color: #1F1F1F;
+}
+.date_day{
+  width: 95%;
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.date_time{
+  width: 95%;
+  /* height: auto; */
+  height: 340rpx;
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  /* align-content: flex-start; */
+  flex-wrap: wrap;
+}
+.date_time_box{
+  width: 120rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #D9D9D9; */
+  font-size: 28rpx;
+  color: #1F1F1F;
+  border-radius: 6rpx;
+  margin-top: 24rpx;
+  border: 1px solid #D1A64D;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+.date_day_box{
+  width: 80rpx;
+  height: 110rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background:#D9D9D9;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  color: #1F1F1F;
+}
+.date_day_box text{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line{
+  width: 8rpx;
+  height: 30rpx;
+  border-radius: 10rpx;
+  background: #FF4500;
+  margin-right: 12rpx;
+}
+.yuyue_btn1{
+  width: 560rpx;
+  height: 70rpx;
+  border-radius: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FF4500;
+  font-size: 32rpx;
+  color: white;
+  position: absolute;
+  bottom: 70rpx;
+}
+.clock_selected{
+  background: #FF4500;
+  color: white;
+  border:0;
+}
+.day_selected{
+  background: #FF4500;
+  color: white;
+}
+
+.noyuyue{
+  width: 92%;
+  height: 200rpx;
+  margin: 0 auto;
+  line-height: 200rpx;
+  background: #eeeeee;
+  border-radius: 10rpx;
+  margin-top: 25rpx;
+  position: relative;
+  text-align: center;
+  font-size: 28rpx;
+  color: #5C5C5C;
+}
+/* 回复评论框样式 */
+.judge_input{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  position: fixed;
+  font-size: 24rpx;
+  background: white;
+  z-index: 999;
+  bottom: 0;
+  color: #FB5500;
+}
+.judge_input image{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+}
+.input_box{
+  width: 74%;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background: #FBFBFB;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 16rpx;
+  border: 1px solid #F0F0F0;
+  padding-left: 20rpx;
+  color: #1D1D1D;
+}
+.judge_input input{
+  width: 74%;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background: #FBFBFB;
+  line-height: 60rpx;
+  margin: 0 16rpx;
+  border: 1px solid #F0F0F0;
+  padding-left: 20rpx;
+  color: #1D1D1D;
+}
+.animate{
+  max-width: 150rpx;
+  max-height: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  opacity: 1 !important;
+}
+.duigou{
+  width: 0;
+  height: 0;
+  border-top: 18px solid #D1A64D;
+  border-left: 22px solid transparent;
+  position: absolute;
+  box-sizing: border-box;
+  right: 0;
+  top: 0;
+}
+.clock_state{
+  font-size: 18rpx;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

@@ -1,0 +1,18 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../dist/xiala-tabs/index",
+    "i-tab": "../../dist/xiala-tab/index",
+    "i-tag": "../../dist/tag/index",
+    "tabbar": "../../tabbarComponent/tabbar",
+    "i-load-more": "../../dist/load-more/index",
+    "i-spin": "../../dist/spin/index"
+  },
+  "navigationBarBackgroundColor": "#BFA24B",
+    "backgroundColor": "#BFA24B",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "课程",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false,
+    "backgroundColorTop":"#BFA24B", 
+    "backgroundColorBottom": "#ffffff" 
+}

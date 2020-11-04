@@ -1,0 +1,166 @@
+<!-- 课程列表数据渲染 -->
+<view class='tea_box' wx:if="{{!tabCheck}}" >
+<block wx:for="{{teacher}}"> 
+ <navigator hover-class='none' url='../../pages/tea_detail/tea_detail?tea_id={{item.Id}}'>
+    <view class='tea_list' style="{{index==idx&&isdown==1?'margin-bottom:0':''}}">
+      <view class='list_left'>
+        <view class='set_tea_img'>
+          <image src='{{item.teaImg}}'></image>
+        </view>
+      </view>
+      <view class='list_right'>
+        <view class='right_line'>
+          <view class='set_tea_name'>姓名：<text class="shenglue">{{item.name}}</text></view>
+          <view class='set_tea_address'>地区：{{item.location}}</view>
+        </view>
+        <view class='right_line'>
+          <view class='set_tea_phone'>手机：{{item.phone}}</view>
+          <view class='set_tea_level'>等级：Lv{{item.level}}</view>
+        </view>
+        <view class='right_line'>
+          <view class='set_tea_type'>类别：{{item.type}}</view>
+          <view class='courNum'>课程数：{{item.courNum}}</view>
+        </view>
+        <view class='right_line'>
+          <view class='applyTime'>注册时间：{{item.time}}</view>
+        </view>
+      </view>
+      <view class='tea_set' catchtap='tea_set' data-idx='{{index}}'>
+        <icon class='iconfont_set icon-set'></icon>
+        <text class='set_txt'>设置</text>
+      </view>
+    </view>
+    <view  hidden='{{!(index==idx&&isdown==1)}}' class='set_down'>
+      <view class='tuijian' catchtap='tuijian' data-idx='{{index}}' data-teaid='{{item.Id}}' data-state='{{item.recom}}'>
+        <icon style="color:{{item.recom==1?'':'gray'}}" class='iconfont_tuijian icon-tuijian'></icon>
+        <text class='set_txt'>{{item.recom==1?'已推荐':'推荐首页'}}</text>
+      </view>
+      <view class='zhiding' catchtap='zhiding' data-idx='{{index}}' data-teaid='{{item.Id}}' data-state='{{item.top}}'>
+        <icon style="color:{{item.top==1?'':'gray'}}" class='iconfont_top icon-top'></icon>
+        <text class='set_txt'>{{item.top==1?'已置顶':'置顶'}}</text>
+      </view>
+      <view class='xiajia' catchtap='xiajia' data-idx='{{index}}' data-teaid='{{item.Id}}' data-state='{{item.cut}}'>
+        <icon style="color:{{item.cut==1?'':'gray'}}" class='iconfont_xiajias icon-xiajias'></icon>
+        <text class='set_txt'>{{item.cut==1?'已下架':'下架'}}</text>
+      </view>
+      <!-- <view class='dongjie' bindtap='dongjie' data-teaid='{{item.Id}}' data-state='{{item.freeze}}'>
+        <icon style="color:{{item.freeze==1?'':'gray'}}" class='iconfont_dongjie icon-dongjie'></icon>
+        <text class='set_txt'>冻结</text>
+      </view> -->
+    </view>
+</navigator>
+</block>
+
+<!-- 信息不完善教师区域 -->
+<block wx:for="{{applyTeacher}}"> 
+<i-message id="message" />
+    <view bindtap="handleDefault" class='tea_list' style="{{index==idx&&isdown==1?'margin-bottom:0':''}};background:#eeeeee">
+      <view class='list_left'>
+        <view class='set_tea_img'>
+          <image wx:if="{{item.pic1}}" src='https://icloudapi.cn/efire/public/uploads/apply/{{item.pic1}}'></image>
+          <image src='../../../img/logo.png' wx:else></image>
+        </view>
+      </view>
+      <view class='list_right'>
+        <view class='right_line'>
+          <view class='set_tea_name'>姓名：<text class="shengluo">{{item.name}}</text></view>
+          <view class='set_tea_address'>地区：{{item.location}}</view>
+        </view>
+        <view class='right_line'>
+          <view class='set_tea_phone'>手机：{{item.phone}}</view>
+          <view class='set_tea_level'>等级：Lv{{item.level}}</view>
+        </view>
+        <view class='right_line'>
+          <view class='set_tea_type'>类别：{{item.type}}</view>
+          <view class='courNum'>课程数：{{item.courNum}}</view>
+        </view>
+        <view class='right_line'>
+          <view class='applyTime'>注册时间：{{item.time}}</view>
+        </view>
+      </view>
+      <!-- <view class='tea_set' bindtap='tea_set' data-idx='{{index}}'>
+        <icon class='iconfont_set icon-set'></icon>
+        <text class='set_txt'>设置</text>
+      </view> -->
+    </view>
+    <!-- <view  hidden='{{!(index==idx&&isdown==1)}}' class='set_down'>
+      <view class='tuijian' bindtap='tuijian' data-idx='{{index}}' data-teaid='{{item.Id}}' data-state='{{item.recom}}'>
+        <icon style="color:{{item.recom==1?'':'gray'}}" class='iconfont_tuijian icon-tuijian'></icon>
+        <text class='set_txt'>{{item.recom==1?'已推荐':'推荐首页'}}</text>
+      </view>
+      <view class='zhiding' bindtap='zhiding' data-idx='{{index}}' data-teaid='{{item.Id}}' data-state='{{item.top}}'>
+        <icon style="color:{{item.top==1?'':'gray'}}" class='iconfont_top icon-top'></icon>
+        <text class='set_txt'>{{item.top==1?'已置顶':'置顶'}}</text>
+      </view>
+      <view class='xiajia' bindtap='xiajia' data-idx='{{index}}' data-teaid='{{item.Id}}' data-state='{{item.cut}}'>
+        <icon style="color:{{item.cut==1?'':'gray'}}" class='iconfont_xiajias icon-xiajias'></icon>
+        <text class='set_txt'>{{item.cut==1?'已下架':'下架'}}</text>
+      </view>
+    
+    </view> -->
+</block>
+
+
+
+<!-- 无数据显示 -->
+  <view class='nodata' wx:if="{{teacher.length===0&&applyTeacher.length===0}}">
+   <icon bindtap='qiehuan' class='iconfont_qiehuan icon-ditu'></icon>
+    <view class='tips'>
+      <text>换个区域，发现更多</text>
+    </view>
+  </view> 
+
+   <!-- 暂无更多数据 -->
+  <view class="noMoreData" wx:if="{{noMoreData&&teacher.length!=0}}">
+    <view class="no_line"></view>
+    <view style="margin:0 6rpx;">暂无更多~</view>
+    <view class="no_line"></view>
+  </view>
+   <!-- 加载动效 -->
+<view class="jiazai" wx:if="{{!noMoreData&&teacher.length!=0}}">
+  <i-spin fix></i-spin>
+  <view>加载中</view>
+</view>
+ 
+</view>
+<!-- 审核教师申请区域 -->
+<view class='tea_apply' wx:if="{{tabCheck}}">
+<block wx:for="{{apply}}">
+  <navigator class='apply_list' url="../../pages/myset/apply_teades/apply_teades?honor={{item.honor}}&introduce={{item.intro}}&phone={{item.phone}}&tea_img={{item.avatarUrl}}&name={{item.name}}" hover-class="none">
+    <view class='apply_list_left'>
+      <view class='apply_img'>
+        <image src='{{item.avatarUrl}}'></image>
+      </view>
+    </view>
+    <view class='apply_list_right'>
+      <view class='apply_name'>
+        <text>姓名：{{item.name}}</text>
+      </view>
+      <view class='apply_type'>
+        <text>类别：{{item.type}}</text>
+      </view>
+      <view class='apply_time'>
+        <text>申请日期：{{item.time}}</text>
+      </view>
+
+    </view>
+<!-- 触发消息模板1 --> 
+    <button class='refuse' catchtap="refuse" data-idx='{{index}}' >
+      {{item.state==2?'已拒绝':'拒绝'}} 
+    </button>
+
+    <button class='pass' catchtap="pass" data-idx='{{index}}'>
+      {{item.state==1?'已同意':'同意'}}
+    </button>
+
+  </navigator>
+</block>
+  <view class='nodata' wx:if="{{apply_num===0}}">
+   <icon  class='iconfont_nocheck icon-shenhe'></icon>
+    <view class='tips'>
+      <text>暂无申请数据</text>
+    </view>
+  </view>
+
+</view>
+  

@@ -1,0 +1,119 @@
+<!-- 课程列表数据渲染 -->
+<view class="content">
+<view id="course_box" class='course_box' style="padding-bottom:{{isIphoneX?'130rpx':'98rpx'}}" >
+
+<!-- 置顶课程 -->
+<block wx:for="{{top_course}}">
+<!-- <navigator hover-class='none' url='../cour_detail/cour_detail?cour_id={{item.Id}}&distance={{item.distance}}&cour_type={{item.courType}}'> -->
+  <view class='course_list' bindtap="course_des" data-courid="{{item.Id}}" data-courtype="{{item.courType}}" data-distance="{{item.distance}}">
+    <view class='course_list_left'>
+      <view class='course_img_box'>
+      <image mode='aspectFill' src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}}"></image>
+      </view>
+    </view>
+    <view class='course_list_right'>
+    <!-- 推荐icon样式 -->
+        <view  class="tea_recom">
+          <image src="/img/level/recom.png"></image>
+        </view> 
+      <view class='course_name'>
+        <text>{{item.courName}}</text>
+        <!-- <text class='distance'>{{item.distance}}</text> -->
+      </view>
+      <view class='course_des'>
+
+         <view class='course_judge'>
+          <block wx:for="{{item.star}}">
+            <icon  class='iconfont_star icon-xingji3'></icon>
+          </block>
+          <block wx:for="{{5-item.star}}">
+            <icon  class='iconfont_star icon-xingji4'></icon>
+          </block>
+          <!-- <text class='course_judge_num'>评价{{item.judgeNum}}</text> -->
+        </view>
+      </view>
+
+      <view class='course_price'>
+        <text class='price_left'>¥</text>
+        <text class='price_middle'>{{item.price}}</text>
+        <text class='price_right'>起</text>
+      </view>
+      <view class='course_address'>
+        <text>{{item.courAddressName}}/{{item.courTags}}</text>
+      </view>
+      <!-- <button class='view_btn'>点击查看</button> -->
+      <view class='distance'>{{item.distance}}</view>
+    </view>
+  </view>
+<!-- </navigator> -->
+  </block>
+
+<!-- 普通课程 -->
+  <block wx:for="{{course}}">
+  <!-- <navigator hover-class='none' url='../cour_detail/cour_detail?cour_id={{item.Id}}&distance={{item.distance}}&cour_type={{item.courType}}'> -->
+  <view class='course_list' bindtap="course_des" data-courid="{{item.Id}}" data-courtype="{{item.courType}}" data-distance="{{item.distance}}">
+    <view class='course_list_left'>
+      <view class='course_img_box'>
+      <image mode='aspectFill' src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}}"></image>
+      </view>
+    </view>
+    <view class='course_list_right'>
+      <view class='course_name'>
+        <text>{{item.courName}}</text>
+        <!-- <text class='distance'>{{item.distance}}</text> -->
+      </view>
+      <view class='course_des'>
+
+         <view class='course_judge'>
+          <block wx:for="{{item.star}}">
+            <icon  class='iconfont_star icon-xingji3'></icon>
+          </block>
+          <block wx:for="{{5-item.star}}">
+            <icon  class='iconfont_star icon-xingji4'></icon>
+          </block>
+          <!-- <text class='course_judge_num'>评价{{item.judgeNum}}</text> -->
+        </view>
+      </view>
+
+      <view class='course_price'>
+        <text class='price_left'>¥</text>
+        <text class='price_middle'>{{item.price}}</text>
+        <text class='price_right'>起</text>
+      </view>
+      <view class='course_address'>
+        <text>{{item.courAddressName}}/{{item.courTags}}</text>
+      </view>
+      <!-- <button class='view_btn'>点击查看</button> -->
+      <view class='distance'>{{item.distance}}</view>
+    </view>
+  </view>
+<!-- </navigator> -->
+  </block>
+
+  <view class='nodata' wx:if="{{shaixuan_state==false&&course.length===0&&(top_course==0||!top_course)}}">
+   <icon bindtap='qiehuan' class='iconfont_qiehuan icon-ditu'></icon>
+    <view class='tips'>
+      <text>换个区域，发现更多</text>
+    </view>
+  </view>
+
+   <!-- 暂无更多数据 -->
+  <view class="noMoreData" wx:if="{{noMoreData&&course.length!=0}}">
+    <view class="no_line"></view>
+    <view style="margin:0 6rpx;">暂无更多~</view>
+    <view class="no_line"></view>
+  </view>
+  <!-- 加载动效 -->
+<view class="jiazai" wx:if="{{!noMoreData&&course.length!=0}}">
+  <i-spin fix></i-spin>
+  <view>加载中</view>
+</view>
+
+  <view class='nodata' wx:if="{{shaixuan_state==true&&course.length===0&&(top_course==0||!top_course)}}">
+    <icon class='iconfont_lost icon-Null-data'></icon>
+    <view class='tips'>
+      <text>暂无发现课程信息～</text>
+    </view>
+  </view>
+</view>
+</view>

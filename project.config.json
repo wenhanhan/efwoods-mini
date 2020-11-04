@@ -1,0 +1,127 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": []
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.9.5",
+  "appid": "wx475a3683acbb603d",
+  "projectname": "course",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "pages/tea_detail/tea_detail",
+          "pathName": "pages/tea_detail/tea_detail",
+          "query": "tea_id=1",
+          "scene": 1007
+        },
+        {
+          "id": 1,
+          "name": "课程分享",
+          "pathName": "pages/cour_detail/cour_detail",
+          "query": "cour_id=43&cour_type=2",
+          "scene": 1007
+        },
+        {
+          "id": 2,
+          "name": "update1",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 3,
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 4,
+          "name": "pages/share/share",
+          "pathName": "pages/share/share",
+          "query": "share_openid=test",
+          "scene": 1007
+        },
+        {
+          "id": -1,
+          "name": "pages/myset/jifen/jifen",
+          "pathName": "pages/myset/jifen/jifen",
+          "query": "videoid=2",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "预约增加",
+          "pathName": "package1/addCourse/addCourse",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/tea_detail/tea_detail",
+          "pathName": "pages/tea_detail/tea_detail",
+          "query": "tea_id=1",
+          "scene": null
+        },
+        {
+          "id": 8,
+          "name": "pages/index/index",
+          "pathName": "pages/web/login",
+          "query": "scene=046b383a30352bfde1be1bfe9a99fd18",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1575006755834'); /* IE9 */
+  src: url('iconfont.eot?t=1575006755834#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPcAAsAAAAAB9AAAAOPAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqDWIMkATYCJAMICwYABCAFhG0HMRvLBhHVmy/J/nBgythE2StbdaeZwhPpjWS/ocYI5pJ3qLHwp6TnOXjg2ZbvA9bnonBjGa23rFKWVXqLbj3GFEXuUmohvgACtuYcqTcqQpVkz3fT6At5oPylGXozuz6o4z5XBrF9BFj+LwCMOJw2xecD5TLH5KgLMN4a4F4YBTy1QALzqGHsyos4DQFIUshGlKtQrR5Bw5gkANG5Q7sWJKVHqykVOBHYS1ZqiOnYcCoTlAvANP/z4g15OkHBpmJU1GpbvjV7vtXMUIeH3DR2CQjGswJsHahANqCBqFdqrwHDeDYqUomLNFhXqYDnQ7v81f7wQICwYxSHAZAM8s9JYAtPtVgBQIO9S4HzvV4StMypCqUaJINF1gULTIxbsSJuzkLDZ5T2BoNl1p2TEzOtSR14lNGnh1uWECP89cJ2PPaKefN1y5i01zwa8AROSt98t9fv1lcGCl/0tBWTrBF+KcUId7w1b9WKuHpe/6rZcwwPnT17uE/XkRN9gsFxCiZZiYRuNf1vzX2+1ZbbHUwom/DEEwjUmz3X8OmTEiXc9gYf1rtxw1Os+TC1Ykyob4nHWq7olOlH78qv8Ifooe8aurt+VzO5VvXb6XxW+Sjlz/T0Q87JGfc9SO2cVPyc8EaJ1KnC8n76+584NKyD/av67eTabQrb1SVtcl6KKhdr9qD3jHvSm9imtBnaLiY8dbtG3Vt1b5fqX4zpPdpsNf1uxR6tzCryXty96VU8+j3jovTknp66AZnbXJPL/J33ZyZzVUw3dk+THnGp+8Z3jM8awvpl+tR1hA+qPSZ32gGtxrYumqHjiDylMs/VazMAhCbub6kD/t93mHMpIbJZZLFvThoAt11P63tDEw+0cwLnXToE/C1ByxpNFRkq5br5yKGwNJGDAkjVRQjDHeN+X6eB2CpwcgGEgoPkUHGSjqhRs8GGTj7YcVISkqwqrteJ1RMiNBeQxRgAQZTNUIjgMFSiXCRq1Huw4fYOdqKqkHhF7I46GVpOnXEUXGD6gJspa8skKig9o3nEkZMin3ZHXl0I2qrJpo6YkceYsz5NJ6JBMyUYwHkYI0Fh8jhLZUVKX9e67ErVTGmjOOMouMD0ATdT1m5jUbn3n9E84sg1VRX2O/Lq+oe2aloQj/LcqupaLlmfphPRoJkSDMCK0YwTlPJhHmepbI9o6WtUT7eVV/Mr09NtAiSGRhHmQBUPoGy8y5sNAA==') format('woff2'),
+  url('iconfont.woff?t=1575006755834') format('woff'),
+  url('iconfont.ttf?t=1575006755834') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1575006755834#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont_mingxi {
+  font-family: "iconfont" !important;
+  font-size: 76rpx;
+  display: flex;
+  color: #FF4C63;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-yongjin:before {
+  content: "\e6b1";
+}
+

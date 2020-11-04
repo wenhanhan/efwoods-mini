@@ -1,0 +1,53 @@
+<view class="container">
+  <view class="welcome">
+    <text>请选择平台入驻类型，并确保填写信息的真实性！</text>
+  </view>
+  <button open-type="getUserInfo" data-type="tea" hover-class="none" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="sijiao">
+    <view class="sijiao_left">
+      <icon class='iconfont_sijiao icon-sijiao'></icon>
+    </view>
+    <view class="sijiao_right">
+      <view class="ruzhu_title">
+        <text>私教入驻</text>
+      </view>
+      <view class="ruzhu_des">
+        <text>教师名片展示，课程管理，签到统计</text>
+      </view>
+    </view>
+  </button>
+  <button open-type="getUserInfo" data-type="agency" hover-class="none" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="agency" style="margin-top:60rpx;">
+    <view class="agency_left">
+      <icon class='iconfont_agency icon-jigourenzheng'></icon>
+    </view>
+    <view class="agency_right">
+      <view class="ruzhu_title">
+        <text>机构入驻</text>
+      </view> 
+      <view class="ruzhu_des">
+        <text>丰富的营销插件，提升品牌曝光率</text>
+      </view>
+    </view>
+  </button>
+
+   <button open-type="getUserInfo" data-type="student" hover-class="none" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="sijiao" style="margin-top:60rpx;">
+    <view class="sijiao_left">
+      <icon class='iconfont_xueyuan icon-xueyuan'></icon>
+    </view>
+    <view class="sijiao_right">
+      <view class="ruzhu_title">
+        <text>普通学员</text>
+      </view>
+      <view class="ruzhu_des">
+        <text>学员随时预约、随时分享传播</text>
+      </view>
+    </view>
+  </button>
+
+  <view class="bottom_bk">
+    <image src="https://cdn.icloudapi.cn/share_bk.png"></image>
+    <view class="logo">
+      <image mode="aspectFill" src="/img/gray_logo.png"></image>
+      <text>由eFIREWOODS提供技术支持</text>
+    </view>
+  </view>
+</view>

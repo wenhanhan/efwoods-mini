@@ -1,0 +1,71 @@
+<view class="container">
+  <view class='top_box'>
+    <view class='qrcode'>
+      <image src='{{qrcode}}'></image>
+    </view>
+    <view class='btn'>
+      <button class='save' bindtap='save'>保存邀请码</button>
+      <button class='share' open-type='share'>分享邀请码</button>
+    </view>
+  </view>
+  <view class='invite_log'>
+    <icon class='iconfont_invite icon-yaoqing'></icon>
+    <text style='font-size:26rpx;margin-left:10rpx;'>邀请记录</text>
+  </view>
+  <view style='width:100%'>
+      <i-tabs current="{{ current }}" color="#FF4E00" bindchange="handleChange">
+        <i-tab key="tab1" title="入驻机构"></i-tab>
+        <i-tab key="tab2" title="入驻私教"></i-tab>
+      </i-tabs>
+  </view>
+
+  <!-- 邀请人员 -->
+  <block wx:for="{{invite_tea}}" wx:if="{{current=='tab2'}}">
+  <view class='invited'>
+    <view class='invited_img'>
+      <image src='{{item.avatarUrl}}'></image>
+    </view>
+    <view class='invited_des'>
+      <view class='name'>{{item.nickName}}</view>
+      <view class='time'>注册日期：{{item.time}}</view>
+    </view>
+    <view class='invited_code'>
+      <view class='code_box'>
+       {{item.random}}
+      </view>
+   </view>
+  </view>
+  </block>
+  <!-- 邀请的机构 -->
+  <block wx:for="{{invite_agency}}" wx:if="{{current=='tab1'}}">
+  <view class='invited'>
+    <view class='invited_img'>
+      <image src='{{item.agency_logo}}'></image>
+    </view>
+    <view class='invited_des'>
+      <view class='name'>{{item.agency_name}}</view>
+      <view class='time'>注册日期：{{item.create_time}}</view>
+    </view>
+    <view class='invited_code'>
+      <view class='code_box'>
+       {{item.random}}
+      </view>
+   </view>
+  </view>
+  </block>
+
+  <view class='nodata' style='height:auto' wx:if="{{invite_tea.length===0&&current=='tab2'}}">
+    <icon class='iconfont_noinvite icon-zanwurenyuan'></icon>
+    <view class='tips'>
+      <text>暂无邀请信息～</text>
+    </view>
+  </view>
+
+  <view class='nodata' style='height:auto' wx:if="{{invite_agency.length===0&&current=='tab1'}}">
+    <icon class='iconfont_noinvite icon-zanwurenyuan'></icon>
+    <view class='tips'>
+      <text>暂无邀请信息～</text>
+    </view>
+  </view>
+
+</view>

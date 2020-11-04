@@ -1,0 +1,58 @@
+<view class="container">
+  <view class="top_bk">
+    <image mode="aspectFill" src="{{top_img}}"></image>
+  </view> 
+  <view class="tea_info">
+    <image src="{{headImg}}"></image>
+    <view class="tea_name">
+      <text>{{tea_name}}</text>
+    </view>
+    <view class="sub_like">
+      <view class="sub">
+        <view class="sub_num">{{sub_num}}</view>
+        <view>订阅</view>
+      </view>
+      <view class="like">
+        <view class="like_num">{{like_num}}</view>
+        <view>喜欢</view>
+      </view>
+    </view>
+  </view>
+  <view class="zhuanlan_content">
+    <i-tabs current="{{ current }}" color="#FF4B00" bindchange="handleChange">
+      <i-tab key="tab1" title="专栏介绍"></i-tab>
+      <i-tab key="tab2" title="专栏目录"></i-tab>
+    </i-tabs>
+    <view class="zhuanlan_des" wx:if="{{current=='tab1'}}" >
+      <text>{{zhuanlan_des}}</text>
+    </view>
+    <view class="zhuanlan_audio" wx:if="{{current=='tab2'}}">
+      <block wx:for="{{zhuanlan_audio}}">
+        <view class="audio_item" bindtap="view" data-id="{{zhuanlan_id}}" data-index="{{index}}">
+          <text class="audio_title">{{index+1}}、{{item.title}}</text>
+          <view class="sub_state">
+            <icon wx:if="{{!is_buy}}"  class='iconfont_lock icon-shangsuo'></icon>
+            <icon wx:if="{{is_buy}}" style="color:#FF4B00" class='iconfont_bofang icon-bofang'></icon>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="dingyue" bindtap="dingyue" wx:if="{{is_buy==false}}">
+    <text>订阅(￥{{price}})</text>
+  </view>
+  <i-toast id="toast" />
+  <view class="share" bindtap="handleOpen1">
+     <icon style="font-size:45rpx;" class='iconfont_fenxiang icon-fenxiang'></icon>
+  </view>
+   <i-action-sheet visible="{{ visible1 }}" actions="{{ actions1 }}" show-cancel bind:cancel="handleCancel1" bind:click="handleClickItem1" />
+   <!-- 生成海报 -->
+  <view class='imagePathBox' bindtap="hide" hidden="{{maskHidden == false}}">
+    <image src="{{imagePath}}" mode='aspectFit' class='shengcheng'></image>
+    <button hidden="{{!save_btn}}" class='baocun' bindtap='baocun'>保存分享卡片</button>
+  </view>
+  <view class="canvas-box">
+    <canvas style="width: {{canvas_width}}px;height: {{canvas_height}}px;position:fixed;top:9999px" canvas-id="mycanvas" />
+  </view>
+</view>

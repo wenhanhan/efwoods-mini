@@ -1,0 +1,156 @@
+<view class='container'>
+  <view class='top_box'>
+    <view class='jifen_title'>
+      <text>当前积分</text>
+    </view>
+    <view class='jifen_sum_box'>
+      <icon class='iconfont_jifen icon-jifenduihuan'></icon>
+      <text class="jifen_sum">{{sum}}</text>
+    </view>
+    <view class="jifen_shop" bindtap="jump_shop">
+      <text>商城兑换</text>
+      <icon class='iconfont_shop icon-iconfontyoujiantou-copy-copy'></icon>
+    </view>
+    <view class="jifen_tips" bindtap="open">
+      <icon class='iconfont_jifen_tips icon-shuoming'></icon>
+      <text>说明</text>
+    </view>
+  </view>
+
+  <!-- 积分遮罩 --> 
+  <view hidden="{{hidden}}" catchtouchmove="ture" class="mask" bindtap="close">
+    <view class="jifen_mask_tips">
+      <view class="jifen_tips_title">
+        <text>积分规则</text>
+      </view>
+      <icon bindtap="close" style="position:absolute;top:10rpx;right:10rpx;display:flex;" class='iconfont_guanbi icon-guanbi'></icon>
+      <view class="jifen_des_box">
+        <view class='rule_des'>
+          <text class="rule_line">1、课程签到获得{{sign_score}}积分,前{{sign_times}}次有效；</text>
+          <text class="rule_line">2、课程评价获得{{judge_score}}积分,前{{judge_times}}次有效；</text>
+          <text class="rule_line">3、分享课程或教练获得{{share_score}}积分,前{{share_times}}次有效；</text>
+          <text class="rule_line">4、教练对学员进行评价将获得{{stu_judge_score}}积分,前{{stu_judge_times}}次有效；</text>
+          <text class="rule_line">5、{{jifen_des}}</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+
+  <view style='width:100%'>
+    <i-tabs current="{{ current }}" color="#f759ab" bindchange="handleChange">
+      <i-tab key="tab1" title="积分记录"></i-tab>
+      <i-tab key="tab2" title="分值提升"></i-tab>
+    </i-tabs>
+  </view>
+
+  <!-- 积分记录 -->
+  <block wx:for='{{jifen_list}}'>
+    <view class='jifen_record' wx:if="{{current=='tab1'&&state==0}}">
+      <view class='record_title'>[{{item.type}}]获得积分</view>
+      <view class='record_time'>{{item.time}}</view>
+      <view class='jifen_num'>+{{item.score}}</view>
+    </view>
+    <view class='jifen_record' wx:if="{{current=='tab1'&&state==1}}">
+      <view class='record_title'>{{item.mark}}</view>
+      <view class='record_time'>{{item.add_time}}</view>
+      <view class='jifen_num' wx:if="{{item.pm}}">+{{item.number}}</view>
+      <view class='jifen_num' wx:else>-{{item.number}}</view>
+    </view>
+  </block>
+
+  <!-- <block wx:for='{{jifen_list}}'>
+    <view class='jifen_record' wx:if="{{current=='tab1'}}">
+      <view class='record_title'>{{item.mark}}</view>
+      <view class='record_time'>{{item.add_time}}</view>
+      <view class='jifen_num' wx:if="{{item.pm}}">+{{item.number}}</view>
+      <view class='jifen_num' wx:else>-{{item.number}}</view>
+    </view>
+  </block> -->
+
+  <!-- 积分记录 -->
+  <view class='jifen_rule' wx:if="{{current!='tab1'}}">
+   
+   <view class="jifen_right">
+    <view class="jifen_img">
+      <image mode="aspectFill" src="https://cdn.icloudapi.cn/score.png"></image>
+    </view>
+     <view class="jifen_title_right">
+        <text>商城签到可获取积分奖励</text>
+     </view>
+     <button bindtap="jump_shop" class="jifen_btn">赚积分</button>
+   </view>
+
+<navigator url="../../index/index" open-type='switchTab'  hover-class="none">
+    <view class="jifen_right">
+    <view class="jifen_img">
+      <image mode="aspectFill" src="https://cdn.icloudapi.cn/score.png"></image>
+    </view>
+     <view class="jifen_title_right">
+        <text>课程签到可获取积分奖励</text>
+     </view>
+     <button class="jifen_btn">赚积分</button>
+   </view>
+</navigator>
+
+<navigator url="../../index/index" open-type='switchTab'  hover-class="none">
+    <view class="jifen_right">
+    <view class="jifen_img">
+      <image mode="aspectFill" src="https://cdn.icloudapi.cn/score.png"></image>
+    </view>
+     <view class="jifen_title_right">
+        <text>课程评价可获取积分奖励</text>
+     </view>
+     <button class="jifen_btn">赚积分</button>
+   </view>
+</navigator>
+
+<navigator url="../../index/index" open-type='switchTab'  hover-class="none">
+    <view class="jifen_right">
+    <view class="jifen_img">
+      <image mode="aspectFill" src="https://cdn.icloudapi.cn/score.png"></image>
+    </view>
+     <view class="jifen_title_right">
+        <text>课程/私教分享可获取积分奖励</text>
+     </view>
+     <button class="jifen_btn">赚积分</button>
+   </view>
+  </navigator>
+
+  <navigator url="../../myset/signSet/signSet" open-type="redirect" hover-class="none">
+    <view class="jifen_right">
+    <view class="jifen_img">
+      <image mode="aspectFill" src="https://cdn.icloudapi.cn/score.png"></image>
+    </view>
+     <view class="jifen_title_right">
+        <text>对学员进行点评可获取积分奖励</text>
+     </view>
+     <button class="jifen_btn">赚积分</button>
+   </view>
+  </navigator>
+
+    <!-- <view class="jifen_shop_box">
+      <view class="shop_left">
+        <image mode="aspectFill" src="/img/goods.jpg"></image>
+      </view>
+      <view class="shop_right">
+        <view class="goods_title">
+          <text>Mizuno美津浓AS短钉男足球鞋</text>
+        </view>
+        <view class="goods_money">
+          <text>￥440.00</text>
+        </view>
+        <view class="goods_jifen">
+          <text>50积分</text>
+          <text style="font-size:22rpx;color:#5E5D5D;margin-left:20rpx;">2019-08-05  12:00:00</text>
+        </view>
+        <view class="goods_count">
+          <text>x1</text>
+        </view>
+      </view>
+    </view> -->
+  </view>
+
+
+</view>

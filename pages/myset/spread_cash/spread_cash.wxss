@@ -1,0 +1,156 @@
+/* pages/myset/spread_cash/spread_cash.wxss */
+@import '/icon/alipay.wxss';
+@import '/icon/weixin.wxss';
+@import '/icon/pay_duihao.wxss';
+@import '/icon/upload_success.wxss';
+@import '/icon/cash_tip.wxss';
+.container{
+  overflow-x: hidden;
+}
+.ways{
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #D6D6D6;
+}
+.alipay,.wechat{
+  width: 240rpx;
+  height: 70rpx;
+  border: 1px solid #CFCFCF;
+  border-radius: 6rpx;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #3F3D3D;
+}
+.alipay.active,.wechat.active{
+  border:1px solid #FF1C2A;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+}
+.select_box{
+  width: 36rpx;
+  height: 30rpx;
+  background: #FF1C2A;
+  position: absolute;
+  display: flex;
+  border-radius: 4rpx;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+}
+.cash_info{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.input_line{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 5%;
+  border-bottom: 1px solid #eeeeee;
+}
+.title{
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #3F3D3D;
+}
+.content{
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #3F3D3D;
+  padding-left: 5%;
+}
+.qrcode{
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #3F3D3D;
+  padding-left: 5%; 
+  position: relative;
+}
+.placeholder{
+  font-size: 26rpx;
+  color: #ACACAC;
+}
+.upload{
+  width: 130rpx;
+  height: 46rpx;
+  border-radius: 6rpx;
+  background: #1B1B1B;
+  color: #F2D11B;
+  font-size: 22rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 100rpx;
+}
+.state{
+  width: auto;
+  height: 100%;
+  position: relative;
+  display: flex;
+  font-size: 24rpx;
+  color: #ACACAC;
+  align-items: center;
+  justify-content: center;
+}
+.baseline{
+  width: 90%;
+  height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+  color: #ACACAC;
+}
+.cash_tips{
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  color: #ACACAC;
+  font-size: 24rpx;
+}
+.child_tips{
+  margin: 6rpx 0;
+}
+.btn{
+  width: 90%;
+  height: 80rpx;
+  border-radius: 40rpx;
+  background: #181818;
+  font-size: 28rpx;
+  color: #F2D11B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 130rpx;
+}

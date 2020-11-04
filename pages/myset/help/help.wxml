@@ -1,0 +1,94 @@
+<view class='container'>
+  <view class='top_box'>
+    <view class='hello'>
+      <text>Hi,{{nickname}}</text>
+    </view>
+  </view>
+  <view class='ask_title'>
+    <view style='margin-left:20rpx'>猜你想问</view>
+  </view>
+
+  <!-- 折叠面板 -->
+  <view class="caption-wrap">
+    <i-collapse name="{{name}}">
+      <i-collapse-item title="如何申请成为教练?" name="name1">
+        <view slot="content">
+          <view>操作步骤：</view>
+          <view style='font-size:24rpx'>(1)用户打开小程序，进入【我的】菜单栏目；</view>
+          <view style='font-size:24rpx'>(2)点击【申请成为教练】导航栏，正确填写申请表单，确认无误后提交；</view>
+          <view style='font-size:24rpx'>(3)等候管理员审核。</view>
+        </view>
+      </i-collapse-item>
+      <i-collapse-item title="如何发布课程?" name="name2">
+        <view slot="content" i-class-content="green-text">
+          <view>操作步骤：</view>
+          <view style='font-size:24rpx'>(1)教师用户打开小程序，进入【我的】菜单栏目，点击【课程管理】；</view>
+          <view style='font-size:24rpx'>(2)点击当前页面下方“发布课程”按钮，详实填写本人所授课程信息，确认无误，保存提交；</view>
+          <view style='font-size:24rpx'>(3)等候管理员审核。</view>
+        </view>
+      </i-collapse-item>
+      <i-collapse-item title="如何进行课程签到?" name="name3">
+        <view slot="content">
+          <view>操作步骤：</view>
+          <view style='font-size:24rpx'>(1)教师打开小程序，进入【我的】菜单栏目，点击【签到管理】菜单栏目；</view>
+          <view style='font-size:24rpx'>(2)教师点击相应课程右侧“签到码”按钮，可生成课程签到码。</view>
+          <view style='font-size:24rpx'>(3)学员打开小程序，点击【课程签到】菜单栏目；</view>
+          <view style='font-size:24rpx'>(4)打开当前页面右侧中央区域的“扫一扫”按钮，扫描步骤2中的课程签到码即可完成签到。</view>
+        </view>
+      </i-collapse-item>
+
+      <i-collapse-item title="如何发布课程优惠券?" name="name4">
+        <view slot="content">
+          <view>操作步骤：</view>
+          <view style='font-size:24rpx'>(1)教师打开小程序，进入【我的】菜单栏目，点击【优惠券管理】菜单栏目；</view>
+          <view style='font-size:24rpx'>(2)教师点击页面右侧“发布”按钮，选择相应课程，添加优惠券信息即可。</view>
+          <view style='font-size:24rpx'>注意：如若下架某课程优惠券，调整优惠券截止日期即可。</view>
+        </view>
+      </i-collapse-item>
+
+      <i-collapse-item title="优惠券如何使用?" name="name5">
+        <view slot="content">
+          <view>操作步骤：</view>
+          <view style='font-size:24rpx'>(1)学员用户打开小程序，进入【我的】菜单栏目，点击【我的优惠券】菜单栏目，点击【有效券】查看待使用优惠券；</view>
+          <view style='font-size:24rpx'>(2)点击优惠券右侧区域“立即使用”按钮，可进入【优惠券详情】页面，可看到当前优惠券核销二维码。</view>
+          <view style='font-size:24rpx'>(3)教师用户打开小程序，进入【我的】菜单栏目，打开【优惠券管理】栏目；</view>
+           <view style='font-size:24rpx'>(4)教师点击当前页面右侧区域“扫一扫”按钮，扫描步骤2中学员优惠券二维码即可完成核销。</view>
+           <view style='font-size:24rpx'>(5)注意：优惠券核销教师须为创建本课程的教师用户。</view>
+        </view>
+      </i-collapse-item>
+
+      <i-collapse-item title="积分的用处?" name="name6">
+        <view slot="content">
+          <view>说明：</view>
+          <view style='font-size:24rpx'>(1)约课端积分获取的途径包括课程签到、课程点评、私教&课程分享、私教对学员课程点评等，商城消费与签到也可获取积分。</view>
+          <view style='font-size:24rpx'>(2)积分可用于【火森林】商城商品兑换。</view>
+        </view>
+      </i-collapse-item>
+
+      <i-collapse-item title="教师如何提升等级?" name="name7">
+        <view slot="content">
+          <view>说明：</view>
+          <view style='font-size:24rpx'>(1)本平台，私教等级与私教排名直接关联，等级越高，教师相应排名会越高，教师获得的曝光与流量也会提升；</view>
+          <view style='font-size:24rpx'>(2)私教经验值（等级）与以下因素有关，包括课程签到数、粉丝数、优惠券核销量、教练秀播放量。</view>
+        </view>
+      </i-collapse-item>
+
+
+      <i-collapse-item title="教练秀注意事项" name="name8">
+        <view slot="content">
+          <view>说明：</view>
+          <view style='font-size:24rpx'>(1)教师可在此板块发布与之授课内容相关的视频信息，不符合本平台规定的视频信息，管理员有权删除。</view>
+          <view style='font-size:24rpx'>(2)视频信息根据平台播放量与本人喜好记录等指标选择推荐。</view>
+        </view>
+      </i-collapse-item>
+
+
+    </i-collapse>
+  </view>
+<view class='btn_box'>
+  <button class='save_btn' open-type="contact" hover-class="none">
+    <text>联系客服</text>
+  </button>
+</view>
+
+</view>

@@ -1,0 +1,40 @@
+<!-- 推荐课程列表数据渲染 -->
+<block wx:for="{{recom_course}}">
+<navigator hover-class='none' url='../cour_detail/cour_detail?cour_id={{item.Id}}&distance={{item.distance}}&cour_type={{item.courType}}'>
+  <view class='course_list'>
+    <view class='course_list_left'>
+      <view class='course_img_box'>
+      <image mode='aspectFill' src='https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}}'></image>
+      </view>
+    </view>
+    <view class='course_list_right'>
+      <view class='course_name'>
+        <text>{{item.courName}}</text>
+        <text class='distance'>{{item.distance}}</text>
+      </view>
+      <view class='course_des'>
+
+         <view class='course_judge'>
+          <block wx:for="{{item.star}}">
+            <icon  class='iconfont_star icon-xingji3'></icon>
+          </block>
+          <block wx:for="{{5-item.star}}">
+            <icon  class='iconfont_star icon-xingji4'></icon>
+          </block>
+          <!-- <text class='course_judge_num'>评价{{item.judgeNum}}</text> -->
+        </view>
+      </view>
+
+      <view class='course_price'>
+        <text class='price_left'>¥</text>
+        <text class='price_middle'>{{item.price}}</text>
+        <text class='price_right'>起</text>
+      </view>
+      <view class='course_address'>
+        <text>{{item.courAddressName}}/{{item.courTags}}</text>
+      </view>
+      <button class='view_btn'>点击查看</button>
+    </view>
+  </view>
+  </navigator>
+  </block>

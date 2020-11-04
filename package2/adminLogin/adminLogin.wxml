@@ -1,0 +1,14 @@
+<view class='container'>
+  <view class='banner'>
+    <image mode='aspectFill' src='/img/logo.png'></image>
+  </view>
+  <view class='form_box'>
+    <view class='username'>
+      <input placeholder="用户名" value='{{username}}' bindinput="getName" placeholder-class='placeholder' type='text' confirm-type='done' />
+    </view>
+    <view class='password'>
+       <input placeholder="密码" password='{{true}}' value='{{pwd}}' bindinput="getPwd" placeholder-class='placeholder' type='text' confirm-type='done' />
+    </view>
+    <view class='login' bindtap='login'>登录</view>
+  </view>
+</view>

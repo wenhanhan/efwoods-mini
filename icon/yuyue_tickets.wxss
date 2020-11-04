@@ -1,0 +1,23 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1583063839156'); /* IE9 */
+  src: url('iconfont.eot?t=1583063839156#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOkAAsAAAAAB2QAAANYAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqCbIJEATYCJAMICwYABCAFhG0HNBtuBsg+YAzGULsmWki7U9/RkGDls7Zbds/Duz88V0Y8/P9+/fZ57459UU+OWhLNIt6YSIJKabY60UPCk2fyTK5ludkrsmxKTCngQrJwsJQtAL5tWT2gBfJAFoV7IW9+3X1v31qkkSQQSBZgWxhQEGBtBZzk/WatPFsDhWbc35XlPuMZJDriNYiOV73eeKn6lzs91VmVVfbHvdM/xVsPKJXA1940qQswDiigvTEaCygukALjhrErL2I/gTpDMtl2NXcOAl+JMSwQV2SRBb4ptVSTG8pCsWRuEk+BlLPH+BGe+J+PfyyGJlPIGQUHzzUJoPYnZgKT/uJdBDjjGcEWkWMBkIijpeb9mDC8gFGnhO3GgHXlBj/7/++yV/vHI4giI7sBDED2OXFs7qn+MgMJJdwAPOuVTGmWGLvxpJOHH9PTYz5I9Xspjay+v6qv5s8/+XR00voin/KPxaQ9mo+ez5x5i6IelY3nP9iqo6vrZVNHTvrrWzbu4frs7DfuHYsznD6YbrftRf5DCAwdTBtOGwQsh0ZQxhB6gSdjsUWFXzqVThQ2zNgnf9444WD9+d3SWlVRUbzS7488GuiDzwVm1WD/1d2be0701HjV2G6f5//NTWKYtPJZZPN8/n30Q6/7deZuaxEhTY3njU1h1rSr8/xOoneOTFLMo7ove+HjplaMG5nOxvOOpt02Dl1zAw8R6p1APVdTAx3nA52gFkCt+qH+x3c8OMW9nA6pvJwEPlV3rO+s1dpZgfJZW4K3z2lZk1SeocmSzCmNZ27wuauiOnWoge1t/vaVd95qPJR13rC1ZDCGXNkEmsgFKKi3DEVlW6HOvJbF9doZGJEqmLMDILR4AZkmryHX4guayD9Q0OUfFLWEgjrHI2LNelMR/BsMzFIsQG4ByrzqJpaO+ge5/Vi0nKyR5PkUhA1T9sG87NxsrAW7sTHGBHNWzKeUQGKoLtgMDsNOpwo1Q1UwT7MlSrXynBxSdqJsXnUBfzsZMBaFCSDOAkjGU7kRtzHln3t/P0xkcWIZNVUVZgQzmOTWoTzZclugLWJ3q6prOcY0S5SPogiIMKhcoGZgxJxmWAVp5b0UGI/KJvUIasrloHqkrTh7fqnr6TZBHUORhTktV/dQtSRL1i3WDQA=') format('woff2'),
+  url('iconfont.woff?t=1583063839156') format('woff'),
+  url('iconfont.ttf?t=1583063839156') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1583063839156#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont_tickets {
+  font-family: "iconfont" !important;
+  font-size: 40rpx;
+  display: flex;
+  color: #5F5F5F;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-youhuiquan:before {
+  content: "\e61b";
+}
+

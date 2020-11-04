@@ -1,0 +1,39 @@
+/* pages/auth/auth.wxss */
+.top_box{
+  width: 100%;
+  height: 760rpx;
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+}
+.top_box image{
+  width: 100%;
+  height: 100%;
+}
+.btn{
+  width: 600rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: white;
+  position:absolute;
+  bottom: 250rpx; 
+   background: -webkit-linear-gradient(left, #F6B771 , #FF7375); /* Safari 5.1 - 6.0 */
+   background: -o-linear-gradient(right, #F6B771 , #FF7375); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right,#F6B771 , #FF7375); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #F6B771 , #FF7375); /* 标准的语法（必须放在最后） */
+}
+.title{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 300rpx;
+  font-size: 40rpx;
+  color: white
+}

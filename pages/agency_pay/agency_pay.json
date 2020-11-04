@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-input": "../../dist/input/index"
+  },
+  "navigationBarBackgroundColor": "#e93323",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "开通VIP",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

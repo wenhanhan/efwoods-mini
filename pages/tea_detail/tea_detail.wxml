@@ -1,0 +1,248 @@
+
+<view class='container'> 
+
+<!-- 教练介绍头部 -->
+	<view class='tea_top'>
+		<image src="https://cdn.icloudapi.cn/tea_bk.png"></image>
+		<view class="tea_top_left">
+			<image mode='aspectFill' src='{{tea_img}}'></image>
+		</view>
+		<view class="tea_top_right">
+			<view class="tea_name">
+				<text class="tea_name_shenglue">{{tea_name}}</text>
+			</view>
+			<view class="tea_tag">
+				<view wx:if="{{tag1}}" class="tag">{{tag1}}</view>
+				<view wx:if="{{tag2}}" class="tag" style="padding:0 10rpx">·</view>
+				<view wx:if="{{tag2}}" class="tag">{{tag2}}</view>
+        <view wx:if="{{tag3}}" class="tag" style="padding:0 10rpx">·</view>
+        <view wx:if="{{tag3}}" class="tag">{{tag3}}</view>
+			</view>
+			<view class="guanzhu" data-tea_id='{{tea_id}}' bindtap='favor'>
+				<text wx:if="{{favor_state==0}}">关注</text>
+        <text wx:else>已关注</text>
+			</view>
+		</view>
+	</view>
+
+  	<!-- 粉丝数等指标 -->
+	<view class="zhibiao">
+		<view class="level_box">
+			<view class="level"> Lv{{level}}</view>
+			<view>等级</view>
+		</view>
+		<view class="divide"></view>
+		<view class="fensi_box">
+			<view class="fensi"> {{fensi}}</view>
+			<view>粉丝</view>
+		</view>
+		<view class="divide"></view>
+		<view class="zuopin_box">
+			<view class="zuopin">{{tea_video.length?tea_video.length:0}}</view>
+			<view>作品</view>
+		</view>
+	</view>
+
+  	<!-- 教练资料 -->
+	<view class="tab_bar">
+		<view class="tea_intro" data-idx="0" bindtap="switch_tab">
+			<text class="{{tab==0?'tab_select':''}}">个人简介</text>
+			<text class="xiahua" style="background:{{tab==0?'red':''}}"></text>
+		</view>
+		<view class="tea_honor" data-idx="1" bindtap="switch_tab">
+			<text class="{{tab==1?'tab_select':''}}">资质荣誉</text>
+			<text class="xiahua" style="background:{{tab==1?'red':''}}"></text>
+		</view>
+		<view class="tea_exp" data-idx="2" bindtap="switch_tab">
+			<text class="{{tab==2?'tab_select':''}}">工作经历</text>
+			<text class="xiahua" style="background:{{tab==2?'red':''}}"></text>
+		</view>
+	</view>
+
+  	<!-- 资料的内容 -->
+	<view class="tea_content {{more_state_style?'more':''}}">
+		<text>{{tea_info?tea_info:'暂无'}}</text>
+	</view>
+
+  <view class="more_state" hidden="{{!more_state}}" bindtap="zhankai">
+			<view>全部</view>
+			<icon class='iconfont_more_xiala icon-chakangengduo'></icon>
+	</view>
+
+  	<!-- 风采展示 -->
+	<view class="fengcai">
+		<view>风采展示</view>
+    <view class="all_works" bindtap="more_works">
+      <text>全部作品</text>
+      <icon class='iconfont_hot icon-gengduo1'></icon>
+    </view>
+	</view>
+
+    <!-- 作品盒子 -->
+  <view class="works_box">
+    <scroll-view wx:if="{{tea_video.length!=0}}" class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+      <view class="scroll-view-item_H" wx:for="{{tea_video}}">
+        <image mode="aspectFill" mode='aspectFill' data-idx='{{index}}' bindtap='play' src="{{item.cover}}"></image>
+        <view class="play">
+          <icon style="color:#FF4500;font-size:40rpx" class='iconfont_play icon-play'></icon>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="none_video" wx:if="{{tea_video.length==0}}">
+      <text>暂无</text>
+    </view>
+  </view>
+
+  <!-- <view class='tea_detail_divide' ></view> -->
+
+  <!-- 网友点评 -->
+  <!-- <navigator  hover-class='none'  url="{{judge_num==0?'':'../all_judge/all_judge'}}?tea_id={{tea_id}}&cour_openid={{tea_openid}}">
+  <view class='comment_nav'>
+    <view class='comment'>
+      <text class='conmment_txt'>网友点评</text>
+      <text class='comment_num'>({{judge_num}})</text>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+  </view>
+</navigator> -->
+
+  <!-- 网友点评列表 -->
+  <!-- 暂时隐藏 -->
+  <!-- <block wx:for="{{tea_judge}}">
+    <view class='comment_list' >
+      <view class="main_comment">
+        <view class='comment_list_left'>
+          <view class='comment_headimg'>
+            <image src='{{item.avatarUrl}}'></image>
+          </view>
+        </view>
+        <view class='comment_list_right'>
+          <view class='comment_nickname'>
+            <text>{{item.nickName}}</text>
+            <view class="reply" hidden="{{tea_openid!=student_openid}}" data-comid="{{item.Id}}" data-courid="{{item.courId}}" bindtap="reply"> 
+              <icon class='iconfont_reply icon-huifu'></icon>
+            </view>
+          </view>
+          <view class='comment_time'>
+            <text>{{item.time}}</text>
+          </view>
+          <view class='comment_score'>
+            打分
+            <block wx:for="{{item.star}}">
+              <icon style='font-size:26rpx;' class='iconfont_star icon-xingji3'></icon>
+            </block>
+            <block wx:for="{{5-item.star}}">
+              <icon style='font-size:26rpx' class='iconfont_star icon-xingji4'></icon>
+            </block>
+          </view>
+          <view class='comment_words'>
+            <text>{{item.content}}</text>
+          </view>
+          <view class='comment_img' wx:if="{{item.pic1||item.pic2||item.pic3}}">
+            <image mode='aspectFill' data-src="https://icloudapi.cn/efire/public/uploads/judge/{{item.pic1}}" bindtap="previewImage" data-index='{{index}}' wx:if="{{item.pic1}}" src='https://icloudapi.cn/efire/public/uploads/judge/{{item.pic1}}'></image>
+            <image mode='aspectFill' data-src="https://icloudapi.cn/efire/public/uploads/judge/{{item.pic2}}" bindtap="previewImage" data-index='{{index}}' wx:if="{{item.pic2}}" src='https://icloudapi.cn/efire/public/uploads/judge/{{item.pic2}}'></image>
+            <image mode='aspectFill' data-src="https://icloudapi.cn/efire/public/uploads/judge/{{item.pic3}}" bindtap="previewImage" data-index='{{index}}' wx:if="{{item.pic3}}" src='https://icloudapi.cn/efire/public/uploads/judge/{{item.pic3}}'></image>
+          </view>
+        </view>
+      </view> 
+      <view class="reply_comment" wx:for="{{item.reply}}" wx:for-item="reply">
+        <view class="reply_img">
+          <image src="{{reply.avatarUrl}}"></image>
+        </view>
+        <view class="replay_right">
+          <view class="replay_name">
+          {{reply.nickName}}<view class="tea_tag">教师</view>
+            <view class="replay_time">{{reply.time}}</view>
+          </view>
+          <view class="relpay_content">
+            <text>{{reply.content}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block> -->
+
+
+<!-- <navigator hover-class='none' wx:if="{{judge_num!=0}}"  url='../all_judge/all_judge?tea_id={{tea_id}}&cour_openid={{tea_openid}}'>
+  <view class='all_comment'>
+    <text class='all_comment_txt'>查看全部评价</text>
+    <icon class='iconfont_right icon-right_daohang'></icon>
+  </view>
+</navigator> -->
+
+  <!-- <view wx:if="{{judge_num==0}}" class='all_comment'>
+    <text class='all_comment_txt'>暂无评价</text>
+    <icon class='iconfont_right icon-right_daohang'></icon>
+  </view> -->
+
+
+  <view class='tea_detail_divide'></view>
+  <!-- 主要授课 -->
+	<view class="fengcai" style="margin-bottom:20rpx">
+		<view>主要授课</view>
+    <view class="all_works">
+    </view>
+	</view>
+
+  <!-- 加载主要授课 -->
+  <view class='main_tea'>
+    <include src='main_tea.wxml' />
+  </view>
+
+  <!-- 底部菜单新样式 -->
+  <view class="bottom_tab_bar">
+    <view class="tab_bar_left">
+      <button open-type='share' class="option_box">
+        <icon class='iconfont_fenxiang icon-fenxiang'></icon>
+      </button>
+      <button class="option_box" bindtap='shengcheng'>
+        <icon class='iconfont_haibao icon-haibao'></icon>
+      </button>
+    </view>
+    <view class="tab_bar_right">
+      <view class="yuyue_btn" bindtap="call">
+        <text>咨询</text>
+      </view>
+    </view>
+  </view> 
+
+<!-- 底部分享样式 -->
+  <view wx:if="{{modal}}" animation="{{modal_animationData}}" class='share_modal' bindtap='hideModal'></view>
+  <view wx:if="{{share}}" animation="{{animationData}}" class='share_frame'>
+    <view class='close_btn' bindtap='share_close'>
+      <icon class='iconfont_guanbi icon-guanbi'></icon>
+    </view>
+    <button class='friend' open-type='share'>
+      <image src='../../img/tea/wechat.png'></image>
+      <text>分享给朋友</text>
+    </button>
+    <button class='share_pic' bindtap='shengcheng'>
+      <image src='../../img/tea/share_pic.png'></image>
+      <text>生成分享码</text>
+    </button>
+  </view>
+
+<!-- 生成海报 -->
+  <view class='imagePathBox' bindtap="hide" hidden="{{maskHidden == false}}">
+    <image src="{{imagePath}}" mode='aspectFill' class='shengcheng'></image>
+    <button class='baocun' catchtap='baocun'>保存相册，分享到朋友圈</button>
+  </view>
+
+  <view class="canvas-box">
+    <canvas style="width: {{canvas_width}}px;height: {{canvas_height}}px;position:fixed;top:9999px" canvas-id="mycanvas" />
+  </view>
+
+<view wx:if="{{scene_state||home_state}}" class='home' bindtap='home' data-courid='{{cour_id}}'>
+  <image src='../../img/home.png'></image>
+  <text>首页</text>
+</view>
+
+ <!-- 回复评论 -->
+  <view class='judge_input' wx:if='{{isjudge}}' style="bottom:{{keyboard_height}}px">
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <input focus='{{focus}}' maxlength='-1' bindconfirm='send' bindinput="replyTxt" adjust-position="{{false}}" bindblur='cancel' bindfocus='focus' placeholder="添加评论"></input>
+    <view bindtap='send'>发送</view>
+  </view>
+
+
+</view>

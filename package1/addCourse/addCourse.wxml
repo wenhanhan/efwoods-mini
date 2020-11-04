@@ -1,0 +1,91 @@
+<view class='container'>
+  <i-cell-group class='cell_line'>
+    <i-cell data-type='1' data-cate='cour_name' data-title="请输入课程名称" bind:click="input" required="{{true}}" is-link title="课程名称" border="{{true}}" value="{{cour_name}}">
+    </i-cell>
+
+    <i-cell data-type='1' data-cate='cour_method' data-title="请输入教学方式" bind:click="input" is-link title="教学方式" border="{{true}}" value="{{cour_method}}">
+    </i-cell>
+
+    <!-- <i-cell data-type='1' data-cate='cour_tool' data-title="请输入教学器材" bind:click="input" is-link title="教学器材" border="{{true}}" value="{{cour_tool}}">
+    </i-cell> -->
+<picker bindchange="courHour" value="{{duration_index}}" range="{{cour_hour_arr}}">
+    <i-cell data-type='6' data-cate='cour_hour' data-title="请输入课程时长" is-link title="课程时长" border="{{true}}" value="{{cour_hour_arr[duration_index]}}分钟">
+    </i-cell>
+</picker>
+
+    <i-cell data-type='1' data-cate='cour_address' data-title="请输入教学地点" bind:click="location" is-link title="教学地点" border="{{true}}" value="{{cour_address}}">
+    </i-cell>
+
+     <picker bindchange="courType" value="{{index}}" range="{{cour_type_arr}}" range-key='type'>
+      <i-cell data-type='1' data-cate='cour_type' data-title="请输入所属类别" is-link title="所属类别" border="{{true}}" value="{{cour_type_arr[index].type}}">
+      </i-cell>
+    </picker>
+
+
+  </i-cell-group>
+
+  <i-cell-group class='cell_line'>
+    <i-cell data-type='7' data-cate='cour_money' data-title="请输入课程金额" bind:click="input" required="{{true}}" is-link title="课程金额" border="{{true}}" value="{{cour_money}}元">
+    </i-cell>
+
+    <i-cell data-type='8' data-cate='cour_contact' data-title="请输入联系方式" bind:click="input" is-link title="联系方式" border="{{true}}" value="{{cour_contact}}">
+    </i-cell>
+
+    <i-cell i-class='valid_time' data-type='1' data-cate='cour_time' data-title="请输入有效期" is-link title="有效期" border="{{true}}" value="{{cour_time}}">
+      <view class='valid_line'>
+
+        <picker class='start_time' start_time mode="date" value="{{start_time}}" start="{{start_time}}" end="2022-01-01" bindchange="start_time">
+          <view>{{start_time}}</view>
+        </picker>
+        <view>—</view>
+        <picker class='end_time' start_time mode="date" value="{{end_time}}" start="{{start_time}}" end="2022-01-01" bindchange="end_time">
+          <view>{{end_time}}</view>
+        </picker>
+      </view>
+    </i-cell>
+
+    <i-cell data-type='1' data-cate='cour_tw' data-title="请输入图文详情" is-link title="图文详情" border="{{true}}" value="{{}}" url="/pages/tw_edit/tw_edit">
+    </i-cell>
+
+    <i-cell data-type='4' data-cate='cour_tag' data-title="请输入课程标签" bind:click="input" is-link title="标签设置" border="{{true}}" value="{{cour_tag}}">
+    </i-cell>
+
+    <i-cell title="预约开启/关闭" border="{{true}}">
+      <i-switch value="{{is_yuyue}}" size="large" bind:change="yuyueSet" slot="footer">
+        <view slot="open">开启</view>
+        <view slot="close">关闭</view>
+      </i-switch>
+    </i-cell>
+
+    <i-cell wx:if="{{is_yuyue}}" url="../../pages/myset/add_yuyue/add_yuyue"   is-link title="预约设置" border="{{true}}" >
+    </i-cell>
+
+  </i-cell-group> 
+  <!-- 课程缩略图 -->
+ 
+  <view class="weui-uploader">
+    <view class="weui-uploader__hd">
+       <view class="weui-uploader__title">课程缩略图（限一张）</view>  
+    </view>
+    <view class="weui-uploader__bd">
+      <view class="weui-uploader__files" id="uploaderFiles">
+        <block wx:for="{{cour_img}}" wx:key="*this">
+          <view class="weui-uploader__file" data-imgidx='{{index}}' bindtap="previewImage" bindlongpress="deleteImg" id="{{item}}">
+            <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+          </view>
+        </block> 
+      </view>
+      <view class="weui-uploader__input-box" hidden='{{cour_img.length==1}}'>
+        <view class="weui-uploader__input" bindtap="chooseImage"></view>
+      </view>
+    </view>
+  </view>
+
+<form bindsubmit="addCourse" report-submit="true" >
+  <view class='btn_box'>
+    <button class='save_btn' form-type="submit">
+      <text>确认添加</text>
+    </button>
+  </view>
+</form>
+</view>

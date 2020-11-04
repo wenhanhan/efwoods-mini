@@ -1,0 +1,160 @@
+<view class='container'>
+
+  <view class='nav_fix'>
+    <i-tabs current="{{ current }}" color="#f759ab" bindchange="handleChange">
+      <i-tab key="tab1" title="课程"></i-tab>
+      <i-tab key="tab2" title="教练"></i-tab>
+      <i-tab key="tab3" title="视频"></i-tab>
+    </i-tabs>
+  </view>
+
+
+  <!-- 课程列表数据渲染 -->
+  <view class='favor_box' wx:if="{{current=='tab1'}}">
+    <block wx:for="{{course}}">
+    <navigator hover-class='none' url='../../cour_detail/cour_detail?cour_img={{item.courImg}}&cour_id={{item.Id}}&cour_name={{item.courName}}&star={{item.star}}&address={{item.courAddressName}}&address_des={{item.courAddressDes}}&cour_contact={{item.courContact}}&cour_hour={{item.courHour}}&cour_tag={{item.courTags}}&cour_tool={{item.courTools}}&distance={{item.distance}}&start_time={{item.startTime}}&end_time={{item.endTime}}&teaId={{item.teaId}}&cour_tw={{item.courDes}}&cour_method={{item.Methods}}&judge_num={{item.judgeNum}}&cour_type={{item.courType}}'>
+      <view class='course_list'>
+        <view class='course_list_left'>
+          <view class='course_img_box'>
+            <image mode='aspectFill' src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}}"></image>
+          </view>
+        </view>
+        <view class='course_list_right'>
+          <view class='course_name'>
+            <text class="cour_name_shenglue">{{item.courName}}</text>
+            <text class='distance'>{{item.distance}}</text>
+          </view>
+          <view class='course_des'>
+
+            <view class='course_judge'>
+              <block wx:for="{{item.star}}">
+                <icon class='iconfont_star icon-xingji3'></icon>
+              </block>
+              <block wx:for="{{5-item.star}}">
+                <icon class='iconfont_star icon-xingji4'></icon>
+              </block>
+              <!-- <text class='course_judge_num'>评价{{item.judgeNum}}</text> -->
+            </view>
+          </view>
+
+          <view class='course_price'>
+            <text class='price_left'>¥</text>
+            <text class='price_middle'>{{item.price}}</text>
+            <text class='price_right'>起</text>
+          </view>
+          <view class='course_address'>
+            <text>{{item.courAddressName}}/{{item.courTags}}</text>
+          </view>
+          <!-- 移除收藏 -->
+          <view class='remove_favor' catchtap='removeCour' data-index='{{index}}' data-courid='{{item.Id}}'>
+            <icon class='iconfont_remove icon-quxiao'></icon>
+          </view>
+
+            <button class='view_btn'>点击查看</button>   
+        </view>
+      </view>
+      </navigator>
+    </block>
+<!-- 暂无收藏提示信息 -->
+  <view class='nodata' wx:if="{{course.length==0}}">
+    <icon class='iconfont_nofavor icon-nofavor'></icon>
+    <view class='tips'>
+      <text>您还没有收藏任何课程～</text>
+    </view>
+  </view>
+  </view>
+
+  <!-- 教师列表数据渲染 -->
+  <view class='favor_box' wx:if="{{current=='tab2'}}">
+    <block wx:for="{{teacher}}">
+<navigator hover-class='none' url='../../tea_detail/tea_detail?tea_id={{item.Id}}'>
+      <view class='tea_list'>
+        <view class='tea_list_left'>
+          <view class='tea_img_box'>
+            <image mode='aspectFill' src='{{item.teaImg}}'></image>
+          </view>
+        </view>
+        <view class='tea_list_right'>
+          <view class='tea_name'>
+            <text class="tea_name_shenglue">{{item.name}}</text>
+            <text class='distance'>{{item.distance}}</text>
+          </view>
+          <view class='teacher_des'>
+
+            <view class='tea_judge'>
+              <!-- <icon class='iconfont_judge icon-pinglun'></icon> -->
+              <icon class='iconfont_jiaoling icon-jiaoling'></icon>
+              <text class='judge_num'>{{item.teaAge}}年</text>
+            </view>
+            <view class='tea_zan'>
+              <icon class='iconfont_zan icon-shoucang'></icon>
+              <text class='zan_num'>{{item.favorNum}}</text>
+            </view>
+
+            <view class='tea_level'>
+              <view class='gold_img'>
+                <image wx:if="{{item.level==3}}" src='/img/level/gold.png'></image>
+                <image wx:elif="{{item.level==2}}" src='/img/level/silver.png'></image>
+                <image wx:else="{{item.level==2}}" src='/img/level/bronze.png'></image>
+              </view>
+              <text wx:if="{{item.level==3}}" class='level_text'>金牌</text>
+              <text wx:elif="{{item.level==2}}" class='level_text'>银牌</text>
+              <text wx:else class='level_text'>铜牌</text>
+            </view>
+
+          </view>
+
+          <!-- <view class='tea_price'>
+            <text class='price_left'>¥</text>
+            <text class='price_middle'>{{item.price}}</text>
+            <text class='price_right'>起</text>
+          </view> -->
+           <view class='tea_address'>
+          <i-tag wx:if="{{item.tag1}}" class="i-tags" name="标签一" type="border" color="red"> {{item.tag1}}</i-tag>
+          <i-tag wx:if="{{item.tag2}}" class="i-tags" name="标签一" color="green" type="border">{{item.tag2}}</i-tag>
+          <i-tag wx:if="{{item.tag3}}" class="i-tags" name="标签一" color="blue" type="border">{{item.tag3}}</i-tag>
+          <!-- <i-tag class="i-tags" name="标签一" color="yellow" type="border">{{item.sex==0?'女':'男'}}</i-tag> -->
+        </view>
+          <view class='remove_favor' catchtap='removeTea' data-index='{{index}}' data-teaid='{{item.Id}}'>
+            <icon class='iconfont_remove icon-quxiao'></icon>
+          </view>
+          <button class='view_btn'>点击查看</button>
+        </view>
+      </view>
+ </navigator>
+    </block>
+    <!-- 暂无收藏提示信息 -->
+  <view class='nodata' wx:if="{{teacher.length==0}}">
+    <icon class='iconfont_nofavor icon-nofavor'></icon>
+    <view class='tips'>
+      <text>您还没有收藏任何教练～</text>
+    </view>
+  </view>
+  </view>
+
+
+  <!-- 视频秀列表 -->
+  <view class='favor_box' style="width:100%" wx:if="{{current=='tab3'}}">
+    <view class='tea_list' style='height:auto' hidden="{{video.length==0}}">
+      <view class='home_show_video'>
+        <view class='child_video_box'>
+          <block wx:for="{{video}}">
+            <view class='home_video_box'>
+                <image mode='aspectFill' data-idx='{{index}}' bindtap='play' src='{{item.cover}}'></image>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+     <!-- 暂无收藏提示信息 -->
+  <view class='nodata' wx:if="{{video.length==0}}">
+    <icon class='iconfont_nofavor icon-nofavor'></icon>
+    <view class='tips'>
+      <text>您还没有收藏任何视频～</text> 
+    </view>
+  </view>
+  </view>
+
+
+</view>
+

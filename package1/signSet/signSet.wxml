@@ -1,0 +1,31 @@
+<view class='container'>
+
+<block wx:for="{{sign_course}}">
+  <view class='sign_course'>
+    <view class='sign_left'>
+      <view class='left_img'>
+        <image mode='aspectFill' src='https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}}'></image>
+      </view>
+    </view>
+    <view class='sign_right'>
+      <view class='course_title'>
+        <text>{{item.courName}}</text>
+      </view>
+      <view class='sign_time'>
+        <text>签到次数：{{item.signNum}}次</text>
+      </view>
+    </view>
+
+    <button class='sign_code' data-courid='{{item.Id}}' bindtap="sign_code">签到码</button>
+    <button class='sign_record' data-courid='{{item.Id}}' bindtap='sign_record'>签到记录</button>
+
+  </view>
+</block>
+
+<i-toast id="toast" />
+
+<view bindtap='previewImg'>
+      <canvas class='canvas' hidden="{{canvasHidden}}" style="width: 320rpx;height: 320rpx;" canvas-id="mycanvas" />
+    </view>
+
+</view>

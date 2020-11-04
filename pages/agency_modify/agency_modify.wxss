@@ -1,0 +1,305 @@
+/* pages/agency/agency.wxss */
+@import '/icon/right_daohang.wxss';
+@import '/icon/duihao.wxss';
+@import '/icon/img.wxss';
+@import '/icon/dele.wxss';
+page{
+width:100%;
+/* overflow-x:hidden; */
+position: absolute;
+background: #eeeeee;
+}
+.container{
+  position: relative;
+  width:100%; 
+  padding-bottom: 20rpx;
+/* overflow-x:hidden; */
+}
+.top_bk{
+  width: 100%;
+  height: 250rpx;
+  background: #e93323;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+.circle_box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35rpx;
+}
+.circle{
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 22rpx;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.circle_txt{
+  font-size: 28rpx;
+  color: #FF4C63;
+}
+.progress_txt{
+  height: auto;
+  width: 200rpx;
+  font-size: 26rpx;
+  color: white;
+  top: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.line{
+  width: 240rpx;
+  height: 4rpx;
+  background: #E49090;
+}
+/* 表单框 */
+.info_box{
+  width: 95%;
+  height: auto;
+  background: white;
+  /* display: flex;
+  justify-content: center; */
+  /* flex-direction: column; */
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  margin-top: -80rpx;
+  position:relative; 
+}
+.input_box{
+  width: 95%;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #F2F2F2;
+  margin: 0 auto;
+  position: relative;
+}
+.input_left{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #2D2D2D;
+}
+.input_right{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 26rpx;
+  color:  #2D2D2D;
+  position: relative;
+  
+}
+input{
+  width: 100% !important;
+  text-align: right;
+}
+.placeholder{
+ color: #B8B6B6;
+}
+.textarea_placeholder{
+ color: #B8B6B6;
+}
+.text_num{
+position: absolute;
+bottom: 0;
+color:  #B8B6B6;
+}
+.license{
+  widows: 100%;
+  height: 280rpx;
+  border-top: 10rpx solid#F2F2F2;
+  border-bottom: 10rpx solid#F2F2F2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.license_title{
+  width: 95%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 28rpx;
+  color: #2D2D2D;
+  font-weight: 500;
+}
+.license_file{
+  width: 95%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 10rpx;
+}
+.license_file_left{
+  width: 40%;
+  height: 180rpx;
+  border: 1px solid #EEEEEE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.agency_img_box{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.agency_img{
+  width: 180rpx;
+  height: 180rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F2F2F2;
+  margin-right: 10rpx;
+}
+.agency_imgs{
+  width: 32%;
+  height: 180rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F2F2F2;
+  margin: 10rpx 1% 20rpx 1%;
+  position: relative;
+}
+.delete_box{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  position: absolute;
+  right: 4rpx;
+  bottom: 4rpx;
+}
+.agency_imgs image{
+  width: 100%;
+  height: 100%;
+}
+
+
+.logo_file_left{
+  width: 40%;
+  height: 180rpx;
+  border: 1px solid #EEEEEE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.license_file_right{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.square{
+  width: 56rpx;
+  height: 56rpx;
+  background: #6B6A6A;
+  font-size: 18rpx;
+  color: #F2D11B;
+  position: absolute;
+  top: -28rpx;
+  left: -28rpx;
+  transform:rotate(45deg);
+-ms-transform:rotate(45deg); /* Internet Explorer */
+-moz-transform:rotate(45deg); /* Firefox */
+-webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+-o-transform:rotate(45deg); /* Opera */
+}
+.example{
+  font-size: 18rpx;
+  color: #F2D11B;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.license_file_left image{
+  width: 120rpx;
+  height: 170rpx;
+}
+.logo_file_left image{
+  width: 240rpx;
+  height: 120rpx;
+}
+
+.upload_des{
+  width: 90%;
+  height: auto;
+  font-size: 24rpx;
+  color: #B8B6B6;
+  word-wrap:break-word;
+}
+.upload{
+  width: 200rpx;
+  height: 56rpx;
+  background: #080808;
+  color: #F2D11B;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.agree{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  padding-left: 30rpx;
+  padding-top: 20rpx;
+}
+.ag_label{
+  background: #eeeeee;
+}
+form{
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  left: 5%;
+}
+.btn{
+  width: 90%;
+  height: 72rpx;
+  background: #181818;
+  font-size: 28rpx;
+  color: #F2D11B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 8rpx;
+  margin-bottom: 40rpx;
+}

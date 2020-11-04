@@ -1,0 +1,379 @@
+<view class='container' style="padding-bottom:{{isIphoneX?'130rpx':'98rpx'}}">
+
+  <!-- 顶部搜索区域重构 -->
+  <view class="home_top_bar_box">
+    <view class="home_top_bar">
+      <view class="home_top_bar_left" bindtap='select_city'>
+        <icon class='iconfont_address icon-dizhi'></icon>
+        <view class='home_address'>{{city}}</view>
+      </view>
+      <view class="home_search_box">
+        <view class='home_search' bindtap='search'>
+          <icon class='iconfont_search icon-soushuo'></icon>
+          <text>点击搜索课程以及教师</text>
+        </view>
+      </view>
+      <view class="home_top_bar_right" hidden="{{news==0}}">
+        <icon bindtap="more_info" style="z-index:2000" class='iconfont_more icon-gengduo'></icon>
+        <i-badge dot style="display:flex;">
+          <icon bindtap="news" class='iconfont_news icon-message'></icon>
+        </i-badge>
+      </view>
+
+      <view class="home_top_bar_right" hidden="{{news!=0}}">
+        <icon bindtap="more_info" style="z-index:2000" class='iconfont_more icon-gengduo'></icon>
+          <icon bindtap="news" class='iconfont_news icon-message'></icon>
+      </view>
+    </view>
+  </view>
+
+  <!-- 指示箭头 -->
+  <view class="more_tips" hidden="{{!more_state}}">
+    <view class="out"></view>
+    <view class="in" bindtap="more_info"></view>
+    <view class="more_line" style="z-index:1000;" bindtap="{{identity==0?'scan':'check'}}">
+      <icon class='iconfont_scan icon-richscan_icon'></icon>
+      <text style="margin-left:16rpx;">扫一扫</text>
+    </view>
+    <view class="more_line" bindtap="spread" hidden="{{identity==0}}">
+      <icon class='iconfont_code icon--wodeyaoqingma'></icon>
+      <text style="margin-left:16rpx;">推广码</text>
+    </view>
+    <view class="more_line" bindtap="dingyue" hidden="{{identity!=0}}">
+      <icon class='iconfont_dingyue icon-wodedingyue'></icon>
+      <text style="margin-left:16rpx;">微订阅</text>
+    </view>
+    <view class="more_line" style="border-bottom:0" bindtap="ticket">
+      <icon class='iconfont_youhui icon-yhq'></icon>
+      <text style="margin-left:16rpx;">优惠券</text>
+    </view>
+  </view>
+  <!-- 头部背景色块 -->
+  <view class="top_bk"></view>
+   <!--遮罩层 -->
+  <view class="mask" hidden="{{!more_state}}" bindtap="more_info" catchtouchmove="false"></view>
+  <!-- 轮播图 -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ffffff" circular="true" indicator-active-color="#e91a1b">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item class="swiper_box">
+      <navigator style='height:100%' hover-class="none" url='{{item.url}}'>
+        <image src="{{item.img}}" class="slide_image" />
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 首页导航 -->
+  <view class="home_nav">
+    <navigator class="nav_item" hover-class="none" open-type="switchTab" url="../show/show">
+      <image mode="aspectFill" src="/img/home/show.png"></image>
+      <text>教练秀</text>
+    </navigator>
+    <navigator class="nav_item" url="../all_agency/all_agency" hover-class="none">
+      <image mode="aspectFill" src="/img/home/agency.png"></image>
+      <text>附近机构</text>
+    </navigator>
+    <navigator class="nav_item" url="../online/online" hover-class="none">
+      <image mode="aspectFill" src="/img/home/teacher.png"></image>
+      <text>名师专栏</text>
+    </navigator>
+    <navigator class="nav_item" target="miniProgram" app-id="wx83f243f73b48c56c" hover-class="none">
+      <image mode="aspectFill" src="/img/home/shop.png"></image>
+      <text>发现好物</text>
+    </navigator>
+  </view>
+
+  <view class='menu_list'> 
+    <view class='menu_line'>
+      <view class="start_line"></view>
+      <text class='menu_text'>菜单目录</text>
+    </view> 
+  </view>
+
+  <view class='course'>
+    <scroll-view class="scroll-course" scroll-x style="width: 100%">
+      <block wx:for="{{courses}}">
+        <view class="img_box" style="{{index==cour_num-1?'margin-right:15rpx;':''}}">
+        <navigator url='{{item.url}}' style='width:100%;height:100%;'>
+          <image src="{{item.img}}"></image>
+        </navigator>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+<!-- 教练秀 -->
+  <view class='menu_list'>
+  <navigator url='../show/show' hover-class='none' open-type='switchTab'>
+    <view class='menu_line'>
+      <view class="start_line"></view>
+      <text class='menu_text'>热门推荐</text>
+      <view class="hot_more">
+        <text>更多</text>
+        <icon class='iconfont_hot icon-gengduo1'></icon>
+      </view>
+    </view>
+  </navigator>
+  </view>
+
+  <view class='home_show_video'>
+    <view class='child_video_box'>
+    <block wx:for="{{video}}" wx:if="{{index<4}}" wx:key="id">
+      <view class='home_video_box'>
+          <image mode='aspectFill' data-idx='{{index}}' bindtap='play' src='{{item.cover}}' ></image>
+          <view class='video_des'>
+            <view class='video_title'>
+              <text>{{item.title}}</text>
+            </view>
+
+            <view class="video_hot" style="margin-top:{{item.title?'14rpx':'14rpx'}}">
+              <view class="video_favor" hidden="{{item.favorPerson.length==0}}">
+                <block wx:for="{{item.favorPerson}}" wx:key="id" wx:for-item="head" wx:for-index="idx">
+                    <image style="left:{{idx>0?idx*24:0}}rpx" hidden="{{idx>2}}" src="{{head.avatarUrl}}"></image>
+                </block>
+                <text class="favor_num" style="left:{{item.favorPerson.length>3?82:24*item.favorPerson.length+14}}rpx">{{item.favorPerson.length}}人喜欢</text>
+              </view>
+              <view class='play'>
+                <image class='img' src='/img/show/play.png'></image>
+                <view class='play_times'>{{item.play}}</view>
+              </view>
+            </view>
+
+          </view>
+      </view>
+    </block>
+    </view>
+  </view>
+  
+
+  <view class='favor'>
+    <view class='favor_line'>
+      <view class='left_line'>
+        <image src='/img/line.png'></image>
+      </view>
+      <text class='favor_txt'>猜你喜欢</text>
+      <view class='right_line'>
+        <image src='/img/line.png'></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 推荐内容区域 -->
+  <view class="favor_box">
+
+    <!-- 管理员推荐课程 -->
+    <block wx:for="{{home_course}}">
+    <view class='favor_list' bindtap="course_des" data-courid="{{item.Id}}" data-courtype="{{item.courType}}" data-distance="{{item.distance}}">
+      <view class='favor_list_left'>
+        <view class='favor_img_box'>
+        <image mode='aspectFill' src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}} "></image>
+        </view>
+      </view>
+      <view class='favor_list_right'>
+      <!-- 推荐icon样式 -->
+          <view  class="tea_recom">
+            <image src="/img/level/recom.png"></image>
+          </view>
+        <view class='course_name'>
+          <text>{{item.courName}}</text>
+          <!-- <text class='distance'>{{item.distance}}</text> -->
+        </view>
+        <view class='course_des'>
+
+          <view class='course_judge'>
+          <block wx:for="{{item.star}}" wx:key="id">
+              <icon  class='iconfont_star icon-xingji3'></icon>
+            </block>
+            <block wx:for="{{5-item.star}}">
+              <icon  class='iconfont_star icon-xingji4'></icon>
+            </block>
+
+            <!-- <text class='course_judge_num'>评价{{item.judgeNum}}</text> -->
+          </view>
+        </view>
+
+        <view class='course_price'>
+        <text class='price_left'>¥</text>
+        <text class='price_middle'>{{item.price}}</text>
+        <text class='price_right'>起</text>
+        </view>
+        <view class='course_address'>
+          <text>{{item.courAddressName}}/{{item.courTags}}</text>
+        </view>
+        <!-- <button class='view_btn'>点击查看</button> -->
+        <view class='distance'>{{item.distance}}</view>
+      </view>
+    </view>
+    </block>
+    <!-- 管理员推荐教师 -->
+    <block wx:for="{{home_teacher}}">
+    <!-- <navigator hover-class='none' url='../tea_detail/tea_detail?tea_id={{item.Id}}'> -->
+        <view class='favor_list' bindtap="tea_des" data-teaid="{{item.Id}}">
+          <view class='favor_list_left'>
+            <view class='favor_img_box'>
+              <image mode='aspectFill' src='{{item.teaImg}}'></image>
+            </view>
+          </view>
+          <view class='favor_list_right'>
+          <!-- 推荐icon样式 -->
+            <view  class="tea_recom">
+              <image src="/img/level/recom.png"></image>
+            </view>
+            <view class='tea_name'>
+              <text>{{item.name}}</text>
+              <!-- <text class='distance'>{{item.distance}}</text> -->
+            </view>
+            <view class='teacher_des'>
+
+              <view class='tea_judge'>
+                <!-- <icon class='iconfont_judge icon-pinglun'></icon> -->
+                <icon class='iconfont_jiaoling icon-jiaoling'></icon>
+                <text class='judge_num'>{{item.teaAge}}年</text>
+              </view>
+
+              <view class='tea_zan'>
+                <icon class='iconfont_zan icon-shoucang'></icon>
+                <text class='zan_num'>{{item.favorNum}}</text>
+              </view>
+
+              <view class='tea_level'>
+                <view class='gold_img'>
+                  <icon wx:if="{{item.level==1}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level1 icon-lv1'></icon>
+            <icon wx:elif="{{item.level==2}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level2 icon-lv2'></icon>
+            <icon wx:elif="{{item.level==3}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level3 icon-lv3'></icon>
+            <icon wx:elif="{{item.level==4}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level4 icon-lv4'></icon>
+            <icon wx:elif="{{item.level==5}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level5 icon-lv5'></icon>
+            <icon wx:else="{{item.level==6}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level6 icon-lv6'></icon>
+                </view>
+              </view>
+
+            </view>
+            <!-- 不要价格 -->
+            <!-- <view class='tea_price'>
+            <text class='price_left'>¥</text>
+            <text class='price_middle'>{{item.price}}</text>
+            <text class='price_right'>起</text>
+          </view> -->
+            <view class='tea_address'>
+              <i-tag wx:if="{{item.tag1}}" class="i-tags" name="标签一" type="border" color="red"> {{item.tag1}}</i-tag>
+              <i-tag wx:if="{{item.tag2}}" class="i-tags" name="标签一" color="green" type="border">{{item.tag2}}</i-tag>
+              <i-tag wx:if="{{item.tag3}}" class="i-tags" name="标签一" color="blue" type="border">{{item.tag3}}</i-tag>
+            </view>
+              <!-- <button class='view_btn'>点击查看</button> -->
+              <view class='distance'>{{item.distance}}</view>
+          </view>
+        </view>
+      <!-- </navigator> -->
+    </block>
+
+    <!-- 推荐教师 -->
+    <block wx:for="{{favor_teacher}}">
+    <!-- <navigator hover-class='none' url='../tea_detail/tea_detail?tea_id={{item.Id}}'> -->
+      <view class='favor_list' bindtap="tea_des" data-teaid="{{item.Id}}">
+        <view class='favor_list_left'>
+          <view class='favor_img_box'>
+            <image mode='aspectFill' src='{{item.teaImg}}'></image>
+          </view>
+        </view>
+        <view class='favor_list_right'>
+          <view class='tea_name'>
+            <text>{{item.name}}</text>
+            <!-- <text class='distance'>{{item.distance}}</text> -->
+          </view>
+          <view class='teacher_des'>
+
+            <view class='tea_judge'>
+              <!-- <icon class='iconfont_judge icon-pinglun'></icon> -->
+              <icon class='iconfont_jiaoling icon-jiaoling'></icon>
+              <text class='judge_num'>{{item.teaAge}}年</text>
+            </view>
+
+            <view class='tea_zan'>
+              <icon class='iconfont_zan icon-shoucang'></icon>
+              <text class='zan_num'>{{item.favorNum}}</text>
+            </view>
+
+            <view class='tea_level'>
+              <view class='gold_img'>
+                <icon wx:if="{{item.level==1}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level1 icon-lv1'></icon>
+          <icon wx:elif="{{item.level==2}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level2 icon-lv2'></icon>
+          <icon wx:elif="{{item.level==3}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level3 icon-lv3'></icon>
+          <icon wx:elif="{{item.level==4}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level4 icon-lv4'></icon>
+          <icon wx:elif="{{item.level==5}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level5 icon-lv5'></icon>
+          <icon wx:else="{{item.level==6}}" style="margin-left:4rpx;font-size:32rpx;" class='iconfont_level6 icon-lv6'></icon>
+              </view>
+            </view>
+
+          </view>
+          <!-- 不要价格 -->
+          <!-- <view class='tea_price'>
+          <text class='price_left'>¥</text>
+          <text class='price_middle'>{{item.price}}</text>
+          <text class='price_right'>起</text>
+        </view> -->
+          <view class='tea_address'>
+            <i-tag wx:if="{{item.tag1}}" class="i-tags" name="标签一" type="border" color="red"> {{item.tag1}}</i-tag>
+            <i-tag wx:if="{{item.tag2}}" class="i-tags" name="标签一" color="green" type="border">{{item.tag2}}</i-tag>
+            <i-tag wx:if="{{item.tag3}}" class="i-tags" name="标签一" color="blue" type="border">{{item.tag3}}</i-tag>
+          </view>
+            <!-- <button class='view_btn'>点击查看</button> -->
+            <view class='distance'>{{item.distance}}</view>
+        </view>
+      </view>
+      <!-- </navigator> -->
+    </block>
+    <!-- 推荐课程 -->
+    <block wx:for="{{favor_course}}">
+    <view class='favor_list' bindtap="course_des" data-courid="{{item.Id}}" data-courtype="{{item.courType}}" data-distance="{{item.distance}}">
+      <view class='favor_list_left'>
+        <view class='favor_img_box'>
+        <image mode='aspectFill' src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}} "></image>
+        </view>
+      </view>
+      <view class='favor_list_right'>
+        <view class='course_name'>
+          <text>{{item.courName}}</text>
+          <!-- <text class='distance'>{{item.distance}}</text> -->
+        </view>
+        <view class='course_des'>
+
+          <view class='course_judge'>
+          <block wx:for="{{item.star}}">
+              <icon  class='iconfont_star icon-xingji3'></icon>
+            </block>
+            <block wx:for="{{5-item.star}}">
+              <icon  class='iconfont_star icon-xingji4'></icon>
+            </block>
+
+            <!-- <text class='course_judge_num'>评价{{item.judgeNum}}</text> -->
+          </view>
+        </view> 
+
+        <view class='course_price'>
+        <text class='price_left'>¥</text>
+        <text class='price_middle'>{{item.price}}</text>
+        <text class='price_right'>起</text>
+        </view>
+        <view class='course_address'>
+          <text>{{item.courAddressName}}/{{item.courTags}}</text>
+        </view>
+        <!-- <button class='view_btn'>点击查看</button> -->
+        <view class='distance'>{{item.distance}}</view>
+      </view>
+    </view>
+    </block>
+  </view>
+
+  <view class='nodata' wx:if="{{favor_course.length===0&&favor_teacher==0&&home_course==0&&home_teacher==0}}">
+    <!-- <icon class='iconfont_lost icon-Null-data'></icon> -->
+    <icon bindtap='qiehuan' class='iconfont_qiehuan icon-ditu'></icon>
+    <view class='tips'>
+      <text>换个区域，发现更多</text>
+    </view>
+  </view>
+
+<tabbar tabbar="{{tabbar}}"></tabbar>
+  <!-- <view class="jump_shop">
+    <icon bindtap='jump_shop' class='iconfont_cart icon-gouwu-copy'></icon>
+  </view> -->
+</view>
+<!-- <home></home> -->

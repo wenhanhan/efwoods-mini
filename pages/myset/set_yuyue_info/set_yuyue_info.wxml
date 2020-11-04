@@ -1,0 +1,101 @@
+<view class="container">
+	<view class="class_top_info">
+		<view class="class_pic">
+			<image src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{cour_info.courImg}}"></image>
+		</view>
+		<view class="class_title">
+			<view class="class_tit">{{cour_info.courName}}</view>
+			<view style="color:#FF0000;font-size:28rpx;" class="class_price">￥{{cour_info.price}}/节</view>
+		</view>
+	</view>
+	<!-- 课程信息 -->
+	<view class="course_info_box">
+		<view class="course_info_head">
+			<text>课程信息</text>
+		</view>
+		<view class="course_info">
+			<view class="course_info_left">
+				<view class="left_item">上课地点</view>
+				<view class="left_item">上课时间</view>
+				<view class="left_item">授课教师</view>
+				<view class="left_item">电话</view>
+			</view>
+			<view class="course_info_right">
+				<view class="right_item" bindtap="chooseLocation">
+					 <text class="shenglue">{{cour_info.courAddressName}}</text>
+					<icon style="position:absolute;right:30rpx" class='iconfont_daohang icon-xiangyou-daohang'></icon>
+				</view>
+				<view class="right_item">{{yuyue_info.date}} {{yuyue_info.clock}}</view>
+				<view class="right_item">
+					<text class="shenglue">{{cour_info.name}}</text>
+				</view>
+				<view class="right_item">{{cour_info.courContact}}</view>
+			</view>
+		</view>
+	</view>
+	<!-- 预约人员 -->
+	<view class="yuyue_stu_box">
+		<view class="yuyue_stu_head">
+			预约学员<text style="font-size:24rpx;color:#FF0000">({{num}}人）</text>
+		</view>
+		<view class="yuyue_stu_title" style="width:{{yuyue_info.state==0?'90%':''}}">
+			<view class="head">头像</view>
+			<view class="nickname">昵称</view>
+			<view class="phone">联系方式</view>
+			<view class="state" hidden="{{yuyue_info.state==0||yuyue_info.state==1}}">状态</view>
+			<view class="option" hidden="{{yuyue_info.state==0||yuyue_info.state==2}}">操作</view>
+		</view>
+
+		<view class="stu_item" wx:if="{{yuyue_info.state==1}}" wx:for="{{stu_info}}">
+			<view class="head">
+				<image mode="aspectFill" src="{{item.avatarUrl}}"></image>
+			</view>
+			<view style="font-size:24rpx" class="nickname">
+			 <text class="shenglue" style="text-align:center;width:100%">{{item.nickName}}</text>
+			</view>
+			<view style="font-size:24rpx" class="phone">{{item.phone}}</view>
+			<view class="option" bindtap="refund" data-idx="{{index}}">
+				<view class="option_btn">退款</view>
+			</view>
+		</view>
+
+		<view class="stu_item" style="width:{{yuyue_info.state==0?'90%':''}}" wx:for="{{stu_info}}" wx:if="{{yuyue_info.state==0}}">
+			<view class="head">
+				<image mode="aspectFill" src="{{item.avatarUrl}}"></image>
+			</view>
+			<view style="font-size:24rpx" class="nickname">
+				<text class="shenglue" style="text-align:center;width:100%">{{item.nickName}}</text>
+			</view>
+			<view style="font-size:24rpx" class="phone">{{item.phone}}</view>
+		</view>
+
+		<view class="stu_item" wx:if="{{yuyue_info.state==2}}" wx:for="{{is_sign}}">
+			<view class="head">
+				<image mode="aspectFill" src="{{item.avatarUrl}}"></image>
+			</view>
+			<view style="font-size:24rpx" class="nickname">
+				<text class="shenglue" style="text-align:center;width:100%">{{item.nickName}}</text>
+			</view>
+			<view style="font-size:24rpx" class="phone">{{item.phone}}</view>
+      <view style="font-size:24rpx;" class="state">已签到</view>
+			<!-- <view class="option">
+				<view class="option_btn">退款</view>
+			</view> -->
+		</view>
+
+    <view class="stu_item" wx:if="{{yuyue_info.state==2}}" wx:for="{{no_sign}}">
+			<view class="head">
+				<image mode="aspectFill" src="{{item.avatarUrl}}"></image>
+			</view>
+			<view style="font-size:24rpx" class="nickname">
+				<text class="shenglue" style="text-align:center;width:100%">{{item.nickName}}</text>
+			</view>
+			<view style="font-size:24rpx" class="phone">{{item.phone}}</view>
+      <view style="font-size:24rpx;color:#FF0000" class="state">未签到</view>
+			<!-- <view class="option">
+				<view class="option_btn">退款</view>
+			</view> -->
+		</view>
+
+	</view>
+</view>

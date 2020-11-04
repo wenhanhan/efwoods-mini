@@ -1,0 +1,75 @@
+<view class="container">
+  <view style='width:100%;position:fixed;top:0;z-index:10'>
+    <i-tabs current="{{ current }}" color="#f759ab" bindchange="handleChange">
+      <i-tab key="tab1" title="进行中"></i-tab>
+      <i-tab key="tab2" title="待退款"></i-tab>
+      <i-tab key="tab3" title="已完成"></i-tab>
+    </i-tabs>
+  </view>
+  <view class="jinxing" wx:if="{{current=='tab1'}}">
+    <view class="jinxing_item" wx:for="{{yuyue}}" data-idx="{{index}}" bindtap="yuyue_des" >
+      <view class="item">上课地点：
+        <text class="shenglue">{{item.cour_address}}</text>
+      </view>
+      <view class="item">课程名称：
+        <text class="shenglue">{{item.cour_name}}</text>
+      </view>
+      <view class="item">预约时间：{{item.date}} {{item.clock}}</view>
+      <view class="item">预约人数：{{item.num}}人</view>
+       <icon style="position:absolute;right:34rpx;top:26rpx" class='iconfont_chakan icon-chakan'></icon>
+      <view class="tixing" style="background:{{item.tip_available?'':'gray'}}" catchtap="reminder" data-idx="{{index}}" data-state="{{item.tip_available}}">
+        <text style="margin-right:10rpx">开课提醒</text>
+        <icon class='iconfont_tixing icon-tixing'></icon>
+      </view>
+    </view>
+    <view class='nodata' style="height:1000rpx;" wx:if="{{yuyue.length==0}}">
+      <icon class='iconfont_lost icon-Null-data'></icon>
+      <view class='tips' style="color:#d1cfcf">
+        <text>暂无预约信息～</text>
+      </view>
+    </view> 
+  </view>
+
+  <view class="tuikuan" wx:if="{{current=='tab2'}}">
+    <view class="tuikuan_item" wx:for="{{yuyue}}" data-idx="{{index}}" bindtap="yuyue_des">
+      <view class="item">上课地点：
+        <text class="shenglue">{{item.cour_address}}</text>
+      </view>
+      <view class="item">课程名称：
+        <text class="shenglue">{{item.cour_name}}</text>
+      </view>
+      <view class="item">预约时间：{{item.date}} {{item.clock}}</view>
+      <view class="item">退款人数：{{item.num}}人</view>
+      <icon style="position:absolute;right:34rpx;top:26rpx" class='iconfont_chakan icon-chakan'></icon>
+    </view>
+
+    <view class='nodata' style="height:1000rpx;" wx:if="{{yuyue.length==0}}">
+      <icon class='iconfont_lost icon-Null-data'></icon>
+      <view class='tips' style="color:#d1cfcf">
+        <text>暂无预约信息～</text>
+      </view>
+    </view> 
+  </view>
+
+  <view class="finish" wx:if="{{current=='tab3'}}">
+    <view class="finish_item" wx:for="{{yuyue}}" data-idx="{{index}}" bindtap="yuyue_des">
+      <view class="item">上课地点：
+        <text class="shenglue">{{item.cour_address}}</text>
+      </view>
+      <view class="item">课程名称：
+        <text class="shenglue">{{item.cour_name}}</text>
+      </view>
+      <view class="item">预约时间：{{item.date}} {{item.clock}}</view>
+      <view class="item">预约人数：{{item.num}}人</view>
+      <icon style="position:absolute;right:34rpx;top:26rpx" class='iconfont_chakan icon-chakan'></icon>
+    </view>
+
+    <view class='nodata' style="height:1000rpx;" wx:if="{{yuyue.length==0}}">
+      <icon class='iconfont_lost icon-Null-data'></icon>
+      <view class='tips' style="color:#d1cfcf">
+        <text>暂无预约信息～</text>
+      </view>
+    </view> 
+  </view>
+
+</view>

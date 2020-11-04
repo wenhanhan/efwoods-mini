@@ -1,0 +1,238 @@
+@import '/icon/duihao.wxss';
+@import '/icon/checking.wxss';
+@import '/icon/paid.wxss';
+@import '/icon/nocheck.wxss';
+page{
+  background: #eeeeee;
+}
+.top_bk{
+  width: 100%;
+  height: 250rpx;
+  background: #e93323; 
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+.circle_box{
+  width: 100%;
+  height: auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35rpx;
+}
+.circle{
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 22rpx;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.circle_txt{
+  font-size: 28rpx;
+  color: #FF4C63;
+}
+.progress_txt{
+  height: auto;
+  width: 200rpx;
+  font-size: 26rpx;
+  color: white;
+  top: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.line{
+  width: 240rpx;
+  height: 4rpx;
+  background: #E49090;
+}
+
+.info_box{
+  width: 95%;
+  height: auto;
+  background: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20rpx;
+  top: 160rpx;
+  position: absolute;
+}
+.pay_icon{
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50rpx;
+}
+.pay_state{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 32rpx;
+  color: #222222;
+  margin-bottom: 20rpx;
+}
+.settled_des{
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #B8B6B6;
+  word-wrap:break-word;
+  margin: 0 auto;
+  margin-top: -10rpx;
+}
+.checking_des{
+  border-top: 1px dashed #DFDDDD;
+  width: 100%;
+  height: auto;
+  word-wrap:break-word;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 26rpx;
+  padding-bottom: 60rpx;
+}
+.tip{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 6rpx 0;
+}
+.tip_circle{
+  width: 10rpx;
+  height: 10rpx;
+  background: #D8D8D8;
+  border-radius: 6rpx;
+  margin: 10rpx 4rpx;
+}
+.tip_des{
+  width: 99%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  word-wrap:break-word;
+}
+/* 栏目切换 */
+.tab{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20rpx;
+}
+.tab1,.tab2{
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background: red; */
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.tab_line{
+  width: 40rpx;
+  height: 4rpx;
+  background: white;
+  margin-top: 4rpx;
+}
+.tab_box{
+  width: 100%;
+  /* height: 500rpx; */
+  height: auto;
+  /* display: flex; */
+  justify-content: center;
+  padding-bottom: 20rpx;
+}
+/* 申请信息 */
+.apply_item{
+  width: 90%;
+  height: 200rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+  margin: 0 auto;
+  position: relative;
+}
+.headimg{
+  width: 120rpx;
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+}
+.headimg image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.tea_name{
+  width: auto;
+  height: auto;
+  font-size: 26rpx;
+}
+.tea_info{
+  width: auto;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  padding-left: 20rpx;
+}
+.tea_name{
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 30rpx;
+}
+.sign_times{
+  font-size: 16rpx;
+  margin-top: 10rpx;
+}
+.pass_btn{
+  width: 130rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 22rpx;
+  position: absolute;
+  right: 60rpx;
+  background: #FF4C63;
+  border-radius: 20rpx;
+  top: 50rpx;
+}
+.refuse_btn{
+   width: 130rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 22rpx;
+  position: absolute;
+  right: 60rpx;
+  background: #FF4C63;
+  border-radius: 20rpx;
+  bottom: 50rpx
+}

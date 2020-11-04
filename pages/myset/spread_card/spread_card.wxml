@@ -1,0 +1,11 @@
+<view class="container">
+    <!-- 生成海报 -->
+  <view class='imagePathBox' bindtap="hide" hidden="{{maskHidden == false}}">
+    <image src="{{imagePath}}" mode='aspectFit' class='shengcheng'></image>
+    <button class='baocun' bindtap='baocun'>保存分享卡片</button>
+  </view>
+
+  <view class="canvas-box">
+    <canvas style="width: {{canvas_width}}px;height: {{canvas_height}}px;position:fixed;top:9999px" canvas-id="mycanvas" />
+  </view>
+</view>

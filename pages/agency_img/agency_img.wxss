@@ -1,0 +1,16 @@
+/* pages/agency_img/agency_img.wxss */
+@import '/icon/noresource.wxss';
+.img_box{
+  width: 95%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.img_box image{
+  width: 340rpx;
+  height: 220rpx;
+  margin-bottom: 10rpx;
+  border-radius: 15rpx;
+}

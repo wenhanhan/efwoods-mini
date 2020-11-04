@@ -1,0 +1,28 @@
+<view class="container">
+<!-- 未登录 -->
+	<view class="un_login" hidden="{{login}}">
+		<view class="user_info" wx:if="{{userInfo}}">
+			<view class="head">
+				<image mode="aspectFill" src="{{userInfo.avatarUrl}}"></image>
+			</view>
+			<view class="nickname">{{userInfo.nickName}}</view>
+		</view>
+
+		<view class="user_info" wx:if="{{!userInfo}}">
+			<view class="head" style="width:100rpx;height:150rpx;">
+				<image mode="aspectFill" style="border-radius:0%" src="{{sysInfo.url}}"></image>
+			</view>
+			<view class="nickname">{{sysInfo.title}}</view>
+		</view>
+
+		<button class="login_btn" bindtap="login">微信登录</button>
+		<navigator hover-class="none" open-type="exit" target="miniProgram" class="cancel">取消</navigator>
+	</view>
+  <!-- 已登录 -->
+  <view class="login" hidden="{{!login}}">
+    <view class="login_icon">
+      <icon class='iconfont_login icon-chenggong'></icon>
+    </view>
+    <view class="login_txt">登录成功！</view>
+  </view>
+</view>

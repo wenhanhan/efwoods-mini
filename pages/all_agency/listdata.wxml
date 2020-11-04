@@ -1,0 +1,94 @@
+<view class="agency_box">
+
+  <!-- //置顶机构 -->
+  <block wx:for="{{top_agency}}">
+    <navigator url="../agency/agency?id={{item.Id}}" style="width:100%;display:flex;justify-content: center;align-items:center;" hover-class="none">
+      <view class="agency_list">
+        <view class="agency_left">
+          <image mode="aspectFill" src="{{item.agency_logo}}"></image>
+        </view>
+        <view class="agency_right">
+          <view class="agency_title">
+            <text>{{item.agency_name}}</text>
+          </view>
+          <view class="agency_score">
+            评分
+            <block wx:for="{{item.star}}">
+              <icon style="display:flex;margin-bottom:0;" class='iconfont_star icon-xingji3'></icon>
+            </block>
+            <block wx:for="{{5-item.star}}">
+              <icon style='display:flex;margin-bottom:0;' class='iconfont_star icon-xingji4'></icon>
+            </block>
+          </view>
+          <view class="agency_tea_num">
+            入驻教练
+            <text style="color:#FF6C00;font-size:26rpx;margin-left:4rpx;">{{item.teaNum}}位</text>
+          </view>
+          <!-- <view class="agency_address">
+        <text>万达广场</text>
+      </view> -->
+          <view class="agency_distance" style="font-size: 22rpx;">
+            <text style="margin-right:10rpx;">{{item.cut_address}}</text>
+            <text>{{item.distance}}</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+
+  <block wx:for="{{agency}}">
+    <navigator url="../agency/agency?id={{item.Id}}" style="width:100%;display:flex;justify-content: center;align-items:center;" hover-class="none">
+      <view class="agency_list">
+        <view class="agency_left">
+          <image mode="aspectFill" src="{{item.agency_logo}}"></image>
+        </view>
+        <view class="agency_right">
+          <view class="agency_title" >
+            <text>{{item.agency_name}}</text>
+          </view>
+          <view class="agency_score">
+            评分
+            <block wx:for="{{item.star}}">
+              <icon style="display:flex;margin-bottom:0;" class='iconfont_star icon-xingji3'></icon>
+            </block>
+            <block wx:for="{{5-item.star}}">
+              <icon style='display:flex;margin-bottom:0;' class='iconfont_star icon-xingji4'></icon>
+            </block>
+          </view>
+          <view class="agency_tea_num">
+            入驻教练
+            <text style="color:#FF6C00;font-size:26rpx;margin-left:4rpx;">{{item.teaNum}}位</text>
+          </view>
+          <!-- <view class="agency_address">
+        <text>万达广场</text>
+      </view> -->
+          <view class="agency_distance" style="font-size: 22rpx;">
+            <text style="margin-right:10rpx;">{{item.cut_address}}</text>
+            <text>{{item.distance}}</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+<!-- 暂无更多数据 -->
+  <view class="noMoreData" wx:if="{{noMoreData&&agency.length!=0}}">
+    <view class="no_line"></view>
+    <view style="margin:0 6rpx;">暂无更多~</view>
+    <view class="no_line"></view>
+  </view>
+     <!-- 加载动效 -->
+<view class="jiazai" wx:if="{{!noMoreData&&agency.length!=0}}">
+  <i-spin fix></i-spin>
+  <view>加载中</view>
+</view>
+  
+  <view class='nodata' wx:if="{{agency.length==0&&(!top_agency||top_agency.length==0)}}">
+     <icon class='iconfont_lost icon-Null-data'></icon>
+    <view class='tips'>
+      <text>暂无发现机构信息～</text>
+    </view>
+  </view>
+
+</view>

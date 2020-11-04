@@ -1,0 +1,53 @@
+/* pages/share/share.wxss */
+@import '/icon/xueyuan.wxss';
+@import '/icon/agency.wxss';
+@import '/icon/sijiao.wxss';
+page{
+  background: #eeeeee;
+}
+button{
+  padding: 0;
+  margin: 0;
+  line-height: normal;
+  text-align: left;
+}
+.welcome{
+  width: 90%;
+  height: auto;
+  font-size: 24rpx;
+  color: #747373;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+.sijiao,.agency{
+  width: 90%;
+  height: 200rpx;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6rpx;
+}
+.sijiao_left,.agency_left{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sijiao_right,.agency_right{
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: center; */
+  flex-direction: column;
+}
+.ruzhu_title{
+  font-size: 38rpx;
+  color: #2F2F2F;
+  font-weight: 600;
+}
+.ruzhu_des{
+  font-size: 28rpx;
+  color: #747373;
+}

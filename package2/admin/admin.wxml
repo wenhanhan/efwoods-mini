@@ -1,0 +1,131 @@
+<view class='container'>
+<!-- 个人中心头部 -->
+  <view class='user_top_box'>
+    <view class='user_top'>
+      <view class='user_headimg'>
+        <image src='{{headimg}}'></image>
+      </view>
+      <view class='user_info'>
+        <view class='use_info_top'>
+          <view class='userNick'>
+            <text>{{nickname}}</text>
+          </view>
+          <view class='usersex'>
+            <icon class='iconfont_man icon-nan' wx:if="{{sex==1}}"></icon>
+            <icon class='iconfont_nv icon-nv' wx:else></icon>
+          </view>
+        </view>
+        <view class='user_info_bot'>
+          <view class='user_tags'>
+            <text>管理员</text>
+          </view>
+          <!-- <view class='user_tags2'>
+            <text>石家庄市</text>
+          </view>
+          <view class='user_tags2'>
+            <text>双子座</text>
+          </view> -->
+        </view>
+      </view>
+    </view>
+
+    <view class='base_info'>
+      <view class='base_info_child'>
+        <view class='child_tags'>
+          <text>注册用户</text>
+        </view>
+        <view class='child_num'>
+          <text>{{user_num}}</text>
+        </view>
+      </view>
+      <view class='base_info_line'></view>
+      <view class='base_info_child'>
+        <view class='child_tags'>
+          <text>教师数量</text>
+        </view>
+        <view class='child_num'>
+          <text>{{tea_num}}</text>
+        </view>
+      </view>
+      <view class='base_info_line'></view>
+      <view class='base_info_child'>
+        <view class='child_tags'>
+          <text>课程数量</text>
+        </view>
+        <view class='child_num'>
+          <text>{{cour_num}}</text>
+        </view>
+      </view>
+
+      <!-- <view class='base_info_line'></view>
+      <view class='base_info_child'>
+        <view class='child_tags'>
+          <text>级别</text>
+        </view>
+        <view class='child_num'>
+          <text>T1</text>
+        </view>
+      </view> -->
+
+    </view>
+  </view>
+<!--个人中心 中间区域  -->
+  <view class='user_set_box'>
+
+  <navigator hover-class='none' url='../courSet/courSet'>
+    <view class='set_box_line' style='margin-top:10rpx;'>
+      <view class='set_icon'>
+        <image src='/img/user/course.png'></image>
+      </view>
+      <view class='set_sign'>课程管理</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+  </navigator>
+
+<navigator hover-class='none' url='../teaSet/teaSet'>
+    <view class='set_box_line'>
+      <view class='set_icon'>
+        <image src='/img/user/set_tea.png'></image>
+      </view>
+      <view class='set_sign'>教师管理</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+</navigator>
+
+<navigator url='../agencySet/agencySet' hover-class="none">
+    <view class='set_box_line'>
+      <view class='set_icon'>
+        <image src='/img/user/agency.png'></image>
+      </view>
+      <view class='set_sign'>机构管理</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+</navigator>
+
+
+    <!-- <view class='set_box_line'>
+      <view class='set_icon'>
+        <image src='/img/user/set_user.png'></image>
+      </view>
+      <view class='set_sign'>普通用户管理</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+
+    <view class='set_box_line'>
+      <view class='set_icon'>
+        <image src='/img/user/set_judge.png'></image>
+      </view>
+      <view class='set_sign'>评价管理</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+
+    <view class='set_box_line'>
+      <view class='set_icon'>
+        <image src='/img/user/set_wrap.png'></image>
+      </view>
+      <view class='set_sign'>首页轮播图管理</view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view> -->
+  </view>
+
+</view>

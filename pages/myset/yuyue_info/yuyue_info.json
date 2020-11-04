@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "i-radio-group": "../../../dist/radio-group/index",
+    "i-radio": "../../../dist/radio/index",
+    "i-tag": "../../../dist/tag/index"
+  },
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "预约详情",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  
+}

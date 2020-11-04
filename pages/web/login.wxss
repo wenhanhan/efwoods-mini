@@ -1,0 +1,77 @@
+/* pages/web/login.wxss */
+@import '/icon/login.wxss';
+.un_login,.login{
+  width: 100%;
+}
+.user_info{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 200rpx;
+}
+.head{
+  width: 140rpx;
+  height: 140rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.head image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.nickname{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  font-size: 36rpx;
+  color: #333333;
+  font-weight: 500;
+}
+.login_btn{
+  width: 80%;
+  height: 80rpx;
+  background: #09BB07;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 140rpx;
+}
+.cancel{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  font-size: 28rpx;
+  color: #09BB07;
+  background: white;
+}
+.login_icon{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 280rpx;
+}
+.login_txt{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
+  color: #0A0A0A;
+}

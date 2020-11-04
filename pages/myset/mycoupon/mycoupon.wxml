@@ -1,0 +1,112 @@
+<view class='container'>
+<!-- 头部 -->
+<view class='coupon_title'>
+  <view class='used_tick'  bindtap='used_tick'>
+    <view class='used_tick_box'>
+      <image src='/img/user/tick/tick01.png'></image>
+    </view>
+  </view>
+  <view class='use_tick' bindtap='use_tick'>
+    <view class='use_tick_box'>
+      <image src='/img/user/tick/tick03.png'></image>
+    </view>
+  </view> 
+</view>
+
+<view style='width:100%'>
+  <i-tabs current="{{ current }}" color="#f759ab" bindchange="handleChange">
+    <i-tab key="tab1" title="失效券"></i-tab>
+    <i-tab key="tab2" title="有效券"></i-tab>
+  </i-tabs>
+</view>
+<!-- 失效券 -->
+<view class='tick_list_box' wx:if="{{tick_state}}">
+ <block wx:for='{{invalid_tick}}'>
+  <view class='tick_list' style="{{index==idx&&isdown==1?'margin-bottom:0':''}}" >
+    <view class='tick_list_left'>
+      <view class='tick_money'>
+        <view style='font-size:22rpx;color:#333333;'>￥</view>
+        <view style='font-size:30rpx;color:#333333;font-weight:600'>{{item.money}}</view>
+      </view>
+      <view class='tick_type'>
+       <text>抵用券</text>
+      </view>
+    </view>
+    <view class='divide'></view>
+
+    <view class='tick_list_right'>
+      <view class='tick_title'>
+        {{item.courName}}
+      </view>
+      <view class='tick_des'>
+        优惠券介绍
+        <icon bindtap='down' data-idx='{{index}}'  class="{{index==idx&&isdown==1?'iconfont_up icon-angle-up':'iconfont_down icon-angle-down'}}"></icon>
+      </view>
+    </view>
+<navigator hover-class='none' url='../coupon_des/coupon_des?courName={{item.courName}}&teaName={{item.name}}&deadline={{item.deadline}}&state={{item.state}}&tickId={{item.Id}}&used=1&tea_openid={{item.openid}}&courId={{item.courId}}'>
+    <button class='state_btn'  style='background:#666666'>{{item.state==1?'已核销':'已过期'}}</button>
+</navigator>
+  </view>
+  <view class='tick_down' hidden='{{!(index==idx&&isdown==1)}}' >
+    <view style='width:95%;margin:0 auto'>
+      <text>发券教师:{{item.name}}</text>
+      <text style='margin-left:10rpx;'>有效期至{{item.deadline}}</text>
+    </view>
+  </view>
+  </block>
+<!-- 暂无优惠券提示信息 -->
+  <view class='nodata' wx:if="{{invalid_tick.length==0}}">
+    <icon class='iconfont_tick icon-notick'></icon>
+    <view class='tips'>
+      <text>暂无优惠券信息～</text>
+    </view>
+  </view>
+</view>
+
+<!-- 有效券 -->
+<view class='tick_list_box' wx:if="{{!tick_state}}">
+ <block wx:for='{{valid_tick}}'>
+  <view class='tick_list' style="{{index==idx&&isdown==1?'margin-bottom:0':''}}" >
+    <view class='tick_list_left'>
+      <view class='tick_money'>
+        <view style='font-size:22rpx;color:#333333;'>￥</view>
+        <view style='font-size:30rpx;color:#333333;font-weight:600'>{{item.money}}</view>
+      </view>
+      <view class='tick_type'>
+       <text>抵用券</text>
+      </view>
+    </view>
+    <view class='divide'></view>
+
+    <view class='tick_list_right'>
+      <view class='tick_title'>
+        {{item.courName}}
+      </view>
+      <view class='tick_des'>
+        优惠券介绍
+        <icon bindtap='down' data-idx='{{index}}'  class="{{index==idx&&isdown==1?'iconfont_up icon-angle-up':'iconfont_down icon-angle-down'}}"></icon>
+      </view>
+    </view>
+
+<navigator hover-class='none' url='../coupon_des/coupon_des?courName={{item.courName}}&teaName={{item.name}}&deadline={{item.deadline}}&state={{item.state}}&tickId={{item.Id}}&used=0&tea_openid={{item.openid}}&courId={{item.courId}}'>
+    <button class='state_btn' >立即使用</button>
+</navigator>
+
+  </view>
+  <view class='tick_down' hidden='{{!(index==idx&&isdown==1)}}' >
+    <view style='width:95%;margin:0 auto'>
+      <text>发券教师:{{item.name}}</text>
+      <text style='margin-left:10rpx;'>有效期至{{item.deadline}}</text>
+    </view>
+  </view>
+  </block>
+  <!-- 暂无优惠券提示信息 -->
+  <view class='nodata' wx:if="{{valid_tick.length==0}}">
+    <icon class='iconfont_tick icon-notick'></icon>
+    <view class='tips'>
+      <text>暂无优惠券信息～</text>
+    </view>
+  </view>
+</view>
+
+</view>

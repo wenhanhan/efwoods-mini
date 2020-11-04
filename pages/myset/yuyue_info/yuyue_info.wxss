@@ -1,0 +1,110 @@
+/* pages/myset/yuyue_info/yuyue_info.wxss */
+@import '/icon/yuyue_daohang.wxss';
+.class_top_info{
+  width: 100%;
+  height: 220rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 10rpx solid #EEEEEE;
+}
+.class_pic{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.class_pic image{
+  width: 240rpx;
+  height: 160rpx;
+  border-radius: 16rpx;
+}
+.class_title{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 34rpx;
+  color: #303030;
+}
+.class_tit,.class_price{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.course_info_box,.order_info_box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid #EEEEEE;
+}
+.course_info_head,.order_info_head{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333333;
+  border-bottom: 1px solid #eeeeee;
+  margin-left: 5%;
+}
+.course_info,.order_info{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-left: 5%;
+}
+.course_info_left,.order_info_left{
+  width: 27%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.course_info_right,.order_info_right{
+  width: 73%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.left_item{
+  width: 100%;
+  height: 65rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+  color: #1D1D1D;
+}
+.right_item{
+  width: 100%;
+  height: 65rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+  color: #1D1D1D;
+  position: relative;
+}
+.shenglue{
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,179 @@
+{
+  "pages": [ 
+    "pages/location/location",
+    "pages/share/share",
+    "pages/web/login",
+    "pages/apply/apply",
+    "pages/yuyue_agree/yuyue_agree",
+    "pages/agree/agree",
+    "pages/agency_apply/agency_apply",
+    "pages/agency_img/agency_img",
+    "pages/tw_edit/tw_edit",
+    "pages/all_shows/all_shows",
+    "pages/myset/set_yuyue/set_yuyue", 
+    "pages/myset/set_yuyue_info/set_yuyue_info",
+    "pages/myset/yuyue/yuyue",  
+    "pages/myset/yuyue_info/yuyue_info",  
+    "pages/yuyue_des/yuyue_des",
+    "pages/myset/edit_yuyue/edit_yuyue",
+    "pages/myset/add_yuyue/add_yuyue",
+    "pages/zhuanlan/zhuanlan",
+    "pages/test/test",
+    "pages/test_result/test_result", 
+    "pages/test_subject/test_subject",
+    "pages/myset/my_dingyue/my_dingyue",
+    "pages/online/online",
+    "pages/player/player",
+    "pages/agency_modify/agency_modify",
+    "pages/index/index",
+    
+    "pages/online_article/article",
+    "pages/myset/spread/spread",
+    "pages/myset/spread_order/spread_order",
+    "pages/myset/cash_notes/cash_notes",
+    "pages/myset/spread_notes/spread_notes",
+    "pages/myset/spread_cash/spread_cash",
+    "pages/myset/apply_teades/apply_teades",
+    "pages/course/course",
+    "pages/news/news",
+    "pages/teacher/teacher",
+    "pages/myset/spread_detail/spread_detail",
+    "pages/myset/spread_card/spread_card",
+    "pages/show/show",
+    "pages/sousuo/sousuo",
+    "pages/myset/jifen/jifen",
+    "pages/auth/auth",
+    "pages/settled/settled",
+    "pages/profess_tea/profess_tea",
+    
+    "pages/user/user",
+    "pages/agency_judge/agency_judge",
+    "pages/agency_pay/agency_pay",
+    
+    "pages/fail_checked/fail_checked",
+    "pages/checking/checking",
+    "pages/all_agency/all_agency",
+    "pages/agency/agency",
+    "pages/agency_license/agency_license",
+    "pages/invite_apply/invite_apply",
+    "pages/show_des/show_des",
+    "pages/add_show/add_show",
+    "pages/renqi_cour/renqi_cour",
+    "pages/cour_detail/cour_detail",
+    "pages/myset/sign/sign",
+    "pages/myset/apply_courdes/apply_courdes",
+    "pages/myset/favor/favor",
+    "pages/column/column",
+    "pages/tea_intro/tea_intro",
+    "pages/myset/personal/personal",
+    "pages/judge/judge",
+    "pages/all_judge/all_judge",
+    "pages/tea_detail/tea_detail",
+    
+    
+    "pages/search/search",
+    "pages/select_city/select_city",
+    "pages/myset/mycoupon/mycoupon",
+    "pages/myset/coach/coach",
+    "pages/myset/coupon_des/coupon_des",
+    "pages/tw_update/tw_update",
+    "pages/tw_preview/tw_preview",
+    "pages/edit/edit",
+    "pages/myset/user/user",
+    "pages/myset/help/help"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "eFIREWOODES",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance":100
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#979795",
+    "selectedColor": "#1c1c1b",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "img/icon/home.png",
+        "selectedIconPath": "img/icon/home1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "iconPath": "img/icon/course.png",
+        "selectedIconPath": "img/icon/course1.png",
+        "text": "课程"
+      },
+      {
+        "pagePath": "pages/show/show",
+        "iconPath": "tabbarComponent/icon/icon_release.png",
+        "isSpecial": true,
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/teacher/teacher",
+        "iconPath": "img/icon/teacher.png",
+        "selectedIconPath": "img/icon/teacher1.png",
+        "text": "教练"
+      },
+      {
+        "pagePath": "pages/myset/coach/coach",
+        "iconPath": "tabbarComponent/icon/icon_mine.png",
+        "selectedIconPath": "tabbarComponent/icon/icon_mine_HL.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "subpackages":[
+    {
+      "root": "package1",
+      "name": "teacher",
+      "pages":[
+        "addCoupon/addCoupon",
+        "addCourse/addCourse",
+        "checkRecord/checkRecord",
+        "editCoupon/editCoupon",
+        "editCourse/editCourse",
+        "invite/invite",
+        "mycourse/mycourse",
+        "myshow/myshow",
+        "setCoupon/setCoupon",
+        "signSet/signSet",
+        "signRecord/signRecord"
+      ]
+    },
+    {
+      "root": "package2",
+      "name":"admin",
+      "pages":[
+        "adminLogin/adminLogin",
+        "admin/admin",
+        "courSet/courSet",
+        "teaSet/teaSet",
+        "agencySet/agencySet"
+      ]
+    }
+  ],
+
+"preloadRule": {
+  "pages/myset/coach/coach": {
+    "network": "all",
+    "packages": [
+      "teacher",
+      "admin"
+    ]
+  }
+},
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取位置信息，获得更好服务"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wx83f243f73b48c56c"
+  ],
+  "requiredBackgroundModes": ["audio", "location"]
+}

@@ -1,0 +1,24 @@
+<view class='container'>
+  <i-cell-group class='cell_line'>
+  <picker bindchange="coupon_name" range-key='courName' value="{{index}}" range="{{course}}">
+    <i-cell  required="{{true}}"  is-link title="课程名称" border="{{true}}" value="{{course[index].courName}}" />
+  </picker> 
+
+    <i-cell data-type='1' data-cate='coupon_num' data-title="请输入优惠券数量" bind:click="input" is-link title="数量" border="{{true}}" value="{{coupon_num}}" />
+
+    <i-cell data-type='1' data-cate='coupon_money' data-title="请输入抵用金额" bind:click="input" is-link title="抵用金额" border="{{true}}" value="{{coupon_money}}" />
+
+    <picker class="weui-btn" mode="date" value="{{date}}" start="{{start_time}}" end="2022-01-01" bindchange="bindDateChange">
+    <i-cell  is-link title="截止日期" border="{{true}}" value="{{deadline}}" />
+    </picker>
+
+    <i-cell data-type='2' data-cate='coupon_des' data-title="请输入优惠券介绍" bind:click="input" is-link title="使用备注" border="{{true}}" value="{{coupon_des}}" />
+  </i-cell-group>
+
+<view class='btn_box'>
+  <view class='save_btn' bindtap='addCoupon'>
+    <text>确认添加</text>
+  </view>
+</view>
+
+</view>

@@ -1,0 +1,116 @@
+<view wx:if="{{type==1}}" class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__bd">
+      <input value='{{input}}' type='text' class="weui-input" bindinput="input" confirm-type="done" focus="{{true}}" placeholder-class="placeholder" placeholder="{{placeholder}}" />
+    </view>
+  </view>
+</view>
+
+<!-- 年龄校验 -->
+<view wx:if="{{type==10}}" class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__bd">
+      <input value='{{input}}' type='number' class="weui-input" bindinput="input" confirm-type="done" focus="{{true}}" placeholder-class="placeholder" placeholder="{{placeholder}}" />
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{type==5}}" class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__bd">
+      <input value='{{input}}' type='number' class="weui-input" bindinput="input" confirm-type="done" focus="{{true}}" placeholder-class="placeholder" placeholder="{{placeholder}}" />
+    </view>
+  </view>
+</view>
+<!-- 课程时长校验 -->
+<view wx:if="{{type==6}}" class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__bd">
+      <input value='{{input}}' type='number' class="weui-input" bindinput="input" confirm-type="done" focus="{{true}}" placeholder-class="placeholder" placeholder="{{placeholder}}" />
+    </view>
+  </view>
+</view>
+<!-- 课程金额校验 -->
+<view wx:if="{{type==7}}" class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__bd">
+      <input value='{{input}}' type='number' class="weui-input" bindinput="input" confirm-type="done" focus="{{true}}" placeholder-class="placeholder" placeholder="{{placeholder}}" />
+    </view>
+  </view>
+</view>
+<!-- 课程 联系方式 --> 
+<view wx:if="{{type==8}}" class="weui-cells weui-cells_after-title">
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__bd">
+      <input value='{{input}}' type='number' class="weui-input" bindinput="input" confirm-type="done" focus="{{true}}" placeholder-class="placeholder" placeholder="{{placeholder}}" />
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{type==2}}" class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea value='{{input}}' maxlength="-1" class="weui-textarea" bindinput="input" bindfocus="inputFocus" placeholder-class="placeholder" placeholder="{{placeholder}}" focus="{{true}}" style="height: 5.3em;font-size:30rpx;" />
+      <view class="weui-textarea-counter"></view>
+    </view>
+  </view>
+</view>
+<!-- 教师标签 -->
+<view wx:if="{{type==3}}" class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea value='{{input}}' maxlength='10' class="weui-textarea" bindinput="input" bindfocus="inputFocus" placeholder-class="placeholder" placeholder="{{placeholder}}" focus="{{true}}" style="height: 3.3em" />
+      <view class="weui-textarea-counter"></view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{type==3}}" class='eg'>
+  <view class='user_tags' style='margin-top:10rpx;'>
+    快捷标签:  
+  </view>
+  <view class='user_tags' style='margin-bottom:20rpx;'>
+     <view class='tea_address'>
+        <i-tag bind:change="tea_tag" checkable="{{true}}" class="i-tags" name=",外教" type="border" color="red"> 外教</i-tag>
+        <i-tag bind:change="tea_tag" class="i-tags" checkable="{{true}}" name=",中教" color="blue" type="border">中教</i-tag>
+        <i-tag bind:change="tea_tag" class="i-tags" checkable="{{true}}" name=",一对一" color="yellow" type="border">一对一</i-tag>
+        <i-tag bind:change="tea_tag" class="i-tags" checkable="{{true}}" name=",可上门" color="red" type="border">可上门</i-tag>
+        <i-tag bind:change="tea_tag" class="i-tags" checkable="{{true}}" name=",vip私人" color="green" type="border">vip私人</i-tag>
+      </view>
+  </view>
+</view>
+<!-- 课程标签 -->
+<view wx:if="{{type==4}}" class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea value='{{input}}' maxlength='10' class="weui-textarea" bindinput="input" bindfocus="inputFocus" placeholder-class="placeholder" placeholder="{{placeholder}}" focus="{{true}}" style="height: 3.3em" />
+      <view class="weui-textarea-counter"></view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{type==4}}" class='eg'>
+  <view class='user_tags' style='margin-top:10rpx;'>
+    快捷标签:  
+  </view>
+  <view class='user_tags' style='margin-bottom:20rpx;'>
+     <view class='tea_address'>
+        <i-tag bind:change="tag" checkable="{{true}}" class="i-tags" name="一对一" type="border" color="red"> 一对一</i-tag>
+        <i-tag bind:change="tag" class="i-tags" checkable="{{true}}" name="试听课程" color="blue" type="border">试听课程</i-tag>
+        <i-tag bind:change="tag" class="i-tags" checkable="{{true}}" name="考级课程" color="yellow" type="border">考级课程</i-tag>
+        <i-tag bind:change="tag" class="i-tags" checkable="{{true}}" name="大师杯课程" color="red" type="border">大师杯课程</i-tag>
+      </view>
+  </view> 
+</view>
+
+
+<button wx:if="{{type!=5&&type!=6&&type!=7&&type!=10}}" class="save_btn" bindtap='save_btn'>完成</button>
+
+<button wx:if="{{type==5}}" class="save_btn" bindtap='save_phone'>完成</button>
+
+<button wx:if="{{type==6}}" class="save_btn" bindtap='save_cour_hour'>完成
+</button>
+
+<button wx:if="{{type==7}}" class="save_btn" bindtap='save_cour_money'>完成</button>
+
+<button wx:if="{{type==10}}" class="save_btn" bindtap='save_sex'>完成</button>

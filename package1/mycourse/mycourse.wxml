@@ -1,0 +1,86 @@
+<view class='container' style="padding-bottom:120rpx;">
+<view style='width:100%'>
+  <i-tabs current="{{ current }}" color="#f759ab" bindchange="handleChange">
+    <i-tab key="tab1" title="审核中"></i-tab>
+    <i-tab key="tab2" title="已审核"></i-tab>
+    <i-tab key="tab3" title="已拒绝"></i-tab>
+  </i-tabs>
+</view>
+
+<!-- 审核中的课程 -->
+<view class='cour_box' wx:if="{{current=='tab1'}}">
+<block wx:for="{{checking_list}}" >
+  <view class='course'>
+    <view class='course_line'>
+      <view class='cour_title'>{{item.courName}}</view>
+      <view class='cour_set'>
+        <icon bindtap="deleCourse" data-type="checking" data-idx="{{index}}" data-id="{{item.Id}}" style="color:#848282;margin-right:40rpx" class='iconfont_dele icon-dele'></icon>
+        <navigator hover-class='none' url="../editCourse/editCourse?cour_id={{item.Id}}">
+        <icon class='iconfont_bianji icon-bianji'></icon>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</block>
+
+<!-- 当没有课程记录时 显示 -->
+<view class='nocourse' wx:if="{{is_checking_cour}}">
+  <text>暂无课程记录</text>
+</view>
+</view> 
+
+
+
+<!-- 审核通过的课程 -->
+<view class='cour_box' wx:if="{{current=='tab2'}}">
+<block wx:for="{{cour_list}}" >
+  <view class='course'>
+    <view class='course_line'>
+      <view class='cour_title'>{{item.courName}}</view>
+      <view class='cour_set'>
+        <icon bindtap="deleCourse" data-type="checked" data-idx="{{index}}" data-id="{{item.Id}}" style="color:#848282;margin-right:40rpx" class='iconfont_dele icon-dele'></icon>
+        <navigator hover-class='none' url="../editCourse/editCourse?cour_id={{item.Id}}">
+        <icon class='iconfont_bianji icon-bianji'></icon>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</block>
+
+<view class='add_btn' bindtap="add_btn">
+  <view>
+    <text>添加课程</text>
+  </view>
+</view>
+
+<!-- 当没有课程记录时 显示 -->
+<view class='nocourse' wx:if="{{is_cour}}">
+  <text>暂无课程记录</text>
+</view>
+</view>
+
+
+<!-- 被拒绝的课程 -->
+<view class='cour_box' wx:if="{{current=='tab3'}}">
+<block wx:for="{{refuse_list}}" >
+  <view class='course'>
+    <view class='course_line'>
+      <view class='cour_title'>{{item.courName}}</view>
+      <view class='cour_set'>
+        <icon bindtap="deleCourse" data-type="refuse" data-idx="{{index}}" data-id="{{item.Id}}" style="color:#848282;margin-right:40rpx" class='iconfont_dele icon-dele'></icon>
+        <navigator hover-class='none' url="../editCourse/editCourse?cour_id={{item.Id}}">
+        <icon class='iconfont_bianji icon-bianji'></icon>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</block>
+
+<!-- 当没有课程记录时 显示 -->
+<view class='nocourse' wx:if="{{is_refuse_cour}}">
+  <text>暂无课程记录</text>
+</view>
+</view>
+
+
+</view>

@@ -1,0 +1,149 @@
+/* pages/apply/apply.wxss */
+.container{
+  overflow-x: hidden;
+}
+page{
+  background-color: #eeeeee;
+}
+.top_bk{
+  width: 100%;
+  height: 250rpx;
+  /* background: #FF4C63; */
+  background: #e93323;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+.circle_box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35rpx;
+}
+.circle{
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 22rpx;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.circle_txt{
+  font-size: 28rpx;
+  color: #FF4C63;
+}
+.progress_txt{
+  height: auto;
+  width: 200rpx;
+  font-size: 26rpx;
+  color: white;
+  top: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.line{
+  width: 240rpx;
+  height: 4rpx;
+  background: #E49090;
+}
+.info_box{
+  width: 95%;
+  height: auto;
+  background: white;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  top: 160rpx;
+  position: absolute;
+}
+/* .top_line{
+  width: 100%;
+  height: 20rpx;
+  float: left;
+  position: relative;
+  background: #eeeeee;
+} */
+.cell_line{
+  width: 100%;
+  float: left;
+  position: relative;
+  /* margin-top: 20rpx; */
+  overflow: hidden;
+}
+.button-sp-area{
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 60%;
+}
+.mini-btn{
+    margin-right: 5px;
+}
+.apply_btn{
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.save_btn{
+  width: 100%;
+  height: 100%;
+  background: black;
+  border-radius: 40rpx;
+  line-height: 80rpx;
+  color: #f2d11b;
+  font-size: 28rpx;
+}
+/* 上传框样式 */
+
+.weui-uploader{
+  width: 100%;
+  float: left;
+  position: relative;
+  background: white;
+  border-top: 1px solid #eeeeee;
+  font-size: 28rpx;
+}
+.weui-uploader__hd{
+  padding-bottom: 0;
+  padding-left: 15px;
+  padding-top: 12px;
+}
+.weui-uploader__bd{
+  margin-left:30rpx;
+  margin-top:30rpx;
+}
+.delete{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.weui-uploader__file{
+  position: relative;
+}
+.agree{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+}
+.ag_label{
+  background: #eeeeee;
+}
+
+form{
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}

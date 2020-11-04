@@ -1,0 +1,73 @@
+<view class='container'>
+
+<view class='tick_list_box'>
+  <view class='tick_list'  >
+    <view class='tick_list_left'>
+      <view class='tick_money'>
+        <view style='font-size:22rpx;color:#333333;'>￥</view>
+        <view style='font-size:30rpx;color:#333333;font-weight:600'>{{money}}</view>
+      </view>
+      <view class='tick_type'>
+       <text>抵用券</text>
+      </view>
+    </view>
+    <view class='divide'></view>
+
+    <view class='tick_list_right'>
+      <view class='tick_title'>
+       {{courName}}
+      </view>
+      <view class='tick_des'>
+        <view class='tick_state'>
+        总数:<text style='color:#ff0000;margin-right:4rpx;'>{{num}}</text> 
+        已领取:<text style='color:#ff0000;margin-right:4rpx;'>{{used}}</text> 
+        已核销:<text style='color:#ff0000;margin-right:4rpx;'>{{checked}}</text></view>
+        <view class='deadline'>有效期至{{deadline}}</view>
+      </view>
+    </view>
+    <!-- <button class='state_btn' bindtap='editCoupon'>编辑</button> -->
+  </view>
+</view>
+
+<view class='check_box'>
+  <view class='check_child_box'>
+    <view class='record_title'>
+      <icon class='iconfont_check icon-check'></icon>
+      <text style='font-size:24rpx;margin-left:10rpx'>记录列表</text>
+    </view>
+
+    <view class='record_item'>
+      <view class='record_head'>
+        <text>头像</text>
+      </view>
+      <view class='record_nick'>
+        <text>昵称</text>
+      </view>
+      <view class='get_time'>
+        <text>手机号码</text>
+      </view>
+      <view class='check_time'>
+        <text>核销时间</text>
+      </view>
+    </view>
+<!-- 核销人员信息 -->
+<block wx:for="{{get_list}}">
+    <view class='record_des'>
+      <view class='record_head'>
+         <image src='{{item.avatarUrl}}'></image>
+      </view>
+      <view class='record_nick'>
+         <text>{{item.nickName}}</text>
+      </view>
+      <view class='get_time'>
+        <text>{{item.phone?item.phone:'未知'}}</text>
+      </view>
+      <view class='check_time'>
+        <text>{{item.update_time}}</text>
+      </view>
+    </view>
+</block>
+  <!-- 核销人员信息 -->
+  </view>
+</view>
+</view>

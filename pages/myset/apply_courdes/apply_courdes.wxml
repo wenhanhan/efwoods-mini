@@ -1,0 +1,107 @@
+<view class="container">
+<!-- 课程详情头部 -->
+  <view class='cour_detail_list'>
+    <view class='cour_list_left'>
+      <view class='cour_img'>
+        <image mode='aspectFill' src='https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{cour_info.courImg}}'></image>
+      </view>
+    </view>
+
+    <view class='cour_list_right'>
+      <view class='cour_des_title'>
+        <text>{{cour_info.courName}}</text>
+      </view>
+  
+      <view class='cour_des_prop'>
+        <text>{{cour_info.courAddressName}}/{{cour_info.Methods}}/{{cour_info.courTags}}</text>
+      </view>
+    </view>
+ <navigator url='../../tea_detail/tea_detail?tea_id={{cour_info.teaId}}'>
+    <view class='teaview_btn'>查看教师</view>
+ </navigator>
+
+  </view>
+
+
+<!-- 课程详情地址 -->
+  <view class='cour_detail_add'>
+    <view class='cour_add_left'>
+      <view class='cour_address'>
+        <view class='cour_address_img'>
+          <icon class='iconfont_add icon-weizhi'></icon>
+        </view>
+        <view class='cour_address_text'>
+          <text>{{cour_info.courAddressDes}}</text>
+        </view>
+       
+      </view>
+    </view>
+    <view class='cour_add_right'>
+      <view class='cour_add_phone' bindtap='call'>
+        <icon class='iconfont_dianhua icon-dianhua'></icon>
+      </view>
+    </view>
+  </view>
+<!-- 课程属性介绍 -->
+<view class='cour_detail_prop'>
+  <view class='cour_time'>
+    <view class='cour_prop_img'>
+      <icon class='iconfont_shichang icon-shichang'></icon>
+    </view>
+    <view class='cour_pro_txt'>
+      <text>课程时长: {{cour_info.courHour}}分钟</text>
+    </view>
+  </view>
+  <view class='cour_date'>
+    <view class='cour_prop_img'>
+      <icon class='iconfont_riqi icon-riqi'></icon>
+    </view>
+    <view class='cour_pro_txt'>
+      <text>有效时间: {{cour_info.startTime}}—{{cour_info.endTime}}</text>
+    </view>
+  </view>
+  <view class='cour_contact'>
+    <view class='cour_prop_img'>
+      <icon class='iconfont_contact icon-contact'></icon>
+    </view>
+    <view class='cour_pro_txt'>
+      <text>联系方式: {{cour_info.courContact}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 分割线 -->
+  <view class='cour_detail_divide'></view>
+
+
+<!-- 分割线 -->
+  <view class='cour_detail_divide'></view>
+
+  <view class='cour_des_nav'>
+    <view class='nav_line'>
+      <view class='nav_line_border'>
+      </view>
+      <view class='line_circle_box'>
+        <view class='line_circle'></view>
+      </view>
+    </view>
+    <view class='des_nav_title'>
+      <text>课程详情</text>
+    </view>
+    <view class='nav_line'>
+      <view class='line_circle_box'>
+        <view class='line_circle'></view>
+      </view>
+      <view class='nav_line_border'>
+      </view>
+    </view>
+  </view>
+
+  <!-- 图文介绍 -->
+  <view class='cour_detail_cont'>
+   <parser html="{{cour_info.courDes}}" />
+  </view>
+
+  <view class='cour_detail_divide'></view>
+
+</view>

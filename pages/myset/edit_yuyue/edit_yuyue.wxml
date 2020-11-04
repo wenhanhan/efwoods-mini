@@ -1,0 +1,108 @@
+<view class="container">
+  <view class="set_top">
+    <view class="item">
+      <view class="item_child">
+        <text>是否开启付费</text>
+        <i-cell title="自定义内容">
+            <i-switch value="{{is_pay}}" size="large" bind:change="pay" slot="footer">
+                <view slot="open">开启</view>
+                <view slot="close">关闭</view>
+            </i-switch>
+        </i-cell>
+      </view>
+    </view>
+    <view class="item" hidden="{{!is_pay}}">
+      <view class="item_child">
+        <text>是否可用优惠券折扣</text>
+        <i-cell title="自定义内容">
+            <i-switch value="{{is_coupon}}" size="large" bind:change="coupon" slot="footer">
+                <view slot="open">开启</view>
+                <view slot="close">关闭</view>
+            </i-switch>
+        </i-cell>
+      </view>
+    </view>
+    <view class="item">
+      <view class="item_child">
+        <text>当前最大预约人数</text>
+        <view class="item_daohang">
+          <input style="width:80rpx;text-align:right;" bindinput="input" type="number" placeholder="{{max_stu==-1?'不限':max_stu}}" />
+          <icon  class='iconfont_daohang icon-xiangyou-daohang'></icon>
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class="item">
+      <view class="item_child">
+        <text>单节课程时长</text>
+        <picker bindchange="duration" value="{{index}}" range="{{array}}">
+        <view class="item_daohang">
+          <text>{{array[index]}}分钟</text>
+          <icon  class='iconfont_daohang icon-xiangyou-daohang'></icon>
+        </view>
+        </picker>
+      </view>
+    </view> -->
+
+    <view class="item">
+      <view class="item_child" style="justify-content:flex-start;">
+        课程开始前
+        <view style="padding:0 16rpx">
+        <i-input-number step="10" value="{{before_time}}" min="10" max="60" bindchange="forbid_yuyue" />
+        </view>
+        分钟禁止预约
+      </view>
+    </view>
+
+    <view class="item">
+      <view class="item_child" style="justify-content:flex-start;">
+        课程开始前
+        <view style="padding:0 16rpx">
+        <i-input-number step="10" value="{{end_time}}" min="10" max="60" bindchange="forbid_cancel" />
+        </view>
+        分钟禁止取消
+      </view>
+    </view>
+  </view>
+  <!-- 开课时间设置 -->
+  <view class="course_time">
+    <view class="time_set_title">
+      <icon class='iconfont_time_set icon-shezhishijian'></icon>
+      <text style="margin-left:15rpx">开课时间设置</text>
+    </view>
+    
+    <view class="time_box" wx:for="{{clock_arr}}" wx:for-index="cidx" wx:for-item="citem">
+      <view class="week_title">
+        <text>开课日期:</text>
+      </view>
+      <view class="week_box">
+        <view class="date_item {{item.state?'selected':''}}" bindtap="select_week" data-idx="{{index}}" wx:for="{{citem.date}}" data-cidx="{{cidx}}">
+          <text>{{item.day}}</text>
+          <view hidden="{{!item.state}}" class="duigou">
+          </view>
+          <icon hidden="{{!item.state}}" class='iconfont_duigou icon-tag31'></icon>
+        </view>
+      </view>
+      <view class="week_title" style="margin-top:20rpx;" >
+        <text>开课时间:</text>
+         <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{citem.multiIndex}}" range="{{citem.multiArray}}">
+            <view bindtap="picker" data-tidx="{{cidx}}" class="clock">
+              <text>{{citem.multiArray[0][citem.multiIndex[0]]}}~{{citem.multiArray[1][citem.multiIndex[1]]}}</text>
+              <icon class='iconfont_clock icon-xiala'></icon>
+            </view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 添加时间 -->
+    <view class="add_time" bindtap="add_time">
+      <icon class='iconfont_add_time icon-jiahaox'></icon>
+      <text style="margin-left:15rpx">添加开课时间</text>
+    </view>
+  </view>
+
+  <view class="save_btn" bindtap="save"> 
+    <text>确认</text>
+  </view>
+  <i-toast id="toast" />
+</view>

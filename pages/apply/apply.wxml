@@ -1,0 +1,100 @@
+<view class='container'>
+
+  <view class="top_bk">
+    <!-- 步骤条 -->
+    <view class="circle_box">
+      <view class="circle">
+        <view class="circle_txt">1</view>
+        <view class="progress_txt">提交资质</view>
+      </view>
+      <view class="line"></view>
+      <view class="circle">
+        <view class="circle_txt">2</view>
+        <view class="progress_txt">开通VIP</view>
+      </view>
+      <view class="line"></view>
+      <view class="circle">
+        <view class="circle_txt">3</view>
+        <view class="progress_txt">等待审核</view>
+      </view>
+    </view>
+  </view>
+  <view class="info_box"> 
+  
+  <i-cell-group class='cell_line' style="border-radius:20rpx;">
+
+    <i-cell data-type='1' data-cate='apply_name' data-title="请输入姓名" bind:click="input" required="{{true}}" is-link title="姓名" border="{{true}}" value="{{apply_name}}" />
+
+    <picker bindchange="apply_sex" value="{{sex_index}}" range="{{sexArr}}">
+      <i-cell data-type='1' data-cate='apply_sex' data-title="请输入性别" is-link title="性别" border="{{true}}" value="{{sexArr[sex_index]}}" />
+    </picker> 
+<!-- 去掉年龄 -->
+    <!-- <i-cell data-type='10' data-cate='apply_age' data-title="请输入年龄" bind:click="input" is-link title="年龄" border="{{true}}" value="{{apply_age}}" /> -->
+    <i-cell data-type='5' data-cate='apply_contact' data-title="请输入联系方式" bind:click="input" is-link title="联系方式" border="{{true}}" value="{{apply_contact}}" />
+
+    <picker bindchange="field" value="{{field_index}}" range="{{field_type_arr}}" range-key='type'>
+      <i-cell data-type='1' data-cate='field' data-title="请输入授课领域" required="{{true}}" is-link title="授课领域" border="{{true}}" value="{{field_type_arr[field_index].type}}" />
+    </picker>
+
+
+    <!-- <i-cell data-type='1' data-cate='apply_tea_age' data-title="请输入教龄" bind:click="input" is-link title="教龄" border="{{true}}" value="{{apply_tea_age}}" /> -->
+
+     <picker bindchange="tea_age" value="{{tea_age_index}}" range="{{tea_ageArr}}">
+        <i-cell data-type='1' i-class='cell_item' data-cate='tea_age' data-title="请输入教龄" is-link title="教龄" border="{{true}}" value="{{tea_ageArr[tea_age_index]}}年" />
+      </picker> 
+
+    <i-cell data-type='1' data-cate='apply_agency' data-title="请输入所属机构" bind:click="input" is-link title="所属机构" border="{{true}}" value="{{apply_agency}}" />
+
+
+    <i-cell data-type='2' data-cate='apply_honer' data-title="请输入荣誉成就" bind:click="input" is-link title="荣誉成就" border="{{true}}" value="{{apply_honer}}" />
+
+  </i-cell-group>
+  <i-cell-group style="border-top:10rpx solid #eeeeee;" class='cell_line'>
+
+    <i-cell data-type='2' data-cate='apply_intro' data-title="请输入个人简介" bind:click="input" is-link title="个人简介" border="{{true}}" value="{{apply_intro}}" />
+
+    <i-cell data-type='3' data-cate='tag' data-title="请输入个人标签" bind:click="input" is-link title="标签" border="{{true}}" value="{{tag}}" />
+
+  </i-cell-group>
+
+
+  <view class="weui-uploader">
+    <view class="weui-uploader__hd">
+      <view class="weui-uploader__title">头像（长按删除）</view>
+    </view>
+    <view class="weui-uploader__bd">
+      <view class="weui-uploader__files" id="uploaderFiles">
+          <view class="weui-uploader__file"  hidden="{{!tea_img}}" >
+            <image class="weui-uploader__img" bindtap="previewImage" data-src='{{tea_img}}' src="{{tea_img}}" mode="aspectFill" />
+          </view>
+      </view>
+      <view class="weui-uploader__input-box">
+        <view class="weui-uploader__input" bindtap="tea_img"></view>
+      </view>
+    </view>
+  </view>
+
+  <i-cell-group class='cell_line' style="background:#eeeeee;">
+<view class='agree'>
+    <checkbox-group bindchange="bindAgreeChange">
+      <label class="weui-agree" for="weuiAgree">
+        <view class="weui-agree__text">
+          <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+          <view class="weui-agree__checkbox-icon">
+            <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+          </view>
+          阅读并同意
+          <navigator hover-class='none' url="../agree/agree" class="weui-agree__link">《用户协议》</navigator>
+        </view>
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="apply_btn">
+      <button class="save_btn" bindtap="apply" >提交申请</button>
+    </view>
+  </i-cell-group> 
+
+</view>
+<i-toast id="toast" />
+<i-toast id="success" />
+</view>

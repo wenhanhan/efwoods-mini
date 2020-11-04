@@ -1,0 +1,101 @@
+<view class='container'>
+
+  <i-cell-group class='cell_line'>
+    <i-cell data-type='1' data-cate='par_name' data-title="请输入姓名" bind:click="input" required="{{true}}" is-link title="姓名" border="{{true}}" value="{{par_name}}" />
+
+    <picker bindchange="par_sex" value="{{par_sex_index}}" range="{{sexArr}}">
+      <i-cell data-type='1' data-cate='par_sex' data-title="请输入性别" is-link title="性别" border="{{true}}" value="{{sexArr[par_sex_index]}}" />
+    </picker>
+
+    <i-cell data-type='5' data-cate='phone' data-title="请输入电话" bind:click="input" is-link title="电话" border="{{true}}" value="{{phone}}" />
+    <!-- <button hover-class='none' class='phone_btn' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button> -->
+  </i-cell-group>
+
+  <view style='width:100%' hidden='{{identity==1}}'>
+    <view class='child_info'>
+      <icon class='iconfont_child icon-child'></icon>
+      <text>子女信息</text>
+    </view>
+
+
+    <i-cell-group class='cell_line'> 
+      <i-cell data-type='1' data-cate='child_name' data-title="请输入姓名" bind:click="input" required="{{true}}" is-link title="姓名" border="{{true}}" value="{{child_name}}" />
+      <i-cell data-type='10' data-cate='child_age' data-title="请输入年龄" bind:click="input" is-link title="年龄" border="{{true}}" value="{{child_age}}" />
+
+      <picker bindchange="child_sex" value="{{index}}" range="{{sexArr}}">
+        <i-cell data-type='1' data-cate='child_sex' data-title="请输入性别" is-link title="性别" border="{{true}}" value="{{sexArr[index]}}" />
+      </picker>
+
+      <i-cell data-type='2' data-cate='child_hobby' data-title="请输入爱好" bind:click="input" is-link title="爱好" border="{{true}}" value="{{child_hobby}}" />
+      <i-cell data-type='2' data-cate='child_honor' data-title="荣获奖项" bind:click="input" is-link title="荣获奖项" border="{{true}}" value="{{child_honor}}" />
+
+    </i-cell-group>
+
+    <!--子女 视频上传 -->
+
+  </view>
+
+  <view hidden='{{identity!=1}}' style="width:100%">
+    <view class='tea_info'>
+      <icon class='iconfont_course icon-course'></icon>
+      <text>授课信息</text>
+    </view>
+ 
+
+    <i-cell-group class='cell_line'>
+      <picker bindchange="field" value="{{field_index}}" range="{{field_type_arr}}" range-key='type'>
+        <i-cell data-type='1' data-cate='field' data-title="请输入授课领域" required="{{true}}" is-link title="授课领域" border="{{true}}" value="{{field_type_arr[field_index].type}}" />
+      </picker> 
+
+
+      <i-cell data-type='1' data-cate='agency' data-title="私教或所属机构" bind:click="input" is-link title="所属机构" border="{{true}}" value="{{agency}}" />
+      <i-cell data-type='2' data-cate='introduce' data-title="请输入个人简介" bind:click="input" is-link title="个人简介" border="{{true}}" value="{{introduce}}" /> 
+      <i-cell data-type='2' data-cate='honor' data-title="请输入荣誉资质" bind:click="input" is-link title="荣誉资质" border="{{true}}" value="{{honor}}" />
+
+      <i-cell data-type='2' data-cate='experience' data-title="请输入工作经历" bind:click="input" is-link title="工作经历" border="{{true}}" value="{{experience}}" />
+
+      <picker bindchange="tea_age" value="{{tea_age_index}}" range="{{tea_ageArr}}">
+        <i-cell data-type='1' i-class='cell_item' data-cate='tea_age' data-title="请输入教龄" is-link title="教龄" border="{{true}}" value="{{tea_ageArr[tea_age_index]}}年" />
+      </picker> 
+
+
+      <i-cell data-type='3' data-cate='tag' data-title="请输入个人标签" bind:click="input" is-link title="标签" border="{{true}}" value="{{tag}}" />
+    
+
+    </i-cell-group>
+
+    <!-- 授课视频上传 -->
+
+
+
+
+    <!-- 课程缩略图 -->
+
+    <view class="weui-uploader"> 
+      <view class="weui-uploader__hd">
+        <view class="weui-uploader__title">展示缩略图</view>
+      </view>
+      <view class="weui-uploader__bd">
+        <view class="weui-uploader__files" id="uploaderFiles">
+            <view class="weui-uploader__file" >
+              <image class="weui-uploader__img" bindtap="previewImage" data-src='{{tea_img}}' src="{{tea_img}}" />
+            </view>
+        </view>
+        <view class="weui-uploader__input-box" >
+          <view class="weui-uploader__input" bindtap="tea_img"></view>
+        </view> 
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 底线 -->
+
+  <view class='btn_box'>
+    <view class='save_btn' bindtap='upload'>
+      <text>保存更改</text>
+    </view>
+  </view>
+<i-toast id="toast" />
+<i-toast id="success" />
+</view>

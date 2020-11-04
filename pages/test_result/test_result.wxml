@@ -1,0 +1,75 @@
+<view class="container">
+  <view class="top">
+    <view class="top_bk">
+      <image mode='aspectFill'  src="https://cdn.icloudapi.cn/result_title1.png"></image>
+    </view>
+    <view class="result_box">
+      <view class="title">
+        <view>评测结果：<text style="color:#F90707;font-size:36rpx;font-weight:500;">{{score}}分</text></view>
+      </view>
+      <view class="result">
+        <image style="width: 248rpx;height:42rpx;" wx:if="{{result==1}}" src="https://cdn.icloudapi.cn/normal.png"></image>
+        <image style="width: 396rpx;height:42rpx;" wx:if="{{result==2}}" src="https://cdn.icloudapi.cn/normal1.png"></image>
+        <image style="width: 396rpx;height:42rpx;" wx:if="{{result==3}}" src="https://cdn.icloudapi.cn/normal2.png"></image>
+      </view>
+      <view class="headimg">
+        <image src="{{headimg}}"></image>
+      </view>
+      <view class="bottom">
+        <view class="share" bindtap="handleOpen1">
+          <icon class='iconfont_fenxiang icon-fenxiang'></icon>
+          <text>分享给好友</text>
+        </view>
+        <view class="line"></view>
+        <view bindtap="again" class="again">
+          <text>重新测试</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 参考结果 -->
+    <view class="cankao">
+      <view class="cankao_title">
+        <text>参考结果</text>
+      </view>
+      <view class="table">
+        <image mode='aspectFill' src="https://cdn.icloudapi.cn/table.png"></image>
+      </view>
+       <!-- 机构广告 -->
+      <navigator open-type="redirect" hover-class="none" url="../location/location" class="banner">
+        <image src="{{banner}}" mode='aspectFill'></image>
+      </navigator>
+      <view class="cankao_intro">
+        <view class="intro_icon">
+          <icon style="color:#222222;margin-right:0" class='iconfont_tip icon-tishi'></icon>
+        </view>
+        <view class="intro">
+          <text>想了解青少年儿童注意力训练方法以及更多青少年儿童心理问题可咨询下方专业心理学老师。</text>
+        </view>
+      </view>
+    </view>
+  <!-- 添加微信 -->
+  <view class="add_wechat">
+    <view class="add_left">
+      <text>李嘉树，美国正面管教家长/学校双讲师，国家二级心理咨询师，华东师范大学发展心理学硕士；</text>
+      <text> 曾在华东师范大学任教3年，讲授人格心理学课程，被评为“优秀教师”。</text>
+    </view>
+    <view class="add_right">
+      <view class="qrcode" bindtap="preview">
+        <image mode='aspectFill' src="{{qrcode}}"></image>
+      </view>
+      <view bindtap="save" class="save">
+        <text>保存</text>
+      </view>
+    </view>
+  </view>
+  <i-action-sheet visible="{{ visible1 }}" actions="{{ actions1 }}" show-cancel bind:cancel="handleCancel1" bind:click="handleClickItem1" />
+  <!-- 生成海报 -->
+  <view class='imagePathBox' bindtap="hide" hidden="{{maskHidden == false}}">
+    <image src="{{imagePath}}" mode='aspectFit' class='shengcheng'></image>
+    <button hidden="{{!save_btn}}" class='baocun' bindtap='baocun'>保存分享卡片</button>
+  </view>
+  <view class="canvas-box">
+    <canvas style="width: {{canvas_width}}px;height: {{canvas_height}}px;position:fixed;top:9999px" canvas-id="mycanvas" />
+  </view>
+</view>

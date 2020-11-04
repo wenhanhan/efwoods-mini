@@ -1,0 +1,94 @@
+/* pages/all_shows/all_shows.wxss *//* pages/myset/myshow/myshow.wxss */
+@import '/icon/play.wxss';
+@import '/icon/video_favor.wxss';
+@import '/icon/dele.wxss';
+@import '/icon/noresource.wxss';
+.show_box{
+  width: 94%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.show_box image{
+  width: 46%;
+  height: 180rpx;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+}
+
+/* 教练秀 */
+.home_show_video{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.child_video_box{
+  width: 94%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home_video_box{
+  width: 46%;
+  height: 270rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 20rpx;
+  position: relative;
+}
+
+.home_video_box image{
+  width: 100%;
+  height: 180rpx;
+  border-radius: 10rpx;
+}
+.video_des{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.video_title{
+  width: 100%;
+  height: auto;
+  float: left;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #1D1C1C;
+  overflow: hidden;/*超出部分隐藏*/
+  text-overflow:ellipsis;/* 超出部分显示省略号 */
+  white-space: nowrap;/*规定段落中的文本不进行换行 */
+}
+.video_play_times{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 20rpx;
+  color: #1D1C1C;
+}
+.dele_video{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 16rpx;
+  top: 135rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

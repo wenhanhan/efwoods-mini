@@ -1,0 +1,66 @@
+<view class="container">
+  <view class="top_bk"></view>
+  <view class="news_nav">
+    <view class="news_nav_item">
+    <i-badge count="{{sysNum}}">
+      <image src="/img/news/system.png"></image>
+    </i-badge>
+      <text>系统消息</text>
+    </view>
+    <view class="news_nav_item">
+    <i-badge count="{{judgeNum}}">
+      <image src="/img/news/judge.png"></image>
+    </i-badge>
+      <text>评论消息</text>
+    </view>
+    <view class="news_nav_item">
+    <i-badge count="{{fansNum}}">
+      <image src="/img/news/fans.png"></image>
+    </i-badge>
+      <text>粉丝消息</text>
+    </view>
+  </view>
+  <view class="clean_box" >
+    <view class="clean_line">
+      <text>消息列表</text>
+      <view class="clean" bindtap="clean">
+        <icon class='iconfont_clean icon-yidu-moren'></icon>
+        <text>全部已读</text>
+      </view>
+    </view>
+  </view>
+  <view class="white_bk"></view>
+
+  <!-- 消息内容 -->
+  <view class="news_box">
+    <navigator bindtouchstart="touchS" bindtouchmove="touchM" style="left:{{status||index!=idx?'0':'-140rpx'}}" class="news_item" data-idx="{{index}}"  wx:for="{{news}}" wx:key="id" hover-class="none" url="{{status?item.url:''}}{{item.Id}}">
+      <view class="news_logo">
+        <image wx:if="{{item.type!=0}}" mode="aspectFill" src="{{item.img}}"></image>
+        <image mode="aspectFill" src="/img/news/sys_news.png" wx:else></image>
+      </view> 
+      <view class="news_des">
+        <view class="news_title">
+          <text>{{item.type==0?'系统消息':item.name}}</text>
+          <text class="news_time">{{item.time}}</text>
+        </view>
+        <view class="news_content">
+          <text>{{item.mark}}</text>
+        </view>
+      </view>
+      <view class="news_dot" wx:if="{{item.type==2&&item.read==0}}">
+        <text class="dot"></text>
+        <icon class='iconfont_chakan icon-dianjichakan'></icon>
+      </view>
+      <view class="del-button" data-idx="{{index}}" data-state="{{item.read}}" data-type="{{item.type}}" data-id="{{item.Id}}" catchtap="dele">删除</view>
+    </navigator>
+    <!-- 无消息 -->
+    <view class='nodata' wx:if="{{news.length==0}}">
+        <icon class='iconfont_notice icon-zanwutongzhi'></icon>
+        <view class='tips'>
+          <text>暂无消息～</text>
+        </view>
+    </view>
+
+<i-load-more  wx:if="{{noMoreData&&page!=1&&news.length>6}}" style="width:100%;position:relative;bottom:0;" tip="我是有底线的~" loading="{{ false }}" />
+  </view>
+</view>

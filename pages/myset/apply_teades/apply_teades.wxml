@@ -1,0 +1,47 @@
+<view class='container'>
+  <view class='card'>
+    <view class='top'>
+      <view class='headimg'>
+        <image src='{{tea_img}}'></image>
+      </view>
+      <view class='name'>
+        <text>{{name}}</text>
+      </view>
+      <view class='cour_add_phone' bindtap='call'>
+        <icon class='iconfont_dianhua icon-dianhua'></icon>
+      </view>
+    </view>
+
+     <view class='intro'>
+      <view class='intro_title'>
+          <icon class='iconfont_jianjie icon-jianjie'></icon>
+           <text>个人简介</text>
+      </view>
+      <view class='intro_txt'>
+        <view>{{introduce}}</view>
+      </view>
+    </view>
+
+     <view class='intro'>
+      <view class='intro_title'>
+          <icon class='iconfont_chengjiu icon-chengjiu'></icon>
+           <text>荣誉成就</text>
+      </view>
+      <view class='intro_txt'>
+        <text>{{honor}}</text>
+      </view>
+    </view>
+
+     <!-- <view class='intro'>
+      <view class='intro_title'>
+          <icon class='iconfont_jingli icon-jingli'></icon>
+           <text>工作经历</text>
+      </view>
+      <view class='intro_txt'>
+        <text>{{experience}}</text>
+      </view>
+    </view> -->
+
+  </view>
+   
+</view>

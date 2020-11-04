@@ -1,0 +1,116 @@
+<view class="container">
+  <view class="top">
+    <view class="name">
+      <text>{{name}}</text>
+      <text style="font-weight:500;font-size:36rpx;">Lv{{level}}</text>
+    </view>
+    <view class="headimg">
+      <image src="{{headimg}}"></image>
+    </view>
+  </view>
+  <view class="user_data">
+    <view class="fensi">
+      粉丝数
+      <text style="color:#0C0C0C;font-size:46rpx;margin-left:4rpx;">{{fensi}}</text>
+    </view>
+    <view class="qiandao">
+      签到数
+      <text style="color:#0C0C0C;font-size:46rpx;margin-left:4rpx;">{{sign}}</text>
+    </view>
+    <view class="show">
+      教练秀
+      <text style="color:#0C0C0C;font-size:46rpx;margin-left:4rpx;">{{show}}</text>次
+    </view>
+  </view>
+  <view class="my_level">
+    <view class="my_level_top">
+      <view class="cur_level">
+        <text>当前等级</text>
+        <icon wx:if="{{level==1}}" style="margin-left:4rpx;" class='iconfont_level1 icon-lv1'></icon>
+        <icon wx:elif="{{level==2}}" style="margin-left:4rpx;" class='iconfont_level2 icon-lv2'></icon>
+        <icon wx:elif="{{level==3}}" style="margin-left:4rpx;" class='iconfont_level3 icon-lv3'></icon>
+        <icon wx:elif="{{level==4}}" style="margin-left:4rpx;" class='iconfont_level4 icon-lv4'></icon>
+        <icon wx:elif="{{level==5}}" style="margin-left:4rpx;" class='iconfont_level5 icon-lv5'></icon>
+        <icon wx:else="{{level==6}}" style="margin-left:4rpx;" class='iconfont_level6 icon-lv6'></icon>
+
+      </view>
+      <view class="cur_exp">
+        经验值
+        <text>{{exp}}</text>
+      </view>
+    </view>
+    <view class="my_level_bottom">
+      <view class="exp_line">
+        <i-progress percent="{{percent}}" status="wrong"></i-progress>
+      </view>
+    </view>
+  </view>
+
+  <!-- 等级区间 -->
+  <view class="qujian">
+    <view class="qujian_title">
+      <icon class='iconfont_huiyuan icon-huiyuan-'></icon>
+      <text style="margin-left:4rpx;" >等级经验值要求</text>
+    </view>
+    <view class="level_txt_box">
+        <view class="level_txt">
+          Lv1
+        </view>
+        <view class="level_txt">
+          Lv2
+        </view>
+        <view class="level_txt">
+          Lv3
+        </view>
+        <view class="level_txt">
+          Lv4
+        </view>
+        <view class="level_txt">
+          Lv5
+        </view>
+        <view class="level_txt">
+          Lv6
+        </view>
+      </view>
+    <view class="line_box">
+      <view class="line">
+        <view class="node"></view>
+        <view class="node"></view>
+        <view class="node"></view>
+        <view class="node"></view>
+        <view class="node"></view>
+        <view class="node"></view>
+      </view>
+    </view>
+
+    <view class="exp">
+      <view wx:for="{{qujian}}" class="exp_txt">{{item.interval}}</view>
+    </view>
+  </view>
+
+  <view class="quanyi">
+    <view class="item">
+      <view class="line_left">
+          <view class="line_left_square">
+            <icon class='iconfont_rank icon-icon-test'></icon>
+          </view>
+      </view>
+      <view class="line_right">
+        <view class="quanyi_title">私教排名</view>
+        <view class="quanyi_des">经验值直接影响私教排名</view>
+      </view>
+    </view>
+
+    <view class="item" bindtap="jump_shop">
+      <view class="line_left">
+          <view class="line_left_square">
+            <icon class='iconfont_shop icon-gouwu'></icon>
+          </view>
+      </view>
+      <view class="line_right">
+        <view class="quanyi_title">会员折扣</view>
+        <view class="quanyi_des">会员折扣，享商城更多权益</view>
+      </view>
+    </view>
+  </view>
+</view>

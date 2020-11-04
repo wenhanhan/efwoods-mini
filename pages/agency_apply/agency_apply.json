@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "i-input": "../../dist/input/index",
+    "i-toast": "../../dist/toast/index"
+  },
+  "navigationBarBackgroundColor": "#e93323",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "机构入驻",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

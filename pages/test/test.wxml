@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="content_box">
+    <view class="title">
+      <image src="https://cdn.icloudapi.cn/pingce1_title.png"></image>
+    </view>
+    <view class="test_num">
+      <icon class='iconfont_pingce icon-pingce'></icon>
+      <text style="margin-left:4rpx;">{{test_num}}人测过</text>
+    </view>
+    <view class="banner">
+      <image mode='aspectFill' src="https://cdn.icloudapi.cn/pingce1_banner.png"></image>
+    </view>
+    <view class="pingce_des">
+      <text>注意力能否集中对于孩子的学习是非常重要的，没有注意力，学习的内容就记不住。</text>
+      <text>如何才能知道孩子需不需要注意力训练呢？不妨认真测试一下，这些问题都是由注意力训练专家多年的经验整编而成，有很高的准确度与公信度。</text>
+    </view>
+    <view class="option_btn">
+      <view class="share" bindtap="handleOpen1">
+        <icon class='iconfont_fenxiang icon-fenxiang'></icon>
+        <text>分享</text>
+      </view>
+      <view bindtap="test" class="start">
+        <text>开始测试</text>
+      </view>
+    </view>
+  </view>
+   <i-action-sheet visible="{{ visible1 }}" actions="{{ actions1 }}" show-cancel bind:cancel="handleCancel1" bind:click="handleClickItem1" />
+  <view class="circle1"></view>
+  <view class="circle2"></view>
+  <view class="circle3"></view>
+  <view class="circle4"></view>
+  <view class="circle5"></view>
+  <view class="circle6"></view>
+  <!-- 分享卡片 -->
+   <!-- 生成海报 -->
+  <view class='imagePathBox' bindtap="hide" hidden="{{maskHidden == false}}">
+    <image src="{{imagePath}}" mode='aspectFit' class='shengcheng'></image>
+    <button hidden="{{!save_btn}}" class='baocun' bindtap='baocun'>保存分享卡片</button>
+  </view>
+  <view class="canvas-box">
+    <canvas style="width: {{canvas_width}}px;height: {{canvas_height}}px;position:fixed;top:9999px" canvas-id="mycanvas" />
+  </view>
+</view>

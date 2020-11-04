@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "i-switch": "../../dist/switch/index",
+    "i-cell": "../../dist/cell/index",
+    "i-cell-group": "../../dist/cell-group/index",
+    "i-icon": "../../dist/icon/index"
+  },
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "新增课程",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

@@ -1,0 +1,60 @@
+<view class="container" style="padding-bottom:20rpx;">
+<!-- tab标签 -->
+<i-tabs style="width:100%" current="{{ current }}" color="#f759ab" bindchange="handleChange">
+  <block wx:for="{{cour_type}}">
+    <i-tab key="tab{{item.Id}}" title="{{item.Id}}" title="{{item.type}}"></i-tab>
+  </block>
+</i-tabs>
+<!--  -->
+
+<view wx:for="{{signlist}}" style="position:relative;width:100%;height:auto;" >
+  <view class="signMonth">
+    <text>{{item.months}}</text> 
+  </view>
+  <view class='sign_list' wx:for="{{item.detail}}" wx:for-item="child"> 
+    <view class='sign_left'>
+      <view class='title'>
+        <text>课程：{{child.courName}}</text>
+      </view>
+      <view class='tea'>
+      <text>教练：{{child.teaName}}</text>
+      </view>
+
+      <!-- <view class='class'>
+      <text>类别：{{item.courType}}</text>
+      </view> -->
+
+      <view wx:if="{{child.wrap}}" class='class'>
+       <text>评语：{{child.judge?child.judge:'暂无评语'}}</text>
+      </view>
+
+      <view wx:else class='class'>
+      评语：
+       <i-notice-bar style="width:75%;background-color:''"  loop speed="2000">
+       {{child.judge?child.judge:'暂无评语'}}
+       </i-notice-bar>
+      </view>
+
+    </view>
+    <view class='sign_right'>
+      <view class='name'>
+        <text>学生:{{child.signName}}</text>
+      </view>
+      <view class='date'>
+        <text>签到日期:{{child.time}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 当没有签到记录时 显示 -->
+<view class='nosign' wx:if="{{signlist.length===0}}">
+  <text>暂无签到记录</text>
+</view>
+
+<view class='scan' bindtap='scan'>
+  <!-- <image src='../../../img/scan.png'></image> -->
+   <icon class='iconfont_scan icon-saomiao'></icon>
+</view>
+
+</view>

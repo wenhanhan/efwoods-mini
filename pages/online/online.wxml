@@ -1,0 +1,90 @@
+<view class="container">
+	<view class="nav_fix">
+		<i-tabs style="width:100%" current="{{ current }}" color="#FF5B00" bindchange="handleChange">
+			<i-tab key="tab1" title="名师推荐"></i-tab>
+			<i-tab key="tab2" title="音频课程"></i-tab>
+			<!-- <i-tab key="tab3" title="音频课程"></i-tab> -->
+		</i-tabs>
+	</view>
+
+	<view class="teacher" wx:if="{{current=='tab1'}}">
+		<view class="card">
+			<swiper indicator-dots="{{indicatorDots}}" bindchange="change" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+				<block wx:for="{{teacher}}" wx:key="*this">
+					<swiper-item>
+						<view class="swiper_box" bindtap="view" data-id="{{item.Id}}" data-dingyue="{{item.dingyue}}" data-price="{{item.price}}">
+							<view class="top_bk">
+								<image mode="aspectFill" src="{{item.bk_img}}"></image>
+							</view>
+							<!-- 显示是否订阅 -->
+							<view wx:if="{{item.dingyue==1}}" class="is_dingyue">
+								<text>已订阅</text>
+							</view>
+							<view class="tea_info">
+								<image mode="aspectFill" src="{{item.tea_img}}"></image>
+								<view class="tea_name">
+									<text>{{item.tea_name}}</text>
+								</view>
+								<view class="tea_career">
+									<text>{{item.tea_info}}</text>
+								</view>
+								<view class="line"></view>
+								<view class="tea_topic">
+									<text>{{item.title}}</text>
+								</view>
+							</view>
+							<view class="sub_num">
+								<icon class='iconfont_duiyuan icon-chengyuan'></icon>
+								<text> {{item.sub_num}}人与你共同学习</text>
+							</view>
+						</view>
+					</swiper-item>
+				</block>
+			</swiper>
+			<view class="scroll_index">
+				<view><text style="color:#FF5B00">{{current_index}}</text> / {{teacher.length}}</view>
+			</view>
+			<!-- <image src="https://cdn.icloudapi.cn/teacher_card.png" mode="aspectFill"></image> -->
+		</view>
+	</view>
+
+	<view class="all_teacher" wx:if="{{current=='tab2'}}">
+		<view wx:for="{{all_teacher}}" class="all_teacher_item" bindtap="view" data-id="{{item.Id}}" data-dingyue="{{item.dingyue}}" data-price="{{item.price}}">
+			<view class="item_top">
+				<view class="item_top_title">
+					<text>{{item.title}}</text>
+				</view>
+				<view class="item_top_info">
+					<view class="item_top_author">
+						<text>{{item.tea_name}}</text>
+					</view>
+					<view class="item_top_intro">
+						<text>{{item.tea_info}}</text>
+					</view>
+				</view>
+				<view class="item_top_img">
+					<image src="{{item.card_img}}"></image>
+				</view>
+				<view wx:if="{{item.dingyue==1}}" class="item_top_dingyue">
+					<text>已订阅</text>
+				</view>
+			</view>
+			<view class="item_bottom">
+				<view class="item_bottom_left">
+					<icon class='iconfont_duiyuan icon-chengyuan'></icon>
+					<text>{{item.sub_num}}人与你共同学习</text>
+				</view>
+				<view class="item_bottom_right">
+					共<text style="color:#FF5B00;padding:0 4rpx">{{item.mp3_num}}</text>节
+				</view>
+			</view>
+		</view>
+		<!-- 暂无课程资源 -->
+		<view class='nodata' style="padding-top:250rpx;" wx:if="{{all_teacher.length==0}}">
+			<icon style="font-size:150rpx;" class='iconfont_resource icon-meiyouneirong'></icon>
+			<view class='tips' style="color:#d1cfcf">
+				<text>暂无课程资源～</text>
+			</view>
+		</view>
+	</view>
+</view>

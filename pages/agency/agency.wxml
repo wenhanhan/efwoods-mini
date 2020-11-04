@@ -1,0 +1,204 @@
+<view class="container" style="{{isIphoneX?'padding-bottom:130rpx':''}}">
+<block wx:for="{{agency_info}}">
+  <view class="agency_info">
+    <view class="agency_logo">
+      <image mode="aspectFill" src="{{item.agency_logo}}"></image>
+    </view>
+    <view class="agency_des">
+      <view class="agency_name">
+        <text>{{item.agency_name}}</text>
+      </view>
+      <view class="agency_score">
+        <text>评分</text>
+        <block wx:for="{{item.star}}">
+          <icon style="display:flex;margin-bottom:0;" class='iconfont_star icon-xingji3'></icon>
+        </block>
+        <block wx:for="{{5-item.star}}">
+          <icon style='display:flex;margin-bottom:0;' class='iconfont_star icon-xingji4'></icon>
+        </block>
+      </view>
+      <view class="agency_type">
+        <text>类别：{{item.agency_type}}</text>
+      </view>
+      <view class="agency_address">
+        <text>地址：{{item.agency_address}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="agency_address_details">
+    <view class="address_icon">
+      <icon data-lat="{{item.agency_lat}}" data-long="{{item.agency_long}}"  data-address="{{item.agency_address}}" data-location="{{item.agency_location}}"    bindtap="chooseLocation" style="font-size:40rpx;color:#ff3700;displayflex;" class='iconfont_add icon-weizhi'></icon>
+    </view> 
+    <view class="address_des">
+      <view>{{item.agency_location}}</view>
+      <view class="agency_distance">距您{{item.distance}}</view>
+    </view>
+    <view class="phone" bindtap="phone" data-phone="{{item.agency_phone}}">
+      <icon class='iconfont_dianhua icon-dianhua'></icon>
+    </view>
+  </view>
+
+  <!-- 机构简介 -->
+  <view class="agency_intro">
+    <view class="intro_title">
+      <icon class='iconfont_intro icon-jianjie'></icon>
+      <text>机构简介</text>
+    </view>
+    <view class="intro_des">
+      <text>{{item.agency_intro}}</text>
+    </view>
+  </view>
+
+  <!-- 更多信息 管理员可见 -->
+  <navigator hidden="{{!admin}}" style="width:95%;" hover-class="none"  url="../agency_license/agency_license?license={{item.agency_license}}&user={{item.agency_con_user}}"> 
+    <view class="agency_secret" style="border-bottom:{{item.is_pass==0?' 1px solid #eeeeee;':''}}">
+      <view style="display:flex;justify-content: center;align-items: center;">
+        <icon class='iconfont_more_info icon-gengduoxinxi'></icon>
+        <view class="more_info">更多信息</view>
+      </view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+  </navigator>
+  <!-- 机构展示图片 -->
+  <view class="agency_img_box" style="border-bottom:0">
+    <navigator hover-class="none" url="../agency_img/agency_img?agency_id={{item.Id}}" class="agency_img_num" style="justify-content:space-between">
+      <view>环境设施
+      <text style="font-size:22rpx;color:#343434;font-weight:500">（{{agency_img.length?agency_img.length:0}}）</text>
+      </view>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </navigator>
+    <view class="img_box">
+      <view class="img_item" wx:for="{{agency_img}}" hidden="{{index>=4}}" data-src="{{item}}" bindtap="preview">
+        <image src="{{item}}"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 入驻教练 -->
+  <view class="teacher" hidden="{{is_pass==0}}">
+    <view class="teacher_num">
+      <view>
+      入驻教练
+      <text style="font-size:22rpx;color:#343434;font-weight:500">（{{teacher.length}}）</text>
+      </view>
+    </view>
+    <scroll-view class="scroll-view_H" scroll-x hidden="{{teacher.length==0}}" >
+      <view wx:for="{{teacher}}" bindtap="tea_info" data-id="{{item.teaid}}"  class="teacher_info" style="{{index==0?'margin-left:20rpx':''}};" style="{{index==teacher.length-1?'margin-right:20rpx':''}};">
+        <view class="teacher_img">
+          <image mode="aspectFill" src="{{item.teaImg}}"></image>
+          <view class="favor" data-idx="{{index}}" data-state="{{item.state}}" data-teaid="{{item.teaid}}" catchtap="guanzhu">
+            <text wx:if="{{item.state==200}}">已关注</text>
+            <text wx:else>+关注</text>
+          </view>
+        </view>
+          <view class="teacher_name">
+            <text>{{item.name}}</text>
+            <icon class='iconfont_renzheng icon-jigourenzheng'></icon>
+          </view>
+          <view class="sign_times">
+            <text>学员累计签到{{item.signNum}}次</text>
+          </view>
+      </view> 
+    </scroll-view>
+  </view>
+ 
+
+<!-- 网友点评 --> 
+<navigator style="width:100%;"  hover-class='none' hidden="{{agency_judge_img.length!=0}}">
+<view class='comment_nav' hidden="{{is_pass==0}}">
+    <view class='comment'>
+      <text class='conmment_txt'>网友点评</text>
+      <text class='comment_num'>({{judge.length}})</text>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+</view>
+</navigator>
+
+<navigator style="width:100%;"  hover-class='none' hidden="{{agency_judge_img.length==0}}"  url="../all_judge/all_judge?agency_id={{agency_id}}">
+<view class='comment_nav' hidden="{{is_pass==0}}">
+    <view class='comment'>
+      <text class='conmment_txt'>网友点评</text>
+      <text class='comment_num'>({{judge_num}})</text>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+</view>
+</navigator>
+
+<view wx:for="{{judge}}" class='comment_list' hidden='{{index>=5||is_pass==0}}'>
+  <view class='comment_list_left'>
+    <view class='comment_headimg'>
+      <image src='{{item.avatarUrl}}'></image>
+    </view>
+  </view>
+  <view class='comment_list_right'>
+    <view class='comment_nickname'>
+      <text>{{item.nickName}}</text>
+    </view>
+    <view class='comment_time'>
+      <text>{{item.create_time}}</text>
+    </view>
+    <view class='comment_score'>
+      打分
+      <block wx:for="{{item.star}}">
+        <icon style='font-size:26rpx;'  class='iconfont_star icon-xingji3'></icon>
+      </block>
+      <block wx:for="{{5-item.star}}">
+        <icon style='font-size:26rpx'  class='iconfont_star icon-xingji4'></icon>
+      </block>
+    </view>
+    <view class='comment_words'>
+      <text>{{item.content}}</text>
+    </view>
+  <!-- 评价图片 -->
+    <view class='comment_img' wx:if="{{item.pic1||item.pic2||item.pic3}}">
+      <image mode='aspectFill' data-src="https://icloudapi.cn/efire/public/uploads/judge/{{item.pic1}}" bindtap="previewImage" data-index='{{index}}' wx:if="{{item.pic1}}" src='https://icloudapi.cn/efire/public/uploads/judge/{{item.pic1}}'></image>
+      <image mode='aspectFill' data-src="https://icloudapi.cn/efire/public/uploads/judge/{{item.pic2}}" bindtap="previewImage" data-index='{{index}}' wx:if="{{item.pic2}}" src='https://icloudapi.cn/efire/public/uploads/judge/{{item.pic2}}'></image>
+      <image mode='aspectFill' data-src="https://icloudapi.cn/efire/public/uploads/judge/{{item.pic3}}" bindtap="previewImage" data-index='{{index}}' wx:if="{{item.pic3}}" src='https://icloudapi.cn/efire/public/uploads/judge/{{item.pic3}}'></image>
+    </view>
+
+  </view>
+</view>
+
+<view class='pingjia' bindtap='pingjia' hidden="{{is_pass==0}}" data-agencyid='{{item.Id}}'>
+  <image src='../../img/judge.png'></image>
+</view>
+
+<!-- 底部菜单 -->
+<view class='bottom_tab_bar' hidden="{{is_pass==0}}" style="{{isIphoneX?'padding-bottom:30rpx':''}}">
+  <view class='cour_favor' hidden="{{state==200}}">
+    <view class='cour_favor_icon' data-agencyid='{{item.Id}}' bindtap='join'>
+     <icon wx:if="{{state==201}}" class='iconfont_wait icon-dengdai-'></icon>
+     <icon wx:else class='iconfont_join icon-jiaru' style='color:white'></icon>
+    </view>
+    <view>
+      <text>{{state==201?'审核中':'加入'}}</text>
+    </view>
+  </view>
+  <view class='cour_share'>
+     <button hover-class='none' class='cour_share_icon' open-type='share'>
+      <icon style="color:white" class='iconfont_fenxiang icon-fenxiang'></icon>
+     </button>
+     <view>
+      <text>分享</text>
+    </view>
+  </view> 
+  <view class='cour_judge'>
+    <view class='cour_judge_icon' bindtap='pingjia' data-agencyid='{{item.Id}}'>
+      <icon class='iconfont_judge icon-pinglun' style='color:white'></icon>
+    </view>
+    <view>
+      <text>评价</text>
+    </view>
+  </view>
+  <view class='cour_call' style='border-right:0'>
+     <view class='cour_call_icon' bindtap='phone' data-phone="{{item.agency_phone}}">
+        <icon class='iconfont_dianhua icon-dianhua' style='color:white;font-size:37rpx'></icon>
+      </view>
+      <view>
+      <text>咨询</text>
+    </view>  
+  </view>
+</view>
+
+</block>
+
+</view>

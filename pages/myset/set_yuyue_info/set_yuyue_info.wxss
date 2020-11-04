@@ -1,0 +1,196 @@
+/* pages/myset/set_yuyue_info/set_yuyue_info.wxss */
+@import '/icon/yuyue_daohang.wxss';
+.class_top_info{
+  width: 100%;
+  height: 220rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 10rpx solid #EEEEEE;
+}
+.class_pic{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.class_pic image{
+  width: 240rpx;
+  height: 160rpx;
+  border-radius: 16rpx;
+}
+.class_title{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 34rpx;
+  color: #303030;
+}
+.class_tit,.class_price{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.course_info_box,.yuyue_stu_box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid #EEEEEE;
+}
+.course_info_head,.yuyue_stu_head{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333333;
+  border-bottom: 1px solid #eeeeee;
+  margin-left: 5%;
+}
+.course_info{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-left: 5%;
+}
+.course_info_left{
+  width: 27%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.course_info_right{
+  width: 73%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.left_item{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+  color: #1D1D1D;
+}
+.right_item{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+  color: #1D1D1D;
+  position: relative;
+}
+.yuyue_stu_title{
+  width: 100%;
+  height: 56rpx;
+  margin-left: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+  color: #121212;
+  border-bottom: 1px solid #eeeeee;
+}
+.head{
+  width:10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: #121212;
+}
+.head image{
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nickname{
+  width:15%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: #121212;
+}
+.phone{
+  width:25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: #121212;
+}
+.state{
+  width:20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: #121212;
+}
+.option{
+  width:30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: #121212;
+}
+.stu_item{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #121212;
+  margin-left: 5%;
+  border-bottom: 1px solid #eeeeee;
+}
+.option_btn{
+  width: 64rpx;
+  height: 32rpx;
+  background:#FF4500;
+  font-size: 20rpx;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6rpx;
+}
+.shenglue{
+    width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../dist/xiala-tabs/index",
+    "i-tab": "../../dist/xiala-tab/index",
+    "i-message": "../../dist/message/index",
+    "i-spin": "../../dist/spin/index"
+  },
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "教师管理",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

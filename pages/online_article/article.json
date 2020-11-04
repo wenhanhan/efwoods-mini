@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+  },
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "名师专栏",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

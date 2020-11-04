@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "i-tag": "../../dist/tag/index",
+    "tabbar": "../../tabbarComponent/tabbar",
+    "i-badge": "../../dist/badge/index"
+  },
+    "navigationBarBackgroundColor": "#BFA24B",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "首页",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+}

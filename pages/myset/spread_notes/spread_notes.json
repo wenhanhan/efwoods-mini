@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../../dist/tabs/index",
+    "i-tab": "../../../dist/tab/index"
+  },
+  "navigationBarBackgroundColor": "#FF1C2A",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "推广记录",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

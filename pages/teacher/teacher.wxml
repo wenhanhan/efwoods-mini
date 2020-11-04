@@ -1,0 +1,171 @@
+<view class="container">
+  <!-- 顶部搜索 -->
+  <!-- <view class='top_bar_box'>
+    <view class='top_bar' style="z-index:1000">
+      <view class='top_bar_left' bindtap='select_city'>
+        <view class='address'>{{city}}</view>
+        <view class='top_xiala'>
+          <icon class='iconfont_xiala icon-xiala'></icon>
+        </view>
+      </view>
+      <view class='search_box' bindtap='search'>
+        <input disabled class='search_input' placeholder='搜索课程以及教师' placeholder-class="placeholderStyle">
+        </input>
+        <icon class='iconfont icon-sousuo'></icon>
+      </view>
+
+      <view class='top_bar_right'></view>
+    </view>
+  </view> -->
+<!-- 顶部搜索区域重构 -->
+  <view class="home_top_bar_box">
+    <view class="home_top_bar">
+      <view class="home_top_bar_left" bindtap='select_city'>
+        <icon class='iconfont_address icon-dizhi'></icon>
+        <view class='home_address'>{{city}}</view>
+      </view>
+      <view class="home_search_box">
+        <view class='home_search' bindtap='search'>
+          <icon class='iconfont_search icon-soushuo'></icon>
+          <text>点击搜索课程以及教师</text>
+        </view>
+      </view>
+      <view class="home_top_bar_right">
+       
+      </view>
+    </view>
+  </view>
+
+  <!-- 顶部轮播 -->
+<view class="swiper_out_box">
+ <!-- 头部背景色块 -->
+  <view class="top_bk"></view>
+  <swiper id='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ffffff" circular="true" indicator-active-color="#e91a1b">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item class="swiper_box">
+        <navigator style='height:100%' url='{{item.url}}'>
+        <image src="{{item.img}}" class="slide_image" />
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+  <!-- 热门机构 -->
+  <view class="agency_box" hidden="{{agency.length==0&&top_agency.length==0}}">
+    <view class="agency" >
+      <view class="agency_nav">
+        <view class="agency_nav_title">
+          <icon class='iconfont_hot_agency icon-remen'></icon>
+          <text>热门机构</text>
+        </view>
+        <navigator style="width:auto;height:100%;" url="../all_agency/all_agency" hover-class="none">
+          <view class="agenc_nav_more">
+            <text>更多</text>
+            <icon style="font-size:36rpx;display:flex;" class='iconfont_right icon-right_daohang'></icon>
+          </view>
+        </navigator>
+      </view>
+      <scroll-view class="scroll-view_H" scroll-x>
+        <navigator wx:for="{{top_agency}}" style="display:inline" hover-class="none" url="../agency/agency?id={{item.Id}}">
+          <view class="agency_banner" style="margin-left:{{index==0?0:''}};">
+            <image src="{{item.agency_logo}}"></image>
+            <view class="agency_name">
+                <text>{{item.agency_name}}</text>
+            </view>
+          </view>
+          
+        </navigator>
+        <navigator wx:for="{{agency}}" style="display:inline" hover-class="none" url="../agency/agency?id={{item.Id}}">
+          <view class="agency_banner" style="margin-left:{{index==0&&top_agency.length==0?0:''}};">
+            <image src="{{item.agency_logo}}"></image>
+            <view class="agency_name">
+                <text>{{item.agency_name}}</text>
+            </view>
+          </view>
+        </navigator>
+      </scroll-view>
+    </view>
+  </view>
+
+ 
+  <!-- 多条件筛选 菜单组件 -->
+  <view id='menu-nav' class="{{fixedNav?'fixedNav':'menu_list'}}">
+    <view class='menu_line' style="border-bottom:{{(!teacher&&!top_teacher)?'1px solid #eeeeee':''}}" >
+      <i-tabs current="{{ current }}" i-class="menu_class" color="#f21b1b" bindchange="handleChange">
+        <i-tab key="tab0" bindtap="diqu" title="{{diqu}}"></i-tab>
+        <view class="line"></view>
+        <i-tab key="tab1" bindtap="fenlei" title="{{fenlei}}"></i-tab>
+        <view class="line"></view>
+        <i-tab key="tab2" bindtap="shaixuan" title="{{shaixuan}}"></i-tab>
+        <view class="line"></view>
+        <i-tab key="tab3" bindtap="paixu" title="{{paixu}}"></i-tab>
+      </i-tabs>
+    </view>
+  </view>
+  <!--地区定位-->
+  <view class="temp temp2 {{quyu_open ? 'slidown' : 'slidup'}} {{quyu_show ? 'disappear':''}} {{xiding? 'slide_fixed':''}}" >
+    <view wx:for="{{cityright}}" class="quyu_line {{select3 == item?'quyu_current':''}}" bindtap='selectright' data-city="{{item}}">
+      <label>{{item}}</label>
+    </view>
+  </view>
+
+  <!-- 分类区域 -->
+
+  <view class="temp temp2 {{fenlei_open? 'slidown':'slidup' }} {{fenlei_show ? 'disappear':''}} {{xiding? 'slide_fixed':''}}">
+
+    <view wx:for="{{fenlei_item}}" class="fenlei_line {{fenlei_index==item.Id ? 'fenlei_current':''}}" bindtap='select_fenlei' data-index="{{index}}" data-type="{{item.Id}}">
+      <text>{{item.type}}</text>
+    </view>
+
+  </view>
+
+  <!-- 筛选区域 -->
+  <view class="temp temp1 {{shaixuan_open? 'slidown':'slidup'}} {{shaixuan_show ? 'disappear':''}} {{xiding? 'slide_fixed':''}}" style="{{(agency.length==0&&top_agency.length==0)?'':'height:440rpx;'}}" >
+
+    <block wx:for="{{shaixuan_cate}}" wx:for-index="cate_idx">
+      <view class='shaixuan_line'>
+        <view class='line_title'>
+          <text>{{item}}</text>
+        </view>
+        <view class='line_item'>
+          <block wx:for="{{shaixuan_item[cate_idx]}}" wx:for-item="shaixuan_item" wx:for-index="item_idx">
+            <button bindtap="select_cate" data-index="{{cate_idx}}{{item_idx}}" 
+              class="{{item_idx==0?'waijiao_btn_left':'waijiao_btn_right'}}" data-cate="{{cate_idx}}" data-item="{{item_idx}}">{{shaixuan_item}}
+              <text wx:if="{{(cate_idx==btn_arr[1][0]&&item_idx==btn_arr[1][1])||(cate_idx==btn_arr[2][0]&&item_idx==btn_arr[2][1])||(cate_idx==btn_arr[3][0]&&item_idx==btn_arr[3][1]) }}" class="sanjiao">
+              </text>
+              <icon wx:if="{{(cate_idx==btn_arr[1][0]&&item_idx==btn_arr[1][1])||(cate_idx==btn_arr[2][0]&&item_idx==btn_arr[2][1])||(cate_idx==btn_arr[3][0]&&item_idx==btn_arr[3][1]) }}" class='iconfont_duigou icon-duigou'></icon>
+              </button>
+          </block>
+        </view>
+      </view>
+    </block>
+
+    <view class='shaixuan_line_btn'>
+      <view class='line_title'>
+        <text></text>
+      </view>
+      <view class='line_item_btn'>
+        <button class='btn_reset' bindtap='btn_reset'>重置选项</button>
+        <button class='btn_sure' bindtap='btn_sure'>确定</button>
+      </view>
+    </view>
+  </view>
+
+
+
+  <!-- 排序展示区域 -->
+  <view class="temp temp2 {{paixu_open? 'slidown':'slidup' }} {{paixu_show ? 'disappear':''}} {{xiding? 'slide_fixed':''}}" >
+
+    <view wx:for="{{paixu_item}}" class="paixu_line {{paixu_index==index ? 'paixu_current':''}}" bindtap='select_paixu' data-index="{{index}}">
+      <text>{{item}}</text>
+    </view>
+
+  </view>
+  <!-- 排序遮罩区域 -->
+  <view wx:if="{{touchmove}}" catchtouchmove="{{touchmove}}" class="fullbg {{isfull ?'fullopacity':''}}" id='fullbg' bindtap="hidebg"></view>
+
+  <!-- 加载课程数据 -->
+  <include src='listdata.wxml' />
+  <tabbar tabbar="{{tabbar}}"></tabbar>
+</view>

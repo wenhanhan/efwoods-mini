@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "i-cell": "../../dist/cell/index",
+    "i-cell-group": "../../dist/cell-group/index",
+    "i-toast": "../../dist/toast/index"
+  },
+  "navigationBarBackgroundColor": "#e93323",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "教师入驻",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

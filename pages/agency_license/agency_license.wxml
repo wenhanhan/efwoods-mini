@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="info_box">
+    <view class="info_box_top">
+      <view class="contact">联系人</view>
+      <view class="contact_name">{{user}}</view>
+    </view>
+    <view class="info_box_bottom">
+      <view class="license">营业执照</view>
+      <view class="license_box">
+        <image bindtap="preview" data-img="{{license}}" src="{{license}}" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,116 @@
+/* pages/myset/yuyue/yuyue.wxss */
+@import '/icon/yuyue_wancheng.wxss';
+@import '/icon/yuyue_cancel.wxss';
+@import '/icon/lost.wxss';
+page{
+  background:#EEEEEE
+}
+.jinxing,.wancheng,.cancel{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 84rpx;
+  padding-bottom: 30rpx;
+}
+.jinxing_item{
+  width: 96%;
+  height: 250rpx;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  background: white;
+  border-radius: 10rpx;
+  margin-top: 15rpx;
+}
+.wancheng_item{
+  width: 96%;
+  height: 180rpx;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  background: white;
+  border-radius: 10rpx;
+  margin-top: 15rpx;
+  font-size: 26rpx;
+  color: #272727;
+  position: relative;
+}
+.item_top{
+  width: 96%;
+  height: 170rpx;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  font-size: 26rpx;
+  color: #272727;
+  border-bottom: 1px solid #E9E7E7;
+}
+.item_bottom{
+  width: 96%;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 26rpx;
+  color: #272727;
+  position: relative;
+}
+.cour_address,.name,.time{
+  display: flex;
+  height: 30%;
+  width: 70%;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20rpx;
+}
+.shenglue{
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cancel_btn{
+  width: 120rpx;
+  height: 48rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #FEFBFB;
+  background:#696969;
+  position: absolute;
+  right: 32rpx;
+  border-radius: 7rpx;
+}
+.pingjia_btn{
+  width: 120rpx;
+  height: 48rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #FEFBFB;
+  background:#FF4500;
+  position: absolute;
+  right: 32rpx;
+  bottom: 14rpx;
+  border-radius: 7rpx;
+}
+.wancheng_icon{
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 18rpx;
+  right: 40rpx;
+}

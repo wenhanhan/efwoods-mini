@@ -1,0 +1,370 @@
+<view class="container" style="{{isIphoneX?'padding-bottom:130rpx':''}}" >
+<!-- 课程详情头部 -->
+  <view class='cour_detail_list'>
+    <view class='cour_list_left'>
+      <view class='cour_img'>
+        <image mode='aspectFill' src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{cour_info.courImg}}"></image>
+      </view>
+    </view>
+
+    <view class='cour_list_right'>
+      <view class='cour_des_title'>
+        <text>{{cour_info.courName}}</text>
+      </view>
+      <view class='cour_des_zonghe'> 
+        <view class='cour_score'>
+           <block wx:for="{{cour_info.star*1}}">
+            <icon  class='iconfont_star icon-xingji3'></icon>
+          </block>
+          <block wx:for="{{5-cour_info.star*1}}">
+            <icon  class='iconfont_star icon-xingji4'></icon>
+          </block>
+        </view>
+
+        <view class='cour_des_zonghe_right'>
+        
+          <!-- <view class='cour_pingjia' bindtap='pingjia' data-courid='{{cour_id}}'>
+            <icon class='iconfont_judge icon-pinglun'></icon>
+          </view> -->
+          <!-- 分割线 -->
+          <!-- <view class='divide'>
+          </view> -->
+
+          <view class='cour_love'  bindtap='collect'>
+              <icon wx:if="{{collect_state==1}}" class='iconfont_zan icon-shoucang'></icon>
+              <icon wx:else class='iconfont_zan icon-shoucang' style='color:gray'></icon>
+          </view>
+
+           <!-- <view class='divide'>
+          </view>
+          <view class='cour_favor'>
+              <icon class='iconfont_favor_star icon-xingxing'></icon>
+          </view> -->
+        </view>
+        
+      </view>
+      <view class='cour_des_prop'>
+        <text>{{cour_info.courAddressName}}/{{cour_info.Methods}}/{{cour_info.courTags}}</text>
+      </view> 
+    </view>
+ <navigator url='../tea_detail/tea_detail?tea_id={{tea_id}}'>
+    <view class='teaview_btn'>查看教师</view>
+ </navigator>
+
+  </view>
+
+<!-- 课程详情地址 -->
+  <view class='cour_detail_add'>
+    <view class='cour_add_left'>
+      <view class='cour_address'>
+        <view class='cour_address_img'>
+          <icon class='iconfont_add icon-weizhi'></icon>
+        </view>
+        <view class='cour_address_text'>
+          <text>{{cour_info.courAddressDes}}</text>
+        </view>
+        <view class='step_time'>
+          <!-- <text>距您702米，步行需要8分钟</text> -->
+          <text>距您{{cour_info.distance}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='cour_add_right'>
+      <view class='cour_add_phone' bindtap='call'>
+        <icon class='iconfont_dianhua icon-dianhua'></icon>
+      </view>
+    </view>
+  </view>
+<!-- 课程属性介绍 -->
+<view class='cour_detail_prop'>
+  <view class='cour_time'>
+    <view class='cour_prop_img'>
+      <icon class='iconfont_shichang icon-shichang'></icon>
+    </view>
+    <view class='cour_pro_txt'>
+      <text>课程时长: {{cour_info.courHour}}分钟</text>
+    </view>
+  </view>
+  <view class='cour_date'>
+    <view class='cour_prop_img'>
+      <icon class='iconfont_riqi icon-riqi'></icon>
+    </view>
+    <view class='cour_pro_txt'>
+      <text>有效时间: {{cour_info.startTime}}—{{cour_info.endTime}}</text>
+    </view>
+  </view>
+  <view class='cour_contact'>
+    <view class='cour_prop_img'>
+      <icon class='iconfont_contact icon-contact'></icon>
+    </view>
+    <view class='cour_pro_txt'>
+      <text>联系方式: {{cour_info.courContact}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 分割线 -->
+  <view class='cour_detail_divide'></view>
+
+<!-- 优惠券区域 -->
+<view class='tick_list_box' wx:if="{{tickets.length!=0&&left_num!=0}}">
+<block wx:for="{{tickets}}">
+   <view class='tick_list' >
+    <view class='tick_list_left'>
+      <view class='tick_money'>
+        <view style='font-size:22rpx;color:#ff0000;'>￥</view>
+        <view style='font-size:30rpx;color:#ff0000;font-weight:600'>{{item.money}}</view>
+      </view>
+      <view class='tick_type'>
+       <text>抵用券</text>
+      </view>
+    </view>
+    <view class='divide'></view>
+
+    <view class='tick_list_right'>
+      <view class='tick_title'>
+        {{item.courName}}
+        <text class='shengyu'>剩余：<text style='color:#ff0000;'>{{left_num}}</text></text>
+      </view>
+      <view class='tick_des'>
+        有效期至：{{item.deadline}}
+        <icon bindtap='down' data-idx='{{index}}'  class="{{index==idx&&isdown==1?'iconfont_up icon-angle-up':'iconfont_down icon-angle-down'}}"></icon>
+      </view>
+    </view>
+    <view class='tick_divide'></view> 
+    <button disabled='{{get_state==1}}' hover-class='none' open-type="getPhoneNumber" class="{{get_state==0?'state_btn':'used_state_btn'}}" data-tickid='{{item.Id}}' bindgetphonenumber='get_tick'>{{btn_txt}}</button>
+    <view class='geted_num'>{{get_num}}人已领取</view>
+  </view>
+</block>
+</view>
+
+<!-- 分割线 -->
+  <view class='cour_detail_divide'></view>
+
+  <view class='cour_des_nav'>
+    <view class='nav_line'>
+      <view class='nav_line_border'>
+      </view>
+      <view class='line_circle_box'>
+        <view class='line_circle'></view>
+      </view>
+    </view>
+    <view class='des_nav_title'>
+      <text>课程详情</text>
+    </view>
+    <view class='nav_line'>
+      <view class='line_circle_box'>
+        <view class='line_circle'></view>
+      </view>
+      <view class='nav_line_border'>
+      </view>
+    </view>
+  </view>
+ 
+  <!-- 图文介绍 -->
+  <view class='cour_detail_cont'>
+    <!-- <rich-text nodes="{{cour_tw}}" type='text'></rich-text> -->
+    <!-- 引入富文本组件 -->
+    <parser html="{{cour_tw}}" />
+  </view>
+
+  <view class='cour_detail_divide'></view>
+<!-- 网友点评 -->
+<navigator  hover-class='none' wx:if="{{judge_num==0}}">
+<view class='comment_nav'>
+    <view class='comment'>
+      <text class='conmment_txt'>网友点评</text>
+      <text class='comment_num'>({{cour_info.judgeNum}})</text>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+</view>
+</navigator> 
+
+<!-- <navigator  hover-class='none' wx:else url="../all_judge/all_judge?cour_id={{cour_id}}&cour_openid={{cour_openid}}">
+<view class='comment_nav'>
+    <view class='comment'>
+      <text class='conmment_txt'>网友点评</text>
+      <text class='comment_num'>({{judge_num}})</text>
+      <icon class='iconfont_right icon-right_daohang'></icon>
+    </view>
+</view>
+</navigator> -->
+
+<!-- 点评列表 --> 
+<!-- 暂时隐藏 -->
+<!-- <block wx:for='{{judge}}'>
+  <view class='comment_list' hidden='{{index>=5}}'>
+    <view class="main_comment">
+      <view class='comment_list_left'>
+        <view class='comment_headimg'>
+          <image src='{{item.avatarUrl}}'></image>
+        </view>
+      </view>
+      <view class='comment_list_right'>
+        <view class='comment_nickname'>
+          <text>{{item.nickName}}</text>
+          <view class="reply" data-comid="{{item.Id}}" hidden="{{cour_openid!=student_openid}}" bindtap="reply">
+            <icon class='iconfont_reply icon-huifu'></icon>
+          </view>
+        </view>
+        <view class='comment_time'>
+          <text>{{item.time}}</text>
+        </view>
+        <view class='comment_score'>
+          打分
+          <block wx:for="{{item.star}}">
+            <icon style='font-size:26rpx;'  class='iconfont_star icon-xingji3'></icon>
+          </block>
+          <block wx:for="{{5-item.star}}">
+            <icon style='font-size:26rpx'  class='iconfont_star icon-xingji4'></icon>
+          </block>
+        </view>
+        <view class='comment_words'>
+          <text>{{item.content}}</text>
+        </view>
+        <view class='comment_img' wx:if="{{item.pic1||item.pic2||item.pic3}}">
+          <image mode='aspectFill' data-src="https://icloudapi.cn/efire/public/uploads/judge/{{item.pic1}}" bindtap="previewImage" data-index='{{index}}' wx:if="{{item.pic1}}" src='https://icloudapi.cn/efire/public/uploads/judge/{{item.pic1}}'></image>
+          <image mode='aspectFill' data-src="https://icloudapi.cn/efire/public/uploads/judge/{{item.pic2}}" bindtap="previewImage" data-index='{{index}}' wx:if="{{item.pic2}}" src='https://icloudapi.cn/efire/public/uploads/judge/{{item.pic2}}'></image>
+          <image mode='aspectFill' data-src="https://icloudapi.cn/efire/public/uploads/judge/{{item.pic3}}" bindtap="previewImage" data-index='{{index}}' wx:if="{{item.pic3}}" src='https://icloudapi.cn/efire/public/uploads/judge/{{item.pic3}}'></image>
+        </view>
+      </view>
+    </view>
+        <view class="reply_comment" wx:for="{{item.reply}}" wx:for-item="reply">
+          <view class="reply_img">
+            <image src="{{reply.avatarUrl}}"></image>
+          </view>
+          <view class="replay_right">
+            <view class="replay_name">
+            {{reply.nickName}}<view class="tea_tag">教师</view>
+              <view class="replay_time">{{reply.time}}</view>
+            </view>
+            <view class="relpay_content">
+              <text>{{reply.content}}</text>
+            </view>
+          </view>
+        </view>
+  </view>
+</block> -->
+
+<!-- <navigator wx:if="{{judge_num!=0}}" hover-class='none'  url='../all_judge/all_judge?cour_id={{cour_id}}&cour_openid={{cour_openid}}'>
+<view class='all_comment'>
+  <text class='all_comment_txt'>查看全部评价</text>
+  <icon class='iconfont_right icon-right_daohang'></icon>
+</view>
+</navigator> -->
+
+<view class='cour_detail_divide'></view>
+  <!-- 其他推荐 -->
+<view class='other_recommends'>
+  <view class='recommends_img'>
+    <image src='../../img/recom.png'></image>
+  </view>
+  <view class='recommends_txt'>其他推荐</view>
+</view>
+
+<!-- 加载推荐数据 -->
+<view class='recom_cour'>
+  <include src='recom_cour.wxml'/>
+</view>
+
+
+<view wx:if="{{home_state}}" class='home' bindtap='home' >
+  <image src='../../img/home.png'></image>
+  <text>首页</text>
+</view>
+
+ <!-- 底部菜单重写 --> 
+  <view class="bottom_tab_bar">
+    <view class="tab_bar_left">
+      <button open-type='share' class="option_box">
+        <icon class='iconfont_fenxiang icon-fenxiang'></icon>
+      </button>
+      <button class="option_box" bindtap='collect'>
+        <icon wx:if="{{collect_state==1}}" style="color:#FF4500" class='iconfont_like icon-shoucang'></icon>
+        <icon wx:else class='iconfont_like icon-shoucang' ></icon>
+      </button>
+      <button class="option_box" bindtap='call'>
+        <icon class='iconfont_phone1 icon-dianhua2'></icon>
+      </button>
+    </view>
+    <view class="tab_bar_right">
+      <view class="yuyue_btn" style="background:{{cour_info.is_yuyue==1?'':'#888888'}}" bindtap="yuyue">
+        <text wx:if="{{yuyue_info.is_pay==0&&cour_info.is_yuyue==1}}">免费</text>预约
+      </view>
+    </view>
+  </view>
+<!-- 底部预约弹窗 -->
+  <view  class="dialog {{showDialog?'dialog_show':''}}">
+    <view class="dialog_mask" bindtap="disapear"></view> 
+    <!-- 自定义显示区域 -->
+    <view class="yuyue_box">
+      <view class="yuyue_info">
+        <view class="yuyue_info_top">
+          <view class="yuyue_title">
+            <text>{{cour_info.courName}}</text>
+          </view>
+          <view class="yuyue_price">
+            <text>￥{{cour_info.price}}/节</text>
+          </view>
+        </view>
+        <view class="yuyue_info_bottom">
+          <text>单节时长：{{cour_info.courHour}}分钟</text>
+          <text hidden="{{!begin_time}}" style="margin-left:40rpx;">开课时间：{{begin_time}}~{{end_time}}</text>
+          <text hidden="{{begin_time}}" style="margin-left:40rpx;">开课时间：暂无</text>
+        </view>
+      </view>
+      <!-- 日历样式 -->
+      <view class="yuyue_date">
+        <view class="date">
+          <view class="date_title"> 
+            <text class="line"></text>
+            <text>选择日期</text>
+          </view>
+          <view class="date_day">
+            <view wx:for="{{date}}" bindtap="select_day" data-idx="{{index}}" class="date_day_box {{index==day_idx?'day_selected':''}}">
+              <text style="font-size:32rpx;font-weight:500">{{index==0?'今':item.day}}</text>
+              <text>{{item.week}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="time">
+          <view class="date_title">
+            <text class="line"></text>
+            <text>选择时间段</text>
+          </view> 
+          <view class="date_time">
+
+          <view class='noyuyue' wx:if="{{!time[0].clock}}">
+            <text>该日无可预约时间</text>
+          </view>
+            <view bindtap="select_clock" data-ismy="{{item.is_my_yuyue}}" data-num="{{item.yuyue_num}}" data-isover="{{item.is_overdue}}" wx:for="{{time}}" class="date_time_box {{item.state&&item.clock?'clock_selected':''}}" style="opacity:{{item.clock?'':0}};background:{{item.is_overdue?'#D9D9D9':''}}" data-idx="{{index}}" >
+              <text>{{item.clock}}</text>
+              <!-- 已满、已过时标志 -->
+              <view hidden="{{(item.yuyue_num<yuyue_info.max_stu||yuyue_info.max_stu==-1)&&!item.is_my_yuyue}}" class="duigou">
+              <icon hidden="{{!item.is_my_yuyue}}" style="bottom:8rpx;" class='iconfont_duigou icon-tag31'></icon>
+              </view>
+              <view hidden="{{item.yuyue_num<yuyue_info.max_stu||yuyue_info.max_stu==-1||item.is_my_yuyue}}" class="clock_state">
+                <text>满</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="yuyue_btn1" bindtap="yuyue1">
+          <text>预约</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+
+<!-- 回复评论 -->
+  <view class='judge_input' wx:if='{{isjudge}}' style="bottom:{{keyboard_height}}px">
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <input focus='{{focus}}' maxlength='-1' bindconfirm='send' bindinput="replyTxt" adjust-position="{{false}}" bindblur='cancel' bindfocus='focus' placeholder="添加评论"></input>
+    <view bindtap='send'>发送</view>
+  </view>
+
+
+
+</view>

@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="top_bk">
+    <image mode='aspectFill' src="https://cdn.icloudapi.cn/pingce_top_bk.png"></image>
+  </view>
+  <view class="content" style="height:{{content_height}}%">
+    <view class="item1">
+      <icon style="color:#F90707;margin-right:0" class='iconfont_tip icon-tishi'></icon>
+      <text style="color:#F90707;font-size:28rpx;margin-left:4rpx;">共15道题，选择"是"记1分，选择"否"记0分。</text>
+    </view>
+    <view class="item" wx:for="{{subject}}">
+      <view class="subject">
+        <text>{{index+1}}、{{item.title}}</text>
+      </view>
+      <view class="option">
+        <view wx:for="{{item.option}}" wx:for-index="option_idx"  wx:for-item="option" bindtap="select" data-subidx="{{index}}" data-idx="{{option_idx}}" class="sele_btn {{arr[index][option_idx]==1?'act':''}}">
+        {{option}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="submit {{sub_state?'sub_act':''}}" bindtap="submit">
+    <text>提交</text>
+  </view>
+  <view class="bottom_bk">
+    <image mode='aspectFill'  src="https://cdn.icloudapi.cn/pingce_bottom_bk1.png"></image>
+  </view>
+</view>

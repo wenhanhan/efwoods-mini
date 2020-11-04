@@ -1,0 +1,43 @@
+<view class='container'>
+  <view class="weui-cells weui-cells_after-title" style='width:100%'>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <!-- 文本域 -->
+        <textarea bindinput='input' class="weui-textarea" placeholder-class='judge_placeholder' placeholder="给机构一个评价吧～" style="height: 300rpx" />
+        <view class="weui-textarea-counter"></view>
+        <!-- 图片上传 -->
+        
+        <view class="weui-uploader">
+         
+          <view class="weui-uploader__bd">
+            <view class="weui-uploader__files" id="uploaderFiles">
+              <block wx:for="{{files}}" wx:key="*this">
+                <view class="weui-uploader__file"  data-imgidx="{{index}}" bindlongpress="deleteImg" bindtap="previewImage" id="{{item}}">
+                  <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                </view>
+              </block>
+            </view>
+            <view class="weui-uploader__input-box" hidden='{{files.length==3}}'>
+              <view class="weui-uploader__input" bindtap="chooseImage"></view>
+            </view>
+
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__info">{{files.length}}/3</view>
+             </view>
+          </view>
+        </view>
+        <!-- 图片上传 -->
+
+      </view>
+    </view>
+  </view>
+  <view class='rate'>
+    <text>机构打分</text>
+        <i-rate 
+            bind:change="onChange2" 
+            value="{{star_num}}" 
+            size="28">
+        </i-rate>
+  </view>
+  <view class='submit' bindtap='submit'>点击发布</view>
+</view>

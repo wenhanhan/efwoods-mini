@@ -1,0 +1,34 @@
+<view class="container">
+  <!-- <i-tabs style="width:100%" current="{{ current }}" color="#FF5B00" bindchange="handleChange">
+    <i-tab key="tab1" title="名师专栏"></i-tab>
+    <i-tab key="tab2" title="视频课程"></i-tab>
+    <i-tab key="tab3" title="音频课程"></i-tab>
+  </i-tabs> -->
+  <view class="teacher" >
+    <view class="teacher_item" wx:for="{{teacher}}">
+        <view class="left">
+          <image src="{{item.tea_img}}" mode="aspectFill"></image>
+        </view>
+        <view class="right">
+          <view class="title">
+            <text>{{item.title}}</text>
+          </view>
+          <view class="author">
+            {{item.tea_name}}·共<text style="color:#FF5B00;padding:0 4rpx">{{item.mp3_num}}</text>讲
+          </view>
+        </view>
+        <view class="study" bindtap="study" data-id="{{item.Id}}">
+          <icon  style="color:#FF4B00;margin-right:10rpx;" class='iconfont_bofang icon-bofang'></icon>
+          <text>开始学习</text>
+        </view>
+    </view>
+    <!-- 暂无课程资源 -->
+    <view class='nodata' style="padding-top:250rpx;" wx:if="{{teacher.length==0}}">
+      <icon style="font-size:150rpx;" class='iconfont_resource icon-meiyouneirong'></icon>
+      <view class='tips' style="color:#d1cfcf">
+        <text>暂无订阅～</text>
+      </view>
+    </view>
+  </view>
+  
+</view>

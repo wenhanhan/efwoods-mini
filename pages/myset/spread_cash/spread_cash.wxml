@@ -1,0 +1,77 @@
+<view class="container">
+  <view class="ways">
+    <view class="alipay {{current=='alipay'?'active':''}}" data-way="alipay" bindtap="pay_ways">
+      <icon class='iconfont_alipay icon-zhifubao'></icon>
+      <text>支付宝</text>
+      <view class="select_box" hidden="{{current=='wechat'}}">
+        <icon class='iconfont_duihao icon-duihao'></icon>
+      </view>
+    </view>
+    <view class="wechat {{current=='wechat'?'active':''}}" data-way="wechat" bindtap="pay_ways">
+      <icon class='iconfont_weixin icon-weixin'></icon>
+      <text>微信</text>
+      <view class="select_box" hidden="{{current=='alipay'}}">
+        <icon class='iconfont_duihao icon-duihao'></icon>
+      </view>
+    </view>
+  </view>
+  <!-- 输入框 -->
+  <view class="cash_info">
+
+    <view class="input_line">
+      <view class="title">
+        <text>账号:</text>
+      </view>
+      <input bindinput="account" class="content" placeholder-class="placeholder" placeholder="{{text}}"></input>
+    </view>
+
+    <view class="input_line">
+      <view class="title">
+        <text>姓名:</text>
+      </view>
+      <input class="content" bindinput="username" placeholder-class="placeholder" placeholder="请填写您的真实姓名"></input>
+    </view>
+
+    <view class="input_line">
+      <view class="title">
+        <text>收款码:</text>
+      </view>
+      <view class="qrcode">
+        <view class="state" hidden="{{state}}">
+          <icon class='iconfont_upload icon-noupload-img'></icon>
+          <text>已上传</text>
+        </view>
+        <view class="upload" bindtap="upload">
+          <text>选择文件</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="input_line">
+      <view class="title">
+        <text>提现:</text>
+      </view>
+      <input type="number" bindinput="cash" class="content" placeholder-class="placeholder" placeholder="最低提现金额10"></input>
+    </view>
+  </view>
+
+  <!-- 最低提现 -->
+  <view class="baseline">
+    <icon class='iconfont_tip icon-tishi'></icon>
+    当前可提现金额<text style="color:#FF1C2A;margin-left:6rpx;">{{brokerage}}</text>
+  </view>
+
+  <!-- 温馨提示 -->
+  <view class="cash_tips">
+    <view style="color:#615F5F;font-size:32rpx;">温馨提示</view>
+    <view class="child_tips">1、提现金额最低10元起。</view>
+    <view class="child_tips">2、每月可申请提现两次，每次请确保申请信息的无误。</view>
+    <view class="child_tips">3、申请信息无误，24小时内提现金额到账。</view>
+    <view class="child_tips">4、如有疑问可联系小程序客服或拨打客服电话021-58879166进行咨询。</view>
+  </view>
+
+  <!-- 提现按钮 -->
+  <view class="btn" bindtap="submit">
+    <text>提现</text>
+  </view>
+</view>

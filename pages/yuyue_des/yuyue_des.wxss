@@ -1,0 +1,539 @@
+/* pages/yuyue_des/yuyue_des.wxss */
+@import '/icon/yuyue_address.wxss';
+@import '/icon/yuyue_time.wxss';
+@import '/icon/yuyue_shichang.wxss';
+@import '/icon/yuyue_phone.wxss';
+@import '/icon/yuyue_tickets.wxss';
+@import '/icon/yuyue_daohang.wxss';
+@import '/icon/no_coupon.wxss';
+@import '/icon/yuyue_success.wxss';
+@import '/icon/shenglue.wxss';
+@import '/icon/xuanzhong.wxss';
+.class_top_info{
+  width: 100%;
+  height: 220rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 10rpx solid #EEEEEE;
+}
+.class_pic{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.class_pic image{
+  width: 240rpx;
+  height: 160rpx;
+  border-radius: 16rpx;
+}
+.class_title{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 34rpx;
+  color: #303030;
+}
+.class_tit,.class_price{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.sijiao{
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.sijiao_img{
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.sijiao_img image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+.sijiao_prop{
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sijiao_name{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 30rpx;
+  color: #1B1B1B;
+  padding-left: 20rpx;
+}
+.sijiao_tag{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.tag_box{
+  width: auto;
+  height: 26rpx;
+  font-size: 19rpx;
+  color: white;
+  padding: 5rpx 16rpx;
+  border-radius: 16rpx;
+  background: #316FFF;
+  margin-left: 12rpx;
+}
+.guanzhu{
+  width: 120rpx;
+  height: 46rpx;
+  border-radius: 23rpx;
+  background: #FF6C00;
+  color: white;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 60rpx;
+}
+.yuyue_info1{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.yuyue_info_line{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 24rpx;
+  color: #0A0A0A;
+  border-bottom: 1px solid #eeeeee;
+}
+.yuyue_icon{
+  width: 50rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 24rpx;
+}
+.yuyue_icon_text{
+  width:85%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 16rpx;
+}
+.agree{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.yuyue_bottom{
+  width: 90%;
+  height: 90rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sum_price{
+  width: auto;
+  height: 100%;
+  font-size: 30rpx;
+  color: #2C2C2C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.yuyue_btn{
+  width: 300rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  background-color: #FF4500;
+  font-size: 26rpx;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 优惠券弹窗 */
+.dialog{
+  display: block;
+  width: 100%;
+}
+.dialog_show .dialog_mask {
+  display: block;
+}
+.clock_dialog_show .clock_dialog_mask{
+  display: block;
+}
+.dialog_show,.clock_dialog_show{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 11;
+}
+.clock_dialog_show .clock_box{
+  transform:translateY(0);
+}
+.dialog_show .coupon_box{
+  transform: translateY(0);
+}
+
+.dialog_mask,.clock_dialog_mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.yuyue_mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+}
+.coupon_box{
+  position: fixed;
+  bottom: 0;
+  /* height: 350rpx; */
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  transform: translateY(150%);
+  transition: all 0.4s ease;
+  z-index: 13;
+}
+.clock_box{
+  position: fixed;
+  bottom: 0;
+  height: 460rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  transform: translateY(150%);
+  transition: all 0.4s ease;
+  z-index: 13;
+}
+.coupon_title{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #1B1B1B;
+  position: relative;
+}
+.coupon{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tip{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 20rpx;
+  font-size: 24rpx;
+  color: #d1cfcf;
+}
+/* 优惠券样式 */
+.my_coupon_box{
+  width: 95%;
+  height: 160rpx;
+  background-color: #FCF1DD;
+  border-radius: 16rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+  position: relative;
+}
+.div_circle{
+  width: 50rpx;
+  height: 50rpx;
+  display: flex;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 160rpx;
+}
+.div_line{
+  width: 1rpx;
+  height: 100rpx;
+  border:dashed 1rpx #FF4545;
+  position: absolute;
+  left: 185rpx;
+}
+.my_coupon_left{
+  width:26%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.my_coupon_right{
+  width: 74%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  padding-left: 80rpx;
+  position: relative;
+}
+.coupon_price{
+  width: 100%;
+  height: auto;
+  font-size: 32rpx;
+  color: #FF4545;
+  font-size: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coupon_type{
+  width: 100%;
+  height: auto;
+  font-size: 26rpx;
+  color: #FF4545;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my_coupon_title{
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 32rpx;
+  color: #000000;
+}
+.coupon_deadline{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 22rpx;
+  color: #494949;
+}
+.use_btn{
+  width: 140rpx;
+  height: 50rpx;
+  background-color: #FF4545;
+  color: white;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 40rpx;
+  border-radius: 35rpx;
+}
+.donot_use_btn{
+  width: 140rpx;
+  height: 50rpx;
+  background-color: #d1cfcf;
+  color: white;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 40rpx;
+  border-radius: 35rpx;
+}
+.yuyue_success{
+  width: 70%;
+  height: 620rpx;
+  position: fixed;
+  z-index: 15;
+  /* left:15%; */
+  top: 300rpx;
+  background-color: white;
+  border-radius: 38rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.yuyue_dialog{
+  width: 100%;
+  height: 200rpx;
+  position: relative;
+}
+.yuyue_dialog image{
+  width: 100%;
+  height: 100%;
+}
+.success_icon{
+  width: 200rpx;
+  height: 200rpx;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 140rpx;
+}
+.success_title{
+  width: 100%;
+  height: auto;
+  font-size: 40rpx;
+  color: #D1A64D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100rpx;
+  z-index: 16;
+}
+.news_option{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 46rpx;
+}
+.news_tip{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #454545;
+  margin-bottom: 20rpx;
+}
+.news_btn{
+  width: 360rpx;
+  height: 70rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:#D1A64D;
+  border-radius: 40rpx;
+  color: white;
+  font-size: 32rpx;
+}
+button{
+  font-size: 26rpx;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF4500;
+}
+/* 更多预约时刻样式 */
+.clock_title{
+  width: 100%;
+  height: auto;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #2C2C2C;
+}
+.clock_item_box{
+  width: 100%;
+  height: 440rpx;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
+  position: relative;
+}
+.clock_item{
+  width: 90%;
+  height: 80rpx;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 26rpx;
+  color: #2C2C2C;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
+}
+.scroll_box{
+  width: 100%;
+  height:260rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+.clock_btn{
+  width: 540rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 30rpx;
+  background: #FF4500;
+  color: white;
+  font-size: 30rpx;
+  border-radius: 30rpx;
+}

@@ -1,0 +1,96 @@
+<view class="container">
+  <!-- 顶部区域 -->
+  <view class="top_bk">
+    <view class="record_detail">
+      <view class="detail_type">
+        <text style="font-size:40rpx;">{{student_num}}</text>
+        <text>学员</text>
+      </view>
+      <view class="line"></view>
+      <view class="detail_type">
+        <text style="font-size:40rpx;">{{teacher_num}}</text>
+        <text>私教</text>
+      </view>
+      <view class="line"></view>
+      <view class="detail_type">
+        <text style="font-size:40rpx;">{{agency_num}}</text>
+        <text>机构</text>
+      </view>
+    </view>
+  </view>
+  <view class="tab">
+    <i-tabs current="{{ current }}" color="#FF1C2A" bindchange="handleChange">
+      <i-tab key="student" title="学员"></i-tab>
+      <i-tab key="teacher" title="私教"></i-tab>
+      <i-tab key="agency" title="机构"></i-tab>
+    </i-tabs>
+  </view>
+  <!-- 搜索框 -->
+  <!-- <view class="search">
+    <input class="search_input" value="{{text}}" bindinput="input" bindconfirm="search" placeholder="请输入会员名称" placeholder-class="placeholder"/>
+    <view class="search_icon" bindtap="search">
+      <icon style="color:#FF1C2A;" class='iconfont_search icon-soushuo'></icon>
+    </view>
+  </view> -->
+  <view class="level_tab" wx:if="{{current=='teacher'||current=='student'}}">
+    <i-tabs current="{{ level }}" i-class="level_tab" color="#FF1C2A" bindchange="level">
+        <i-tab key="one" title="一级"></i-tab>
+        <i-tab key="two" title="二级"></i-tab>
+    </i-tabs>
+  </view>
+
+<!-- 入驻私教 -->
+  <view class="sijiao" wx:if="{{current=='teacher'}}">
+    <view class="sijiao_item" wx:for="{{level=='one'?tea_one_level:tea_two_level}}">
+      <image src="{{item.avatarUrl}}"></image>
+      <view class="sijiao_des">
+        <view class="sijiao_name">{{item.nickName}}</view>
+        <view class="time"><text style="margin-right:6rpx;">加入时间:</text>{{item.time}}</view>
+      </view>
+    </view>
+    <!-- 暂无推广信息 -->
+  <view class='nodata' style="padding-top:100rpx;" wx:if="{{(level=='one'&&tea_one_level.length==0)||(level!='one'&&tea_two_level.length==0)}}">
+    <icon style="font-size:150rpx;" class='iconfont_lost icon-Null-data'></icon>
+    <view class='tips'>
+      <text>暂无推广记录～</text>
+    </view>
+  </view>
+  </view>
+<!-- 入驻机构 -->
+  <view class="agency" wx:if="{{current=='agency'}}">
+    <navigator hover-class="none" class="agency_item" wx:for="{{agency}}" url="../../agency/agency?id={{item.Id}}" >
+      <image src="{{item.agency_logo}}"></image>
+      <view class="agency_des">
+        <view class="agency_name">{{item.agency_name}}</view>
+        <view class="agency_time"><text style="margin-right:6rpx;">加入时间:</text>{{item.create_time}}</view>
+      </view>
+    </navigator>
+    <!-- 暂无推广信息 -->
+  <view class='nodata' style="padding-top:100rpx;" wx:if="{{agency.length==0}}">
+    <icon style="font-size:150rpx;" class='iconfont_lost icon-Null-data'></icon>
+    <view class='tips'>
+      <text>暂无推广记录～</text>
+    </view>
+  </view>
+  </view>
+<!-- 入驻学员 -->
+
+  <view class="sijiao" wx:if="{{current=='student'}}">
+    <view class="sijiao_item" wx:for="{{level=='one'?stu_one_level:stu_two_level}}">
+      <image src="{{item.avatarUrl}}"></image>
+      <view class="sijiao_des">
+        <view class="sijiao_name">{{item.nickName}}</view>
+        <view class="time"><text style="margin-right:6rpx;">加入时间:</text>{{item.time}}</view>
+      </view>
+    </view>
+    <!-- 暂无推广信息 -->
+  <view class='nodata' style="padding-top:100rpx;" wx:if="{{(level=='one'&&stu_one_level.length==0)||(level!='one'&&stu_two_level.length==0)}}">
+    <icon style="font-size:150rpx;" class='iconfont_lost icon-Null-data'></icon>
+    <view class='tips'>
+      <text>暂无推广记录～</text>
+    </view>
+  </view>
+
+  </view>
+
+</view>

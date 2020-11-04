@@ -1,0 +1,39 @@
+<view class="container">
+  <!-- 顶部区域 -->
+  <view class="top_bk">
+    <view class="brokerage_title">
+      <view class="title">提现金额</view>
+      <view class="brokerage_sum">
+        <text style="font-size:38rpx;">￥</text>
+        <text>{{cash_sum}}</text>
+      </view>
+      <view class="brokerage_icon">
+        <icon class='iconfont_brokerage icon-ziyuan'></icon>
+      </view>
+    </view>
+  </view>
+
+  <!-- 佣金明细 -->
+  <view class="brokerage_detail">
+    <block wx:for="{{cash}}">
+      <view class="brokerage_item">
+          <view class="brokerage_month">
+            <text>{{item.months}}</text>
+          </view>
+          <view class="month_item" wx:for="{{item.detail}}" wx:for-item="child">
+            <view class="item_title">{{child.state==1?'余额提现':'提现失败'}}</view>
+            <view class="item_time" >{{child.time}}</view>
+            <view class="item_num" wx:if="{{child.state==1}}">+{{child.money}}</view>
+            <view class="item_num" wx:else>-{{child.money}}</view>
+          </view>
+      </view>
+    </block>
+    <!-- 暂无推广信息 -->
+  <view class='nodata' style="padding-top:100rpx;" wx:if="{{!cash}}">
+    <icon style="font-size:150rpx;" class='iconfont_lost icon-Null-data'></icon>
+    <view class='tips'>
+      <text>暂无提现记录～</text>
+    </view>
+  </view>
+  </view>
+</view>

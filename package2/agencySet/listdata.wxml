@@ -1,0 +1,81 @@
+<view class="agency_box" wx:if="{{!tabCheck}}">
+
+    <block wx:for="{{agency}}">
+      <view class="agency_list" data-id="{{item.Id}}" bindtap="agency_des" data-ispass="{{item.is_pass}}" >
+        <view class="agency_left">
+          <image mode="aspectFill" src="{{item.agency_logo}}"></image>
+        </view>
+        <view class="agency_right">
+          <view class="agency_title">
+            <text class="suoxie">{{item.agency_name}}</text>
+          </view>
+          <view class="agency_score">
+            评分
+            <block wx:for="{{item.star}}">
+              <icon style="display:flex;margin-bottom:0;" class='iconfont_star icon-xingji3'></icon>
+            </block>
+            <block wx:for="{{5-item.star}}">
+              <icon style='display:flex;margin-bottom:0;' class='iconfont_star icon-xingji4'></icon>
+            </block>
+          </view>
+          <view class="agency_tea_num">
+            入驻教练
+            <text style="color:#FF6C00;font-size:26rpx;margin-left:4rpx;">{{item.teaNum}}位</text>
+          </view>
+          <button data-id="{{item.Id}}" data-idx="{{index}}" data-state="{{item.is_recom}}" class="recom_btn" catchtap="recom">{{item.is_recom==1?'已推荐':'推荐'}}</button>
+          <button data-id="{{item.Id}}"  data-idx="{{index}}" data-state="{{item.is_cut}}" catchtap="cut" class="cut_btn">{{item.is_cut==1?'已下架':'下架'}}</button>
+        </view>
+      </view>
+    </block>
+    <!-- 无数据显示 -->
+  <view class='nodata' wx:if="{{agency.length===0}}">
+   <icon bindtap='qiehuan' class='iconfont_qiehuan icon-ditu'></icon>
+    <view class='tips'>
+      <text>换个区域，发现更多</text>
+    </view>
+  </view>
+    <!-- 暂无更多数据 -->
+  <view class="noMoreData" wx:if="{{noMoreData&&agency.length!=0}}">
+    <view class="no_line"></view>
+    <view style="margin:0 6rpx;">暂无更多~</view>
+    <view class="no_line"></view>
+  </view>
+  <!-- 加载动效 -->
+<view class="jiazai" wx:if="{{!noMoreData&&agency.length!=0}}">
+  <i-spin fix></i-spin>
+  <view>加载中</view>
+</view>
+</view>
+
+
+<view class="agency_apply" wx:if="{{tabCheck}}">
+  <block wx:for="{{apply}}">
+    <!-- <navigator url="../../agency/agency?admin=1" style="width:100%;display:flex;justify-content: center;align-items:center;" hover-class="none"> -->
+    <view class="agency_list" data-id="{{item.Id}}" data-ispass="{{item.is_pass}}" bindtap="agency_des">
+      <view class="agency_left">
+        <image mode="aspectFill" src="{{item.agency_logo}}"></image>
+      </view>
+      <view class="agency_right">
+        <view class="agency_title" style="font-size:35rpx;color:#1E1E1E;font-weight:600;padding-top:0;">
+          <text>{{item.agency_name}}</text>
+        </view>
+        <view class="agency_address">
+          {{item.agency_address}}[{{item.agency_type}}]
+        </view>
+        <view class="agency_apply_time">
+          申请时间：{{item.create_time}}
+        </view>
+        <button  data-idx="{{index}}"  catchtap="pass" class="recom_btn">通过</button>
+        <button data-idx="{{index}}" catchtap="refuse" class="cut_btn">拒绝</button>
+      </view>
+    </view>
+    <!-- </navigator> -->
+  </block>
+
+  <view class='nodata' wx:if="{{apply_num===0}}">
+   <icon  class='iconfont_nocheck icon-shenhe'></icon>
+    <view class='tips'>
+      <text>暂无申请数据</text>
+    </view>
+  </view>
+</view>

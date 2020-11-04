@@ -1,0 +1,114 @@
+<view class='container'>
+  <view class='search_box'>
+    <view class='input_box'>
+      <view class='start_search_box'>
+        <view class='search_icon'>
+          <i-icon type="search" size="18" color="#797676" />
+        </view>
+        <input value='{{text}}' bindinput="input" bindconfirm="search" confirm-type="search" class='start_search' focus='{{true}}' placeholder='搜索视频内容' placeholder-class="placeholderStyle">
+        </input>
+      </view>
+    </view>
+    <view class='cancel' bindtap='goback'>
+      <text>取消</text>
+    </view>
+  </view>
+
+  <view class='hot_search' wx:if="{{hot}}">
+    <text>热门搜索</text>
+  </view>
+  <view class='hot_btn_line' wx:if="{{hot}}">
+    <view class='hot_btn' bindtap='hot_search' data-text='钢琴'>
+      <text>钢琴</text>
+    </view>
+    <view class='hot_btn' bindtap='hot_search' data-text='小提琴'>
+      <text>小提琴</text>
+    </view>
+    <view class='hot_btn' bindtap='hot_search' data-text='高尔夫'>
+      <text>高尔夫</text>
+    </view>
+    <view class='hot_btn' bindtap='hot_search' data-text='瑜伽'>
+      <text>瑜伽</text>
+    </view>
+  </view>
+
+  <!-- 搜索内容列表 -->
+<!--瀑布流懒加载 --> 
+  <view style="display:none">
+    <image wx:for="{{images}}" wx:key="id" data-idx="{{index}}"  data-id="{{item.id}}" src="{{item.cover}}" bindload="onImageLoad"></image>
+  </view>
+
+<view class="video_num" hidden="{{sum==0}}" >
+  <text>共{{sum}}个视频</text>
+</view>
+  <view class="video_box" hidden="{{video.length==0&&page_num==1}}"  >
+    <view class="img_item">
+      <view class='img_box' bindtap='play' data-idx='{{item.Id}}'  wx:for="{{col1}}" wx:key="id">
+        <image mode="aspectFill" src="{{item.cover}}" style="width:100%;height:{{item.height}}px;"></image>
+        <view class="video_des">
+            <view class='headimg_box' bindtap='teades' data-openid='{{item.openid}}' >
+              <image class='headimg' src='{{item.avatarUrl}}'></image>
+            </view>
+            <view class='name'>{{item.nickName}}</view>
+            <view class='video_title'>{{item.title}}</view>
+            <view class="video_hot" style="margin-top:{{item.title?'14rpx':0}}">
+              <view class="video_favor" hidden="{{item.favorPerson.length==0}}">
+                <block wx:for="{{item.favorPerson}}" wx:key="id" wx:for-item="head" wx:for-index="idx">
+                    <image style="left:{{idx>0?idx*24:0}}rpx" hidden="{{idx>2}}" src="{{head.avatarUrl}}"></image>
+                </block>
+                <text class="favor_num" style="left:{{item.favorPerson.length>3?82:24*item.favorPerson.length+14}}rpx">{{item.favorPerson.length}}人喜欢</text>
+              </view>
+              <view class='play'>
+                <image class='img' src='/img/show/play.png'></image>
+                <view class='play_times'>{{item.play}}</view>
+              </view>
+            </view>
+        </view>
+      </view>
+    </view> 
+
+    <view class="img_item">
+      <view class='img_box' wx:for="{{col2}}" bindtap='play' data-idx='{{item.Id}}' wx:key="id">
+        <image mode="aspectFill" src="{{item.cover}}"  style="width:100%;height:{{item.height}}px;"></image>
+        <view class="video_des">
+            <view class='headimg_box' bindtap='teades' data-openid='{{item.openid}}' >
+              <image class='headimg' src='{{item.avatarUrl}}'></image>
+            </view>
+            <view class='name'>{{item.nickName}}</view>
+            <view class='video_title'>{{item.title}}</view>
+            <view class="video_hot" style="margin-top:{{item.title?'14rpx':0}}">
+              <view class="video_favor" hidden="{{item.favorPerson.length==0}}">
+                <block wx:for="{{item.favorPerson}}" wx:key="id" wx:for-item="head" wx:for-index="idx">
+                    <image style="left:{{idx>0?idx*24:0}}rpx" hidden="{{idx>2}}" src="{{head.avatarUrl}}"></image>
+                </block>
+                <text class="favor_num" style="left:{{item.favorPerson.length>3?82:24*item.favorPerson.length+14}}rpx">{{item.favorPerson.length}}人喜欢</text>
+              </view>
+              <view class='play'>
+                <image class='img' src='/img/show/play.png'></image>
+                <view class='play_times'>{{item.play}}</view>
+              </view>
+            </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 暂无更多数据 -->
+  <view class="noMoreData" wx:if="{{noMoreData}}">
+    <view class="line"></view>
+    <view style="margin:0 6rpx;">暂无更多~</view>
+    <view class="line"></view>
+  </view>
+
+</view>
+
+<!-- 没有任何视频 -->
+  <view class='nodata' wx:if="{{novideo}}">
+    <icon class='iconfont_video icon-zanwushipin'></icon>
+    <view class='tips'>
+      <text>暂无视频信息～</text>
+    </view>
+  </view>
+    
+
+
+</view>
