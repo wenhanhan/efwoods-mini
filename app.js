@@ -309,8 +309,8 @@ App({
 
     tabBar: {
       "backgroundColor": "#ffffff",
-      "color": "#979795",
-      "selectedColor": "#bca05a",
+      "color": "#A6A6A6",
+      "selectedColor": "#FACC3C",
       "list": [
         {
           "pagePath": "/pages/index/index",
@@ -338,8 +338,8 @@ App({
         },
         {
           "pagePath": "/pages/myset/coach/coach",
-          "iconPath": "/img/icon/myset.png",
-          "selectedIconPath": "/img/icon/myset1.png",
+          "iconPath": "/img/icon/my.png",
+          "selectedIconPath": "/img/icon/my1.png",
           "text": "我的"
         }
       ]

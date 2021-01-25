@@ -9,8 +9,8 @@ Component({
       type: Object,
       value: {
         "backgroundColor": "#ffffff",
-        "color": "#979795",
-        "selectedColor": "#bca05a",
+        "color": "#A6A6A6",
+        "selectedColor": "#FACC3C",
         "list": [
           {
             "pagePath": "/pages/index/index",
@@ -38,8 +38,8 @@ Component({
           },
           {
             "pagePath": "pages/myset/coach/coach",
-            "iconPath": "icon/icon_mine.png",
-            "selectedIconPath": "icon/icon_mine_HL.png",
+            "iconPath": "/img/icon/my.png",
+            "selectedIconPath": "/img/icon/my1.png",
             "text": "我的"
           }
         ]
