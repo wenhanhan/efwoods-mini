@@ -107,6 +107,12 @@
     <image src="https://cdn.icloudapi.cn/ruzhu.png"></image>
   </view>
 </view>
+<!-- 好课推荐 -->
+<view class="recommend_course">
+  <view class="recommend_course_title"></view>
+  <view class="recommend_course_box"></view>
+</view>
+
   <view class='menu_list'> 
     <view class='menu_line'>
       <view class="start_line"></view>
