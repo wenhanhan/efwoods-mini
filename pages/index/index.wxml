@@ -80,8 +80,33 @@
       <image mode="aspectFill" src="/img/home/shop.png"></image>
       <text>发现好物</text>
     </navigator>
+    <navigator class="nav_item" hover-class="none" open-type="switchTab" url="../show/show">
+      <image mode="aspectFill" src="/img/home/news.png"></image>
+      <text>赛事资讯</text>
+    </navigator>
+    <navigator class="nav_item" url="../all_agency/all_agency" hover-class="none">
+      <image mode="aspectFill" src="/img/home/test.png"></image>
+      <text>综合测评</text>
+    </navigator>
+    <navigator class="nav_item" url="../online/online" hover-class="none">
+      <image mode="aspectFill" src="/img/home/service.png"></image>
+      <text>留学服务</text>
+    </navigator>
+    <navigator class="nav_item" target="miniProgram" app-id="wx83f243f73b48c56c" hover-class="none">
+      <image mode="aspectFill" src="/img/home/camp.png"></image>
+      <text>夏令营</text>
+    </navigator>
   </view>
-
+<!-- 快捷选择区域 -->
+<view class="quick_select">
+  <view class="quick_select_left">
+    <image src="https://cdn.icloudapi.cn/daka.png"></image>
+    <image style="margin-top:16rpx;" src="https://cdn.icloudapi.cn/paihang.png"></image>
+  </view>
+  <view class="quick_select_right">
+    <image src="https://cdn.icloudapi.cn/ruzhu.png"></image>
+  </view>
+</view>
   <view class='menu_list'> 
     <view class='menu_line'>
       <view class="start_line"></view>

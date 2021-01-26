@@ -314,32 +314,32 @@ App({
       "list": [
         {
           "pagePath": "/pages/index/index",
-          "iconPath": "/img/icon/home.png",
-          "selectedIconPath": "/img/icon/home1.png",
+          "iconPath": "icon/home.png",
+          "selectedIconPath": "icon/home1.png",
           "text": "首页"
         },
         {
           "pagePath": "/pages/course/course",
-          "iconPath": "/img/icon/course.png",
-          "selectedIconPath": "/img/icon/course1.png",
+          "iconPath": "icon/course.png",
+          "selectedIconPath": "icon/course1.png",
           "text": "课程"
         },
         {
           "pagePath": "/pages/show/show",
-          "iconPath": "icon/icon_release.png",
+          "iconPath": "icon/show.png",
           "isSpecial": true,
           "text": "教练秀"
         },
         {
           "pagePath": "/pages/teacher/teacher",
-          "iconPath": "/img/icon/teacher.png",
-          "selectedIconPath": "/img/icon/teacher1.png",
+          "iconPath": "icon/teacher.png",
+          "selectedIconPath": "icon/teacher1.png",
           "text": "教练"
         },
         {
           "pagePath": "/pages/myset/coach/coach",
-          "iconPath": "/img/icon/my.png",
-          "selectedIconPath": "/img/icon/my1.png",
+          "iconPath": "icon/my.png",
+          "selectedIconPath": "icon/my1.png",
           "text": "我的"
         }
       ]

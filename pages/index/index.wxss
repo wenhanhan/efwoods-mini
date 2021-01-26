@@ -42,7 +42,7 @@
   width: 100%;
   height: 90rpx;
   /* background-color: #bca05a; */
-  background-color: #BFA24B;
+  background-color: #FACC3C;
   position: fixed;
   display: flex;
   /* font-size: 24rpx; */
@@ -147,21 +147,25 @@
 .top_bk{
   width: 100%;
   height: 240rpx;
-  background: #BFA24B;
+  background: #FACC3C;
   border-bottom-left-radius: 30rpx;
   border-bottom-right-radius: 30rpx;
   position: fixed;
   top: 90rpx;
   z-index: -1;
-  background-image: linear-gradient(to bottom,#BFA24B , #F4EBCA);
+  background-image: linear-gradient(to bottom,#FACC3C , #FFE79D);
 }
 /* 按钮导航区域 */
 .home_nav{
   width: 100%;
-  height: 200rpx;
+  /* height: 200rpx; */
+  height: auto;
+  padding-top: 8rpx;
+  padding-bottom: 17rpx;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   background: white;
 }
 .nav_item{
@@ -171,6 +175,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  margin-top: 40rpx;
   font-size: 26rpx;
   color: #2F2F2F;
 }
@@ -498,3 +503,32 @@ text-overflow:ellipsis;
   font-size: 20rpx;
 }
 
+/* 改版功能样式 */
+.quick_select{
+  width: 100%;
+  height: auto;
+  background-color: white;
+  padding: 30rpx 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #eeeeee;
+}
+.quick_select_left{
+  width: 360rpx;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 24rpx;
+}
+.quick_select_right{
+  width: 326rpx;
+  height: 336rpx;
+  margin-right: 24rpx;}
+.quick_select_right image{
+  width: 100%;
+  height: 100%;
+}
+.quick_select_left image{
+  width: 100%;
+  height: 160rpx;
+}

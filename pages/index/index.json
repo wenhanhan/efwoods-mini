@@ -4,7 +4,7 @@
     "tabbar": "../../tabbarComponent/tabbar",
     "i-badge": "../../dist/badge/index"
   },
-    "navigationBarBackgroundColor": "#BFA24B",
+    "navigationBarBackgroundColor": "#FACC3C",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "首页",
     "backgroundTextStyle": "light",
