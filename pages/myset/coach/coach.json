@@ -1,9 +1,9 @@
 {
   "usingComponents": {
-    "i-message": "../../../dist/message/index",
+    "i-toast": "../../../dist/toast/index",
     "tabbar": "../../../tabbarComponent/tabbar"
   },
-  "navigationBarBackgroundColor": "#e93323",
+  "navigationBarBackgroundColor": "#FACC3C",
   "navigationBarTextStyle": "white",
   "navigationBarTitleText": "个人中心",
   "backgroundColor": "#eeeeee",

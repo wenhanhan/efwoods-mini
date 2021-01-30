@@ -6,12 +6,12 @@
     "tabbar": "../../tabbarComponent/tabbar",
     "i-spin": "../../dist/spin/index"
   },
-  "navigationBarBackgroundColor": "#BFA24B",
-  "backgroundColor": "#BFA24B",
+  "navigationBarBackgroundColor": "#FACC3C",
+  "backgroundColor": "#FACC3C",
   "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "私教和机构",
+  "navigationBarTitleText": "教练",
   "backgroundTextStyle": "light",
   "enablePullDownRefresh": false,
-  "backgroundColorTop": "#BFA24B",
-  "backgroundColorBottom": "#ffffff" 
+  "backgroundColorTop": "#FACC3C",
+  "backgroundColorBottom": "#FACC3C" 
 }

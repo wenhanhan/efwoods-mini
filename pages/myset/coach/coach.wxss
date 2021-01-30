@@ -1,15 +1,7 @@
 /* pages/myset/user/user.wxss */
 @import '/icon/jifen.wxss';
-@import '/icon/man.wxss';
-@import '/icon/girl.wxss';
 @import '/icon/right_daohang.wxss';
 @import '/icon/jingyan.wxss';
-@import '/icon/level1.wxss';
-@import '/icon/level2.wxss';
-@import '/icon/level3.wxss';
-@import '/icon/level4.wxss';
-@import '/icon/level5.wxss';
-@import '/icon/level6.wxss';
 page{
   background-color: #eeeeee;
 }
@@ -21,13 +13,13 @@ page{
 
 .tea_top_box{
   width: 100%;
-  height: 340rpx;
+  height: auto;
   float: left;
   position: relative;
 }
 .user_top_box{
   width: 100%;
-  height: 320rpx;
+  height: auto;
   float: left;
   position: relative;
 }
@@ -35,11 +27,11 @@ page{
 .user_top{
   width: 100%;
   height: 285rpx;
-  background-size: 100% 100%;
-  border-bottom-right-radius:80rpx;
-  border-bottom-left-radius:80rpx;
-  background: #e93323;
-  float: left;
+  /* background-size: 100% 100%; */
+  border-bottom-right-radius:24rpx;
+  border-bottom-left-radius:24rpx;
+  background: #FACC3C;
+  display: flex;
   /* background-image: url(https://s2.ax1x.com/2019/03/09/ASLUtx.png); */
   position: relative;
 }
@@ -48,7 +40,7 @@ page{
   height: 130rpx;
   float: left;
   position: relative;
-  margin-top: 70rpx;
+  margin-top: 48rpx;
   border-radius: 75rpx;
   margin-left: 50rpx;
   box-sizing:border-box;
@@ -63,13 +55,27 @@ page{
   box-sizing:border-box;
   /* border: 2px solid white; */
 }
+.user_sex{
+  width: 26rpx;
+  height: 26rpx;
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  bottom: 6rpx;
+  right: 4rpx;
+}
+.user_sex image{
+  width: 100%;
+  height: 100%;
+}
 .user_info{
   width: 540rpx;
   height: 100rpx;
   float: left;
   position: relative;
   margin-left: 20rpx;
-  margin-top: 84rpx;
+  margin-top: 48rpx;
+  padding-top: 10rpx;
   /* background: red; */
 }
 
@@ -82,28 +88,34 @@ page{
 }
 .user_info_bot{
   width: 100%;
-  height: 50rpx;
+  height: auto;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-start;
+  margin-top: 28rpx;
   position: relative;
+  font-size: 22rpx;
+  color:white
 }
+
 .userNick{
   width: auto;
   height: 100%;
-  font-size: 30rpx;
+  font-weight: 600;
+  font-size: 36rpx;
   float: left;
   position: relative;
   color: white;
 }
-.usersex{
-  width: 25rpx;
-  height: 25rpx;
+.user_level{
+  width: 78rpx;
+  height: 32rpx;
   display: flex;
-  justify-content: center;
-  /* background: green; */
-  margin-bottom: 20rpx;
-  margin-left: 4rpx;
+  margin-left: 10rpx;
+}
+.user_level image{
+  width: 100%;
+  height: 100%;
 }
 .user_exp{
   /* margin-left: 10rpx; */
@@ -163,17 +175,25 @@ page{
 }
 /* 个人喜欢 评价 样式 */
 .base_info{
-  width: 85%;
-  height: 115rpx;
-  background: white;
-  border-radius: 30rpx;
-  position: absolute;
-  left: 0;right: 0;
-  bottom: 0;
-  margin: auto;
+  width: 100%;
+  height: 130rpx;
   display: flex;
-  justify-content: center;
+  justify-items: center;
   align-items: center;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  margin-top: -65rpx;
+  position: relative;
+}
+.base_info_box{
+  width: 100%;
+  height: 100%;
+  border-radius: 14rpx;
+  background: white;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .base_info_child{
   width: 25%;
@@ -184,12 +204,13 @@ page{
   align-items: center;
 }
 .child_tags{
-  font-size: 30rpx;
-  color: #333333;
+  font-size: 24rpx;
+  color: #7F7F7F;
 }
 .child_num{
-  font-size: 24rpx;
-  color: #666666;
+  font-size: 32rpx;
+  color: #000000;
+  font-weight: 600;
 }
 .base_info_line{
   height: 42rpx;
@@ -198,47 +219,22 @@ page{
   display: flex;
 }
 /* 个人中心 中间区域样式 */
-.user_set_box{
-  width: 95%;
-  /* height: 460rpx; */
-  height: auto;
-  position: relative;
-  margin: 0 auto;
-  background: white;
-  border-radius: 30rpx;
-  margin-top: 20rpx;
-  font-size: 30rpx;
-  color: #333333;
-}
-.set_box_line{
-  width: 95%;
-  height: 90rpx;
-  /* float: left; */
-  position: relative;
-  line-height: 90rpx;
-  /* display: flex; */
-  /* align-items: center; */
-  margin: 0 auto;
-  border-bottom: 1px solid #eeeeee;
-}
 .set_icon{
-  width: 32rpx;
-  height: 32rpx;
-  float: left;
-  position: relative;
-  margin-left: 10rpx;
-  margin-top: 6rpx;
-  margin-right: 10rpx;
+  width: 56rpx;
+  height: 56rpx;
+  margin-left: 24rpx;
 }
 .set_icon image{
   width: 100%;
   height: 100%;
 }
 .set_sign{
-  float: left;
-  height: 100%;
-  position: relative;
   width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 16rpx;
 }
 .jifen{
   width: auto;
@@ -249,4 +245,103 @@ page{
   font-size: 24rpx;
   color: white;
   font-weight: 600;
+}
+/* 改版功能 */
+.spread_card{
+  width: 100%;
+  height: 152rpx;
+  padding: 0 24rpx;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+}
+.spread_card image{
+  width: 100%;
+  height: 100%;
+  border-radius: 14rpx;
+}
+.common_tools{
+  width: 100%;
+  height: 208rpx;
+  padding: 0 24rpx;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+}
+.common_tools_box{
+  width: 100%;
+  height: 100%;
+  background:white;
+  border-radius: 14rpx;
+  display: flex;
+  flex-direction: column;
+}
+.common_tools_title{
+  width: 100%;
+  height: 76rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20rpx;
+  font-size: 32rpx;
+  color:#000000;
+  font-weight: 600;
+}
+.common_tools_item{
+  width: 100%;
+  height: 132rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.common_tools_item_child{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  color:#000000
+}
+.common_tools_item_child_img{
+  width: 64rpx;
+  height: 64rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.common_tools_item_child_img image{
+  width:50rpx;
+  height:56rpx;
+}
+.user_set{
+  width: 100%;
+  height: auto;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  margin-top: 30rpx;
+}
+.user_set_box{
+  width: 100%;
+  height:auto;
+  background:white;
+  border-radius: 14rpx;
+  position: relative;
+  font-size: 30rpx;
+  color: #000000;
+  font-weight: 500;
+}
+.set_box_line{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #EFEFEF;
+}
+.more{
+  width: 14rpx;
+  height: 22rpx;
+  position: absolute;
+  right:40rpx;
 }

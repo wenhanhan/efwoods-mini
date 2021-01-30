@@ -40,7 +40,7 @@
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.9.5",
+  "libVersion": "2.14.4",
   "appid": "wx475a3683acbb603d",
   "projectname": "course",
   "debugOptions": {

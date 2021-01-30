@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "课程详情",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

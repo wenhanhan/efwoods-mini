@@ -1,6 +1,12 @@
 {
   "pages": [ 
+    "pages/daily_exercise_start/daily_exercise_start",
+    "pages/daily_exercise_reply/daily_exercise_reply",
+    "pages/daily_exercise_des/daily_exercise_des",
+  
+    "pages/daily_exercise/daily_exercise",
     "pages/location/location",
+    "pages/myset/coach/coach",
     "pages/share/share",
     "pages/web/login",
     "pages/apply/apply",
@@ -74,7 +80,6 @@
     "pages/search/search",
     "pages/select_city/select_city",
     "pages/myset/mycoupon/mycoupon",
-    "pages/myset/coach/coach",
     "pages/myset/coupon_des/coupon_des",
     "pages/tw_update/tw_update",
     "pages/tw_preview/tw_preview",

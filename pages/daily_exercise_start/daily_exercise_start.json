@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "开始锻炼",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

@@ -1,0 +1,100 @@
+<view class="container">
+  <view class="video_banner">
+    <view class="video_title">平板支撑</view>
+    <image class="play" src="/img/home/play1.png"></image>
+  </view>
+  <view class="video_info">
+    <view class="video_prop">
+      <view class="video_prop_item">
+        <view class="item1">4节</view>
+        <view class="item2">课程</view>
+      </view>
+      <view class="video_prop_item">
+        <view class="item1">30分钟</view>
+        <view class="item2">时长</view>
+      </view>
+      <view class="video_prop_item">
+        <view class="item1">1000人</view>
+        <view class="item2">参与</view>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <!-- 简介 -->
+    <view class="content_title">课程介绍</view>
+      <view class="video_intro">
+        <text>{{intro}}</text>
+      </view>
+    <view class="content_title">课程内容</view>
+    <view class="content_box">
+      <scroll-view class="scroll-course" scroll-x style="width: 100%">
+        <block wx:for="{{courses}}">
+          <view class="img_box" style="{{index==cour_num-1?'margin-right:15rpx;':''}}">
+            <view class="child_info">
+              <view class="child_title">{{item.title}}</view>
+              <view class="child_time">{{item.duration}}</view>
+            </view>
+            <navigator url='{{item.url}}' style='width:100%;height:100%;'>
+              <image src="{{item.img}}"></image>
+            </navigator>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 评论区 -->
+  <view class="discuss">
+    <view class="content_title">
+      <text>评论区</text>
+      <image class="more" src="/img/user/more.png"></image>
+    </view>
+    <view class="discuss_num">
+      <view>1000条</view>
+      <view>按时间 | 按热度</view>
+    </view>
+    <view class="discuss_input">
+      <view class="head_img">
+        <image src="{{userInfo.avatarUrl}}"></image>
+      </view>
+      <view class="input">说点什么吧~</view>
+      <!-- <view class='judge_input' bindtap="judge" style="bottom:{{keyboard_height}}px;{{isIphoneX?'padding-bottom:30rpx':''}}">
+        <image src='{{userInfo.avatarUrl}}'></image>
+        <input focus='{{focus}}' value="{{content}}" disabled="{{!userInfo}}" maxlength='-1' bindconfirm='send' bindinput="judgeTxt" adjust-position="{{false}}" bindblur='cancel' bindfocus='focus' placeholder="添加评论"></input>
+        <view bindtap='send'>发送</view>
+      </view> -->
+    </view>
+    <view class="discuss_content">
+      <view class="discuss_content_item" wx:for="{{judge}}">
+        <view class="discuss_content_item_left">
+          <image src="{{item.head}}"></image>
+        </view>
+        <view class="discuss_content_item_right">
+          <view class="discuss_content_item_right_top">
+            <view class="username">
+              <view>{{item.name}}</view>
+              <view class="time">{{item.time}}</view>
+            </view>
+            <view class="icon">
+              <image src="/img/reply.png"></image>
+              <image style="margin-left:26rpx" src="/img/favor.png"></image>
+            </view>
+          </view>
+          <view class="discuss_content_item_right_bottom">
+            <view class="discuss_content_item_right_bottom_text">
+              <text>{{item.content}}</text>
+            </view>
+            <view class="discuss_content_item_right_bottom_repaly">
+              <view wx:for="{{item.reply}}" wx:if="{{idx<=1}}" wx:for-item="reply" wx:for-index="idx"><text style="color:#FE8711">{{reply.name}}：</text>{{reply.reply_content}}</view>
+              <view class="all_discuss" hidden="{{item.reply.length<=2}}">查看全部12条回复</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 开始按钮 -->
+  <view class="start">
+    开始训练
+  </view>
+
+</view>

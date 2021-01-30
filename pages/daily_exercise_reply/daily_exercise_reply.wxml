@@ -1,0 +1,55 @@
+<view class="container">
+  <view class="main_reply">
+    <view class="discuss_content">
+      <view class="discuss_content_item">
+        <view class="discuss_content_item_left">
+          <image src="{{judge.head}}"></image>
+        </view>
+        <view class="discuss_content_item_right">
+          <view class="discuss_content_item_right_top">
+            <view class="username">
+              <view>{{judge.name}}</view>
+              <view class="time">{{judge.time}}</view>
+            </view>
+            <view class="icon">
+              <image src="/img/reply.png"></image>
+              <image style="margin-left:26rpx" src="/img/favor.png"></image>
+            </view>
+          </view>
+          <view class="discuss_content_item_right_bottom">
+            <view class="discuss_content_item_right_bottom_text">
+              <text>{{judge.content}}</text>
+            </view>
+            <!-- <view class="discuss_content_item_right_bottom_repaly">
+              <view wx:for="{{judge.reply}}" wx:if="{{idx<=1}}" wx:for-item="reply" wx:for-index="idx"><text style="color:#FE8711">{{reply.name}}：</text>{{reply.reply_content}}</view>
+              <view class="all_discuss" hidden="{{item.reply.length<=2}}">查看全部12条回复</view>
+            </view> -->
+          </view>
+        </view>
+      </view>
+      <!-- 回复列表 -->
+      <view class="discuss_content_item" wx:for="{{judge.reply}}">
+        <view class="reply_content_item_left">
+          <image src="{{item.head}}"></image>
+        </view>
+        <view class="reply_content_item_right">
+          <view class="reply_content_item_right_top">
+            <view class="reply_username">
+              <view>{{item.name}}</view>
+              <view class="reply_time">{{item.time}}</view>
+            </view>
+            <view class="icon">
+              <image src="/img/reply.png"></image>
+              <image style="margin-left:26rpx" src="/img/favor.png"></image>
+            </view>
+          </view>
+          <view class="reply_content_item_right_bottom">
+            <view class="reply_content_item_right_bottom_text">
+              <text wx:if="{{item.to}}">回复<text style="color:#FE8711;padding:0 4rpx;font-weight:500">{{item.to.name}}:</text></text><text>{{item.reply_content}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

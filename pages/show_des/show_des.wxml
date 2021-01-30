@@ -77,10 +77,6 @@
             <text>{{item.content}}</text>
           </view>
         </view>
-        <!-- <button wx:if="{{home_state}}" hover-class='none' class='judge_love' data-judgeid='{{item.Id}}' catchtap='like' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">
-          <icon class='iconfont_zan icon-shoucang' style="color:{{item.isLike==200?'#F13838':'#B6B4B4'}};margin-left:0"></icon>
-          <text style='margin-left:5rpx'>{{item.likeNum}}</text>
-        </button> -->
         <view  class='judge_love' data-judgeid='{{item.Id}}' catchtap='like' >
           <icon class='iconfont_zan icon-shoucang' style="color:{{item.isLike==200?'#F13838':'#B6B4B4'}};margin-left:0"></icon>
           <text style='margin-left:5rpx'>{{item.likeNum}}</text>

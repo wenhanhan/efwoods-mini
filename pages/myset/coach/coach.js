@@ -1,6 +1,6 @@
 // pages/myset/coach/coach.js
 var app=getApp()
-const { $Message } = require('../../../dist/base/index');
+const { $Toast } = require('../../../dist/base/index');
 Page({
 
   /**
@@ -472,9 +472,18 @@ myshow:function(e){
 invite:function(e){
   var userInfo = wx.getStorageSync('userInfo')
   if (userInfo) {
-    wx.navigateTo({
-      url: '../../myset/spread/spread',
-    })
+    if(this.data.identity==0&&this.data.vvip==0){
+      //请联系管理员
+      $Toast({
+        content: '请联系管理员',
+        type: 'loading',
+        duration:2
+      });
+    }else{ 
+      wx.navigateTo({
+        url: '../../myset/spread/spread',
+      })
+    }
   } else {
     app.login()
   }
