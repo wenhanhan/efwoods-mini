@@ -1,1 +1,145 @@
 /* pages/daily_exercise_start/daily_exercise_start.wxss */
+.video_box{
+  width: 100%;
+  height: 420rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video_box video{
+  width: 100%;
+  height: 100%;
+}
+.video_box image{
+  width: 100%;
+  height: 100%;
+}
+.video_title{
+  width: 100%;
+  height: 95rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eeeeee;
+}
+.title{
+  font-size: 36rpx;
+  color: #181818;
+  font-weight: 600;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.people{
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20rpx;
+  color: #343434;
+}
+.num{
+  font-size: 26rpx;
+  color: #000000;
+  font-weight: 500;
+}
+.content{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  border-top: 1px solid #eeeeee;
+}
+.content_box{
+  width: 100%;
+  height: auto;
+  float: left;
+  /* position: relative; */
+  background: white;
+  margin-bottom: 20rpx;
+}
+.content_title{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 32rpx;
+  color: #232323;
+  font-weight: 600;
+  position: relative;
+}
+.scroll-course{
+  width: 270rpx;
+  height: 172rpx;
+  float: left;
+  /* margin-top: 20rpx; */
+  margin-bottom: 15rpx;
+  white-space: nowrap;
+  position: relative;
+}
+.img_box{
+  width: 270rpx;
+  height: 172rpx;
+  margin-right: 15rpx;
+  display: inline-block;
+  position: relative;
+}
+.img_box image{
+  width: 100%;
+  height: 100%;
+}
+.child_info{
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 10rpx;
+  position: absolute;
+  padding-left: 16rpx;
+}
+.child_title{
+  width: 180rpx;
+  font-size: 24rpx;
+  color: white;
+  font-weight: 600;
+  overflow: hidden;
+}
+.child_time{
+  width: auto;
+  font-size: 20rpx;
+  color: white;
+  margin-left: 20rpx;
+}
+.timing{
+  width: auto;
+  height: 100%;
+  font-size: 80rpx;
+  color: #000000;
+  font-weight: 600;
+  margin-top: 85rpx;
+}
+.end{
+  width: 640rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50rpx;
+  background: #fe8711;
+  font-size: 32rpx;
+  color: white;
+  font-weight: 500;
+  margin-top: 80rpx;
+}

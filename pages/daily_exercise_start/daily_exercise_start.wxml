@@ -1,3 +1,37 @@
 <view class="container">
-  
+  <view class='video_box'>
+    <video objectFit='fill' src='{{video[idx].url}}' title="{{video[idx].title}}" controls="{{true}}" autoplay="{{false}}" enable-play-gesture="{{true}}" ></video>
+  </view>
+  <view class="video_title">
+    <view class="title">{{video[idx].title}}</view>
+    <view class="people">
+      <view class="num">{{video[idx].num}}</view>
+      <view>参加人数</view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="content_title">课程内容</view>
+    <view class="content_box">
+      <scroll-view class="scroll-course" scroll-x style="width: 100%">
+        <block wx:for="{{courses}}">
+          <view class="img_box" style="{{index==cour_num-1?'margin-right:15rpx;':''}}">
+            <view class="child_info">
+              <view class="child_title">{{item.title}}</view>
+              <view class="child_time">{{item.duration}}</view>
+            </view>
+            <navigator url='{{item.url}}' hover-class="none" style='width:100%;height:100%;'>
+              <image src="{{item.img}}"></image>
+            </navigator>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 计时 -->
+  <view class="timing">
+    <text>{{timing}}</text>  
+  </view>
+  <view class="end">
+    <text>结束训练</text>
+  </view>
 </view>

@@ -1,0 +1,90 @@
+/* pages/sports_event_sign/sports_event_sign.wxss */
+page{
+  background:#eeeeee;
+}
+.sports_bk{
+  width: 100%;
+  height: 328rpx;
+  position: relative;
+}
+.sports_bk image{
+  width: 100%;
+  height: 100%;
+}
+.sports_info{
+  width: 100%;
+  height: auto;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sports_info_top{
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  /* justify-content: center; */
+  align-items: flex-start;
+  flex-direction: column;
+  background: white;
+  margin-top: -120rpx;
+  z-index: 999;
+  border-radius: 16rpx;
+}
+.start_line{
+  width: 8rpx;
+  height: 36rpx;
+  background: #005FFF;
+  /* border-radius: 10rpx; */
+}
+.sports_title{
+  width: 100%;
+  height: 95rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 36rpx;
+  color: #1F1F1F;
+  font-weight: 600;
+  border-bottom: 1px solid #eeeeee;
+}
+.sign_form{
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.input_line{
+  width: 650rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #E2E2E2;
+  border-radius: 6rpx;
+  font-size: 26rpx;
+  color: #222222;
+  padding-left: 24rpx;
+  box-sizing: border-box;
+  margin-top: 45rpx;
+}
+.input_line input{
+  width: 70%;
+}
+.btn-area{
+  margin-top: 60rpx;
+}
+.btn-area button{
+  width:650rpx;
+  height: 90rx !important;
+  margin: 30rpx 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  background: #0B73FF;
+  color: white;
+}

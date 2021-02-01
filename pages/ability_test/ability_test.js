@@ -1,45 +1,42 @@
-// pages/daily_exercise_start/daily_exercise_start.js
+// pages/ability_test/ability_test.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    idx:0,
-    video:[
+    imgUrls:[
       {
-        url:'https://cdn.icloudapi.cn/f88a3201907031905507410.mp4',
-        title:'平板支撑',
-        num:2000
+        url:'',
+        img:'https://cdn.icloudapi.cn/ability_test.png'
       }
     ],
-    courses:[
+    professional_test:[
       {
-        url:'',
-        img:'https://cdn.icloudapi.cn/daily-exercise.png',
-        title:'平板支撑入门',
-        duration:'2分钟'
+        type:'高尔夫',
+        img:'https://cdn.icloudapi.cn/test_golf.png'
       },
       {
-        url:'',
-        img:'https://cdn.icloudapi.cn/daily-exercise.png',
-        title:'平板支撑入门',
-        duration:'2分钟'
+        type:'足球',
+        img:'https://cdn.icloudapi.cn/test_foot.png'
       },
       {
-        url:'',
-        img:'https://cdn.icloudapi.cn/daily-exercise.png',
-        title:'平板支撑入门',
-        duration:'2分钟'
+        type:'篮球',
+        img:'https://cdn.icloudapi.cn/test_basketball.png'
       },
       {
-        url:'',
-        img:'https://cdn.icloudapi.cn/daily-exercise.png',
-        title:'平板支撑入门',
-        duration:'2分钟'
+        type:'排球',
+        img:'https://cdn.icloudapi.cn/test_volleyball.png'
       }
     ],
-    timing:'2:00'
+    hot_test:[
+      '素描','心理','注意力','体力'
+    ],
+    hot_test_list:[
+      {
+
+      }
+    ]
   },
 
   /**

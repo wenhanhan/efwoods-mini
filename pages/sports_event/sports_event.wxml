@@ -1,0 +1,53 @@
+<view class="container" >
+    <!-- 顶部搜索区域重构 -->
+  <view class="home_top_bar_box">
+    <view class="home_top_bar">
+        <view class="home_top_bar_left" bindtap='select_city'>
+          <icon class='iconfont_address icon-dizhi'></icon>
+          <view class='home_address'>{{city}}</view>
+        </view>
+        <view class="home_search_box"> 
+          <view class='home_search' bindtap='search'>
+            <icon class='iconfont_search icon-soushuo'></icon>
+            <text>点击搜索课程以及教师</text>
+          </view>
+        </view>
+        <view class="home_top_bar_right">
+          <icon bindtap="more_info" style="z-index:2000" class='iconfont_more icon-gengduo'></icon>
+            <icon bindtap="news" class='iconfont_news icon-message'></icon>
+        </view>
+    </view>
+  </view>
+    <!-- 头部背景色块 -->
+  <view class="top_bk"></view>
+    <!-- 轮播图 -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ffffff" circular="true" indicator-active-color="#e91a1b">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item class="swiper_box">
+      <navigator style='height:100%' hover-class="none" url='{{item.url}}'>
+        <image src="{{item.img}}" class="slide_image" />
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 滑动区域 -->
+  <view class="content">
+    <scroll-view scroll-x="true" class="tab-bar" scroll-left="{{scrollleft}}">
+      <view wx:for="{{sports_type}}" class="tab-item {{currenttab==index?'active':''}}" data-current="{{index}}" bindtap="swichnav">{{item}}</view>
+    </scroll-view>
+    <swiper class="tab-content" current="{{currenttab}}" duration="300" bindchange="switchtab" style="height:{{winheight}}rpx">
+      <swiper-item wx:for="{{sports_type}}">
+        <view class="sports">
+          <view class="sports_item" wx:for="{{sports}}">
+            <view class="status">{{item.status}}</view>
+            <image mode="aspectFit" src="{{item.img}}"></image>
+            <view class="sports_info">
+              <view class="sports_title"><text wx:if="{{item.is_hot}}" class="hot">热门</text>{{item.title}}</view>
+              <view class="sports_time">活动时间:{{item.time}}</view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

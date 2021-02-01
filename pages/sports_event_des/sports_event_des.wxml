@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="sports_bk">
+    <image src="https://cdn.icloudapi.cn/sports_des_bk.png"></image>
+  </view>
+  <view class="sports_info">
+    <view class="sports_info_top">
+      <view class="sports_title">
+        <view class="start_line"></view>
+        <text style="margin-left: 15rpx;">{{sports_info.title}}</text>
+      </view>
+      <view class="sports_time_address">
+          <view class="sports_time_address_child">
+            <image src="/img/sports/begin.png"></image>
+            <view class="sports_time_address_text">比赛时间</view>
+            <view>{{sports_info.time}}</view>
+          </view>
+          <view class="sports_time_address_child">
+            <image src="/img/sports/deadline.png"></image>
+            <view class="sports_time_address_text">报名截止</view>
+            <view>{{sports_info.deadline}}</view>
+          </view>
+          <view class="sports_time_address_child">
+            <image src="/img/sports/address.png"></image>
+            <view class="sports_time_address_text">比赛地点</view>
+            <view>{{sports_info.address}}</view>
+          </view>
+      </view>
+    </view>
+    <view class="sports_info_bottom">
+      <view class="sports_title">
+        <view class="start_line"></view>
+        <text style="margin-left: 15rpx;">赛事介绍</text>
+      </view>
+      <view class="content">
+        <parser html="{{sports_info.content}}" />
+      </view>
+    </view>
+  </view>
+  <view class="baoming">
+    <text>报名</text>
+  </view>
+</view>

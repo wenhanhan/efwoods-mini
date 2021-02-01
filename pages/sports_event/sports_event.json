@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#005FFF",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "赛事资讯",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

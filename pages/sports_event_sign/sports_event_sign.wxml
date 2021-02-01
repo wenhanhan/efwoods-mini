@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="sports_bk">
+    <image src="https://cdn.icloudapi.cn/sports_des_bk.png"></image>
+  </view>
+  <view class="sports_info">
+    <view class="sports_info_top">
+      <view class="sports_title">
+        <view class="start_line"></view>
+        <text style="margin-left: 15rpx;">{{title}}</text>
+      </view>
+      <view class="sign_form">
+        <form catchsubmit="formSubmit" catchreset="formReset">
+          <view class="input_line">
+            姓名：<input class="weui-input" name="input" placeholder="请输入姓名" />
+          </view>
+          <view class="input_line">
+            年龄：<input class="weui-input" type="number" name="input" placeholder="请输入年龄" />
+          </view>
+          <view class="input_line">
+            性别：<input class="weui-input" name="input" placeholder="请选择性别" />
+          </view>
+          <view class="input_line">
+            手机号：<input class="weui-input" type="number" name="input" placeholder="请输入手机号" />
+          </view>
+          <view class="input_line">
+            现居地址：<input class="weui-input" name="input" placeholder="请输入地址" />
+          </view>
+          <view class="input_line">
+            身份证号：<input class="weui-input" type="idcard" name="input" placeholder="请输入身份证号" />
+          </view>
+          <view class="btn-area">
+            <button formType="submit" style="height:85rpx">提交</button>
+            <button style="background:#eeeeee;color:#2B2B2B;height:85rpx" formType="reset">清空</button>
+          </view>
+        </form>
+      </view>
+    </view>
+  </view>
+</view> 

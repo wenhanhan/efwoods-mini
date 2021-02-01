@@ -1,11 +1,15 @@
 {
   "pages": [ 
+    "pages/ability_test/ability_test",
+    "pages/sports_event_sign/sports_event_sign",
+    "pages/sports_event_des/sports_event_des",
+    
+    "pages/sports_event/sports_event",
+    "pages/location/location", 
+    "pages/daily_exercise_ranking/daily_exercise_ranking",
     "pages/daily_exercise_start/daily_exercise_start",
     "pages/daily_exercise_reply/daily_exercise_reply",
     "pages/daily_exercise_des/daily_exercise_des",
-  
-    "pages/daily_exercise/daily_exercise",
-    "pages/location/location",
     "pages/myset/coach/coach",
     "pages/share/share",
     "pages/web/login",
