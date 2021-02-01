@@ -3,7 +3,7 @@
   },
   "navigationBarBackgroundColor": "#FE8711",
   "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "综合测评",
+  "navigationBarTitleText": "测评详情",
   "backgroundColor": "#eeeeee",
   "backgroundTextStyle": "light",
   "enablePullDownRefresh": false

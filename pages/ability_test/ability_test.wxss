@@ -1,67 +1,11 @@
 /* pages/ability_test/ability_test.wxss */
 .container{
   overflow-x: hidden;
-}
-.home_top_bar_box{
-  width: 100%;
-  height: 90rpx;
+  padding-bottom: 30rpx;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: #BFA24B; */
 }
-.home_top_bar{ 
-  width: 100%;
-  height: 90rpx;
-  /* background-color: #bca05a; */
-  background-color: #FE8711;
-  position: fixed;
-  display: flex;
-  /* font-size: 24rpx; */
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  z-index: 999;
-}
-.home_top_bar_left{
-  width: 20%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size:22rpx;
-  color: white;
-}
-/* .home_address{
-  padding-top: 16rpx;
-} */
-.home_search_box{
-  width: 70%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-.home_search{
-  width: 100%;
-  height: 52rpx;
-  border-radius: 28rpx;
-  background: white;
-  font-size: 22rpx;
-  color: #7E7E7E;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.home_top_bar_right{
-  width: 10%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+page{
+  background: #eeeeee;
 }
 /* 头部色块 */
 .top_bk{
@@ -70,7 +14,7 @@
   background: #FE8711;
   border-bottom-left-radius: 30rpx;
   border-bottom-right-radius: 30rpx;
-  position: fixed;
+  position: absolute;
   top: 0rpx;
   z-index: -1;
   background-image: linear-gradient(to bottom,#FE8711 , #FFAE6D);
@@ -90,6 +34,7 @@ swiper{
   height: 90rpx;
   display: flex;
   margin-top: 20rpx;
+  margin-bottom: 10rpx;
   align-items: center;
   justify-content: center;
   font-size: 32rpx;
@@ -124,4 +69,126 @@ swiper{
   width: 80rpx;
   height: 80rpx;
   margin-bottom: 8rpx;
+}
+/* 热门测评 */
+.hot_test{
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: 0 24rpx;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.hot_test_type{
+  width: 95%;
+  height: auto;
+  display: flex;
+  margin-bottom: 20rpx;
+  justify-content:space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 22rpx;
+  color: #202020;
+}
+.hot_test_type_name{
+  width: 140rpx;
+  height: 48rpx;
+  display: flex;
+  margin-bottom: 20rpx;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 10rpx;
+}
+.active{
+  background:#848398;
+  color: white;
+}
+.hot_test_list{
+  width: 100%;
+  height: auto;
+  display: flex;
+  background: white;
+  border-radius: 16rpx;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.hot_test_list_title{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #444444;
+}
+.test_num{
+  color: #444444;
+  font-size: 24rpx;
+  font-weight: normal;
+}
+.test_content{
+  width: 95%;
+  height: 150rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+  /* margin-bottom: 30rpx; */
+  box-sizing: border-box;
+  position: relative;
+}
+.test_content image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 12rpx;
+}
+.test_content_info{
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  padding-left: 20rpx;
+}
+.test_content_info_title,.test_content_info_type{
+  width: auto;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #444444;
+  font-weight: 500;
+}
+.right_btn{
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20rpx;
+  color: #737373;
+  position: absolute;
+  right: 10rpx;
+}
+.start_btn{
+  width:80rpx;
+  height: 44rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FF6A00;
+  color: white;
+  margin-bottom: 8rpx;
+  border-radius: 10rpx;
+  font-size: 22rpx;
 }

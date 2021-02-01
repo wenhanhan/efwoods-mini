@@ -22,4 +22,34 @@
       <view>{{item.type}}</view>
     </view>
   </view>
+  <view class="type_title">
+    <view class="line"></view>
+    <text style="margin:0 40rpx">热门测评</text>
+    <view class="line"></view>
+  </view>
+  <!-- 热门测评 -->
+  <view class="hot_test">
+    <view class="hot_test_type">
+      <view bindtap="handleType" data-curindex="{{index}}" class="hot_test_type_name {{idx==index?'active':''}}" style="opacity:{{!item.type?0:1}}" wx:for="{{hot_test}}">
+        {{item.type}}
+      </view>
+    </view>
+    <view class="hot_test_list">
+      <view class="hot_test_list_title">
+        <text>热门测评</text>
+        <text class="test_num">共50个测评</text>
+      </view>
+      <view class="test_content" wx:for="{{hot_test_list}}">
+        <image src="{{item.img}}"></image>
+        <view class="test_content_info">
+          <view class="test_content_info_title">{{item.title}}</view>
+          <view class="test_content_info_type" style="font-size:20rpx;color:#717171">{{item.type}}</view>
+        </view>
+        <view class="right_btn">
+          <view class="start_btn">GO</view>
+          <text>1000人测过</text>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
