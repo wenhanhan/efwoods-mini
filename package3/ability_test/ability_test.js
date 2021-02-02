@@ -8,7 +8,7 @@ Page({
     idx:0,
     imgUrls:[
       {
-        url:'',
+        url:'/package3/ability_test_res/ability_test_res',
         img:'https://cdn.icloudapi.cn/ability_test.png'
       }
     ],

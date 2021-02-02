@@ -1,0 +1,81 @@
+<view class="container">
+    <view class="sports_title">
+        <view class="start_line"></view>
+        <text style="margin-left: 15rpx;">测评指标</text>
+    </view>
+    <view class="leida">
+        <ec-canvas id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ ec }}"></ec-canvas>
+    </view>
+    <view class="sports_title">
+        <view class="start_line"></view>
+        <text style="margin-left: 15rpx;">测评分析</text>
+    </view>
+    <!-- 测评分析 -->
+    <view class="test_fenxi_box">
+        <view class="test_fenxi">
+            <view class="test_fenxi_item">
+                <view class="circle"></view>
+                <view class="item_type">心理</view>
+                <view class="item_text">耐心，专注等心理素质颇佳</view>
+            </view>
+            <view class="test_fenxi_item">
+                <view class="circle"></view>
+                <view class="item_type">心理</view>
+                <view class="item_text">耐心，专注等心理素质颇佳</view>
+            </view>
+            <view class="test_fenxi_item">
+                <view class="circle"></view>
+                <view class="item_type">心理</view>
+                <view class="item_text">耐心，专注等心理素质颇佳</view>
+            </view>
+            <view class="test_fenxi_item">
+                <view class="circle"></view>
+                <view class="item_type">心理</view>
+                <view class="item_text">耐心，专注等心理素质颇佳</view>
+            </view>
+        </view>
+    </view>
+    <view class="sports_title">
+        <view class="start_line"></view>
+        <text style="margin-left: 15rpx;">推荐课程</text>
+    </view>
+    <view class="content_box">
+        <scroll-view scroll-x style="width: 100%" enable-flex="{{true}}">
+            <block wx:for="{{courses}}">
+            <navigator url='{{item.url}}' hover-class="none">
+                <view class="img_box" style="{{index==cour_num-1?'margin-right:15rpx;':''}}">
+                    <image src="{{item.img}}"></image>
+                    <view class="child_info">
+                        <view class="child_title">{{item.title}}</view>
+                        <view class="child_time">
+                            <text class="tag" wx:for-item="tag" wx:for="{{item.tag}}">{{tag}}</text>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+            </block>
+        </scroll-view>
+    </view>
+    <view class="sports_title">
+        <view class="start_line"></view>
+        <text style="margin-left: 15rpx;">推荐私教</text>
+    </view>
+    <view class="content_box">
+        <scroll-view scroll-x style="width: 100%" enable-flex="{{true}}">
+            <block wx:for="{{teacher}}">
+            <navigator url='{{item.url}}' hover-class="none">
+                <view class="tea_img_box" style="{{index==cour_num-1?'margin-right:15rpx;':''}}">
+                    <image src="{{item.img}}"></image>
+                    <view class="tea_intro">
+                        <text>{{item.name}}</text>
+                        <text class="intro">{{item.intro}}</text>
+                    </view>
+                    <view style="background:{{color[index]}}" class="tea_tag">
+                        <text>{{item.tag}}</text>
+                    </view>
+                </view>
+            </navigator>
+            </block>
+        </scroll-view>
+    </view>
+</view>

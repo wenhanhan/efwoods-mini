@@ -84,7 +84,7 @@
       <image mode="aspectFill" src="/img/home/news.png"></image>
       <text>赛事资讯</text>
     </navigator>
-    <navigator class="nav_item" url="../all_agency/all_agency" hover-class="none">
+    <navigator class="nav_item" url="/package3/ability_test/ability_test" hover-class="none">
       <image mode="aspectFill" src="/img/home/test.png"></image>
       <text>综合测评</text>
     </navigator>

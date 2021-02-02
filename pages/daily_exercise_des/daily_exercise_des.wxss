@@ -108,6 +108,7 @@
   margin-right: 15rpx;
   display: inline-block;
   position: relative;
+  border-radius: 10rpx;
 }
 .img_box image{
   width: 100%;

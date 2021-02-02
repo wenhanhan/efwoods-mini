@@ -1,8 +1,6 @@
 {
   "pages": [ 
     "pages/location/location",
-    "pages/ability_test_des/ability_test_des",
-    "pages/ability_test/ability_test",
     "pages/sports_event_sign/sports_event_sign",
     "pages/sports_event_des/sports_event_des",
     "pages/sports_event/sports_event", 
@@ -55,7 +53,6 @@
     "pages/auth/auth",
     "pages/settled/settled",
     "pages/profess_tea/profess_tea",
-    
     "pages/user/user",
     "pages/agency_judge/agency_judge",
     "pages/agency_pay/agency_pay",
@@ -162,6 +159,15 @@
         "courSet/courSet",
         "teaSet/teaSet",
         "agencySet/agencySet"
+      ]
+    },
+    {
+      "root":"package3",
+      "name":"ceping",
+      "pages":[
+        "ability_test/ability_test",
+        "ability_test_des/ability_test_des",
+        "ability_test_res/ability_test_res"
       ]
     }
   ],
