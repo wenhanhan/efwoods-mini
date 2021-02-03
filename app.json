@@ -172,7 +172,9 @@
         "study_abroad_news/study_abroad_news",
         "news_des/news_des",
         "study_abroad_agency/study_abroad_agency",
-        "agency_des/agency_des"
+        "agency_des/agency_des",
+        "summer_camp/summer_camp",
+        "summer_camp_shaixuan/summer_camp_shaixuan"
       ]
     }
   ],

@@ -1,0 +1,76 @@
+/* package3/summer_camp_shaixuan/summer_camp_shaixuan.wxss */
+.container{
+  padding: 0 24rpx;
+  padding-bottom: 100rpx;
+}
+.item{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid #eeeeee;
+}
+.item_topic{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #535353;
+  font-weight: 500;
+}
+.item_btn_box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.item_btn{
+  width: 155rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #0C0C0C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #E0E0E0;
+  border-radius: 4rpx;
+  margin-bottom: 20rpx;
+}
+.on{
+  background: white;
+  color: #fe8711;
+  border: 1px solid #fe8711;
+}
+.btn_box{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: white;
+  position: fixed;
+  bottom: 0;
+}
+.reset,.commit{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reset{
+  background: #9F9F9F;
+}
+.commit{
+  background: #fe8711;
+}

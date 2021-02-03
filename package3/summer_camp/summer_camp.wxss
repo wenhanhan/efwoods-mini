@@ -1,0 +1,214 @@
+/* package3/summer_camp/summer_camp.wxss */
+@import '/icon/bar_address.wxss';
+@import '/icon/sousuo.wxss';
+@import '/icon/search.wxss';
+.container{
+  overflow-x: hidden;
+}
+.home_top_bar_box{
+  width: 100%;
+  height: 90rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #BFA24B; */
+}
+.home_top_bar{ 
+  width: 100%;
+  height: 90rpx;
+  /* background-color: #bca05a; */
+  background-color: #03CBD8;
+  position: fixed;
+  display: flex;
+  /* font-size: 24rpx; */
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  z-index: 999;
+}
+.home_top_bar_left{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:22rpx;
+  color: white;
+}
+/* .home_address{
+  padding-top: 16rpx;
+} */
+.home_search_box{
+  width: 70%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.home_search{
+  width: 100%;
+  height: 52rpx;
+  border-radius: 28rpx;
+  background: white;
+  font-size: 22rpx;
+  color: #7E7E7E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home_top_bar_right{
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 头部色块 */
+.top_bk{
+  width: 100%;
+  height: 240rpx;
+  background: #BAA5F9;
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  position: fixed;
+  top: 90rpx;
+  z-index: -1;
+  background-image: linear-gradient(to bottom,#03CBD8 , #6EF6FF);
+}
+navigator{
+  width: 100%;
+  display: flex;
+  height: auto;
+  justify-content: center;
+}
+swiper{
+  width: 95%;
+  height: 336rpx;
+}
+.content{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  background: white;
+}
+.tab_bar{
+  width: 100%;
+  height: 90rpx;
+  padding: 0 24rpx;
+  z-index: 999;
+  top: 0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 8rpx solid #eeeeee;
+  border-bottom:2rpx solid #eeeeee;
+  margin-top: 20rpx;
+}
+.tab_bar_fix{
+  width: 100%;
+  height: 90rpx;
+  position: fixed;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  z-index: 999;
+  top: 0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom:2rpx solid #eeeeee;
+}
+.tab_item{
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #202020;
+}
+.tab_item image{
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 6rpx;
+}
+.on{
+  color: #FD8D32;
+}
+.camp_item{
+  width: 100%;
+  height: 270rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: white;
+  border-bottom: 1px solid #eeeeee;
+  padding: 0 24rpx;
+}
+.camp_item_left{
+  width: 35%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.camp_item_left image{
+  width: 220rpx;
+  height: 200rpx;
+  border-radius: 12rpx;
+}
+.camp_item_right{
+  width: 65%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.camp_name,.camp_people,.camp_tag,.camp_price{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 6rpx 0;
+}
+.camp_name{
+  font-size: 32rpx;
+  color: #000000;
+  font-weight: 500;
+}
+.camp_people{
+  font-size: 28rpx;
+  color: #3B3B3B;
+}
+.tag{
+  font-size: 20rpx;
+  color: #4E4E4E;
+  width: auto;
+  padding: 4rpx 10rpx;
+  height: 36rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4rpx;
+  border: 1px solid #C9C9C9;
+  margin-right: 16rpx;
+  box-sizing: border-box;
+}
+.camp_price{
+  font-size: 32rpx;
+  color: #ff6a00;
+  font-weight: 500;
+  align-items: baseline;
+}

@@ -33,7 +33,7 @@ navigator{
 .on{
   font-size: 30rpx;
   font-weight: 600;
-  color: #FFD283;
+  color: #DDC9A7;
 }
 .tab_bar_item{
   width: auto;
@@ -156,6 +156,6 @@ navigator{
   align-items: center;
 }
 .phone image{
-  width: 80rpx;
-  height: 80rpx;
+  width: 68rpx;
+  height: 68rpx;
 }

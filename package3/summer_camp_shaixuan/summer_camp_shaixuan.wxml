@@ -1,0 +1,12 @@
+<view class="container" style="{{isIphoneX?'padding-bottom:130rpx':''}}" >
+  <view class="item" wx:for="{{option}}" wx:for-index="optidx" >
+    <view class="item_topic">{{item.topic}}</view>
+    <view class="item_btn_box">
+      <view data-optidx="{{optidx}}" data-btnidx="{{idx}}" bindtap="select" style="opacity:{{opt?1:0}}" wx:for-index="idx" wx:for="{{item.opt}}" wx:for-item="opt" class="item_btn {{idx==item.selected?'on':''}}">{{opt}}</view>
+    </view>
+  </view>
+  <view class="btn_box">
+    <view class="reset" bindtap="reset">重置</view>
+    <view class="commit" bindtap="sub">确认</view>
+  </view>
+</view>

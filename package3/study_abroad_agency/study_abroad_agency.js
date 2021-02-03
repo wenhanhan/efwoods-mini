@@ -68,7 +68,12 @@ Page({
   onReady: function () {
 
   },
-
+//选择城市跳转
+select_city:function(){
+  wx.navigateTo({
+    url: '../../pages/select_city/select_city',
+  })
+},
   /**
    * 生命周期函数--监听页面显示
    */
