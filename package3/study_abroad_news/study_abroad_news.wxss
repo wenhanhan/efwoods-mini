@@ -1,0 +1,96 @@
+/* package3/study_abroad_news/study_abroad_news.wxss */
+/* package3/study_abroad/study_abroad.wxss */
+.container{
+  overflow-x: hidden;
+  /* padding: 0 24rpx; */
+  padding-bottom: 60rpx;
+}
+/* 头部色块 */
+.top_bk{
+  width: 100%;
+  height: 240rpx;
+  background: #BAA5F9;
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  position: absolute;
+  top: 0rpx;
+  z-index: -1;
+  background-image: linear-gradient(to bottom,#BAA5F9 , #DBCFFB);
+}
+navigator{
+  width: 100%;
+  display: flex;
+  height: auto;
+  justify-content: center;
+}
+swiper{
+  width: 95%;
+  height: 336rpx;
+}
+.padding_box{
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+.news_box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 30rpx;
+}
+.news{
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+}
+.news_left{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.news_left image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 12rpx;
+}
+.news_right{
+  width: 80%;
+  height: 120rpx;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 12rpx;
+  position: relative;
+}
+.news_title{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 30rpx;
+  color: #2C2C2C;
+  font-weight: 500;
+}
+.date{
+  width: auto;
+  font-size: 24rpx;
+  color: #989898;
+  position: absolute;
+  right: 30rpx;
+  bottom: 0;
+}

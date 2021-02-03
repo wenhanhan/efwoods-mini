@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#BAA5F9",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "合作机构",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

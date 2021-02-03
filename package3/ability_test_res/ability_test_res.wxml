@@ -38,6 +38,10 @@
     <view class="sports_title">
         <view class="start_line"></view>
         <text style="margin-left: 15rpx;">推荐课程</text>
+        <view class="more">
+            <view>更多课程</view>
+            <image class="more" src="/img/user/more.png"></image>
+        </view>
     </view>
     <view class="content_box">
         <scroll-view scroll-x style="width: 100%" enable-flex="{{true}}">
@@ -56,9 +60,13 @@
             </block>
         </scroll-view>
     </view>
-    <view class="sports_title">
+    <view class="sports_title" style="margin-top:20rpx">
         <view class="start_line"></view>
         <text style="margin-left: 15rpx;">推荐私教</text>
+        <view class="more">
+            <view>更多私教</view>
+            <image class="more" src="/img/user/more.png"></image>
+        </view>
     </view>
     <view class="content_box">
         <scroll-view scroll-x style="width: 100%" enable-flex="{{true}}">

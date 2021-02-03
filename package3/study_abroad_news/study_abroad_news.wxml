@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="top_bk"></view>
+    <!-- 轮播图 -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ffffff" circular="true" indicator-active-color="#e91a1b">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item class="swiper_box">
+      <navigator style='height:100%' hover-class="none" url='{{item.url}}'>
+        <image src="{{item.img}}" class="slide_image" />
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="padding_box">
+    <view class="news_box">
+      <view class="news" wx:for="{{news}}">
+        <view class="news_left">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="news_right">
+          <view class="news_title">
+            {{item.title}}
+          </view>
+          <view class="date">
+            {{item.date}}
+          </view>
+        </view>
+      </view>
+  </view>
+  </view>
+</view>

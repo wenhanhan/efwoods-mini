@@ -1,0 +1,161 @@
+/* package3/agency_des/agency_des.wxss */
+.container{
+  padding-bottom: 60rpx;
+}
+swiper{
+  width: 100%;
+  height: 320rpx;
+}
+page{
+  background: #24232E;
+}
+navigator{
+  width: 100%;
+  display: flex;
+  height: auto;
+  justify-content: center;
+}
+.swiper_box image{
+  border-radius: 0;
+}
+.tab_bar{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  top: 0;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 30rpx;
+  color: #D8C9AE;
+  background: #32303D;
+  z-index: 999;
+}
+.on{
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #FFD283;
+}
+.tab_bar_item{
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content_box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+.content{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50rpx;
+}
+.title{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+.title image{
+  width: 376rpx;
+  height: 30rpx;
+}
+.about_intro_box{
+  width: 710rpx;
+  /* height: 310rpx; */
+  padding:24rpx;
+  display: flex;
+  justify-content: center;
+  margin-top: 16rpx;
+  position: relative;
+  box-sizing: border-box;
+  border-radius:12rpx ;
+  background-image: url(https://cdn.icloudapi.cn/about_new_bk.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.intro_text_box{
+  width: 100%;
+  /* height: 356rpx; */
+  border-radius:12rpx;
+  background: white;
+  position: relative;
+}
+.intro_text{
+  margin: 24rpx;
+  font-size: 26rpx;
+  color: #393939;
+  text-indent: 2em;
+  line-height: 180%;
+  overflow:hidden;          
+  text-overflow:ellipsis;   
+  /* display: -webkit-box; */
+  -webkit-line-clamp:5;    /*只显示3行，如果不设置这个属性，会出现文本被拦腰截断的现象*/
+  -webkit-box-orient: vertical;
+  box-sizing: border-box;
+}
+.view_more{
+  width: 100%;
+  height: 70rpx;
+  background: #EEE6DB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: #AB9A7C;
+  position: absolute;
+  bottom:0;
+  border-bottom-left-radius: 12rpx;
+  border-bottom-right-radius: 12rpx;
+}
+
+.intro_text_box image{
+  width: 100%;
+  height: 1174rpx;
+}
+.view_more image{
+  width: 26rpx;
+  height: 24rpx;
+  margin-left: 6rpx;
+}
+.professor,.contact_box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.professor image{
+  width: 710rpx;
+  height: 470rpx;
+}
+.contact_box image{
+  width: 100%;
+  height: 332rpx;
+}
+.phone{
+  position: fixed;
+  bottom: 600rpx;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.phone image{
+  width: 80rpx;
+  height: 80rpx;
+}

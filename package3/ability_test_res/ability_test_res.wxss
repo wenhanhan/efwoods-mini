@@ -6,7 +6,7 @@ ec-canvas {
 /**app.wxss**/
 .container {
   padding: 0 24rpx;
-  padding-bottom: 50rpx;
+  padding-bottom: 60rpx;
 } 
 .leida{
   width: 100%;
@@ -33,6 +33,7 @@ ec-canvas {
   font-size: 36rpx;
   color: #1F1F1F;
   font-weight: 600;
+  position: relative;
 }
 .test_leida{
   width: 100%;
@@ -210,4 +211,22 @@ scroll-view{
   margin-right: 16rpx;
   background: #FEDBBE;
   border-radius: 4rpx;
+}
+.more{
+  width: auto;
+  height: 100%;
+  font-size: 24rpx;
+  color: #303030;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  font-weight: normal;
+}
+.more image{
+  width: 14rpx;
+  height: 22rpx;
+  margin-left: 10rpx;
+  position: relative;
 }

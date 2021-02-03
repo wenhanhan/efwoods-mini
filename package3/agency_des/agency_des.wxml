@@ -1,0 +1,69 @@
+<view class="container">
+  <!-- 轮播图 -->
+  <swiper id="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ffffff" circular="true" indicator-active-color="#e91a1b">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item class="swiper_box">
+      <navigator style='height:100%' hover-class="none" url='{{item.url}}'>
+        <image src="{{item.img}}" class="slide_image" />
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 导航栏 -->
+  <view class="tab_bar" id="tab_bar" style="position:{{tab_position}}">
+    <view bindtap="tab" data-id="{{item.id}}" data-idx="{{index}}" class="tab_bar_item {{index==tab_idx?'on':''}}" wx:for="{{tab}}">{{item.name}}</view>
+  </view>
+  <view class="content_box">
+    <view class="content">
+      <view class="title" id="about">
+        <image src="../img/agency/about.png"></image>
+      </view>
+      <view class="about_intro_box"  style="height:{{about_height}}">
+        <view class="intro_text_box">
+          <view class="intro_text" style="display:{{about_display}}">{{agency.intro}}</view>
+          <view class="view_more" bindtap="view" style="position:{{position}}">
+            <text>{{view_status}}</text>
+            <image style="transform:rotate({{deg}})" src="../img/agency/more.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="title" id="intro">
+        <image src="../img/agency/liuxue.png"></image>
+      </view>
+      <view class="about_intro_box"  style="height:auto">
+        <view class="intro_text_box">
+            <image src="https://cdn.icloudapi.cn/new_liuxue_intro.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="title" id="service">
+        <image src="../img/agency/service.png"></image>
+      </view>
+      <view class="about_intro_box"  style="height:auto">
+        <view class="intro_text_box">
+            <image style="height:1450rpx" src="https://cdn.icloudapi.cn/new_liuxue_service.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="professor" id="professor">
+        <image src="https://cdn.icloudapi.cn/professor.png"></image>
+      </view>
+    </view>
+    <!-- 联系我们 -->
+    <view class="content">
+      <view class="title">
+        <image src="../img/agency/contact.png"></image>
+      </view>
+      <view class="contact_box" bindtap="scan">
+        <image src="https://cdn.icloudapi.cn/contact_agency.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="phone" bindtap="contact">
+    <image src="../img/agency/phone.png"></image>
+  </view>
+</view>

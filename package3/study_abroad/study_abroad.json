@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+  },
+  "navigationBarBackgroundColor": "#BAA5F9",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "留学服务",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

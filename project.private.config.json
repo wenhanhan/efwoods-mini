@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -61,9 +62,8 @@
           "scene": null
         },
         {
-          "id": -1,
-          "name": "pages/tea_detail/tea_detail",
-          "pathName": "pages/tea_detail/tea_detail",
+          "name": "pages/sports_event_des/sports_event_des",
+          "pathName": "pages/sports_event_des/sports_event_des",
           "query": "tea_id=1",
           "scene": null
         },
@@ -75,8 +75,8 @@
           "scene": null
         },
         {
-          "name": "package3/ability_test_res/ability_test_res",
-          "pathName": "package3/ability_test_res/ability_test_res",
+          "name": "package3/agency_des/agency_des",
+          "pathName": "package3/agency_des/agency_des",
           "query": "test",
           "scene": null
         }

@@ -167,7 +167,12 @@
       "pages":[
         "ability_test/ability_test",
         "ability_test_des/ability_test_des",
-        "ability_test_res/ability_test_res"
+        "ability_test_res/ability_test_res",
+        "study_abroad/study_abroad",
+        "study_abroad_news/study_abroad_news",
+        "news_des/news_des",
+        "study_abroad_agency/study_abroad_agency",
+        "agency_des/agency_des"
       ]
     }
   ],

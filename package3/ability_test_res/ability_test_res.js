@@ -96,22 +96,22 @@ Page({
     courses:[
       {
         title:'网球课程一对一',
-        img:'./img/recom.png',
+        img:'../img/recom.png',
         tag:['网球','体能培训']
       },
       {
         title:'网球课程一对一',
-        img:'./img/recom.png',
+        img:'../img/recom.png',
         tag:['网球','体能培训']
       },
       {
         title:'网球课程一对一',
-        img:'./img/recom.png',
+        img:'../img/recom.png',
         tag:['网球','体能培训']
       },
       {
         title:'网球课程一对一',
-        img:'./img/recom.png',
+        img:'../img/recom.png',
         tag:['网球','体能培训']
       }
     ],

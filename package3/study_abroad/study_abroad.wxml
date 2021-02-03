@@ -1,0 +1,84 @@
+<view class="container">
+  <view class="top_bk"></view>
+    <!-- 轮播图 -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#ffffff" circular="true" indicator-active-color="#e91a1b">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item class="swiper_box">
+      <navigator style='height:100%' hover-class="none" url='{{item.url}}'>
+        <image src="{{item.img}}" class="slide_image" />
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+   <!-- 金刚区 -->
+   <view class="home_nav">
+      <navigator class="nav_item" hover-class="none" open-type="switchTab" url="../show/show">
+        <image mode="aspectFill" src="../img/zhinan.png"></image>
+        <text>留学指南</text>
+      </navigator>
+      <navigator class="nav_item" url="../all_agency/all_agency" hover-class="none">
+        <image mode="aspectFill" src="../img/agency.png"></image>
+        <text>合作机构</text>
+      </navigator>
+      <navigator class="nav_item" url="../online/online" hover-class="none">
+        <image mode="aspectFill" src="../img/ask.png"></image>
+        <text>留学咨询</text>
+      </navigator>
+      <navigator class="nav_item" target="miniProgram" app-id="wx83f243f73b48c56c" hover-class="none">
+        <image mode="aspectFill" src="../img/school.png"></image>
+        <text>院校排行</text>
+      </navigator>
+   </view>
+    <!-- 热门机构 -->
+  <view class="padding_box">
+    <view class="sports_title">
+        <view class="start_line"></view>
+        <text style="margin-left: 15rpx;">热门机构</text>
+        <view class="more">
+            <view>更多</view>
+            <image class="more" src="/img/user/more.png"></image>
+        </view>
+    </view>
+     <!-- 机构列表 -->
+    <view class="content_box">
+        <scroll-view scroll-x style="width: 100%" enable-flex="{{true}}">
+            <block wx:for="{{agency}}">
+            <navigator url='{{item.url}}' hover-class="none">
+                <view class="img_box" style="{{index==cour_num-1?'margin-right:15rpx;':''}}">
+                    <image src="{{item.img}}"></image>
+                    <view class="child_info">
+                        <view class="child_title">{{item.name}}</view>
+                        <view class="child_time">
+                            <text class="tag">{{item.address}}</text>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+            </block>
+        </scroll-view>
+    </view>
+    <view class="sports_title">
+        <view class="start_line"></view>
+        <text style="margin-left: 15rpx;">留学资讯</text>
+        <view class="more">
+            <view>更多</view>
+            <image class="more" src="/img/user/more.png"></image>
+        </view>
+    </view>
+    <view class="news_box">
+      <view class="news" wx:for="{{news}}">
+        <view class="news_left">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="news_right">
+          <view class="news_title">
+            {{item.title}}
+          </view>
+          <view class="date">
+            {{item.date}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="top">
+    <view class="top_title">{{news.title}}</view>
+    <view class="top_date">{{news.date}}</view>
+  </view>
+  <view class="content">
+    <parser html="{{news.content}}" />
+  </view>
+  <view class="news_box">
+      <view class="news" wx:for="{{other_news}}">
+        <view class="news_left">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="news_right">
+          <view class="news_title">
+            {{item.title}}
+          </view>
+          <view class="date">
+            {{item.date}}
+          </view>
+        </view>
+      </view>
+  </view>
+</view>
