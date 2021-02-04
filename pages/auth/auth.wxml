@@ -1,24 +1,12 @@
 <!--pages/login/login.wxml-->
 <view class="container">
-  <!-- <view class='top'> -->
-    <!-- <image mode='aspectFill' src='https://cdn.icloudapi.cn/auth.png'></image> -->
-    <!-- <image mode='aspectFill' src='https://cdn.icloudapi.cn/address.png'></image> -->
-  <!-- </view> -->
-
+  
   <view class="top_box">
-    <image mode="aspectFill" src="https://cdn.icloudapi.cn/address.png"></image>
+    <image mode="aspectFill" src="https://cdn.icloudapi.cn/new_begin_logo.png"></image>
   </view>
-
-<view class='auth_btn'>
+  <view class="intro">
+    <view class="title">eFIREWOODS</view>
+    <view>青少年体育艺术培训专享平台</view>
+  </view>
   <button open-type="getUserInfo" hover-class="none" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class='login'>微信登录</button>
-</view>
-  
-  <view class="bottom_bk">
-    <!-- <image src="https://cdn.icloudapi.cn/share_bk.png"></image> -->
-    <view class="logo">
-      <image mode="aspectFill" src="/img/gray_logo.png"></image>
-      <text>由eFIREWOODS提供技术支持</text>
-    </view>
-  </view>
-  
 </view>

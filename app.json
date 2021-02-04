@@ -174,7 +174,8 @@
         "study_abroad_agency/study_abroad_agency",
         "agency_des/agency_des",
         "summer_camp/summer_camp",
-        "summer_camp_shaixuan/summer_camp_shaixuan"
+        "summer_camp_shaixuan/summer_camp_shaixuan",
+        "summer_camp_des/summer_camp_des"
       ]
     }
   ],

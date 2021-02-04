@@ -1,39 +1,30 @@
 /* pages/auth/auth.wxss */
 .top_box{
   width: 100%;
-  height: 760rpx;
+  height: auto;
   display: flex;
   justify-content:center ;
   align-items: center;
+  margin-top: 180rpx;
 }
 .top_box image{
-  width: 100%;
-  height: 100%;
+  width: 610rpx;
+  height: 562rpx;
 }
-.btn{
-  width: 600rpx;
-  height: 80rpx;
-  border-radius: 40rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30rpx;
-  color: white;
-  position:absolute;
-  bottom: 250rpx; 
-   background: -webkit-linear-gradient(left, #F6B771 , #FF7375); /* Safari 5.1 - 6.0 */
-   background: -o-linear-gradient(right, #F6B771 , #FF7375); /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(right,#F6B771 , #FF7375); /* Firefox 3.6 - 15 */
-    background: linear-gradient(to right, #F6B771 , #FF7375); /* 标准的语法（必须放在最后） */
-}
-.title{
+
+.intro{
   width: 100%;
   height: auto;
   display: flex;
+  margin-top: 30rpx;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 300rpx;
+  flex-direction: column;
+  font-size: 24rpx;
+  color: #5B5B5B;
+}
+.title{
   font-size: 40rpx;
-  color: white
+  color: #2C2C2C;
+  font-weight: 500;
 }
