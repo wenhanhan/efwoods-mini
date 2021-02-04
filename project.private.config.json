@@ -75,9 +75,9 @@
           "scene": null
         },
         {
-          "name": "pages/auth/auth",
-          "pathName": "pages/auth/auth",
-          "query": "test",
+          "name": "pages/daily_exercise_start/daily_exercise_start",
+          "pathName": "pages/daily_exercise_start/daily_exercise_start",
+          "query": "video_id=1",
           "scene": null
         }
       ]

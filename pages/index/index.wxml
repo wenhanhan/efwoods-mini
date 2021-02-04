@@ -100,7 +100,9 @@
 <!-- 快捷选择区域 -->
 <view class="quick_select">
   <view class="quick_select_left">
-    <image src="https://cdn.icloudapi.cn/daka.png"></image>
+    <navigator url="../daily_exercise/daily_exercise" hover-class="none">
+      <image src="https://cdn.icloudapi.cn/daka.png"></image>
+    </navigator>
     <image style="margin-top:16rpx;" src="https://cdn.icloudapi.cn/paihang.png"></image>
   </view>
   <view class="quick_select_right">

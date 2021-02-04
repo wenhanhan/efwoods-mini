@@ -4,6 +4,7 @@
     "pages/sports_event_sign/sports_event_sign",
     "pages/sports_event_des/sports_event_des",
     "pages/sports_event/sports_event", 
+    "pages/daily_exercise/daily_exercise",
     "pages/daily_exercise_ranking/daily_exercise_ranking",
     "pages/daily_exercise_start/daily_exercise_start",
     "pages/daily_exercise_reply/daily_exercise_reply",

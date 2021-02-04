@@ -1,37 +1,13 @@
 // pages/daily_exercise_des/daily_exercise_des.js
+var app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    intro:'平板支撑（plank）是一种类似于俯卧撑的肌肉训练方法，但无需上下撑起运动，在锻炼时主要呈俯卧姿势，身体呈一线保持平衡，可以有效的锻炼腹横肌，被公认为训练核心肌群的有效方法。',
-    courses:[
-      {
-        url:'',
-        img:'https://cdn.icloudapi.cn/daily-exercise.png',
-        title:'平板支撑入门',
-        duration:'2分钟'
-      },
-      {
-        url:'',
-        img:'https://cdn.icloudapi.cn/daily-exercise.png',
-        title:'平板支撑入门',
-        duration:'2分钟'
-      },
-      {
-        url:'',
-        img:'https://cdn.icloudapi.cn/daily-exercise.png',
-        title:'平板支撑入门',
-        duration:'2分钟'
-      },
-      {
-        url:'',
-        img:'https://cdn.icloudapi.cn/daily-exercise.png',
-        title:'平板支撑入门',
-        duration:'2分钟'
-      }
-    ],
+    video_id:null,
+    course:{},
     userInfo:{},
     judge:[
       {
@@ -89,11 +65,20 @@ Page({
       keyboard_height: height
     })
   },
+  //开始练习
+  start:function(){
+    var course=this.data.course
+    wx.navigateTo({
+      url: '../daily_exercise_start/daily_exercise_start?video_id='+this.data.video_id
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      video_id: options.video_id
+    })
   },
 
   /**
@@ -107,8 +92,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that=this;
+    var video_id=that.data.video_id;
     this.setData({
       userInfo:wx.getStorageSync('userInfo')
+    })
+    wx.request({
+      url: app.globalData.url + 'index/Dailyexercise/getVideoDes',
+      data: {
+        video_id: video_id
+      },
+      header: {
+        'content-type': 'application/json' // 默认值 
+      },
+      success(res){
+        console.log(res.data)
+        that.setData({
+          course:res.data
+        })
+      }
     })
   },
 

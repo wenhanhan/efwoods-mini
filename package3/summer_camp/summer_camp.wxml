@@ -31,7 +31,7 @@
     </block>
   </swiper>
   <!-- 夏令营详情 -->
-  <view class="content">
+  <view class="content"> 
     <view id="menu-nav" class="{{is_fix?'tab_bar_fix':'tab_bar'}}">
       <view class="tab_item {{index==tab_idx?'on':''}}" bindtap="tab" data-idx="{{index}}" wx:for="{{tab}}">{{item}}
         <image wx:if="{{index==3}}" src="../img/camp/shaixuan.png"></image>

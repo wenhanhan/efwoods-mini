@@ -1,5 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+  },
   "navigationBarBackgroundColor": "#8959FF",
   "navigationBarTextStyle": "white",
   "navigationBarTitleText": "每日打卡",

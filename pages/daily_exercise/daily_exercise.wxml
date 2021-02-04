@@ -1,24 +1,31 @@
 <view class="container">
-  <view class="top_box">
+  <view class="top_box" id="swiper">
     <image src="https://cdn.icloudapi.cn/daily_exercise_banner.png"></image>
   </view>
-  <view class="swiper-tab">
+  <view id="tab_bar" class="{{is_fixed?'swiper-tab-fix':'swiper-tab'}}">
     <view wx:for="{{category}}" class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab">{{item.grade}}</view>
   </view>
-  <view class="grade">
+  <view class="{{is_fixed?'grade_fix':'grade'}}">
     <view class="grade_title">年级</view>
       <view class="grade_item_box">
         <view class="grade_item {{currentClass==idx?'selected':''}}" data-current="{{idx}}" bindtap="selectGrade" wx:for="{{category[grade].class}}" wx:for-item="nianji" wx:for-index="idx">{{nianji}}</view>
       </view>
   </view>
-  <swiper style="height:100vh" current="{{currentTab}}" duration="300"  bindchange="swiperTab">
+  <swiper style="margin-top:{{is_fixed?'172rpx':''}}" current="{{currentTab}}" duration="300"  bindchange="swiperTab">
       <swiper-item wx:for="{{category}}">
         <view class="video_box">
-          <view class="video_item" wx:for="{{[1,2,3,4]}}">
-            <image src="https://cdn.icloudapi.cn/daily-exercise.png"></image>
+          <view class="video_item" wx:for="{{item.video}}" data-id="{{item.Id}}" bindtap="view">
+            <image src="{{item.cover}}"></image>
             <view class="video_info">
-              <view class="video_title">平板支撑基础训练</view>
-              <view class="video_time_num">3分钟·10万人练过</view>
+              <view class="video_title">{{item.title}}</view>
+              <view class="video_time_num">{{item.duration}}·{{item.join_num}}人练过</view>
+            </view>
+          </view>
+          <!-- 暂无训练资源 -->
+          <view class='nodata' wx:if="{{item.video.length==0}}">
+            <icon style="font-size:150rpx;" class='iconfont_resource icon-meiyouneirong'></icon>
+            <view class='tips' style="color:#d1cfcf">
+              <text>暂无训练资源～</text>
             </view>
           </view>
         </view>
