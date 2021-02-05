@@ -12,7 +12,7 @@
               <view class="time">{{judge.time}}</view>
             </view>
             <view class="icon">
-              <image src="/img/reply.png"></image>
+              <image bindtap="reply" data-videoid="{{judge.video_id}}" data-type="{{judge.main_id}}" data-mainname="{{judge.username}}" src="/img/reply.png"></image>
               <image style="margin-left:26rpx" src="/img/favor.png"></image>
             </view>
           </view>
@@ -35,7 +35,7 @@
               <view class="reply_time">{{item.time}}</view>
             </view>
             <view class="icon">
-              <image src="/img/reply.png"></image>
+              <image bindtap="reply" data-videoid="{{item.video_id}}" data-mainname="{{item.username}}" data-type="{{item.main_id}}" src="/img/reply.png"></image>
               <image style="margin-left:26rpx" src="/img/favor.png"></image>
             </view>
           </view>
@@ -47,5 +47,10 @@
         </view>
       </view>
     </view>
+  </view>
+  <view  class='judge_input' hidden="{{!isjudge}}" style="bottom:{{keyboard_height}}px;{{isIphoneX?'padding-bottom:30rpx':''}}">
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <input focus='{{focus}}' value="{{content}}" disabled="{{!userInfo}}" maxlength='-1' bindconfirm='send' bindinput="judgeTxt" adjust-position="{{false}}" bindblur='cancel' bindfocus='focus' placeholder="{{placeholder}}"></input>
+    <view bindtap='send'>发送</view>
   </view>
 </view>

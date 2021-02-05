@@ -6,6 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    main_id:null,//主评论id
+    placeholder:'添加评论',
+    judge_num:0,
     isjudge: false,
     focus: false,
     video_id:null,
@@ -69,13 +72,6 @@ Page({
       keyboard_height: height
     })
   },
-  focus: function (e) {
-    console.log(e)
-    var height = e.detail.height;
-    this.setData({
-      keyboard_height: height
-    })
-  },
   cancel: function (e) {
     console.log(e)
     this.setData({
@@ -94,8 +90,32 @@ Page({
   send:function(){
     var that = this;
     var content = that.data.content.trim();
-    var openid = wx.getStorageSync('openid');
     var video_id = that.data.video_id;
+    var main_id=that.data.main_id?that.data.main_id:''
+    console.log(main_id)
+    that.commen_send(content,main_id,video_id,'')
+  },
+  //回复某人评论
+  reply:function(e){
+    var userInfo = wx.getStorageSync('userInfo');//用户信息
+    var mainname=e.currentTarget.dataset.mainname;
+    var main_id=e.currentTarget.dataset.mainid
+    if(userInfo){
+        this.setData({
+        isjudge: true,
+        focus: true,
+        placeholder:'回复 '+mainname,
+        main_id:main_id
+    })
+  }else{
+    app.login()
+  }
+    },
+  //抽离评论函数
+  commen_send(content,main_id,video_id,reply_name){
+    var that=this;
+    var content = that.data.content.trim();
+    var openid = wx.getStorageSync('openid');
     var userInfo=wx.getStorageSync('userInfo');
     if(content){
       wx.request({
@@ -104,9 +124,11 @@ Page({
         data: {
           openid: openid,
           video_id: video_id,
+          main_id:main_id,
           content: content,
           headimg:userInfo.avatarUrl,
-          username:userInfo.nickName
+          username:userInfo.nickName,
+          reply_name:reply_name
         },
         header: {
           'content-type': 'application/json' // 默认值
@@ -154,7 +176,7 @@ Page({
       video_id: options.video_id,
       isIphoneX: isIphoneX
     })
-    this.getVideoJudge(options.video_id)
+    console.log(options)
   },
 
   /**
@@ -173,6 +195,7 @@ Page({
     this.setData({
       userInfo:wx.getStorageSync('userInfo')
     })
+    this.getVideoJudge(this.data.video_id)
     wx.request({
       url: app.globalData.url + 'index/Dailyexercise/getVideoDes',
       data: {
@@ -201,8 +224,12 @@ Page({
       },
       success(res){
         console.log(res.data)
+        var a=res.data;
+        var b=a.judge_num;
+        delete a.judge_num
         that.setData({
-          judge:res.data
+          judge_num:b,
+          judge:a
         })
       }
     })
@@ -217,11 +244,13 @@ Page({
   //开始评论
   judge:function(){
 //首先判断是否授权
-var userInfo = wx.getStorageSync('userInfo');//用户信息
-if(userInfo){
-  this.setData({
-    isjudge: true,
-    focus: true
+   var userInfo = wx.getStorageSync('userInfo');//用户信息
+    if(userInfo){
+       this.setData({
+        isjudge: true,
+        focus: true,
+        main_id:null,
+        placeholder:'添加评论'
   })
 }else{
   app.login()

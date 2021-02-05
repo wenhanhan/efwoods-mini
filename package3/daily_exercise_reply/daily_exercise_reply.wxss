@@ -154,3 +154,55 @@
   font-size:24rpx;
   color: #252525;
 }
+.judge_input{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  position: fixed;
+  font-size: 24rpx;
+  background: white;
+  z-index: 999;
+  bottom: 0;
+  color: #FB5500;
+}
+.judge_input image{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+}
+.input_box{
+  width: 74%;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background: #FBFBFB;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 16rpx;
+  border: 1px solid #F0F0F0;
+  padding-left: 20rpx;
+  color:#8086a8;
+  font-size: 26rpx;
+}
+.judge_input input{
+  width: 74%;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background: #FBFBFB;
+  line-height: 60rpx;
+  margin: 0 16rpx;
+  border: 1px solid #F0F0F0;
+  padding-left: 20rpx;
+  color: #1D1D1D;
+}
+.animate{
+  max-width: 150rpx;
+  max-height: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  opacity: 1 !important;
+}

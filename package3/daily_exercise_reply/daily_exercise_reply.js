@@ -6,6 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    video_id:0,
+    userInfo:{},
+    main_id:null,//主评论id
+    placeholder:'添加评论',
+    reply_name:null,
+    isjudge: false,
+    focus: false,
+    keyboard_height:0,
+    content:'',
     judge:
       {
         head:'/img/head.jpeg',
@@ -38,6 +47,55 @@ Page({
         ]
       },
   },
+  focus: function (e) {
+    console.log(e)
+    var height = e.detail.height;
+    this.setData({
+      keyboard_height: height
+    })
+  },
+  cancel: function (e) {
+    console.log(e)
+    this.setData({
+      focus: false,
+      isjudge: false,
+      keyboard_height: 0
+    })
+  },
+  judgeTxt: function (e) {
+      this.setData({
+        content: e.detail.value
+      })
+  },
+  reply:function(e){
+    var userInfo = wx.getStorageSync('userInfo');//用户信息
+    var mainname=e.currentTarget.dataset.mainname;
+    var video_id=e.currentTarget.dataset.videoid;
+    console.log(video_id)
+    var main_id=e.currentTarget.dataset.type==0?this.data.main_id:e.currentTarget.dataset.type;
+    console.log(this.data.isjudge)
+    if(userInfo){
+        this.setData({
+        isjudge: true,
+        video_id:video_id,
+        main_id:main_id,
+        reply_name:e.currentTarget.dataset.type==0?'':mainname,
+        focus: true,
+        placeholder:'回复 '+mainname,
+    })
+  }else{
+    app.login()
+  }
+    },
+      //发送评论
+  send:function(){
+    var that = this;
+    var content = that.data.content.trim();
+    var video_id = that.data.video_id;
+    var main_id=that.data.main_id?that.data.main_id:''
+    var reply_name=that.data.reply_name;
+    that.commen_send(content,main_id,video_id,reply_name)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -65,7 +123,55 @@ Page({
       }
     })
   },
-
+//抽离评论函数
+commen_send(content,main_id,video_id,reply_name){
+  var that=this;
+  var content = that.data.content.trim();
+  var openid = wx.getStorageSync('openid');
+  var userInfo=wx.getStorageSync('userInfo');
+  if(content){
+    wx.request({
+      method: 'POST',
+      url: app.globalData.url + 'index/Dailyexercise/judge',
+      data: {
+        openid: openid,
+        video_id: video_id,
+        main_id:main_id,
+        content: content,
+        headimg:userInfo.avatarUrl,
+        username:userInfo.nickName,
+        reply_name:reply_name
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        if(res.data==87014){
+          wx.showToast({
+            title: '评论内容不合法',
+            icon:'loading',
+            duration:1000
+          })
+        }else{
+          that.setData({
+            content:'',
+            focus:false,//评论完成输入框下拉回到初始态
+            keyboard_height:0
+          })
+          wx.showToast({
+            title: '评论成功',
+            icon: 'success',
+            duration: 1000
+          })
+          that.getJudge(main_id);//提交成功，重新获取视频评论
+        }
+      }
+    })
+  }else{
+    console.log('评价内容为空')
+  }
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -77,7 +183,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      userInfo:wx.getStorageSync('userInfo')
+    })
   },
 
   /**

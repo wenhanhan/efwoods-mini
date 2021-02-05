@@ -45,10 +45,10 @@
   <view class="discuss">
     <view class="content_title">
       <text>评论区</text>
-      <image class="more" src="/img/user/more.png"></image>
+      <!-- <image class="more" src="/img/user/more.png"></image> -->
     </view>
     <view class="discuss_num">
-      <view>1000条</view>
+      <view>共{{judge_num}}条评论</view>
       <view>按时间 | 按热度</view>
     </view>
     <view class="discuss_input">
@@ -69,7 +69,7 @@
               <view class="time">{{item.time}}</view>
             </view>
             <view class="icon">
-              <image src="/img/reply.png"></image>
+              <image bindtap="reply" data-mainid="{{item.Id}}" data-mainname="{{item.username}}" src="/img/reply.png"></image>
               <image style="margin-left:26rpx" src="/img/favor.png"></image>
             </view>
           </view>
@@ -77,7 +77,7 @@
             <view class="discuss_content_item_right_bottom_text">
               <text>{{item.content}}</text>
             </view>
-            <view class="discuss_content_item_right_bottom_repaly" data-mainid="{{item.Id}}" bindtap="view">
+            <view hidden="{{item.child_topic.length==0}}" class="discuss_content_item_right_bottom_repaly" data-mainid="{{item.Id}}" bindtap="view">
               <view wx:for="{{item.child_topic}}" wx:if="{{idx<=1}}" wx:for-item="reply" wx:for-index="idx"><text style="color:#FE8711">{{reply.username}}<text wx:if="{{reply.reply_name}}"><text style="color:#252525">回复</text>{{reply.reply_name}}</text>:</text>{{reply.content}}</view>
               <view class="all_discuss" hidden="{{item.child_topic.length<=2}}">查看全部{{item.child_topic.length}}条回复</view>
             </view>
@@ -92,7 +92,7 @@
   </view>
   <view  class='judge_input' hidden="{{!isjudge}}" style="bottom:{{keyboard_height}}px;{{isIphoneX?'padding-bottom:30rpx':''}}">
     <image src='{{userInfo.avatarUrl}}'></image>
-    <input focus='{{focus}}' value="{{content}}" disabled="{{!userInfo}}" maxlength='-1' bindconfirm='send' bindinput="judgeTxt" adjust-position="{{false}}" bindblur='cancel' bindfocus='focus' placeholder="添加评论"></input>
+    <input focus='{{focus}}' value="{{content}}" disabled="{{!userInfo}}" maxlength='-1' bindconfirm='send' bindinput="judgeTxt" adjust-position="{{false}}" bindblur='cancel' bindfocus='focus' placeholder="{{placeholder}}"></input>
     <view bindtap='send'>发送</view>
   </view>
 

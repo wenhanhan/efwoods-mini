@@ -170,6 +170,7 @@ bindMultiPickerColumnChange: function (e) {
     var that=this;
     var time=that.data.my_time
     var video_id=that.data.video_id;
+    var openid=wx.getStorageSync('openid');
     console.log(!time)
     if(time==0||!time){
       //首页跳转
