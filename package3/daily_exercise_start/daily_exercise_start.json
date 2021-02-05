@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-dialog": "../dist/dialog/index"
+  },
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "开始锻炼",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

@@ -4,11 +4,6 @@
     "pages/sports_event_sign/sports_event_sign",
     "pages/sports_event_des/sports_event_des",
     "pages/sports_event/sports_event", 
-    "pages/daily_exercise/daily_exercise",
-    "pages/daily_exercise_ranking/daily_exercise_ranking",
-    "pages/daily_exercise_start/daily_exercise_start",
-    "pages/daily_exercise_reply/daily_exercise_reply",
-    "pages/daily_exercise_des/daily_exercise_des",
     "pages/myset/coach/coach",
     "pages/share/share",
     "pages/web/login",
@@ -57,7 +52,6 @@
     "pages/user/user",
     "pages/agency_judge/agency_judge",
     "pages/agency_pay/agency_pay",
-    
     "pages/fail_checked/fail_checked",
     "pages/checking/checking",
     "pages/all_agency/all_agency",
@@ -176,7 +170,12 @@
         "agency_des/agency_des",
         "summer_camp/summer_camp",
         "summer_camp_shaixuan/summer_camp_shaixuan",
-        "summer_camp_des/summer_camp_des"
+        "summer_camp_des/summer_camp_des",
+        "daily_exercise/daily_exercise",
+        "daily_exercise_ranking/daily_exercise_ranking",
+        "daily_exercise_start/daily_exercise_start",
+        "daily_exercise_reply/daily_exercise_reply",
+        "daily_exercise_des/daily_exercise_des"
       ]
     }
   ],

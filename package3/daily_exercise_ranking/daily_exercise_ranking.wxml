@@ -1,0 +1,64 @@
+<view class="container">
+  <view class="tab">
+    <picker bindchange="bindCategory" value="{{cate_index}}" range="{{category}}">
+      <view class="cate">
+        <text>{{category[cate_index]}}</text>
+        <image src="/img/xiala.png"></image>
+      </view>
+    </picker>
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class="grade">
+        <text>{{multiArray[1][multiIndex[1]]}}</text>
+        <image src="/img/xiala.png"></image>
+      </view>
+    </picker>
+    <picker bindchange="bindPeriod" value="{{period_index}}" range="{{period}}">
+      <view class="period">
+        <text>{{period[period_index]}}</text>
+        <image src="/img/xiala.png"></image>
+      </view>
+    </picker>
+  </view>
+  <!-- 我的排名 -->
+  <view class="my_ranking">
+    <view class="rank">
+      <view style="font-size:32rpx;font-weight:500">{{my_rank.order?my_rank.order:0}}</view>
+      <view>我的排名</view>
+    </view>
+    <view class="headimg">
+      <image src="{{my_rank.info.avatarUrl?my_rank.info.avatarUrl:userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="username" style="font-size:32rpx"><text>{{my_rank.info.nickName?my_rank.info.nickName:userInfo.nickName}}</text></view>
+    <view class="time">
+      <view style="font-size:32rpx;font-weight:500">{{my_rank.info.format_duration?my_rank.info.format_duration:0}}</view>
+      <view>累计训练</view>
+    </view>
+  </view>
+  <!-- 排名表 -->
+  <view class="ranking_list">
+    <scroll-view scroll-y style='height:{{scroll_height}}rpx' class="ranking_list_box">
+      <view class="ranking_list_item" wx:for="{{ranking_list}}">
+        <view class="rank">
+          <image wx:if="{{index==0}}" src="/img/first.png"></image>
+          <image src="/img/second.png" wx:elif="{{index==1}}"></image>
+          <image src="/img/third.png" wx:elif="{{index==2}}"></image>
+          <view style="font-size:32rpx;font-weight:500" wx:else>{{index+1}}</view>
+        </view>
+        <view class="ranking_headimg">
+          <image src="{{item.avatarUrl}}"></image>
+        </view>
+        <view class="username"><text>{{item.nickName}}</text></view>
+        <view class="time">
+          <view style="font-size:28rpx;font-weight:500">{{item.format_duration}}</view>
+        </view>
+      </view>
+      <!-- 暂无训练资源 -->
+      <view class='nodata' wx:if="{{ranking_list.length==0}}">
+            <icon style="font-size:150rpx;" class='iconfont_noorder icon-zanwupaiming'></icon>
+            <view class='tips' style="color:#eeeeee;opacity: 0.5;">
+              <text>暂无排名信息～</text>
+            </view>
+          </view>
+    </scroll-view>
+  </view>
+</view>

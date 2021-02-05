@@ -1,0 +1,105 @@
+/* pages/daily_exercise_ranking/daily_exercise_ranking.wxss */
+@import '/icon/noorder.wxss';
+page{
+  background-image: linear-gradient(to bottom,#8959FF , #AF9AFF);
+}
+.tab{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24rpx;
+  margin-top: 25rpx;
+  box-sizing: border-box;
+}
+.cate,.grade,.period{
+  width: 190rpx;
+  height: 60rpx;
+  display: flex;
+  padding: 0 14rpx;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,.1);
+  border-radius: 6rpx;
+  font-size: 24rpx;
+  color: white;
+}
+.cate image,.grade image,.period image{
+  width: 30rpx;
+  height: 16rpx;
+}
+.my_ranking{
+  width: 100%;
+  display: flex;
+  height: 150rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-top: 24rpx; */
+}
+.rank,.headimg,.ranking_headimg,.time{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* background: red; */
+  font-size: 24rpx;
+  color: white;
+}
+.rank image{
+  width: 50rpx;
+  height: 48rpx;
+}
+.headimg image{
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 38rpx;
+}
+.ranking_headimg image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+}
+.username{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* background: chartreuse; */
+  font-size: 28rpx;
+  color: white;
+}
+.ranking_list{
+  width: 100%;
+  height:auto;
+  padding: 0 24rpx;
+  margin-top: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ranking_list_box{
+  width: 100%;
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #EFEFEF;
+}
+.ranking_list_item{
+  width: 100%;
+  display: flex;
+  height: 110rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.nodata{
+  padding-top:100rpx ;
+}

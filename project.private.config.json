@@ -75,8 +75,8 @@
           "scene": null
         },
         {
-          "name": "pages/daily_exercise_start/daily_exercise_start",
-          "pathName": "pages/daily_exercise_start/daily_exercise_start",
+          "name": "package3/daily_exercise_des/daily_exercise_des",
+          "pathName": "package3/daily_exercise_des/daily_exercise_des",
           "query": "video_id=1",
           "scene": null
         }
