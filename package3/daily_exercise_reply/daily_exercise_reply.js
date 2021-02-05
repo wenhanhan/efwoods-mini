@@ -1,4 +1,5 @@
 // pages/daily_exercise_reply/daily_exercise_reply.js
+var app=getApp()
 Page({
 
   /**
@@ -37,12 +38,32 @@ Page({
         ]
       },
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      main_id:options.main_id
+    })
+    this.getJudge(options.main_id)
+  },
+  getJudge(judge_id){
+    var that=this;
+    wx.request({
+      url: app.globalData.url + 'index/Dailyexercise/getTopicInfo',
+      data: {
+        main_id: judge_id
+      },
+      header: {
+        'content-type': 'application/json' // 默认值 
+      },
+      success(res){
+        console.log(res.data)
+        that.setData({
+          judge:res.data
+        })
+      }
+    })
   },
 
   /**

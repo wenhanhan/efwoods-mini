@@ -55,22 +55,17 @@
       <view class="head_img">
         <image src="{{userInfo.avatarUrl}}"></image>
       </view>
-      <view class="input">说点什么吧~</view>
-      <!-- <view class='judge_input' bindtap="judge" style="bottom:{{keyboard_height}}px;{{isIphoneX?'padding-bottom:30rpx':''}}">
-        <image src='{{userInfo.avatarUrl}}'></image>
-        <input focus='{{focus}}' value="{{content}}" disabled="{{!userInfo}}" maxlength='-1' bindconfirm='send' bindinput="judgeTxt" adjust-position="{{false}}" bindblur='cancel' bindfocus='focus' placeholder="添加评论"></input>
-        <view bindtap='send'>发送</view>
-      </view> -->
+      <view class="input" bindtap="judge">说点什么吧~</view>
     </view>
     <view class="discuss_content">
       <view class="discuss_content_item" wx:for="{{judge}}">
         <view class="discuss_content_item_left">
-          <image src="{{item.head}}"></image>
+          <image src="{{item.headimg}}"></image>
         </view>
         <view class="discuss_content_item_right">
           <view class="discuss_content_item_right_top">
             <view class="username">
-              <view>{{item.name}}</view>
+              <view>{{item.username}}</view>
               <view class="time">{{item.time}}</view>
             </view>
             <view class="icon">
@@ -82,9 +77,9 @@
             <view class="discuss_content_item_right_bottom_text">
               <text>{{item.content}}</text>
             </view>
-            <view class="discuss_content_item_right_bottom_repaly">
-              <view wx:for="{{item.reply}}" wx:if="{{idx<=1}}" wx:for-item="reply" wx:for-index="idx"><text style="color:#FE8711">{{reply.name}}：</text>{{reply.reply_content}}</view>
-              <view class="all_discuss" hidden="{{item.reply.length<=2}}">查看全部12条回复</view>
+            <view class="discuss_content_item_right_bottom_repaly" data-mainid="{{item.Id}}" bindtap="view">
+              <view wx:for="{{item.child_topic}}" wx:if="{{idx<=1}}" wx:for-item="reply" wx:for-index="idx"><text style="color:#FE8711">{{reply.username}}<text wx:if="{{reply.reply_name}}"><text style="color:#252525">回复</text>{{reply.reply_name}}</text>:</text>{{reply.content}}</view>
+              <view class="all_discuss" hidden="{{item.child_topic.length<=2}}">查看全部{{item.child_topic.length}}条回复</view>
             </view>
           </view>
         </view>
@@ -94,6 +89,11 @@
   <!-- 开始按钮 -->
   <view class="start" bindtap="start">
     开始训练
+  </view>
+  <view  class='judge_input' hidden="{{!isjudge}}" style="bottom:{{keyboard_height}}px;{{isIphoneX?'padding-bottom:30rpx':''}}">
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <input focus='{{focus}}' value="{{content}}" disabled="{{!userInfo}}" maxlength='-1' bindconfirm='send' bindinput="judgeTxt" adjust-position="{{false}}" bindblur='cancel' bindfocus='focus' placeholder="添加评论"></input>
+    <view bindtap='send'>发送</view>
   </view>
 
 </view>
