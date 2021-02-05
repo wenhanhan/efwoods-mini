@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    order:true,//排序 0代表时间 1代表热度
     main_id:null,//主评论id
     placeholder:'添加评论',
     judge_num:0,
@@ -64,6 +65,16 @@ Page({
         ]
       }
     ]
+  },
+  //评论排序
+  judge_order:function(){
+    var that=this;
+    var video_id=that.data.video_id;
+    this.setData({
+      order:!this.data.order
+    })
+    var order=this.data.order?0:1
+    that.getVideoJudge(video_id,order)
   },
   focus: function (e) {
     console.log(e)
@@ -152,7 +163,7 @@ Page({
               icon: 'success',
               duration: 1000
             })
-            that.getVideoJudge(video_id);//提交成功，重新获取视频评论
+            that.getVideoJudge(video_id,0);//提交成功，重新获取视频评论
           }
         }
       })
@@ -195,7 +206,7 @@ Page({
     this.setData({
       userInfo:wx.getStorageSync('userInfo')
     })
-    this.getVideoJudge(this.data.video_id)
+    this.getVideoJudge(this.data.video_id,0)
     wx.request({
       url: app.globalData.url + 'index/Dailyexercise/getVideoDes',
       data: {
@@ -212,12 +223,13 @@ Page({
       }
     })
   },
-  getVideoJudge(video_id){
+  getVideoJudge(video_id,order){
     var that=this;
     wx.request({
       url: app.globalData.url + 'index/Dailyexercise/getVideoJudge',
       data: {
-        video_id: video_id
+        video_id: video_id,
+        order:order
       },
       header: {
         'content-type': 'application/json' // 默认值 
