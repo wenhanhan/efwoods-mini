@@ -206,3 +206,7 @@
   position: absolute;
   opacity: 1 !important;
 }
+.judge_num{
+  font-size: 24rpx;
+  color: #888888;
+}

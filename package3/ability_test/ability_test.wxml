@@ -17,9 +17,9 @@
     <view class="line"></view>
   </view>
   <view class="type_column">
-    <view class="type_column_item" wx:for="{{professional_test}}">
+    <view class="type_column_item" wx:for="{{professional_test}}" bindtap="view" data-id="{{item.sub_id}}">
       <image src="{{item.img}}"></image>
-      <view>{{item.type}}</view>
+      <view>{{item.title}}</view>
     </view>
   </view>
   <view class="type_title">
@@ -30,25 +30,31 @@
   <!-- 热门测评 -->
   <view class="hot_test">
     <view class="hot_test_type">
-      <view bindtap="handleType" data-curindex="{{index}}" class="hot_test_type_name {{idx==index?'active':''}}" style="opacity:{{!item.type?0:1}}" wx:for="{{hot_test}}">
-        {{item.type}}
+      <view bindtap="handleType" data-type="{{item.Id}}" data-curindex="{{index}}" class="hot_test_type_name {{idx==index?'active':''}}" style="opacity:{{!item.title?0:1}}" wx:for="{{hot_test}}">
+        {{item.title}}
       </view>
     </view>
     <view class="hot_test_list">
       <view class="hot_test_list_title">
         <text>热门测评</text>
-        <text class="test_num">共50个测评</text>
+        <text class="test_num">共{{hot_test_list.length}}个测评</text>
       </view>
-      <view class="test_content" wx:for="{{hot_test_list}}">
-        <image src="{{item.img}}"></image>
+      <view class="test_content" wx:for="{{hot_test_list}}" data-id="{{item.Id}}" bindtap="view">
+        <image src="{{item.cover}}"></image>
         <view class="test_content_info">
           <view class="test_content_info_title">{{item.title}}</view>
-          <view class="test_content_info_type" style="font-size:20rpx;color:#717171">{{item.type}}</view>
+          <view class="test_content_info_type" style="font-size:20rpx;color:#717171">{{item.type_name}}</view>
         </view>
         <view class="right_btn">
           <view class="start_btn">GO</view>
-          <text>1000人测过</text>
+          <text>{{item.test_num}}人测过</text>
         </view>
+      </view>
+      <view class='nodata' wx:if="{{hot_test_list.length==0}}">
+            <icon style="font-size:150rpx;" class='iconfont_resource icon-meiyouneirong'></icon>
+            <view class='tips' style="color:#d1cfcf">
+              <text>暂无测评资源～</text>
+            </view>
       </view>
     </view>
   </view>

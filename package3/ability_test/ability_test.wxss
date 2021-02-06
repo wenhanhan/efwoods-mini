@@ -1,4 +1,5 @@
 /* pages/ability_test/ability_test.wxss */
+@import '/icon/noresource.wxss';
 .container{
   overflow-x: hidden;
   padding-bottom: 30rpx;
@@ -115,6 +116,7 @@ swiper{
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
+  padding-bottom: 20rpx;
 }
 .hot_test_list_title{
   width: 100%;

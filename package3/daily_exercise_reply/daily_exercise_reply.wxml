@@ -12,8 +12,10 @@
               <view class="time">{{judge.time}}</view>
             </view>
             <view class="icon">
-              <image bindtap="reply" data-videoid="{{judge.video_id}}" data-type="{{judge.main_id}}" data-mainname="{{judge.username}}" src="/img/reply.png"></image>
-              <image style="margin-left:26rpx" src="/img/favor.png"></image>
+              <image bindtap="reply"  data-videoid="{{judge.video_id}}" data-type="{{judge.main_id}}" data-mainname="{{judge.username}}" src="/img/reply.png"></image>
+              <image bindtap="like" data-mainid="{{judge.main_id}}" data-judgeid="{{judge.Id}}" data-likestatus="{{judge.isLike}}" style="margin-left:30rpx" wx:if="{{judge.isLike==200}}" src="/img/favor.png"></image>
+              <image bindtap="like" data-mainid="{{judge.main_id}}" data-judgeid="{{judge.Id}}" data-likestatus="{{judge.isLike}}" style="margin-left:30rpx" wx:if="{{judge.isLike==404}}" src="/img/unfavor.png"></image>
+              <text class="judge_num">{{judge.likeNum}}</text>
             </view>
           </view>
           <view class="discuss_content_item_right_bottom">
@@ -35,8 +37,10 @@
               <view class="reply_time">{{item.time}}</view>
             </view>
             <view class="icon">
-              <image bindtap="reply" data-videoid="{{item.video_id}}" data-mainname="{{item.username}}" data-type="{{item.main_id}}" src="/img/reply.png"></image>
-              <image style="margin-left:26rpx" src="/img/favor.png"></image>
+              <image bindtap="reply"  data-videoid="{{item.video_id}}" data-mainname="{{item.username}}" data-type="{{item.main_id}}" src="/img/reply.png"></image>
+              <image bindtap="like" data-idx="{{index}}" data-mainid="{{item.main_id}}" data-likestatus="{{item.isLike}}" data-judgeid="{{item.Id}}" style="margin-left:30rpx" wx:if="{{item.isLike==404}}"  src="/img/unfavor.png"></image>
+              <image bindtap="like" data-idx="{{index}}" data-mainid="{{item.main_id}}" data-likestatus="{{item.isLike}}" data-judgeid="{{item.Id}}" style="margin-left:30rpx" wx:if="{{item.isLike==200}}" src="/img/favor.png"></image>
+              <text class="judge_num">{{item.likeNum}}</text>
             </view>
           </view>
           <view class="reply_content_item_right_bottom">

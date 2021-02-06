@@ -1,10 +1,12 @@
 // pages/ability_test_des/ability_test_des.js
+var app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    sub_id:null,
     currenttab:0,
     option_idx:-1,
     topic:[
@@ -70,7 +72,28 @@ switchtab:function(e){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      sub_id:options.sub_id
+    })
+  },
+  //查询题目的具体信息
+  getSubject(sub_id){
+    var that=this;
+    wx.request({
+      url: app.globalData.url + 'index/AbilityTest/getSubjectById',
+      data: {
+        id:sub_id
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res){
+        console.log(res.data)
+        that.setData({
+          topic:res.data.subject
+        })
+      }
+    })
   },
 
   /**
@@ -84,7 +107,8 @@ switchtab:function(e){
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var id=this.data.sub_id
+    this.getSubject(id)
   },
 
   /**

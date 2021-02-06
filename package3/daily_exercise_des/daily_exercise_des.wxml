@@ -70,7 +70,9 @@
             </view>
             <view class="icon">
               <image bindtap="reply" data-mainid="{{item.Id}}" data-mainname="{{item.username}}" src="/img/reply.png"></image>
-              <image style="margin-left:26rpx" src="/img/favor.png"></image>
+              <image bindtap="like" data-idx="{{index}}" data-likestatus="{{item.isLike}}" wx:if="{{item.isLike==404}}" data-mainid="{{item.Id}}" style="margin-left:30rpx" src="/img/unfavor.png"></image>
+              <image bindtap="like" data-idx="{{index}}" data-likestatus="{{item.isLike}}" wx:if="{{item.isLike==200}}" data-mainid="{{item.Id}}" style="margin-left:30rpx" src="/img/favor.png"></image>
+              <text class="judge_num">{{item.likeNum}}</text>
             </view>
           </view>
           <view class="discuss_content_item_right_bottom">

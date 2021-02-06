@@ -96,6 +96,50 @@ Page({
     var reply_name=that.data.reply_name;
     that.commen_send(content,main_id,video_id,reply_name)
   },
+  //点赞评论
+  like:function(e){
+    var judge_id=e.currentTarget.dataset.judgeid;
+    var status=e.currentTarget.dataset.likestatus;
+    var openid=wx.getStorageSync('openid');
+    var main_id=e.currentTarget.dataset.mainid;
+    var idx=e.currentTarget.dataset.idx;
+    var judge=this.data.judge
+    if(main_id==0){
+      //点赞主评论
+      if(status==200){
+        judge.isLike=404;
+        judge.likeNum--
+      }else{
+        judge.isLike=200;
+        judge.likeNum++
+      }
+    }else{
+      //点赞子评论
+      if(status==200){
+        judge.child_topic[idx].isLike=404;
+        judge.child_topic[idx].likeNum--
+      }else{
+        judge.child_topic[idx].isLike=200;
+        judge.child_topic[idx].likeNum++
+      }
+    }
+    this.setData({
+      judge:judge
+    })
+    wx.request({
+      url: app.globalData.url + 'index/Dailyexercise/likeJudge',
+        data: {
+          openid: openid,
+          judge_id:judge_id
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res){
+          console.log(res.data)
+        }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -107,10 +151,12 @@ Page({
   },
   getJudge(judge_id){
     var that=this;
+    var openid=wx.getStorageSync('openid')
     wx.request({
       url: app.globalData.url + 'index/Dailyexercise/getTopicInfo',
       data: {
-        main_id: judge_id
+        main_id: judge_id,
+        openid:openid
       },
       header: {
         'content-type': 'application/json' // 默认值 

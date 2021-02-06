@@ -75,9 +75,9 @@
           "scene": null
         },
         {
-          "name": "package3/daily_exercise_des/daily_exercise_des",
-          "pathName": "package3/daily_exercise_des/daily_exercise_des",
-          "query": "video_id=1",
+          "name": "package3/ability_test_res/ability_test_res",
+          "pathName": "package3/ability_test_res/ability_test_res",
+          "query": "sub_id=1&score=450",
           "scene": null
         }
       ]

@@ -97,6 +97,38 @@ Page({
         content: e.detail.value
       })
   },
+  //喜欢某条评论
+  like:function(e){
+    var judge_id=e.currentTarget.dataset.mainid;
+    var openid=wx.getStorageSync('openid');
+    var idx=e.currentTarget.dataset.idx;
+    var status=e.currentTarget.dataset.likestatus;
+    var judge=this.data.judge
+    if(status==200){
+      //取消点赞
+      judge[idx].isLike=404
+      judge[idx].likeNum--
+    }else{
+      judge[idx].isLike=200
+      judge[idx].likeNum++
+    }
+    this.setData({
+      judge:judge
+    })
+    wx.request({
+      url: app.globalData.url + 'index/Dailyexercise/likeJudge',
+        data: {
+          openid: openid,
+          judge_id:judge_id
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res){
+          console.log(res.data)
+        }
+    })
+  },
   //发送评论
   send:function(){
     var that = this;
@@ -225,11 +257,13 @@ Page({
   },
   getVideoJudge(video_id,order){
     var that=this;
+    var openid=wx.getStorageSync('openid')
     wx.request({
       url: app.globalData.url + 'index/Dailyexercise/getVideoJudge',
       data: {
         video_id: video_id,
-        order:order
+        order:order,
+        openid:openid
       },
       header: {
         'content-type': 'application/json' // 默认值 

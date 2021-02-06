@@ -13,25 +13,10 @@
     <!-- 测评分析 -->
     <view class="test_fenxi_box">
         <view class="test_fenxi">
-            <view class="test_fenxi_item">
+            <view class="test_fenxi_item" wx:for="{{words}}">
                 <view class="circle"></view>
-                <view class="item_type">心理</view>
-                <view class="item_text">耐心，专注等心理素质颇佳</view>
-            </view>
-            <view class="test_fenxi_item">
-                <view class="circle"></view>
-                <view class="item_type">心理</view>
-                <view class="item_text">耐心，专注等心理素质颇佳</view>
-            </view>
-            <view class="test_fenxi_item">
-                <view class="circle"></view>
-                <view class="item_type">心理</view>
-                <view class="item_text">耐心，专注等心理素质颇佳</view>
-            </view>
-            <view class="test_fenxi_item">
-                <view class="circle"></view>
-                <view class="item_type">心理</view>
-                <view class="item_text">耐心，专注等心理素质颇佳</view>
+                <view class="item_type">{{item.title}}</view>
+                <view class="item_text">{{item.target}}</view>
             </view>
         </view>
     </view>
