@@ -1,38 +1,18 @@
 // package3/study_abroad_news/study_abroad_news.js
+var app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 1000,
     imgUrls:[
-      {
-        url:'/package3/ability_test_res/ability_test_res',
-        img:'https://cdn.icloudapi.cn/study_abroad.png'
-      }
     ],
-    news:[
-      {
-        title:'为什么美国最受留学生欢迎？',
-        date:'2021-01-01',
-        img:'../img/abroad.png'
-      },
-      {
-        title:'为什么美国最受留学生欢迎？',
-        date:'2021-01-01',
-        img:'../img/abroad.png'
-      },
-      {
-        title:'为什么美国最受留学生欢迎？',
-        date:'2021-01-01',
-        img:'../img/abroad.png'
-      },
-      {
-        title:'为什么美国最受留学生欢迎？',
-        date:'2021-01-01',
-        img:'../img/abroad.png'
-      }
-    ]
+    news:[]
   },
 
   /**
@@ -53,9 +33,41 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that=this;
+      //获取首页轮播图与赛事类别
+      wx.request({
+        url: app.globalData.url + 'index/StudyAbroad/getBanner',
+        data: {},
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res) {
+          console.log(res.data)
+          that.setData({
+            imgUrls: res.data[0]
+          })
+        }
+      })
+      wx.request({
+        url: app.globalData.url + 'index/StudyAbroad/getNewsList',
+        data: {},
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res) {
+          console.log(res.data)
+          that.setData({
+            news: res.data
+          })
+        }
+      })
   },
-
+  view:function(e){
+    var news_id=e.currentTarget.dataset.newsid;
+    wx.navigateTo({
+      url: '../news_des/news_des?news_id='+news_id,
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

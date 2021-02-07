@@ -1,44 +1,23 @@
 // package3/news_des/news_des.js
+var app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    news:{
-      title:'兴致体育高尔夫项目介绍',
-      date:'2021-01-20',
-      content:'<div>Hello World!</div>'
-    },
-    other_news:[
-      {
-        title:'为什么美国最受留学生欢迎？',
-        date:'2021-01-01',
-        img:'../img/abroad.png'
-      },
-      {
-        title:'为什么美国最受留学生欢迎？',
-        date:'2021-01-01',
-        img:'../img/abroad.png'
-      },
-      {
-        title:'为什么美国最受留学生欢迎？',
-        date:'2021-01-01',
-        img:'../img/abroad.png'
-      },
-      {
-        title:'为什么美国最受留学生欢迎？',
-        date:'2021-01-01',
-        img:'../img/abroad.png'
-      }
-    ]
+    news_id:null,
+    news:{},
+    other_news:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      news_id:options.news_id
+    })
   },
 
   /**
@@ -52,7 +31,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that=this;
+    var news_id=this.data.news_id
+    wx.request({
+      url: app.globalData.url + 'index/StudyAbroad/getNewsById',
+      data: {
+        news_id:news_id
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          news:res.data[0],
+          other_news:res.data[1]
+        })
+      }
+    })
   },
 
   /**

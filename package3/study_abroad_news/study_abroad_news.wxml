@@ -12,16 +12,16 @@
   </swiper>
   <view class="padding_box">
     <view class="news_box">
-      <view class="news" wx:for="{{news}}">
+      <view class="news" wx:for="{{news}}" data-newsid="{{item.Id}}" bindtap="view">
         <view class="news_left">
-          <image src="{{item.img}}"></image>
+          <image src="{{item.cover}}"></image>
         </view>
         <view class="news_right">
           <view class="news_title">
             {{item.title}}
           </view>
           <view class="date">
-            {{item.date}}
+            {{item.time}}
           </view>
         </view>
       </view>

@@ -19,7 +19,7 @@
 }
 navigator{
   width: 100%;
-  display: flex;
+  /* display: flex; */
   height: auto;
   justify-content: center;
 }
@@ -36,7 +36,7 @@ swiper{
   padding-top: 8rpx;
   padding-bottom: 17rpx;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   background: white;
@@ -201,7 +201,7 @@ scroll-view{
 }
 .news_right{
   width: 80%;
-  height: 120rpx;
+  height: 130rpx;
   display: flex;
   align-items: flex-start;
   padding-left: 12rpx;

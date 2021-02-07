@@ -88,7 +88,7 @@
       <image mode="aspectFill" src="/img/home/test.png"></image>
       <text>综合测评</text>
     </navigator>
-    <navigator class="nav_item" url="../online/online" hover-class="none">
+    <navigator class="nav_item" url="/package3/study_abroad/study_abroad" hover-class="none">
       <image mode="aspectFill" src="/img/home/service.png"></image>
       <text>留学服务</text>
     </navigator>

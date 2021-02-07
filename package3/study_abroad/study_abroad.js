@@ -1,4 +1,5 @@
 // package3/study_abroad/study_abroad.js
+const { $Toast } = require('../../dist/base/index');
 var app=getApp()
 Page({
 
@@ -6,6 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 1000,
     imgUrls:[],
     agency:[
       {
@@ -29,30 +34,37 @@ Page({
         address:'上海市'
       }
     ],
-    news:[
-      {
-        title:'为什么美国最受留学生欢迎？',
-        date:'2021-01-01',
-        img:'../img/abroad.png'
-      },
-      {
-        title:'为什么美国最受留学生欢迎？',
-        date:'2021-01-01',
-        img:'../img/abroad.png'
-      },
-      {
-        title:'为什么美国最受留学生欢迎？',
-        date:'2021-01-01',
-        img:'../img/abroad.png'
-      },
-      {
-        title:'为什么美国最受留学生欢迎？',
-        date:'2021-01-01',
-        img:'../img/abroad.png'
-      }
-    ]
+    news:[]
   },
-
+  view:function(e){
+    var news_id=e.currentTarget.dataset.newsid;
+    wx.navigateTo({
+      url: '../news_des/news_des?news_id='+news_id,
+    })
+  },
+  //电话咨询
+  call:function(){
+    wx.makePhoneCall({
+      phoneNumber: '021-58879166',
+    })
+  },
+  //院校排行
+  school:function(){
+    $Toast({
+      content: '该模块暂未开放',
+      duration:1
+  });
+  },
+  more_news:function(){
+    wx.navigateTo({
+      url: '../study_abroad_news/study_abroad_news',
+    })
+  },
+  more_agency:function(){
+    wx.navigateTo({
+      url: '../study_abroad_agency/study_abroad_agency',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -20,7 +20,7 @@
       </view>
       <view class="about_intro_box"  style="height:{{about_height}}">
         <view class="intro_text_box">
-          <view class="intro_text" style="display:{{about_display}}">{{agency.intro}}</view>
+          <view class="intro_text" style="display:{{about_display}}">{{agency.introduce}}</view>
           <view class="view_more" bindtap="view" style="position:{{position}}">
             <text>{{view_status}}</text>
             <image style="transform:rotate({{deg}})" src="../img/agency/more.png"></image>

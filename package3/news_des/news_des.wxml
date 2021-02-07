@@ -1,7 +1,7 @@
 <view class="container">
   <view class="top">
     <view class="top_title">{{news.title}}</view>
-    <view class="top_date">{{news.date}}</view>
+    <view class="top_date">{{news.time}}</view>
   </view>
   <view class="content">
     <parser html="{{news.content}}" />
@@ -9,14 +9,14 @@
   <view class="news_box">
       <view class="news" wx:for="{{other_news}}">
         <view class="news_left">
-          <image src="{{item.img}}"></image>
+          <image src="{{item.cover}}"></image>
         </view>
         <view class="news_right">
           <view class="news_title">
             {{item.title}}
           </view>
           <view class="date">
-            {{item.date}}
+            {{item.time}}
           </view>
         </view>
       </view>

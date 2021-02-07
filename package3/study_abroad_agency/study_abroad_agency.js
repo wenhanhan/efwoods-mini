@@ -9,38 +9,12 @@ Page({
    */
   data: {
     city:'定位中',//市
-    imgUrls:[
-      {
-        url:'',
-        img:'https://cdn.icloudapi.cn/study_abroad_agency.png'
-      }
-    ],
+    imgUrls:[],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000,
-    agency:[
-      {
-        img:'../img/agency2.png',
-        name:'兴致体育',
-        tag:'高尔夫/足球'
-      },
-      {
-        img:'../img/agency2.png',
-        name:'兴致体育',
-        tag:'高尔夫/足球'
-      },
-      {
-        img:'../img/agency2.png',
-        name:'兴致体育',
-        tag:'高尔夫/足球'
-      },
-      {
-        img:'../img/agency2.png',
-        name:'兴致体育',
-        tag:'高尔夫/足球'
-      }
-    ]
+    agency:[]
   },
   // 截取字符串,多余省略号显示
   substr: function (val) {
@@ -51,6 +25,12 @@ Page({
     } else {
       return val;
     }
+  },
+  view:function(e){
+    var agency_id=e.currentTarget.dataset.agencyid;
+    wx.navigateTo({
+      url: '../agency_des/agency_des?agency_id='+agency_id,
+    })
   },
 
   /**
@@ -87,6 +67,33 @@ select_city:function(){
         city: that.substr(select_city)
       })
     }
+    //获取首页轮播图与赛事类别
+    wx.request({
+      url: app.globalData.url + 'index/StudyAbroad/getBanner',
+      data: {},
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          imgUrls: res.data[0]
+        })
+      }
+    })
+    wx.request({
+      url: app.globalData.url + 'index/StudyAbroad/getAgencyList',
+      data: {},
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          agency: res.data
+        })
+      }
+    })
   },
    //获取用户位置
    getUserLocation:function(){

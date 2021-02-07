@@ -28,6 +28,7 @@
   font-size: 20rpx;
   color: #5B5B5B;
   margin-top: 10rpx;
+  font-weight: normal;
 }
 .content{
   width: 100%;
@@ -70,7 +71,7 @@
 }
 .news_right{
   width: 80%;
-  height: 120rpx;
+  height: 130rpx;
   display: flex;
   align-items: flex-start;
   padding-left: 12rpx;

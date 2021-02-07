@@ -1,6 +1,6 @@
 <view class="container">
       <!-- 顶部搜索区域重构 -->
-  <view class="home_top_bar_box">
+  <!-- <view class="home_top_bar_box">
     <view class="home_top_bar">
         <view class="home_top_bar_left" bindtap='select_city'>
           <icon class='iconfont_address icon-dizhi'></icon>
@@ -17,7 +17,7 @@
             <icon bindtap="news" class='iconfont_news icon-message'></icon>
         </view>
     </view>
-  </view>
+  </view> -->
     <!-- 头部背景色块 -->
   <view class="top_bk"></view>
     <!-- 轮播图 -->
@@ -32,14 +32,21 @@
   </swiper>
   <!-- 机构区域 -->
   <view class="agency_box">
-    <view class="agency" wx:for="{{agency}}">
+    <view class="agency" wx:for="{{agency}}" bindtap="view" data-agencyid="{{item.Id}}">
       <view class="agency_img">
-        <image src="{{item.img}}"></image>
+        <image src="{{item.cover}}"></image>
       </view>
       <view class="agency_info">
         <view class="agency_name">{{item.name}}</view>
         <view class="agency_tag">{{item.tag}}</view>
       </view>
+    </view>
+    <!-- 暂无赛事资源 -->
+    <view class='nodata' wx:if="{{agency.length==0}}">
+      <icon style="font-size:150rpx;" class='iconfont_resource icon-meiyouneirong'></icon>
+        <view class='tips' style="color:#d1cfcf">
+          <text>暂无机构资源～</text>
+        </view>
     </view>
   </view>
 </view>

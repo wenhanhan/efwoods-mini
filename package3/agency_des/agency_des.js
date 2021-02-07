@@ -1,9 +1,12 @@
 // package3/agency_des/agency_des.js
+var app=getApp()
 Page({
   /**
    * 页面的初始数据
    */
   data: {
+    agency_id:null,
+    agency:{},//机构信息
     qrcode:'https://cdn.icloudapi.cn/xingzhi_qrcode.png',
     tab_idx:0,
     tab:[{name:'关于兴致',id:'about'},{name:'留学简介',id:'intro'},{name:'兴致服务',id:'service'},{name:'客座教练',id:'professor'}],
@@ -22,8 +25,7 @@ Page({
       }
     ],
     agency:{
-      intro:'兴致体育教育是北京兴致体育股份有限公司旗下专注体育教育的专业团队。兴致体育教育凭借优质的青训资源优势帮助中国青少年打通学生运动员申请美国名校之路，让中国的青少年能够凭借自身的运动竞技能力享受到世界顶尖的体育和学术教育。动竞技能力享受到世界顶尖的体育和学术教育动竞技能力享受到世界顶尖的体育和学术教育动竞技能力享受到世界顶尖的体育和学术教育动竞技能力享受到世界顶尖的体育和学术教育',
-      liuxue:'https://cdn.icloudapi.cn/new_liuxue_intro.png'
+      intro:'',
     },
     about_height:'370rpx',
     liuxue_height:'auto',
@@ -99,6 +101,10 @@ scan:function(){
    */
   onLoad: function (options) {
     var that=this;
+    console.log(options)
+    this.setData({
+      agency_id:options.agency_id
+    })
     let query = wx.createSelectorQuery();
     query.select('#swiper').boundingClientRect(
       (rect) => {
@@ -131,7 +137,23 @@ scan:function(){
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that=this;
+    //查询机构基本信息
+    wx.request({
+      url: app.globalData.url + 'index/StudyAbroad/getAgencyById',
+      data: {
+        agency_id:that.data.agency_id
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          agency: res.data
+        })
+      }
+    })
   },
 
   /**
