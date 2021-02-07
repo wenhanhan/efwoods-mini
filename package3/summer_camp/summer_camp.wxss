@@ -2,6 +2,7 @@
 @import '/icon/bar_address.wxss';
 @import '/icon/sousuo.wxss';
 @import '/icon/search.wxss';
+@import '/icon/noresource.wxss';
 .container{
   overflow-x: hidden;
 }

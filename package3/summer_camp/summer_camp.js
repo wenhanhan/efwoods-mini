@@ -19,56 +19,11 @@ Page({
         price:'3800',
         duration:'7天',
         img:'../img/camp/camp.png'
-      },
-      {
-        name:'2021西点陆军7天冬令营',
-        people:'6~16周岁',
-        tag:['军事拓展','感恩','体验军旅','拓展'],
-        price:'3800',
-        duration:'7天',
-        img:'../img/camp/camp.png'
-      },
-      {
-        name:'2021西点陆军7天冬令营',
-        people:'6~16周岁',
-        tag:['军事拓展','感恩','体验军旅','拓展'],
-        price:'3800',
-        duration:'7天',
-        img:'../img/camp/camp.png'
-      },
-      {
-        name:'2021西点陆军7天冬令营',
-        people:'6~16周岁',
-        tag:['军事拓展','感恩','体验军旅','拓展'],
-        price:'3800',
-        duration:'7天',
-        img:'../img/camp/camp.png'
-      },
-      {
-        name:'2021西点陆军7天冬令营',
-        people:'6~16周岁',
-        tag:['军事拓展','感恩','体验军旅','拓展'],
-        price:'3800',
-        duration:'7天',
-        img:'../img/camp/camp.png'
-      },
-      {
-        name:'2021西点陆军7天冬令营',
-        people:'6~16周岁',
-        tag:['军事拓展','感恩','体验军旅','拓展'],
-        price:'3800',
-        duration:'7天',
-        img:'../img/camp/camp.png'
       }
     ],
     tab_idx:0,//tab选中的位置
     city:'定位中',//市
-    imgUrls:[
-      {
-        url:'',
-        img:'https://cdn.icloudapi.cn/summer_camp.png'
-      }
-    ],
+    imgUrls:[],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -243,6 +198,9 @@ onPageScroll: function(res) {
   onShow: function () {
     var that=this;
     var select_city = app.globalData.select_city;
+    var province = wx.getStorageSync('address').province;//当前的省
+    var city = wx.getStorageSync('address').city;//当前的省市
+    var address = province + city;
     if(!select_city){
       this.getUserLocation();
     }else{
@@ -250,8 +208,31 @@ onPageScroll: function(res) {
         city: that.substr(select_city)
       })
     }
+    //获取banner
+    //获取首页轮播图与夏令营列表
+    wx.request({
+      url: app.globalData.url + 'index/SummerCamp/getBanner',
+      data: {
+        address:address
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          imgUrls: res.data[0],
+          camp:res.data[1]
+        })
+      }
+    })
   },
-
+  view:function(e){
+    var camp_id=e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../summer_camp_des/summer_camp_des?camp_id='+camp_id,
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

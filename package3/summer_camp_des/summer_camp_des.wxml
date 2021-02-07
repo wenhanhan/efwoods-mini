@@ -1,6 +1,6 @@
 <view class="container">
   <view class="top_pic">
-    <image src="https://cdn.icloudapi.cn/camp_des.png"></image>
+    <image src="{{camp.banner}}"></image>
   </view>
   <view class="camp_intro">
     <view class="camp_intro_top">
@@ -8,9 +8,10 @@
         <view class="camp_title">{{camp.title}}</view>
         <view class="camp_price"><text class="price_tag">￥</text>{{camp.price}}<text class="tags">起</text></view>
       </view>
-      <view class="top_right">
+      <view class="top_right" bindtap="favor">
         <view class="line"></view>
-        <image src="../img/camp/favor.png"></image>
+        <image wx:if="{{camp.is_favor}}" src="../img/camp/favored.png"></image>
+        <image src="../img/camp/favor.png" wx:else></image>
       </view>
     </view>
     <view class="camp_intro_bottom">

@@ -1,10 +1,12 @@
 // package3/summer_camp_des/summer_camp_des.js
+var app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    camp_id:null,
     camp:{
       title:'2020拼搏体育14天足球夏令营',
       price:5000,
@@ -20,9 +22,44 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      camp_id:options.camp_id
+    })
   },
-
+  favor:function(e){
+    var that=this;
+    var camp_id=this.data.camp.Id
+    var camp=that.data.camp;
+    camp.is_favor=!camp.is_favor
+    var openid=wx.getStorageSync('openid')
+    wx.request({
+      url: app.globalData.url + 'index/SummerCamp/favorCamp',
+      data: {
+       openid:openid,
+       camp_id:camp_id
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res){
+        console.log(res.data)
+        if(camp.is_favor){
+          wx.showToast({
+            title: '已收藏',
+            icon:'success'
+          })
+        }else{
+          wx.showToast({
+            title: '已取消',
+            icon:'success'
+          })
+        }
+        that.setData({
+          camp:camp
+        })
+      }
+    })
+  },  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -34,7 +71,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that=this;
+    var openid=wx.getStorageSync('openid');
+    wx.request({
+      url: app.globalData.url + 'index/SummerCamp/getSummerCampInfo',
+      data: {
+       camp_id:that.data.camp_id,
+       openid:openid
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          camp:res.data
+        })
+      }
+    })
   },
 
   /**
