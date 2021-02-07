@@ -6,54 +6,42 @@ Page({
    * 页面的初始数据
    */
   data: {
+    score:0,//答题的模拟得分
     sub_id:null,
     currenttab:0,
     option_idx:-1,
     topic:[
-      {
-        title:'1、网球运动中两个最基本的底线技术是: ( )',
-        option:['A.攻球和削球','B.攻球和发球','C.搓球和削球','D.削球和高压球'],
-        right:[0,'A']
-      },
-      {
-        title:'2、网球运动中两个最基本的底线技术是: ( )',
-        option:['A.攻球和削球','B.攻球和发球','C.搓球和削球','D.削球和高压球'],
-        right:[1,'B']
-      },
-      {
-        title:'3、网球运动中两个最基本的底线技术是: ( )',
-        option:['A.攻球和削球','B.攻球和发球','C.搓球和削球','D.削球和高压球'],
-        right:[2,'C']
-      },
-      {
-        title:'3、网球运动中两个最基本的底线技术是: ( )',
-        option:['A.攻球和削球','B.攻球和发球','C.搓球和削球','D.削球和高压球'],
-        right:[2,'C']
-      },
-      {
-        title:'3、网球运动中两个最基本的底线技术是: ( )',
-        option:['A.攻球和削球','B.攻球和发球','C.搓球和削球','D.削球和高压球'],
-        right:[2,'C']
-      },
-      {
-        title:'3、网球运动中两个最基本的底线技术是: ( )',
-        option:['A.攻球和削球','B.攻球和发球','C.搓球和削球','D.削球和高压球'],
-        right:[2,'C']
-      }
-    ]
+    ],
+    type_name:'',
   },
 select:function(e){
-  var idx=e.currentTarget.dataset.idx;
   var that=this;
+  var idx=e.currentTarget.dataset.idx;
   var topic_idx=this.data.currenttab;
+  var type_name=this.data.type_name;
+  var topic=this.data.topic;
+  var score=this.data.score;
+  var sub_id=this.data.sub_id
   this.setData({
     option_idx:idx
   })
+  //判断正误
+  if(idx==topic[topic_idx].right[0]*1){
+    score++
+    this.setData({
+      score:score
+    })
+  }
   //选择以后切换下一题
-  console.log(topic_idx)
   if(topic_idx==this.data.topic.length-1){
-    //直接跳转结果页面
-    console.log('跳转啦')
+    wx.showLoading({
+      title: '正在提交',
+    })
+    setTimeout(function(){
+      wx.reLaunch({
+        url: '../ability_test_res/ability_test_res?sub_id='+sub_id+'&score='+score+'&length='+topic.length+'&type_name='+type_name,
+      })
+    },1000)
   }else{
     setTimeout(function(){
       topic_idx++;
@@ -73,12 +61,16 @@ switchtab:function(e){
    */
   onLoad: function (options) {
     this.setData({
-      sub_id:options.sub_id
+      sub_id:options.sub_id,
+      type_name:options.type_name
     })
   },
   //查询题目的具体信息
   getSubject(sub_id){
     var that=this;
+    wx.showLoading({
+      title: '题目生成中',
+    })
     wx.request({
       url: app.globalData.url + 'index/AbilityTest/getSubjectById',
       data: {
@@ -89,6 +81,7 @@ switchtab:function(e){
       },
       success(res){
         console.log(res.data)
+        wx.hideLoading({})
         that.setData({
           topic:res.data.subject
         })

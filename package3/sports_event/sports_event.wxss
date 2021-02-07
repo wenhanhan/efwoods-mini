@@ -2,6 +2,7 @@
 @import '/icon/bar_address.wxss';
 @import '/icon/sousuo.wxss';
 @import '/icon/search.wxss';
+@import '/icon/noresource.wxss';
 .container{
   overflow-x: hidden;
 }
@@ -74,7 +75,7 @@
   border-bottom-left-radius: 30rpx;
   border-bottom-right-radius: 30rpx;
   position: fixed;
-  top: 90rpx;
+  top: 0;
   z-index: -1;
   background-image: linear-gradient(to bottom,#005FFF , #76C1FE);
 }
@@ -239,4 +240,7 @@ swiper{
   align-items: center;
   font-size: 24rpx;
   color: #636363;
+}
+.nodata{
+  padding-top:100rpx ;
 }

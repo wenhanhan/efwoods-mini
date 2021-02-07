@@ -80,7 +80,7 @@
       <image mode="aspectFill" src="/img/home/shop.png"></image>
       <text>发现好物</text>
     </navigator>
-    <navigator class="nav_item" hover-class="none" open-type="switchTab" url="../show/show">
+    <navigator class="nav_item" hover-class="none" url="/package3/sports_event/sports_event">
       <image mode="aspectFill" src="/img/home/news.png"></image>
       <text>赛事资讯</text>
     </navigator>

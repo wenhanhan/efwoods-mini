@@ -1,5 +1,6 @@
 // pages/ability_test/ability_test.js
 var app=getApp()
+const { $Toast } = require('../../dist/base/index');
 Page({
 
   /**
@@ -39,9 +40,18 @@ Page({
   //跳转
   view:function(e){
     var id=e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '../ability_test_des/ability_test_des?sub_id='+id,
-    })
+    var type_name=e.currentTarget.dataset.typename;
+    //判断是否存在题目
+    if(id){
+      wx.navigateTo({
+        url: '../ability_test_des/ability_test_des?sub_id='+id+'&type_name='+type_name,
+      })
+    }else{
+      $Toast({
+        content: '该栏目未开放测评',
+        duration:1
+    });
+    }
   },
   /**
    * 生命周期函数--监听页面加载

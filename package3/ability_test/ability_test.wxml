@@ -17,7 +17,7 @@
     <view class="line"></view>
   </view>
   <view class="type_column">
-    <view class="type_column_item" wx:for="{{professional_test}}" bindtap="view" data-id="{{item.sub_id}}">
+    <view class="type_column_item" wx:for="{{professional_test}}" data-typename="{{item.title}}" bindtap="view" data-id="{{item.sub_id}}">
       <image src="{{item.img}}"></image>
       <view>{{item.title}}</view>
     </view>
@@ -39,7 +39,7 @@
         <text>热门测评</text>
         <text class="test_num">共{{hot_test_list.length}}个测评</text>
       </view>
-      <view class="test_content" wx:for="{{hot_test_list}}" data-id="{{item.Id}}" bindtap="view">
+      <view class="test_content" wx:for="{{hot_test_list}}" data-typename="{{item.type_name}}" data-id="{{item.Id}}" bindtap="view">
         <image src="{{item.cover}}"></image>
         <view class="test_content_info">
           <view class="test_content_info_title">{{item.title}}</view>
@@ -58,4 +58,5 @@
       </view>
     </view>
   </view>
+  <i-toast id="toast" />
 </view>

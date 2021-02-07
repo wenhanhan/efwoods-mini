@@ -23,7 +23,7 @@
     <view class="sports_title">
         <view class="start_line"></view>
         <text style="margin-left: 15rpx;">推荐课程</text>
-        <view class="more">
+        <view class="more" bindtap="more_course">
             <view>更多课程</view>
             <image class="more" src="/img/user/more.png"></image>
         </view>
@@ -31,24 +31,30 @@
     <view class="content_box">
         <scroll-view scroll-x style="width: 100%" enable-flex="{{true}}">
             <block wx:for="{{courses}}">
-            <navigator url='{{item.url}}' hover-class="none">
+            <navigator url='/pages/cour_detail/cour_detail?cour_id={{item.Id}}&distance={{item.distance}}&cour_type={{item.courType}}' hover-class="none">
                 <view class="img_box" style="{{index==cour_num-1?'margin-right:15rpx;':''}}">
-                    <image src="{{item.img}}"></image>
+                    <image mode='aspectFill' src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}}"></image>
                     <view class="child_info">
-                        <view class="child_title">{{item.title}}</view>
+                        <view class="child_title">{{item.courName}}</view>
                         <view class="child_time">
-                            <text class="tag" wx:for-item="tag" wx:for="{{item.tag}}">{{tag}}</text>
+                            <text class="tag" wx:for-item="tag" wx:for="{{item.courTags}}">{{tag}}</text>
                         </view>
                     </view>
                 </view>
             </navigator>
             </block>
+            <view class='nodata' wx:if="{{courses.length==0}}">
+                <icon style="font-size:100rpx;" class='iconfont_resource icon-meiyouneirong'></icon>
+                <view class='tips' style="color:#d1cfcf">
+                <text>暂无课程资源～</text>
+                </view>
+            </view>
         </scroll-view>
     </view>
     <view class="sports_title" style="margin-top:20rpx">
         <view class="start_line"></view>
         <text style="margin-left: 15rpx;">推荐私教</text>
-        <view class="more">
+        <view class="more" bindtap="more_teacher">
             <view>更多私教</view>
             <image class="more" src="/img/user/more.png"></image>
         </view>
@@ -56,19 +62,25 @@
     <view class="content_box">
         <scroll-view scroll-x style="width: 100%" enable-flex="{{true}}">
             <block wx:for="{{teacher}}">
-            <navigator url='{{item.url}}' hover-class="none">
+            <navigator hover-class='none' url='/pages/tea_detail/tea_detail?tea_id={{item.Id}}'>
                 <view class="tea_img_box" style="{{index==cour_num-1?'margin-right:15rpx;':''}}">
-                    <image src="{{item.img}}"></image>
+                    <image src="{{item.teaImg}}"></image>
                     <view class="tea_intro">
                         <text>{{item.name}}</text>
-                        <text class="intro">{{item.intro}}</text>
+                        <text class="intro">{{item.introduce}}</text>
                     </view>
                     <view style="background:{{color[index]}}" class="tea_tag">
-                        <text>{{item.tag}}</text>
+                        <text>{{item.tag2}}</text>
                     </view>
                 </view>
             </navigator>
             </block>
+            <view class='nodata' wx:if="{{teacher.length==0}}">
+                <icon style="font-size:100rpx;" class='iconfont_resource icon-meiyouneirong'></icon>
+                <view class='tips' style="color:#d1cfcf">
+                <text>暂无私教资源～</text>
+                </view>
+            </view>
         </scroll-view>
     </view>
 </view>

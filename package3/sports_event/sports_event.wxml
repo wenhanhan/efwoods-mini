@@ -1,6 +1,6 @@
 <view class="container" >
     <!-- 顶部搜索区域重构 -->
-  <view class="home_top_bar_box">
+  <!-- <view class="home_top_bar_box">
     <view class="home_top_bar">
         <view class="home_top_bar_left" bindtap='select_city'>
           <icon class='iconfont_address icon-dizhi'></icon>
@@ -17,7 +17,7 @@
             <icon bindtap="news" class='iconfont_news icon-message'></icon>
         </view>
     </view>
-  </view>
+  </view> -->
     <!-- 头部背景色块 -->
   <view class="top_bk"></view>
     <!-- 轮播图 -->
@@ -33,18 +33,27 @@
   <!-- 滑动区域 -->
   <view class="content">
     <scroll-view scroll-x="true" class="tab-bar" scroll-left="{{scrollleft}}">
-      <view wx:for="{{sports_type}}" class="tab-item {{currenttab==index?'active':''}}" data-current="{{index}}" bindtap="swichnav">{{item}}</view>
+      <view wx:for="{{sports_type}}" class="tab-item {{currenttab==index?'active':''}}" data-current="{{index}}" bindtap="swichnav">{{item.name}}</view>
     </scroll-view>
     <swiper class="tab-content" current="{{currenttab}}" duration="300" bindchange="switchtab" style="height:{{winheight}}rpx">
       <swiper-item wx:for="{{sports_type}}">
         <view class="sports">
-          <view class="sports_item" wx:for="{{sports}}">
-            <view class="status">{{item.status}}</view>
-            <image mode="aspectFit" src="{{item.img}}"></image>
+          <view class="sports_item"  wx:for="{{sports[index]}}">
+            <view class="status" wx:if="{{item.is_overdate==0}}">进行中</view>
+            <view class="status" wx:elif="{{item.is_overdate==1}}">未开始</view>
+            <view class="status" style="background:#ABABAB" wx:else>已结束</view>
+            <image mode="aspectFit" src="{{item.cover}}"></image>
             <view class="sports_info">
               <view class="sports_title"><text wx:if="{{item.is_hot}}" class="hot">热门</text>{{item.title}}</view>
-              <view class="sports_time">活动时间:{{item.time}}</view>
+              <view class="sports_time">活动时间:{{item.begin_time}} 至 {{item.end_time}}</view>
             </view>
+          </view>
+          <!-- 暂无赛事资源 -->
+          <view class='nodata' wx:if="{{sports[index].length==0}}">
+              <icon style="font-size:150rpx;" class='iconfont_resource icon-meiyouneirong'></icon>
+              <view class='tips' style="color:#d1cfcf">
+                <text>暂无赛事资源～</text>
+              </view>
           </view>
         </view>
       </swiper-item>

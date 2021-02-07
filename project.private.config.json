@@ -75,9 +75,9 @@
           "scene": null
         },
         {
-          "name": "package3/ability_test_res/ability_test_res",
-          "pathName": "package3/ability_test_res/ability_test_res",
-          "query": "sub_id=1&score=450",
+          "name": "package3/sports_event/sports_event",
+          "pathName": "package3/sports_event/sports_event",
+          "query": "",
           "scene": null
         }
       ]

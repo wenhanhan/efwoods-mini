@@ -1,4 +1,5 @@
 /* pages/ability_test_res/ability_test_res.wxss */
+@import '/icon/noresource.wxss';
 ec-canvas {
   width: 90%;
   height: 90%;
@@ -158,12 +159,20 @@ scroll-view{
   position: absolute;
   top: 0;
   right: 0;
+  padding: 0 10rpx;
   border-top-right-radius:12rpx;
   border-bottom-left-radius: 12rpx;
+  overflow:hidden;
+  white-space:nowrap;
+ text-overflow:ellipsis;
 }
 .intro{
   font-size: 20rpx;
+  width: 100%;
   color: #5D5D5D;
+  overflow:hidden;
+  white-space:nowrap;
+ text-overflow:ellipsis;
 }
 .img_box image{
   width: 250rpx;
@@ -229,4 +238,10 @@ scroll-view{
   height: 22rpx;
   margin-left: 10rpx;
   position: relative;
+}
+.nodata{
+  height: 200rpx;
+}
+.tips{
+  font-size: 22rpx;
 }

@@ -1,9 +1,6 @@
 {
   "pages": [ 
     "pages/location/location",
-    "pages/sports_event_sign/sports_event_sign",
-    "pages/sports_event_des/sports_event_des",
-    "pages/sports_event/sports_event", 
     "pages/myset/coach/coach",
     "pages/share/share",
     "pages/web/login",
@@ -175,7 +172,10 @@
         "daily_exercise_ranking/daily_exercise_ranking",
         "daily_exercise_start/daily_exercise_start",
         "daily_exercise_reply/daily_exercise_reply",
-        "daily_exercise_des/daily_exercise_des"
+        "daily_exercise_des/daily_exercise_des",
+        "sports_event/sports_event",
+        "sports_event_des/sports_event_des",
+        "sports_event_sign/sports_event_sign"
       ]
     }
   ],

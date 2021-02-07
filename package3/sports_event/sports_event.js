@@ -25,30 +25,30 @@ Page({
     duration: 1000,
     sports_type:['高尔夫','篮球','羽毛球','足球','跆拳道','网球'],
     sports:[
-      {
-        img:'https://cdn.icloudapi.cn/sports_pp.png',
-        url:'',
-        title:'上海市第二届乒乓球比赛报名啦!',
-        time:'2021-02-03至2021-02-01',
-        status:'进行中',
-        is_hot:true
-      },
-      {
-        img:'https://cdn.icloudapi.cn/sports_pp.png',
-        url:'',
-        title:'上海市第二届乒乓球比赛报名啦!',
-        time:'2021-02-03至2021-02-01',
-        status:'进行中',
-        is_hot:false
-      },
-      {
-        img:'https://cdn.icloudapi.cn/sports_pp.png',
-        url:'',
-        title:'上海市第二届乒乓球比赛报名啦!',
-        time:'2021-02-03至2021-02-01',
-        status:'进行中',
-        is_hot:false
-      }
+      // {
+      //   img:'https://cdn.icloudapi.cn/sports_pp.png',
+      //   url:'',
+      //   title:'上海市第二届乒乓球比赛报名啦!',
+      //   time:'2021-02-03至2021-02-01',
+      //   status:'进行中',
+      //   is_hot:true
+      // },
+      // {
+      //   img:'https://cdn.icloudapi.cn/sports_pp.png',
+      //   url:'',
+      //   title:'上海市第二届乒乓球比赛报名啦!',
+      //   time:'2021-02-03至2021-02-01',
+      //   status:'进行中',
+      //   is_hot:false
+      // },
+      // {
+      //   img:'https://cdn.icloudapi.cn/sports_pp.png',
+      //   url:'',
+      //   title:'上海市第二届乒乓球比赛报名啦!',
+      //   time:'2021-02-03至2021-02-01',
+      //   status:'进行中',
+      //   is_hot:false
+      // }
     ]
   },
 //选择城市跳转
@@ -65,16 +65,22 @@ search:function(){
 },
 // 滚动切换标签样式
 switchtab:function(e){
+  console.log(this.data.sports_type[e.detail.current].Id)
+  this.getSportsList(this.data.sports_type[e.detail.current].Id)
   this.setData({
     currenttab:e.detail.current,
-    winheight:this.data.sports.length*(390+35)
+    // winheight:this.data.sports[this.data.currenttab].length==0
   });
   this.checkcor();
 },
 // 点击标题切换当前页时改变样式
 swichnav:function(e){
   var cur=e.target.dataset.current;
-  if(this.data.currenttab==cur){return false;}
+  if(this.data.currenttab==cur){
+    console.log(this.data.sports_type[cur].Id)
+    this.getSportsList(this.data.sports_type[cur].Id)
+    return false;
+  }
   else{
     this.setData({
       currenttab:cur
@@ -83,7 +89,7 @@ swichnav:function(e){
 },
 //判断当前滚动超过一屏时，设置tab标题滚动条。
 checkcor:function(){
- if (this.data.currenttab>4){
+ if (this.data.currenttab>3){
   this.setData({
    scrollleft:300
   })
@@ -111,25 +117,10 @@ checkcor:function(){
     var isIphoneX = app.globalData.isIphoneX;
     this.setData({
       isIphoneX: isIphoneX,
-      winheight:this.data.sports.length*(390+35)
     })
     qqmapsdk = new QQMapWX({
       key: 'K3PBZ-PSUCD-T3A4R-P5JPH-6MCR2-KYF6K' //key秘钥 
     });
-    // 高度自适应
-    // wx.getSystemInfo( { 
-    //   success: function( res ) { 
-    //     console.log(res)
-    //     var clientheight=res.windowHeight,
-    //       clientwidth=res.windowWidth,
-    //       rpxr=750/clientwidth;
-    //    var calc=clientheight*rpxr-180;
-    //     console.log(calc)
-    //     that.setData( { 
-    //       winheight: calc 
-    //     }); 
-    //   } 
-    // });
   },
 
   /**
@@ -152,6 +143,52 @@ checkcor:function(){
         city: that.substr(select_city)
       })
     }
+    //获取首页轮播图与赛事类别
+    wx.request({
+      url: app.globalData.url + 'index/SportsEvent/getBanner',
+      data: {},
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          imgUrls: res.data[0],
+          sports_type:res.data[1]
+        })
+        that.getSportsList(res.data[1][0].Id)
+      }
+    })
+  },
+  //获取赛事列表
+  getSportsList(type){
+    var that=this;
+    var sports=this.data.sports;
+    var province = wx.getStorageSync('address').province;//当前的省
+    var city = wx.getStorageSync('address').city;//当前的省市
+    var address = province + city;
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.request({
+      url: app.globalData.url + 'index/SportsEvent/getSportsList',
+      data: {
+        type:type,
+        address:address
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        wx.hideLoading({
+        })
+        that.setData({
+          sports:res.data,
+          winheight:res.data[that.data.currenttab].length==0?425:res.data[that.data.currenttab].length*425
+        })
+      }
+    })
   },
     //获取用户位置
     getUserLocation:function(){
