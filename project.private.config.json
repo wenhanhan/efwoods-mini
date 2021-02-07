@@ -75,9 +75,9 @@
           "scene": null
         },
         {
-          "name": "package3/sports_event_sign/sports_event_sign",
-          "pathName": "package3/sports_event_sign/sports_event_sign",
-          "query": "sports_id=1",
+          "name": "package3/study_abroad/study_abroad",
+          "pathName": "package3/study_abroad/study_abroad",
+          "query": "",
           "scene": null
         }
       ]

@@ -1,16 +1,12 @@
 // package3/study_abroad/study_abroad.js
+var app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls:[
-      {
-        url:'/package3/ability_test_res/ability_test_res',
-        img:'https://cdn.icloudapi.cn/study_abroad.png'
-      }
-    ],
+    imgUrls:[],
     agency:[
       {
         name:'兴致体育',
@@ -73,9 +69,25 @@ Page({
 
   /**
    * 生命周期函数--监听页面显示
-   */
+   */ 
   onShow: function () {
-
+    var that=this;
+  //获取首页轮播图与赛事类别
+    wx.request({
+      url: app.globalData.url + 'index/StudyAbroad/getBanner',
+      data: {},
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          imgUrls: res.data[0],
+          news:res.data[1],
+          agency:res.data[2]
+        })
+      }
+    })
   },
 
   /**

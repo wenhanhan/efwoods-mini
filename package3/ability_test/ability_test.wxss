@@ -29,6 +29,7 @@ navigator{
 swiper{
   width: 95%;
   height: 336rpx;
+  margin-top: 20rpx;
 }
 .type_title{
   width: 100%;

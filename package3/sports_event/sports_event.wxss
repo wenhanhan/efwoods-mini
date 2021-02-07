@@ -88,6 +88,7 @@ navigator{
 swiper{
   width: 95%;
   height: 336rpx;
+  margin-top: 20rpx;
 }
 .content{
   width: 100%;

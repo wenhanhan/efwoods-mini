@@ -1,4 +1,5 @@
 /* package3/study_abroad/study_abroad.wxss */
+@import '/icon/noresource.wxss';
 .container{
   overflow-x: hidden;
   /* padding: 0 24rpx; */
@@ -25,6 +26,7 @@ navigator{
 swiper{
   width: 95%;
   height: 336rpx;
+  margin-top: 20rpx;
 }
 /* 按钮导航区域 */
 .home_nav{
@@ -222,4 +224,10 @@ scroll-view{
   position: absolute;
   right: 30rpx;
   bottom: 0;
+}
+.nodata{
+  height: 300rpx;
+}
+.tips{
+  font-size:22rpx;
 }

@@ -14,10 +14,6 @@ Page({
     isIphoneX:false,
     city:'定位中',//市
     imgUrls:[
-      {
-        url:'',
-        img:'https://cdn.icloudapi.cn/sports_banner.png'
-      }
     ],
     indicatorDots: true,
     autoplay: true,
@@ -25,30 +21,6 @@ Page({
     duration: 1000,
     sports_type:['高尔夫','篮球','羽毛球','足球','跆拳道','网球'],
     sports:[
-      // {
-      //   img:'https://cdn.icloudapi.cn/sports_pp.png',
-      //   url:'',
-      //   title:'上海市第二届乒乓球比赛报名啦!',
-      //   time:'2021-02-03至2021-02-01',
-      //   status:'进行中',
-      //   is_hot:true
-      // },
-      // {
-      //   img:'https://cdn.icloudapi.cn/sports_pp.png',
-      //   url:'',
-      //   title:'上海市第二届乒乓球比赛报名啦!',
-      //   time:'2021-02-03至2021-02-01',
-      //   status:'进行中',
-      //   is_hot:false
-      // },
-      // {
-      //   img:'https://cdn.icloudapi.cn/sports_pp.png',
-      //   url:'',
-      //   title:'上海市第二届乒乓球比赛报名啦!',
-      //   time:'2021-02-03至2021-02-01',
-      //   status:'进行中',
-      //   is_hot:false
-      // }
     ]
   },
 //选择城市跳转
