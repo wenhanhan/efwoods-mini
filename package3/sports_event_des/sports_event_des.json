@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "parser": "../../components/parser/parser"
+    "parser": "../../components/parser/parser",
+    "i-toast": "../../dist/toast/index"
   },
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTextStyle": "black",

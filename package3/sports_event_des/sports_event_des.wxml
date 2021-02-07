@@ -1,6 +1,6 @@
 <view class="container">
   <view class="sports_bk">
-    <image src="https://cdn.icloudapi.cn/sports_des_bk.png"></image>
+    <image src="{{sports_info.cover}}"></image>
   </view>
   <view class="sports_info">
     <view class="sports_info_top">
@@ -10,19 +10,19 @@
       </view>
       <view class="sports_time_address">
           <view class="sports_time_address_child">
-            <image src="/img/sports/begin.png"></image>
+            <image src="/img/sports/start_time.png"></image>
             <view class="sports_time_address_text">比赛时间</view>
-            <view>{{sports_info.time}}</view>
+            <view>{{sports_info.begin_time}}</view>
           </view>
           <view class="sports_time_address_child">
             <image src="/img/sports/deadline.png"></image>
             <view class="sports_time_address_text">报名截止</view>
-            <view>{{sports_info.deadline}}</view>
+            <view>{{sports_info.end_time}}</view>
           </view>
           <view class="sports_time_address_child">
             <image src="/img/sports/address.png"></image>
             <view class="sports_time_address_text">比赛地点</view>
-            <view>{{sports_info.address}}</view>
+            <view>上海市</view>
           </view>
       </view>
     </view>
@@ -36,7 +36,8 @@
       </view>
     </view>
   </view>
-  <view class="baoming">
+  <view class="baoming {{state!=0||sports_info.is_sign==1?'disable':''}}" bindtap="baoming">
     <text>报名</text>
   </view>
+  <i-toast id="toast" />
 </view>

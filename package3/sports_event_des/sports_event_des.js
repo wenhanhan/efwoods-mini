@@ -1,24 +1,26 @@
 // pages/sports_event_des/sports_event_des.js
+var app=getApp()
+const { $Toast } = require('../../dist/base/index');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    sports_info:{
-      title:'第二届环岛马拉松比赛报名啦！',
-      time:'2021.02.01',
-      deadline:'2021.03.01',
-      address:'上海市',
-      content:'<div>Hello World!</div>'
-    }
+    sports_id:null,
+    sports_info:{},
+    state:0//资讯的实效
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      sports_id:options.sports_id,
+      state:options.state
+    })
+    console.log(options)
   },
 
   /**
@@ -27,12 +29,63 @@ Page({
   onReady: function () {
 
   },
-
+  baoming:function(){
+    var state=this.data.state;
+    var userInfo = wx.getStorageSync('userInfo');//用户信息
+    var is_sign=this.data.sports_info.is_sign;
+    var cover=this.data.sports_info.cover;
+    var sports_id=this.data.sports_id;
+    if(userInfo){
+      if(state==0){
+        if(is_sign==0){
+          wx.navigateTo({
+            url: '../sports_event_sign/sports_event_sign?sports_id='+sports_id+'&cover='+cover,
+          })
+        }else{
+          $Toast({
+            content: '您已经报名',
+            duration:1
+        });
+        }
+      }else if(state==1){
+        $Toast({
+          content: '报名未开始',
+          duration:1
+      });
+      }else{
+        $Toast({
+          content: '赛事报名已结束',
+          duration:1
+      });
+      }
+    }else{
+      app.login()
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that=this;
+    var id=this.data.sports_id
+    var openid=wx.getStorageSync('openid')
+    //加载赛事资讯
+    wx.request({
+      url: app.globalData.url + 'index/SportsEvent/getSportsById',
+      data: {
+        id:id,
+        openid:openid
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          sports_info:res.data
+        })
+      }
+    })
   },
 
   /**

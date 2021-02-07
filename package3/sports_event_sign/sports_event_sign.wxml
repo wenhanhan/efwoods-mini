@@ -9,24 +9,28 @@
         <text style="margin-left: 15rpx;">{{title}}</text>
       </view>
       <view class="sign_form">
-        <form catchsubmit="formSubmit" catchreset="formReset">
+        <form bindsubmit="formSubmit" catchreset="formReset">
           <view class="input_line">
-            姓名：<input class="weui-input" name="input" placeholder="请输入姓名" />
+            姓名：<input class="weui-input" name="name" placeholder="请输入姓名" />
           </view>
           <view class="input_line">
-            年龄：<input class="weui-input" type="number" name="input" placeholder="请输入年龄" />
+            年龄：<input class="weui-input" type="number" name="age" placeholder="请输入年龄" />
           </view>
           <view class="input_line">
-            性别：<input class="weui-input" name="input" placeholder="请选择性别" />
+            性别：<picker style="width:80%" name="sex" bindchange="bindPickerAge" value="{{sex_array[sex_index]}}" range="{{sex_array}}">
+                    <view class="picker">
+                      {{sex_array[sex_index]}}
+                    </view>
+                  </picker>
           </view>
           <view class="input_line">
-            手机号：<input class="weui-input" type="number" name="input" placeholder="请输入手机号" />
+            手机号：<input class="weui-input" type="number" name="phone" placeholder="请输入手机号" />
           </view>
           <view class="input_line">
-            现居地址：<input class="weui-input" name="input" placeholder="请输入地址" />
+            现居地址：<input class="weui-input" name="address" placeholder="请输入地址" />
           </view>
           <view class="input_line">
-            身份证号：<input class="weui-input" type="idcard" name="input" placeholder="请输入身份证号" />
+            身份证号：<input class="weui-input" type="idcard" name="idcard" placeholder="请输入身份证号" />
           </view>
           <view class="btn-area">
             <button formType="submit" style="height:85rpx">提交</button>
@@ -34,6 +38,6 @@
           </view>
         </form>
       </view>
-    </view>
+    </view> 
   </view>
 </view> 

@@ -114,3 +114,6 @@ page{
   margin: 0 auto;
   position: relative;
 }
+.disable{
+  background: #CFCFCF;
+}

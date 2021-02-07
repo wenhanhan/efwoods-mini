@@ -38,7 +38,7 @@
     <swiper class="tab-content" current="{{currenttab}}" duration="300" bindchange="switchtab" style="height:{{winheight}}rpx">
       <swiper-item wx:for="{{sports_type}}">
         <view class="sports">
-          <view class="sports_item"  wx:for="{{sports[index]}}">
+          <view class="sports_item"  wx:for="{{sports[index]}}" bindtap="view" data-state="{{item.is_overdate}}" data-id="{{item.Id}}">
             <view class="status" wx:if="{{item.is_overdate==0}}">进行中</view>
             <view class="status" wx:elif="{{item.is_overdate==1}}">未开始</view>
             <view class="status" style="background:#ABABAB" wx:else>已结束</view>

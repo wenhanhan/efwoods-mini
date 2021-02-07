@@ -190,6 +190,14 @@ checkcor:function(){
       }
     })
   },
+  //跳转
+  view:function(e){
+    var sports_id=e.currentTarget.dataset.id;
+    var state=e.currentTarget.dataset.state;
+    wx.navigateTo({
+      url: '../sports_event_des/sports_event_des?sports_id='+sports_id+'&state='+state,
+    })
+  },
     //获取用户位置
     getUserLocation:function(){
       var that=this;

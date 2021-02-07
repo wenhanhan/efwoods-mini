@@ -75,9 +75,9 @@
           "scene": null
         },
         {
-          "name": "package3/sports_event/sports_event",
-          "pathName": "package3/sports_event/sports_event",
-          "query": "",
+          "name": "package3/sports_event_sign/sports_event_sign",
+          "pathName": "package3/sports_event_sign/sports_event_sign",
+          "query": "sports_id=1",
           "scene": null
         }
       ]
