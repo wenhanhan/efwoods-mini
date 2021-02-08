@@ -213,3 +213,6 @@ swiper{
   font-weight: 500;
   align-items: baseline;
 }
+.search_input{
+  text-align: center;
+}

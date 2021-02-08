@@ -1,6 +1,7 @@
 // package3/summer_camp/summer_camp.js
 var QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
 var qqmapsdk;
+var cityData = require('../../utils/city.js'); //引入自己定位的市区数据信息
 var app=getApp();
 Page({
 
@@ -8,20 +9,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    shaixuan:0,//筛选页面回传参数
+    address:'',
+    cityleft: cityData.getCity(), //获取省区域的下拉框筛选项内容
     price_order:false,
     order:0,//默认按综合排序
     is_fix:false,
     top_bar_height:'',//导航条高度
     swiper_height:'',
     camp:[
-      {
-        name:'2021西点陆军7天冬令营',
-        people:'6~16周岁',
-        tag:['军事拓展','感恩','体验军旅','拓展'],
-        price:'3800',
-        duration:'7天',
-        img:'../img/camp/camp.png'
-      }
     ],
     tab_idx:0,//tab选中的位置
     city:'定位中',//市
@@ -65,6 +61,9 @@ Page({
     }else if(!that.data.price_order&&idx==2){
       that.getCamp(22)
     }else{
+      this.setData({
+        shaixuan:0
+      })
       wx.navigateTo({
         url: '../summer_camp_shaixuan/summer_camp_shaixuan',
       })
@@ -75,6 +74,37 @@ Page({
   select_city:function(){
     wx.navigateTo({
       url: '../../pages/select_city/select_city',
+    })
+  },
+   //输入事件
+   input: function (e) {
+    this.setData({
+      text: e.detail.value
+    })
+  },
+  search:function(){
+    var that=this;
+    wx.showLoading({
+      title: '搜索中…',
+    })
+    var address=this.data.address
+    var text = that.data.text.trim();
+    wx.request({
+      url: app.globalData.url + 'index/SummerCamp/searchCamp',
+      data: {
+        address: address,
+        key:text
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        wx.hideLoading()
+        console.log(res.data)
+        that.setData({
+          camp: res.data,
+        })
+      }
     })
   },
  //获取用户位置
@@ -223,10 +253,12 @@ onPageScroll: function(res) {
    */
   onShow: function () {
     var that=this;
+    var shaixuan=this.data.shaixuan?this.data.shaixuan:0;
+    console.log(shaixuan)
     var select_city = app.globalData.select_city;
-    var province = wx.getStorageSync('address').province;//当前的省
-    var city = wx.getStorageSync('address').city;//当前的省市
-    var address = province + city;
+    var new_city = wx.getStorageSync('new_city');
+    // var province = wx.getStorageSync('address').province;//当前的省
+    // var city = wx.getStorageSync('address').city;//当前的省市
     if(!select_city){
       this.getUserLocation();
     }else{
@@ -234,12 +266,44 @@ onPageScroll: function(res) {
         city: that.substr(select_city)
       })
     }
-    //获取banner
-    //获取首页轮播图与夏令营列表
+    that.setData({
+      tab_idx:0
+    })
+    var select_city = app.globalData.select_city;
+    var store_city = wx.getStorageSync('address').city;
+    //获得城市
+    var city = select_city ? select_city : store_city;
+     //获得省
+     var select_province;
+     qqmapsdk.geocoder({
+       address: city,
+       success: function (res) {
+         select_province = res.result.address_components.province
+         console.log(select_province)
+         wx.setStorageSync('select_address', res.result)
+         //插入全部
+         var a = that.data.cityleft[select_province][city];
+         if (a.indexOf('全部') == -1) {
+           a.unshift('全部')
+         }
+         that.setData({
+           select_province: select_province,
+           select2: city,
+         })
+       }
+     })
+     if (!app.globalData.select_city){
+      var province = wx.getStorageSync('address').province;//当前的省
+      var city = wx.getStorageSync('address').city;//当前的省市
+      var district = that.data.select3;//选择的区
+      var address = province + city;
+      console.log('请求的城市' + province + city + district)
+      //获取首页轮播图与夏令营列表
     wx.request({
       url: app.globalData.url + 'index/SummerCamp/getBanner',
       data: {
-        address:address
+        address:address,
+        shaixuan:shaixuan
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -248,16 +312,48 @@ onPageScroll: function(res) {
         console.log(res.data)
         that.setData({
           imgUrls: res.data[0],
-          camp:res.data[1]
+          camp:res.data[1],
+          address:address
         })
       }
     })
+     }else{
+      //从选择的省市筛选
+      var city = app.globalData.select_city;
+      qqmapsdk.geocoder({
+        address: city,
+        success: function (res) {
+          select_province = res.result.address_components.province
+          var address = select_province + city 
+          wx.request({
+            url: app.globalData.url + 'index/SummerCamp/getBanner',
+            data: {
+              address:address,
+              shaixuan:shaixuan
+            },
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res) {
+              console.log(res.data)
+              that.setData({
+                imgUrls: res.data[0],
+                camp:res.data[1],
+                address:address
+              })
+            }
+          })
+        }
+      })
+     }
+    //获取banner
+    
   },
   getCamp(order){
     var that=this;
-    var province = wx.getStorageSync('address').province;//当前的省
-    var city = wx.getStorageSync('address').city;//当前的省市
-    var address = province + city;
+    // var province = wx.getStorageSync('address').province;//当前的省
+    // var city = wx.getStorageSync('address').city;//当前的省市
+    var address = that.data.address;
     wx.request({
       url: app.globalData.url + 'index/SummerCamp/getCampByOrder',
       data: {

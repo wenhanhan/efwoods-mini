@@ -19,7 +19,7 @@
         <i-tab key="tab1" bindtap="fenlei" title="{{fenlei}}"></i-tab>
         <view class="line"></view>
         <i-tab key="tab2" bindtap="paixu" title="{{paixu}}"></i-tab>
-      </i-tabs>
+      </i-tabs> 
     </view>
   </view>
 

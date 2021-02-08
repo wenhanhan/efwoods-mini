@@ -6,11 +6,10 @@
           <icon class='iconfont_address icon-dizhi'></icon>
           <view class='home_address'>{{city}}</view>
         </view>
-        <view class="home_search_box"> 
-          <view class='home_search' bindtap='search'>
-            <icon class='iconfont_search icon-soushuo'></icon>
-            <text>点击搜索课程以及教师</text>
-          </view>
+          <view class='search_box' style="width:80%;">
+            <input  class='search_input' placeholder='请输入夏令营信息' placeholder-class="placeholderStyle" bindconfirm="search" confirm-type="search" value='{{text}}' bindinput="input">
+            </input>
+            <icon style="left:22%;" class='iconfont icon-sousuo'></icon>
         </view>
         <view class="home_top_bar_right">
           <icon bindtap="more_info" style="z-index:2000" class='iconfont_more icon-gengduo'></icon>

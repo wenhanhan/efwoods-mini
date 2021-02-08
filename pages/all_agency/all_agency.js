@@ -671,7 +671,7 @@ Page({
     wx.showLoading({
       title: '搜索中…',
     })
-    var text = that.data.text;
+    var text = that.data.text.trim();
     var type = that.data.fenlei_index == -1 ? '' : that.data.fenlei_index;//课程类别
     if (!app.globalData.select_city) {
       var province = wx.getStorageSync('address').province;//当前的省

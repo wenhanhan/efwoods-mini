@@ -64,7 +64,17 @@ Page({
     for(var i=0;i<arr.length;i++){
      b.push(arr[i].opt[arr[i].selected])
     }
+    //页面回传参数
     console.log(b)
+    //向上一页面传值
+    let pages = getCurrentPages();//获取page
+    let prevPage = pages[pages.length-2];//上一个页面（父页面）
+    prevPage.setData({
+      shaixuan:JSON.stringify(b),
+    })
+    wx.navigateBack({
+      delta:1
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -87,7 +97,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.reset()
   },
 
   /**
