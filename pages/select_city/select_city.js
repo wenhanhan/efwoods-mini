@@ -107,7 +107,8 @@ Page({
     let prevPage = pages[pages.length-2];//上一个页面（父页面）
     prevPage.setData({
       page:1,
-      noMoreData:false
+      noMoreData:false,
+      is_select_city:true
     })
     wx.navigateBack({
       delta:1
@@ -195,7 +196,8 @@ Page({
      let prevPage = pages[pages.length-2];//上一个页面（父页面）
      prevPage.setData({
        page:1,
-       noMoreData:false
+       noMoreData:false,
+       is_select_city:true
      })
     wx.navigateBack({
       delta: 1

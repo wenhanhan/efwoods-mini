@@ -6,12 +6,12 @@
   "i-toast": "../../dist/toast/index",
   "i-spin": "../../dist/spin/index"
   },
- "navigationBarBackgroundColor": "#BFA24B",
+ "navigationBarBackgroundColor": "#FACC3C",
  "backgroundColor": "#BFA24B",
   "navigationBarTextStyle": "white",
   "navigationBarTitleText": "所有机构",
   "backgroundTextStyle": "light",
   "enablePullDownRefresh": false,
-  "backgroundColorTop": "#BFA24B",
+  "backgroundColorTop": "#FACC3C",
   "backgroundColorBottom": "#ffffff"
 }

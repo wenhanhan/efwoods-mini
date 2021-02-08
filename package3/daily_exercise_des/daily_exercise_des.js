@@ -215,9 +215,29 @@ Page({
    */
   onLoad: function (options) {
     var isIphoneX = app.globalData.isIphoneX;
+    var that=this;
     this.setData({
       video_id: options.video_id,
       isIphoneX: isIphoneX
+    })
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.request({
+      url: app.globalData.url + 'index/Dailyexercise/getVideoDes',
+      data: {
+        video_id:options.video_id
+      },
+      header: {
+        'content-type': 'application/json' // 默认值 
+      },
+      success(res){
+        console.log(res.data)
+        wx.hideLoading({})
+        that.setData({
+          course:res.data
+        })
+      }
     })
     console.log(options)
   },
@@ -239,21 +259,6 @@ Page({
       userInfo:wx.getStorageSync('userInfo')
     })
     this.getVideoJudge(this.data.video_id,0)
-    wx.request({
-      url: app.globalData.url + 'index/Dailyexercise/getVideoDes',
-      data: {
-        video_id: video_id
-      },
-      header: {
-        'content-type': 'application/json' // 默认值 
-      },
-      success(res){
-        console.log(res.data)
-        that.setData({
-          course:res.data
-        })
-      }
-    })
   },
   getVideoJudge(video_id,order){
     var that=this;

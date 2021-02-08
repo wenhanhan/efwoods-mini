@@ -2,7 +2,7 @@
   <view class="top">
     <view class="name">
       <text>{{name}}</text>
-      <text style="font-weight:500;font-size:36rpx;">Lv{{level}}</text>
+      <text style="font-weight:500;font-size:34rpx;">LV{{level}}</text>
     </view>
     <view class="headimg">
       <image src="{{headimg}}"></image>
@@ -11,15 +11,15 @@
   <view class="user_data">
     <view class="fensi">
       粉丝数
-      <text style="color:#0C0C0C;font-size:46rpx;margin-left:4rpx;">{{fensi}}</text>
+      <text style="font-weight:500;color:#0C0C0C;font-size:46rpx;margin-left:4rpx;">{{fensi}}</text>
     </view>
     <view class="qiandao">
       签到数
-      <text style="color:#0C0C0C;font-size:46rpx;margin-left:4rpx;">{{sign}}</text>
+      <text style="font-weight:500;color:#0C0C0C;font-size:46rpx;margin-left:4rpx;">{{sign}}</text>
     </view>
     <view class="show">
       教练秀
-      <text style="color:#0C0C0C;font-size:46rpx;margin-left:4rpx;">{{show}}</text>次
+      <text style="font-weight:500;color:#0C0C0C;font-size:46rpx;margin-left:4rpx;">{{show}}</text>次
     </view>
   </view>
   <view class="my_level">
@@ -54,22 +54,22 @@
     </view>
     <view class="level_txt_box">
         <view class="level_txt">
-          Lv1
+          LV1
         </view>
         <view class="level_txt">
-          Lv2
+          LV2
         </view>
         <view class="level_txt">
-          Lv3
+          LV3
         </view>
         <view class="level_txt">
-          Lv4
+          LV4
         </view>
         <view class="level_txt">
-          Lv5
+          LV5
         </view>
         <view class="level_txt">
-          Lv6
+          LV6
         </view>
       </view>
     <view class="line_box">

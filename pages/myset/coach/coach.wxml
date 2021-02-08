@@ -194,7 +194,7 @@
         </view>
         <view class='set_sign'>预约管理</view>
         <image class="more" src="/img/user/more.png"></image>
-      </view>
+      </view> 
       <view class='set_box_line' bindtap="myshow">
         <view class='set_icon'>
           <image src='/img/user/set_show.png'></image>

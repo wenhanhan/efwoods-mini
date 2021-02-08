@@ -5,6 +5,7 @@
       <i-tab key="tab1" title="课程"></i-tab>
       <i-tab key="tab2" title="教练"></i-tab>
       <i-tab key="tab3" title="视频"></i-tab>
+      <i-tab key="tab4" title="夏令营"></i-tab>
     </i-tabs>
   </view>
 
@@ -153,6 +154,23 @@
       <text>您还没有收藏任何视频～</text> 
     </view>
   </view>
+  </view>
+
+  <!-- 夏令营渲染列表 -->
+  <view class="favor_box" style="width:100%" wx:if="{{current=='tab4'}}">
+    <view class="camp_item" wx:for="{{camp}}" bindtap="view" data-id="{{item.Id}}">
+      <view class="camp_item_left">
+        <image src="{{item.cover}}"></image>
+      </view>
+      <view class="camp_item_right">
+        <view class="camp_name">
+          <text class="shenglue">{{item.title}}</text>
+        </view>
+        <view class="camp_people">招生对象:{{item.people}}</view>
+        <view class="camp_tag"><text wx:for="{{item.tag}}" wx:for-item="tag" class="tag">{{tag}}</text></view>
+        <view class="camp_price"><text style="font-size:26rpx;">￥</text>{{item.price}}/<text style="font-size:28rpx;color:#000000;font-weight:normal">{{item.duration}}</text></view>
+      </view>
+    </view>
   </view>
 
 

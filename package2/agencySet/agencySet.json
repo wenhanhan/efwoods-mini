@@ -6,8 +6,8 @@
     "i-toast": "../../dist/toast/index",
     "i-spin": "../../dist/spin/index"
   },
-  "navigationBarBackgroundColor": "#ffffff",
-  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#facc3c",
+  "navigationBarTextStyle": "white",
   "navigationBarTitleText": "机构管理",
   "backgroundColor": "#eeeeee",
   "backgroundTextStyle": "light",

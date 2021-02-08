@@ -92,7 +92,7 @@
       <image mode="aspectFill" src="/img/home/service.png"></image>
       <text>留学服务</text>
     </navigator>
-    <navigator class="nav_item" target="miniProgram" app-id="wx83f243f73b48c56c" hover-class="none">
+    <navigator class="nav_item" url="/package3/summer_camp/summer_camp" hover-class="none">
       <image mode="aspectFill" src="/img/home/camp.png"></image>
       <text>夏令营</text>
     </navigator>
@@ -103,11 +103,13 @@
     <navigator url="/package3/daily_exercise/daily_exercise" hover-class="none">
       <image src="https://cdn.icloudapi.cn/daka.png"></image>
     </navigator>
-    <image style="margin-top:16rpx;" src="https://cdn.icloudapi.cn/paihang.png"></image>
+    <navigator url="/package3/daily_exercise_ranking/daily_exercise_ranking" hover-class="none">
+      <image style="margin-top:16rpx;" src="https://cdn.icloudapi.cn/paihang.png"></image>
+    </navigator>
   </view>
-  <view class="quick_select_right">
-    <image src="https://cdn.icloudapi.cn/ruzhu.png"></image>
-  </view>
+    <view class="quick_select_right" bindtap="join">
+        <image src="https://cdn.icloudapi.cn/ruzhu.png"></image>
+    </view>
 </view>
 <!-- 好课推荐 -->
 <view class="recommend_course">
@@ -116,37 +118,43 @@
       <view class="start_line"></view>
       <text class='menu_text'>好课推荐</text>
     </view>
-    <view class="fresh">
+    <view class="fresh" bindtap="fresh">
       <text>换一批</text>
       <icon class='iconfont_fresh icon-caozuo-shuaxin'></icon>
     </view>
   </view>
   <view class="recommend_course_box">
-    <view class="recommend_course_item" wx:for="{{3}}">
+    <view class="recommend_course_item" wx:for="{{favor_course}}" bindtap="course_des" data-courid="{{item.Id}}" data-courtype="{{item.courType}}" data-distance="{{item.distance}}">
       <view class="recommend_course_item_left">
-        <image src=""></image>
+        <image src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}}"></image>
       </view>
       <view class="recommend_course_item_right">
         <view class="recommend_course_item_title">
-          测试
+          {{item.courName}}
         </view>
         <view class="recommend_course_tag">
-          测试/测试
+          {{item.courAddressName}}/{{item.courTags}}
         </view>
         <view class="recommend_course_price">
-          ￥<text style="font-size:32rpx;font-weight:600">500</text>
+          ￥<text style="font-size:32rpx;font-weight:600">{{item.price}}</text>
         </view>
         <view class="recommend_course_socre">
           <text>评分</text>
-            <block wx:for="{{[1,2,3]}}" wx:key="id">
+            <block wx:for="{{item.star}}" wx:key="id">
               <icon  class='iconfont_star icon-xingji3'></icon>
             </block>
-            <block wx:for="{{5-3}}">
+            <block wx:for="{{5-item.star}}">
               <icon  class='iconfont_star icon-xingji4'></icon>
             </block>
         </view>
       </view>
-      <view class="recommend_course_distance">5km</view>
+    <view class="recommend_course_distance">{{item.distance}}</view>
+    </view>
+    <view class='nodata' wx:if="{{favor_course.length==0}}">
+      <icon style="font-size:90rpx;" class='iconfont_resource icon-meiyouneirong'></icon>
+        <view class='tips' style="color:#d1cfcf">
+          <text>暂无课程资源～</text>
+        </view>
     </view>
   </view>
 </view>
@@ -157,7 +165,7 @@
       <view class="start_line"></view>
       <text class='menu_text'>热门动态</text>
     </view>
-    <view class="hot-trends-more">
+    <view class="hot-trends-more" bindtap="more_hot">
       <text>更多</text>
       <icon class='iconfont_daohang icon-xiangyou-daohang'></icon>
     </view>
@@ -166,7 +174,7 @@
     <block wx:for="{{video}}" wx:if="{{index<4}}" wx:key="id">
       <view class='home_video_box'>
           <view class="video_tag">
-            <text>{{item.type}}</text>
+            <text>{{item.type_name}}</text>
           </view>
           <view class="show-play">
             <image src="/img/home/play.png" mode="aspectFill"></image>
@@ -201,18 +209,18 @@
       <view class="start_line"></view>
       <text class='menu_text'>每日一练</text>
     </view>
-    <view class="hot-trends-more">
+    <view class="hot-trends-more" bindtap="more_exercise">
       <text>更多</text>
       <icon class='iconfont_daohang icon-xiangyou-daohang'></icon>
     </view>
   </view>
   <view class="daily-exercise-box">
-    <view class="daily-exercise-item" wx:for="{{[1,2,3,4]}}">
-      <view class="daily-exercise-tag"><text>HOT</text></view>
-      <image src=""></image>
+    <view class="daily-exercise-item" wx:for="{{dailyExercise}}" bindtap="viewDailyExercise" data-id="{{item.Id}}">
+      <view wx:if="{{item.is_hot==1}}" class="daily-exercise-tag"><text>HOT</text></view>
+      <image src="{{item.cover}}"></image>
       <view class="daily-exercise-text">
-        <text class="daily-exercise-title">测试</text>
-        <text class="daily-exercise-prop">测试·测试</text>
+        <text class="daily-exercise-title">{{item.title}}</text>
+        <text class="daily-exercise-prop">{{item.belong}}·{{item.duration}}</text>
       </view>
     </view>
   </view>

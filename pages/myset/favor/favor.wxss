@@ -99,3 +99,78 @@ page{
   font-size: 20rpx;
   color: #1D1C1C;
 }
+/* 夏令营 */
+.camp_item{
+  width: 100%;
+  height: 270rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: white;
+  border-bottom: 1px solid #eeeeee;
+  padding: 0 24rpx;
+}
+.camp_item_left{
+  width: 35%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.camp_item_left image{
+  width: 220rpx;
+  height: 200rpx;
+  border-radius: 12rpx;
+}
+.camp_item_right{
+  width: 65%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.camp_name,.camp_people,.camp_tag,.camp_price{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 6rpx 0;
+}
+.camp_name{
+  font-size: 32rpx;
+  color: #000000;
+  font-weight: 500;
+}
+.shenglue{
+  width: 80%;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+.camp_people{
+  font-size: 28rpx;
+  color: #3B3B3B;
+}
+.tag{
+  font-size: 20rpx;
+  color: #4E4E4E;
+  width: auto;
+  padding: 4rpx 10rpx;
+  height: 36rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4rpx;
+  border: 1px solid #C9C9C9;
+  margin-right: 16rpx;
+  box-sizing: border-box;
+}
+.camp_price{
+  font-size: 32rpx;
+  color: #ff6a00;
+  font-weight: 500;
+  align-items: baseline;
+}

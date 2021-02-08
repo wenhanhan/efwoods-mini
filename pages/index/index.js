@@ -9,6 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    dailyExercise:[],//每日一练
+    is_select_city:false,
     //新的登录方式
     openid: '',
     userInfo: {},
@@ -47,6 +49,7 @@ Page({
    */
   onLoad: function (options) {
     app.editTabbar();
+    var that=this;
     var isIphoneX = app.globalData.isIphoneX;
     this.setData({
       isIphoneX: isIphoneX
@@ -85,7 +88,88 @@ Page({
         content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
       })
     }
-    
+    that.getRecommendCourse();
+    that.getDailtExercise();
+  },
+  getDailtExercise(){
+    var that=this;
+    wx.request({
+      url: app.globalData.url+'index/Recommend/getDailyExercise',
+      data:{},
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res){
+        console.log(res.data)
+        that.setData({
+          dailyExercise:res.data
+        })
+      }
+    })
+  },
+  getRecommendCourse(){
+    var that=this;
+   //获取推荐课程
+   if (!app.globalData.select_city) {
+    var province = wx.getStorageSync('address').province;//当前的省
+    var city = wx.getStorageSync('address').city;//当前的省市
+    var latitude = wx.getStorageSync('address').location.lat;//本人实际位置的经纬度
+    console.log(latitude)
+    var longitude = wx.getStorageSync('address').location.lng;
+    var address = province + city;//（只保留省市）
+    wx.request({
+      url: app.globalData.url + 'index/Recommend/homeRecommend',
+      data: {
+        address: address,
+        latitude: latitude,
+        longitude: longitude,
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        // wx.hideLoading()
+        that.setData({
+          favor_course: res.data,
+        })
+      }
+    })
+  } else {
+    //根据选择的位置进行筛选
+    console.log(44444)
+    var city = app.globalData.select_city;
+    var select_province = '';
+    qqmapsdk.geocoder({
+      address: city,
+      success: function (res) {
+        console.log(res.result)
+        select_province = res.result.address_components.province
+        var latitude = wx.getStorageSync('address').location.lat;//本人实际位置的经纬度
+        var longitude = wx.getStorageSync('address').location.lng;
+        console.log('请求的城市' + select_province + city)
+        var address = select_province + city
+        wx.request({
+          url: app.globalData.url + 'index/Recommend/homeRecommend',
+          data: {
+            address: address,
+            latitude: latitude,
+            longitude: longitude,
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success(res) {
+            console.log(res.data)
+            // wx.hideLoading()
+            that.setData({
+              favor_course: res.data
+            })
+          }
+        })
+      }
+    })
+  }
   },
   /**
    * 生命周期函数--监听页面显示
@@ -93,6 +177,10 @@ Page({
   onShow: function () {
     app.hidetabbar();
     var that=this;
+    if(this.data.is_select_city){
+      console.log(888)
+      that.getRecommendCourse()
+    }
     wx.removeStorageSync('new_city');//清除切换城市选择的新的城市
     //获取openid 并判断用户身份
     app.getOpenid().then(function (res) {
@@ -121,17 +209,6 @@ Page({
         console.log(res.data);
       }
     });
-    // //获取用户信息
-    // app.getUserInfo().then(function (res) {
-    //   if (res.status == 200) {
-    //     that.setData({
-    //       userInfo: wx.getStorageSync('userInfo')
-    //     })
-    //     console.log(that.data.userInfo)
-    //   } else {
-    //     console.log(res.data);
-    //   }
-    // });
     
     //信息再次获取
     app.globalData.identity = wx.getStorageSync('identity')
@@ -152,75 +229,6 @@ Page({
         city: that.substr(select_city)
       })
     }
-
-    //获取推荐课程
-    if (!app.globalData.select_city) {
-      var province = wx.getStorageSync('address').province;//当前的省
-      var city = wx.getStorageSync('address').city;//当前的省市
-      var latitude = wx.getStorageSync('address').location.lat;//本人实际位置的经纬度
-      console.log(latitude)
-      var longitude = wx.getStorageSync('address').location.lng;
-      var address = province + city;//（只保留省市）
-      wx.request({
-        url: app.globalData.url + 'index/Recommend/homeRecommend',
-        data: {
-          address: address,
-          latitude: latitude,
-          longitude: longitude,
-        },
-        header: {
-          'content-type': 'application/json' // 默认值
-        },
-        success(res) {
-          console.log(res.data)
-          // wx.hideLoading()
-          that.setData({
-            favor_course: res.data[0],
-            favor_teacher: res.data[1],
-            home_course:res.data[2],
-            home_teacher:res.data[3]
-          })
-        }
-      })
-    } else {
-      //根据选择的位置进行筛选
-      console.log(44444)
-      var city = app.globalData.select_city;
-      var select_province = '';
-      qqmapsdk.geocoder({
-        address: city,
-        success: function (res) {
-          console.log(res.result)
-          select_province = res.result.address_components.province
-          var latitude = wx.getStorageSync('address').location.lat;//本人实际位置的经纬度
-          var longitude = wx.getStorageSync('address').location.lng;
-          console.log('请求的城市' + select_province + city)
-          var address = select_province + city
-          wx.request({
-            url: app.globalData.url + 'index/Recommend/homeRecommend',
-            data: {
-              address: address,
-              latitude: latitude,
-              longitude: longitude,
-            },
-            header: {
-              'content-type': 'application/json' // 默认值
-            },
-            success(res) {
-              console.log(res.data)
-              // wx.hideLoading()
-              that.setData({
-                favor_course: res.data[0],
-                favor_teacher: res.data[1],
-                home_course: res.data[2],
-                home_teacher: res.data[3]
-              })
-            }
-          })
-        }
-      })
-    }
-
     //首页轮播图
     wx.request({
       url: app.globalData.url + 'index/Lunbo/getHomeBanner',
@@ -591,6 +599,51 @@ check:function(){
     }else{
       app.login()
     }
+  },
+  //快速入驻
+  join:function(){
+    wx.navigateTo({
+      url: '../share/share',
+    })
+  },
+    //课程点击跳转
+    course_des:function(e){
+      var cour_id = e.currentTarget.dataset.courid;//课程id
+      var distance = e.currentTarget.dataset.distance;//课程距离
+      var cour_type = e.currentTarget.dataset.courtype;//课程类别
+      this.setData({
+        is_select_city:false
+      })
+      wx.navigateTo({
+        url: '../cour_detail/cour_detail?cour_id=' + cour_id + '&distance=' + distance + '&cour_type=' + cour_type,
+      })
+    },
+  fresh:function(e){
+    wx.showLoading({
+      title: '正在寻找~',
+    })
+    setTimeout(() => {
+      wx.hideLoading({
+      })
+    }, 500);
+    this.getRecommendCourse()
+  },
+  //更多热门动态
+  more_hot:function(){
+    wx.switchTab({
+      url: '../show/show',
+    })
+  },
+  more_exercise:function(){
+    wx.navigateTo({
+      url: '../../package3/daily_exercise/daily_exercise',
+    })
+  },
+  viewDailyExercise:function(e){
+    var id=e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../../package3/daily_exercise_des/daily_exercise_des?video_id='+id,
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

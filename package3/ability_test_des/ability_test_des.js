@@ -38,7 +38,7 @@ select:function(e){
       title: '正在提交',
     })
     setTimeout(function(){
-      wx.reLaunch({
+      wx.redirectTo({
         url: '../ability_test_res/ability_test_res?sub_id='+sub_id+'&score='+score+'&length='+topic.length+'&type_name='+type_name,
       })
     },1000)

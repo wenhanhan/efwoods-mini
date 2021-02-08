@@ -14,7 +14,9 @@ Page({
     course: [],
 
     //收藏教师列表  接口请求
-    teacher: []
+    teacher: [],
+    //夏令营
+    camp:[]
      
   },
 
@@ -135,7 +137,7 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res){
-        console.log(res.data)
+        // console.log(res.data)
         that.setData({
           course:res.data
         })
@@ -151,7 +153,7 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        console.log(res.data)
+        // console.log(res.data)
         that.setData({
           teacher: res.data
         })
@@ -169,9 +171,27 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        console.log(res.data)
+        // console.log(res.data)
         that.setData({
           video: res.data
+        })
+      }
+
+    })
+
+    //收藏的夏令营
+    wx.request({
+      url: app.globalData.url + 'index/SummerCamp/getFavorCamp',
+      data: {
+        openid: openid
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          camp: res.data
         })
       }
 
@@ -187,6 +207,13 @@ Page({
     // console.log('../show_des/show_des?video='+video.video + '&title=' + video.title + '&name=' + video.nickName + '&img=' + video.avatarUrl + '&openid=' + video.openid + '&favor=' + video.favor + '&videoid=' + video.Id)
     wx.navigateTo({
       url: '../../show_des/show_des?video=' + video.video + '&title=' + encodeURIComponent(video.title) + '&name=' + encodeURIComponent(video.nickName) + '&img=' + video.avatarUrl + '&openid=' + video.openid + '&favor=' + video.favor + '&videoid=' + video.Id+'&cover='+encodeURIComponent(video.cover),
+    })
+  },
+
+  view:function(e){
+    var camp_id=e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/package3/summer_camp_des/summer_camp_des?camp_id='+camp_id,
     })
   },
 

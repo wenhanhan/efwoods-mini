@@ -253,3 +253,6 @@ page{
   color: #4B4A4A;
   /* font-weight: 600; */
 }
+.iconfont_level1{
+  font-size: 32rpx;
+}

@@ -2,7 +2,7 @@ page{
  background: -webkit-linear-gradient(#EC5A5A, #FFEDCF); /* Safari 5.1 - 6.0 */
   background: -o-linear-gradient(#EC5A5A, #FFEDCF); /* Opera 11.1 - 12.0 */
   background: -moz-linear-gradient(#EC5A5A, #FFEDCF); /* Firefox 3.6 - 15 */
-  background: linear-gradient(#EC5A5A,#FFEDCF); /* 标准的语法 */
+  background: linear-gradient(#FACC3C,#FFEDCF); /* 标准的语法 */
 }
 .container{
   font-family: Microsoft YaHei;
@@ -72,8 +72,8 @@ page{
   color: white;
   text-align: center;
   border-radius: 44rpx;
-  background: #F83939;
-  opacity: 0.6;
+  background: #FACC3C;
+  /* opacity: 0.6; */
   display: flex;
   margin: 0 auto;
   position: relative;

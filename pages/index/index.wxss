@@ -31,6 +31,7 @@
 @import '/icon/dingyue.wxss';
 @import '/icon/fresh.wxss';
 @import '/icon/yuyue_daohang.wxss';
+@import '/icon/noresource.wxss';
 .home_top_bar_box{
   width: 100%;
   height: 90rpx;
@@ -445,7 +446,7 @@ color: transparent;
   font-weight: 500;
   overflow:hidden;
   white-space:nowrap;
-text-overflow:ellipsis;
+  text-overflow:ellipsis;
 }
 
 
@@ -566,8 +567,8 @@ text-overflow:ellipsis;
 }
 .fresh{
   width: 136rpx;
-  height: 40rpx;
-  border-radius: 25rpx;
+  height: 45rpx;
+  border-radius: 30rpx;
   border: 1px solid #C7C7C7;
   display: flex;
   justify-content: center;
@@ -606,7 +607,7 @@ text-overflow:ellipsis;
 .recommend_course_item_left{
   width: 190rpx;
   height: 190rpx;
-  background:red;
+  /* background:red; */
   border-radius: 10rpx;
 }
 .recommend_course_item_left image{
@@ -657,12 +658,12 @@ text-overflow:ellipsis;
   align-items: center;
   font-size: 22rpx;
   color:#676767; 
+  align-items: baseline;
 }
 .iconfont_star{
   font-size: 26rpx;
   display: flex;
   align-items: center;
-  margin:0 auto;
 }
 /* 热门动态 */
 .hot-trends{
@@ -704,7 +705,7 @@ text-overflow:ellipsis;
   position: absolute;
   right: 0;
   top: 0;
-  background: #FF6700;
+  background: #fe8711;
   text-align: center;
   line-height: 36rpx;
   font-size: 20rpx;
@@ -735,7 +736,7 @@ text-overflow:ellipsis;
   width: 338rpx;
   height: 192rpx;
   position: relative;
-  background: red;
+  /* background: red; */
   margin-bottom: 28rpx;
   border-radius: 10rpx;
 }
@@ -782,4 +783,10 @@ text-overflow:ellipsis;
   width: 50rpx;
   height: 1rpx;
   background-color: #979797;
+}
+.nodata{
+  height: 180rpx;
+}
+.tips{
+  font-size:22rpx;
 }

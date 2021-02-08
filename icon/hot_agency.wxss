@@ -10,7 +10,7 @@
 .iconfont_hot_agency {
   font-family: "iconfont" !important;
   font-size: 40rpx;
-  color: #FF5272;
+  color: #ff6a00;
   display: flex;
   margin-right: 10rpx;
   font-style: normal;

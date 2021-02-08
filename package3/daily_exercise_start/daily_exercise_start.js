@@ -87,7 +87,7 @@ Page({
         .then(() => {
           // 清空计时器 将结果提交 跳转到排行榜页面
           clearInterval(timer)
-          wx.navigateTo({
+          wx.redirectTo({
             url: '/package3/daily_exercise_ranking/daily_exercise_ranking?time='+time+'&video_id='+that.data.video_id,
           })
         })
@@ -115,7 +115,7 @@ Page({
       .then(() => {
         // 清空计时器 将结果提交 跳转到排行榜页面
         clearInterval(timer)
-        wx.navigateTo({
+        wx.redirectTo({
           url: '/package3/daily_exercise_ranking/daily_exercise_ranking?time='+time+'&video_id='+that.data.video_id,
         })
       })

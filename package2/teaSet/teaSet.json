@@ -5,8 +5,8 @@
     "i-message": "../../dist/message/index",
     "i-spin": "../../dist/spin/index"
   },
-  "navigationBarBackgroundColor": "#ffffff",
-  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#facc3c",
+  "navigationBarTextStyle": "white",
   "navigationBarTitleText": "教师管理",
   "backgroundColor": "#eeeeee",
   "backgroundTextStyle": "light",

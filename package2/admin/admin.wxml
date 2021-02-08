@@ -78,17 +78,17 @@
         <image src='/img/user/course.png'></image>
       </view>
       <view class='set_sign'>课程管理</view>
-      <icon class='iconfont_right icon-right_daohang'></icon>
+      <image class="more" src="/img/user/more.png"></image>
     </view>
   </navigator>
 
 <navigator hover-class='none' url='../teaSet/teaSet'>
     <view class='set_box_line'>
       <view class='set_icon'>
-        <image src='/img/user/set_tea.png'></image>
+        <image src='/img/user/info.png'></image>
       </view>
       <view class='set_sign'>教师管理</view>
-      <icon class='iconfont_right icon-right_daohang'></icon>
+      <image class="more" src="/img/user/more.png"></image>
     </view>
 </navigator>
 
@@ -98,7 +98,7 @@
         <image src='/img/user/agency.png'></image>
       </view>
       <view class='set_sign'>机构管理</view>
-      <icon class='iconfont_right icon-right_daohang'></icon>
+      <image class="more" src="/img/user/more.png"></image>
     </view>
 </navigator>
 

@@ -31,7 +31,7 @@
   justify-content: center;
   align-items: center;
   font-size: 24rpx;
-  color: blue;
+  color: #7E7E7E;
 }
 .start_search_box{
   width: 95%;
