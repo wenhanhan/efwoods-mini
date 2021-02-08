@@ -35,7 +35,9 @@
     <view id="menu-nav" class="{{is_fix?'tab_bar_fix':'tab_bar'}}">
       <view class="tab_item {{index==tab_idx?'on':''}}" bindtap="tab" data-idx="{{index}}" wx:for="{{tab}}">{{item}}
         <image wx:if="{{index==3}}" src="../img/camp/shaixuan.png"></image>
-        <image style="width:20rpx;height:20rpx" wx:if="{{index==2}}" src="../img/camp/up_down.png"></image>
+        <image style="width:20rpx;height:20rpx" wx:if="{{tab_idx==2&&price_order&&index==2}}" src="../img/camp/down.png"></image>
+        <image style="width:20rpx;height:20rpx" wx:if="{{tab_idx==2&&!price_order&&index==2}}" src="../img/camp/up.png"></image>
+        <image style="width:20rpx;height:20rpx" wx:if="{{tab_idx!=2&&!price_order&&index==2}}" src="../img/camp/auto.png"></image>
       </view>
     </view>
     <view class="camp_item" wx:for="{{camp}}" bindtap="view" data-id="{{item.Id}}">

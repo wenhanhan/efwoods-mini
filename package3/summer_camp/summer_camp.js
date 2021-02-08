@@ -8,6 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    price_order:false,
+    order:0,//默认按综合排序
     is_fix:false,
     top_bar_height:'',//导航条高度
     swiper_height:'',
@@ -41,9 +43,33 @@ Page({
       }
     },
   tab:function(e){
+    var that=this;
+    var price_order=this.data.price_order;
+    var idx=e.currentTarget.dataset.idx
+    
+    if(idx==this.data.tab_idx&&idx==2){
+      price_order=!price_order
+      that.setData({
+        price_order:price_order
+      })
+    }
     this.setData({
       tab_idx:e.currentTarget.dataset.idx
     })
+    if(idx==0){
+      that.getCamp(0)
+    }else if(idx==1){
+      that.getCamp(1)
+    }else if(that.data.price_order&&idx==2){
+      that.getCamp(21)
+    }else if(!that.data.price_order&&idx==2){
+      that.getCamp(22)
+    }else{
+      wx.navigateTo({
+        url: '../summer_camp_shaixuan/summer_camp_shaixuan',
+      })
+    }
+    //开启排序
   },
   //选择城市跳转
   select_city:function(){
@@ -223,6 +249,28 @@ onPageScroll: function(res) {
         that.setData({
           imgUrls: res.data[0],
           camp:res.data[1]
+        })
+      }
+    })
+  },
+  getCamp(order){
+    var that=this;
+    var province = wx.getStorageSync('address').province;//当前的省
+    var city = wx.getStorageSync('address').city;//当前的省市
+    var address = province + city;
+    wx.request({
+      url: app.globalData.url + 'index/SummerCamp/getCampByOrder',
+      data: {
+        address:address,
+        order:order
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          camp:res.data
         })
       }
     })
