@@ -42,7 +42,7 @@
             <view class="status" wx:if="{{item.is_overdate==0}}">进行中</view>
             <view class="status" wx:elif="{{item.is_overdate==1}}">未开始</view>
             <view class="status" style="background:#ABABAB" wx:else>已结束</view>
-            <image mode="aspectFit" src="{{item.cover}}"></image>
+            <image  src="{{item.cover}}"></image>
             <view class="sports_info">
               <view class="sports_title"><text wx:if="{{item.is_hot}}" class="hot">热门</text>{{item.title}}</view>
               <view class="sports_time">活动时间:{{item.begin_time}} 至 {{item.end_time}}</view>

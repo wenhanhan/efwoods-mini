@@ -328,7 +328,7 @@ App({
           "pagePath": "/pages/show/show",
           "iconPath": "icon/show.png",
           "isSpecial": true,
-          "text": "教练秀"
+          "text": "动态"
         },
         {
           "pagePath": "/pages/teacher/teacher",

@@ -1,6 +1,6 @@
 <view class="container">
   <view class="bk"></view>
-  <view class="title">测试</view>
+  <view class="title">{{topic_title}}</view>
   <view class="content">
     <view class="deco">
       <image src="/img/ability_test/test_bk.png"></image>
@@ -8,7 +8,7 @@
         <text style="transform:translateY(-6px);">{{currenttab+1}}</text><text style="font-size:52rpx;color:#979797;transform:translateY(-6px);transform:rotate(20deg);">/</text><text style="transform:translateY(6px);color:#979797;font-size:28rpx">{{topic.length}}</text>
       </view>
     </view>
-    <view class="topic">
+    <view class="topic"> 
       <swiper class="tab-content" current="{{currenttab}}" duration="300" bindchange="switchtab" style="height:100%">
         <swiper-item wx:for="{{topic}}" wx:for-item="child" catchtouchmove="{{false}}">
           <view class="topic_title">{{child.title}}</view>
@@ -24,7 +24,7 @@
           </view>
           <view class="feedback" wx:if="{{option_idx!=child.right[0]&&option_idx!=-1}}">
             <image src="/img/ability_test/cry.png"></image>
-            <text>正确答案{{child.right[1]}}</text>
+            <text style="color:#FF0000">正确答案{{child.right[1]}}</text>
           </view>
         </swiper-item>
       </swiper>

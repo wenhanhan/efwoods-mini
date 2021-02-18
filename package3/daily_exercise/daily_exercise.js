@@ -175,6 +175,10 @@ onPageScroll: function(res) {
   onShow: function () {
     var that=this;
     that.getVideo('一年级',0)
+    that.setData({
+      currentTab: 0,
+      currentClass:0
+    })
   },
 
   /**

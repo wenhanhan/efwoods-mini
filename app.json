@@ -77,7 +77,6 @@
     "pages/tw_update/tw_update",
     "pages/tw_preview/tw_preview",
     "pages/edit/edit",
-    "pages/myset/user/user",
     "pages/myset/help/help"
   ],
   "window": {
@@ -186,6 +185,12 @@
     "packages": [
       "teacher",
       "admin"
+    ]
+  },
+  "pages/index/index":{
+    "network": "all",
+    "packages": [
+      "ceping"
     ]
   }
 },

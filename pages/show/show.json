@@ -7,7 +7,7 @@
     "i-load-more": "../../dist/load-more/index"
   },
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "教练秀",
+  "navigationBarTitleText": "动态",
   "backgroundColor": "#eeeeee",
   "backgroundTextStyle": "light",
   "enablePullDownRefresh": true

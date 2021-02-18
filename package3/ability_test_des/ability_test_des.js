@@ -13,6 +13,7 @@ Page({
     topic:[
     ],
     type_name:'',
+    topic_title:''
   },
 select:function(e){
   var that=this;
@@ -26,6 +27,7 @@ select:function(e){
     option_idx:idx
   })
   //判断正误
+  console.log(idx)
   if(idx==topic[topic_idx].right[0]*1){
     score++
     this.setData({
@@ -83,7 +85,8 @@ switchtab:function(e){
         console.log(res.data)
         wx.hideLoading({})
         that.setData({
-          topic:res.data.subject
+          topic:res.data.subject,
+          topic_title:res.data.title
         })
       }
     })
@@ -129,13 +132,6 @@ switchtab:function(e){
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 })

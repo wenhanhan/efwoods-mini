@@ -45,7 +45,7 @@ Page({
   view:function(e){
     var id=e.currentTarget.dataset.id
     var type_name=e.currentTarget.dataset.typename;
-    //判断是否存在题目
+    //判断是否存在题目 
     if(id){
       wx.navigateTo({
         url: '../ability_test_des/ability_test_des?sub_id='+id+'&type_name='+type_name,

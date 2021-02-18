@@ -64,37 +64,37 @@
   </swiper>
   <!-- 首页导航 -->
   <view class="home_nav">
-    <navigator class="nav_item" hover-class="none" open-type="switchTab" url="../show/show">
-      <image mode="aspectFill" src="/img/home/show.png"></image>
-      <text>教练秀</text>
-    </navigator>
-    <navigator class="nav_item" url="../all_agency/all_agency" hover-class="none">
-      <image mode="aspectFill" src="/img/home/agency.png"></image>
-      <text>附近机构</text>
+    <navigator class="nav_item" url="/package3/ability_test/ability_test" hover-class="none">
+      <image mode="aspectFill" src="/img/home/test.png"></image>
+      <text>综合测评</text>
     </navigator>
     <navigator class="nav_item" url="../online/online" hover-class="none">
       <image mode="aspectFill" src="/img/home/teacher.png"></image>
       <text>名师专栏</text>
     </navigator>
-    <navigator class="nav_item" target="miniProgram" app-id="wx83f243f73b48c56c" hover-class="none">
-      <image mode="aspectFill" src="/img/home/shop.png"></image>
-      <text>发现好物</text>
-    </navigator>
     <navigator class="nav_item" hover-class="none" url="/package3/sports_event/sports_event">
       <image mode="aspectFill" src="/img/home/news.png"></image>
       <text>赛事资讯</text>
     </navigator>
-    <navigator class="nav_item" url="/package3/ability_test/ability_test" hover-class="none">
-      <image mode="aspectFill" src="/img/home/test.png"></image>
-      <text>综合测评</text>
+    <navigator class="nav_item" url="/package3/summer_camp/summer_camp" hover-class="none">
+      <image mode="aspectFill" src="/img/home/camp.png"></image>
+      <text>夏令营</text>
+    </navigator>
+    <navigator class="nav_item" url="../all_agency/all_agency" hover-class="none">
+      <image mode="aspectFill" src="/img/home/agency.png"></image>
+      <text>附近机构</text>
+    </navigator>
+    <navigator class="nav_item" hover-class="none" open-type="switchTab" url="../show/show">
+      <image mode="aspectFill" src="/img/home/show.png"></image>
+      <text>发现动态</text>
     </navigator>
     <navigator class="nav_item" url="/package3/study_abroad/study_abroad" hover-class="none">
       <image mode="aspectFill" src="/img/home/service.png"></image>
       <text>留学服务</text>
     </navigator>
-    <navigator class="nav_item" url="/package3/summer_camp/summer_camp" hover-class="none">
-      <image mode="aspectFill" src="/img/home/camp.png"></image>
-      <text>夏令营</text>
+    <navigator class="nav_item" target="miniProgram" app-id="wx83f243f73b48c56c" hover-class="none">
+      <image mode="aspectFill" src="/img/home/shop.png"></image>
+      <text>发现好物</text>
     </navigator>
   </view>
 <!-- 快捷选择区域 -->

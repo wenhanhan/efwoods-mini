@@ -476,7 +476,6 @@ invite:function(e){
       //请联系管理员
       $Toast({
         content: '请联系管理员',
-        type: 'loading',
         duration:2
       });
     }else{ 

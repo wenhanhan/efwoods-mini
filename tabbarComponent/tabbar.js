@@ -28,7 +28,7 @@ Component({
             "pagePath": "/pages/show/show",
             "iconPath": "icon/icon_release.png",
             "isSpecial": true,
-            "text": "教练秀"
+            "text": "动态"
           },
           {
             "pagePath": "/pages/teacher/teacher",

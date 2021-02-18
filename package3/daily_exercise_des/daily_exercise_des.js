@@ -339,6 +339,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    var video_id = this.data.video_id;
+    return {
+      title: '向你分享了一个训练',
+      path: '/package3/daily_exercise_des/daily_exercise_des?video_id=' + video_id
+    }
   }
 })

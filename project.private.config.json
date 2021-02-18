@@ -68,9 +68,8 @@
           "scene": null
         },
         {
-          "id": 8,
-          "name": "pages/index/index",
-          "pathName": "pages/web/login",
+          "name": "pages/myset/user/user",
+          "pathName": "pages/myset/user/user",
           "query": "scene=046b383a30352bfde1be1bfe9a99fd18",
           "scene": null
         },

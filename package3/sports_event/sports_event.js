@@ -21,7 +21,8 @@ Page({
     duration: 1000,
     sports_type:['高尔夫','篮球','羽毛球','足球','跆拳道','网球'],
     sports:[
-    ]
+    ],
+    address:'',
   },
 //选择城市跳转
 select_city:function(){
@@ -110,9 +111,13 @@ checkcor:function(){
     var select_city = app.globalData.select_city;
     if(!select_city){
       this.getUserLocation();
+      that.setData({
+        address:wx.getStorageSync('address').city
+      })
     }else{
       this.setData({
-        city: that.substr(select_city)
+        city: that.substr(select_city),
+        address:select_city
       })
     }
     //获取首页轮播图与赛事类别
@@ -136,9 +141,10 @@ checkcor:function(){
   getSportsList(type){
     var that=this;
     var sports=this.data.sports;
-    var province = wx.getStorageSync('address').province;//当前的省
-    var city = wx.getStorageSync('address').city;//当前的省市
-    var address = province + city;
+    var address=that.data.address;
+    // var province = wx.getStorageSync('address').province;//当前的省
+    // var city = wx.getStorageSync('address').city;//当前的省市
+    // var address = province + city;
     wx.showLoading({
       title: '加载中',
     })

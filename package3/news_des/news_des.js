@@ -83,6 +83,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    var news_id = this.data.news_id;
+    return {
+      title: '向你分享了留学资讯',
+      path: '/package3/news_des/news_des?news_id=' + news_id
+    }
   }
 })

@@ -46,7 +46,7 @@
       <view class="camp_item_right">
         <view class="camp_name">{{item.title}}</view>
         <view class="camp_people">招生对象:{{item.people}}</view>
-        <view class="camp_tag"><text wx:for="{{item.tag}}" wx:for-item="tag" class="tag">{{tag}}</text></view>
+        <view class="camp_tag"><text wx:for="{{item.tag}}" wx:for-item="tag" class="tag">{{tag.name}}</text></view>
         <view class="camp_price"><text style="font-size:26rpx;">￥</text>{{item.price}}/<text style="font-size:28rpx;color:#000000;font-weight:normal">{{item.duration}}</text></view>
       </view>
     </view>

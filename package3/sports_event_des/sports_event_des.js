@@ -120,6 +120,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    var sports_id = this.data.sports_id;
+    return {
+      title: '向你分享了一个赛事',
+      path: '/package3/sports_event_des/sports_event_des?sports_id=' + sports_id
+    }
   }
 })

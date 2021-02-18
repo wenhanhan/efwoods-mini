@@ -24,7 +24,7 @@ Page({
   onLoad: function (options) {
     this.setData({
       camp_id:options.camp_id
-    })
+    }) 
   },
   favor:function(e){
     var that=this;
@@ -123,6 +123,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    var camp_id = this.data.camp_id;
+    return {
+      title: '向你分享了夏令营',
+      path: '/package3/summer_camp_des/summer_camp_des?camp_id=' + camp_id
+    }
   }
 })

@@ -85,8 +85,9 @@ Page({
     }
 },
 contact:function(){
+  var that=this;
   wx.makePhoneCall({
-    phoneNumber: '4001015528'
+    phoneNumber: that.data.agency.phone
   })
 },
 scan:function(){
@@ -188,6 +189,10 @@ scan:function(){
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    var agency_id = this.data.agency_id;
+    return {
+      title: '向你分享了留学机构',
+      path: '/package3/agency_des/agency_des?agency_id=' + agency_id
+    }
   }
 })

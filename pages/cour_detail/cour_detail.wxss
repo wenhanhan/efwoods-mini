@@ -189,6 +189,9 @@
   width: 8%;
   height: 100%;
   float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   background: white;
 }
