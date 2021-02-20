@@ -111,6 +111,53 @@
         <image src="https://cdn.icloudapi.cn/ruzhu.png"></image>
     </view>
 </view>
+<!-- 免费专区 -->
+<view class="free_zone">
+  <view class="hot-trends-title">
+    <view class="hot-trends-title-left">
+      <view class="start_line"></view>
+      <text class='menu_text'>免费专区</text>
+    </view>
+  </view>
+  <view class="recommend_course_box">
+    <view class="recommend_course_item" wx:for="{{free_course}}" bindtap="course_des" data-courid="{{item.Id}}" data-courtype="{{item.courType}}" data-distance="{{item.distance}}">
+      <view class="recommend_course_item_left">
+        <image src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}}"></image>
+      </view>
+      <view class="recommend_course_item_right">
+        <view class="recommend_course_item_title">
+          {{item.courName}}
+        </view>
+        <view class="free_course_tag">
+          <view>{{item.courAddressName}}/{{item.courTags}}</view>
+          <view class="free_course_distance">{{item.distance}}</view>
+        </view>
+        <view class="recommend_course_price">
+          ￥<text style="font-size:32rpx;font-weight:600">{{item.price}}</text>
+        </view>
+        <view class="recommend_course_socre">
+          <text>评分</text>
+            <block wx:for="{{item.star}}" wx:key="id">
+              <icon  class='iconfont_star icon-xingji3'></icon>
+            </block>
+            <block wx:for="{{5-item.star}}">
+              <icon  class='iconfont_star icon-xingji4'></icon>
+            </block>
+        </view>
+      </view>
+      <!-- 免费体验按钮 -->
+      <view class="fress_btn">
+        <text>免费体验</text>
+      </view>
+    </view>
+    <view class='nodata' wx:if="{{free_course.length==0}}">
+      <icon style="font-size:90rpx;" class='iconfont_resource icon-meiyouneirong'></icon>
+        <view class='tips' style="color:#d1cfcf">
+          <text>暂无课程资源～</text>
+        </view>
+    </view>
+  </view>
+</view>
 <!-- 好课推荐 -->
 <view class="recommend_course">
   <view class="recommend_course_title">
@@ -232,118 +279,5 @@
   <text class="dixian-line"></text>
 </view>
 
-  <!-- <view class='menu_list'> 
-    <view class='menu_line'>
-      <view class="start_line"></view>
-      <text class='menu_text'>菜单目录</text>
-    </view> 
-  </view> -->
-
-  <!-- <view class='course'>
-    <scroll-view class="scroll-course" scroll-x style="width: 100%">
-      <block wx:for="{{courses}}">
-        <view class="img_box" style="{{index==cour_num-1?'margin-right:15rpx;':''}}">
-        <navigator url='{{item.url}}' style='width:100%;height:100%;'>
-          <image src="{{item.img}}"></image>
-        </navigator>
-        </view>
-      </block>
-    </scroll-view>
-  </view> -->
-
-<!-- 教练秀 -->
-  <!-- <view class='menu_list'>
-  <navigator url='../show/show' hover-class='none' open-type='switchTab'>
-    <view class='menu_line'>
-      <view class="start_line"></view>
-      <text class='menu_text'>热门推荐</text>
-      <view class="hot_more">
-        <text>更多</text>
-        <icon class='iconfont_hot icon-gengduo1'></icon>
-      </view>
-    </view>
-  </navigator>
-  </view> -->
-
-  <!-- <view class='home_show_video'>
-    <view class='child_video_box'>
-    <block wx:for="{{video}}" wx:if="{{index<4}}" wx:key="id">
-      <view class='home_video_box'>
-          <image mode='aspectFill' data-idx='{{index}}' bindtap='play' src='{{item.cover}}' ></image>
-          <view class='video_des'>
-            <view class='video_title'>
-              <text>{{item.title}}</text>
-            </view>
-
-            <view class="video_hot" style="margin-top:{{item.title?'14rpx':'14rpx'}}">
-              <view class="video_favor" hidden="{{item.favorPerson.length==0}}">
-                <block wx:for="{{item.favorPerson}}" wx:key="id" wx:for-item="head" wx:for-index="idx">
-                    <image style="left:{{idx>0?idx*24:0}}rpx" hidden="{{idx>2}}" src="{{head.avatarUrl}}"></image>
-                </block>
-                <text class="favor_num" style="left:{{item.favorPerson.length>3?82:24*item.favorPerson.length+14}}rpx">{{item.favorPerson.length}}人喜欢</text>
-              </view>
-              <view class='play'>
-                <image class='img' src='/img/show/play.png'></image>
-                <view class='play_times'>{{item.play}}</view>
-              </view>
-            </view>
-
-          </view>
-      </view>
-    </block>
-    </view>
-  </view> -->
-  
-
-  <!-- <view class='favor'>
-    <view class='favor_line'>
-      <view class='left_line'>
-        <image src='/img/line.png'></image>
-      </view>
-      <text class='favor_txt'>猜你喜欢</text>
-      <view class='right_line'>
-        <image src='/img/line.png'></image>
-      </view>
-    </view>
-  </view> -->
-
-  <!-- 推荐内容区域 -->
-  <!-- <view class="favor_box">
-    <block wx:for="{{favor_course}}">
-    <view class='favor_list' bindtap="course_des" data-courid="{{item.Id}}" data-courtype="{{item.courType}}" data-distance="{{item.distance}}">
-      <view class='favor_list_left'>
-        <view class='favor_img_box'>
-        <image mode='aspectFill' src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}} "></image>
-        </view>
-      </view>
-      <view class='favor_list_right'>
-        <view class='course_name'>
-          <text>{{item.courName}}</text>
-        </view>
-        <view class='course_des'>
-
-          <view class='course_judge'>
-          <block wx:for="{{item.star}}">
-              <icon  class='iconfont_star icon-xingji3'></icon>
-            </block>
-            <block wx:for="{{5-item.star}}">
-              <icon  class='iconfont_star icon-xingji4'></icon>
-            </block>
-          </view>
-        </view> 
-
-        <view class='course_price'>
-        <text class='price_left'>¥</text>
-        <text class='price_middle'>{{item.price}}</text>
-        <text class='price_right'>起</text>
-        </view>
-        <view class='course_address'>
-          <text>{{item.courAddressName}}/{{item.courTags}}</text>
-        </view>
-        <view class='distance'>{{item.distance}}</view>
-      </view>
-    </view>
-    </block>
-  </view> -->
 <tabbar tabbar="{{tabbar}}"></tabbar>
 </view>

@@ -2,7 +2,7 @@
   "usingComponents": {},
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "教练秀",
+  "navigationBarTitleText": "动态详情",
   "backgroundColor": "#eeeeee",
   "backgroundTextStyle": "light",
   "enablePullDownRefresh": false

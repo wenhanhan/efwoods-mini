@@ -541,8 +541,40 @@ color: transparent;
   width: 100%;
   height: 160rpx;
 }
+/* 免费专区 */
+.fress_btn{
+  width: 180rpx;
+  height: 50rpx;
+  border-radius: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: white;
+  font-weight: 500;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(to right,#FFA300,#FF6A00);
+}
+.free_course_distance{
+  position: relative;
+  width: auto;
+  height: auto;
+  font-size: 20rpx;
+  color:#676767
+}
+.free_course_tag{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+  font-size: 26rpx;
+  color:#676767; 
+}
 /* 好课推荐 */
-.recommend_course{
+.recommend_course,.free_zone{
   width: 100%;
   height: auto;
   display: flex;
@@ -616,7 +648,7 @@ color: transparent;
   border-radius: 10rpx;
 }
 .recommend_course_item_right{
-  width: auto;
+  width: calc(100% - 210rpx);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -739,6 +771,7 @@ color: transparent;
   /* background: red; */
   margin-bottom: 28rpx;
   border-radius: 10rpx;
+  overflow: hidden;
 }
 .daily-exercise-item image{
   width: 100%;

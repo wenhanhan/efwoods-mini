@@ -18,7 +18,7 @@
 
 .icon-xingji3:before {
   content: "\e502";
-  color: #ef4e16;
+  color: #FF6A00;
 }
 .icon-xingji4:before {
   content: "\e502";
