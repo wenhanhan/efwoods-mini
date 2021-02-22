@@ -1,0 +1,34 @@
+/* pages/myset/bind_phone/bind_phone.wxss */
+.btn_box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 200rpx;
+}
+button{
+  width: 600rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  color: white;
+  background:#FACC3C;
+  margin-bottom: 50rpx;
+}
+.btn_unbind{
+  width: 600rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  color: #5F5F5F;
+  background:#D2D2D2;
+  margin-bottom: 50rpx;
+}

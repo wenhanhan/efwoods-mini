@@ -164,7 +164,8 @@ Page({
             console.log(res.data)
             // wx.hideLoading()
             that.setData({
-              favor_course: res.data
+              favor_course: res.data[0],
+              free_course:res.data[1]
             })
           }
         })

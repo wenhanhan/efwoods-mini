@@ -2,6 +2,7 @@
   "pages": [ 
     "pages/location/location",
     "pages/myset/coach/coach",
+    "pages/myset/bind_phone/bind_phone",
     "pages/share/share",
     "pages/web/login",
     "pages/apply/apply",

@@ -6,9 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title:'第二届环岛马拉松比赛报名啦！',
+    title:'',
     sex_index: 0,
-    sex_array:['男','女']
+    sex_array:['男','女'],
+    cover:''
   },
   bindPickerAge:function(e){
     this.setData({
@@ -100,7 +101,8 @@ Page({
   onLoad: function (options) {
     this.setData({
       cover:options.cover,
-      sports_id:options.sports_id
+      sports_id:options.sports_id,
+      title:options.title
     })
   },
 

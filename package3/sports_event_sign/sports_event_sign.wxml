@@ -1,6 +1,6 @@
 <view class="container">
   <view class="sports_bk">
-    <image src="https://cdn.icloudapi.cn/sports_des_bk.png"></image>
+    <image src="{{cover}}"></image>
   </view>
   <view class="sports_info">
     <view class="sports_info_top">

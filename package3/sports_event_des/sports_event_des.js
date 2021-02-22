@@ -34,12 +34,13 @@ Page({
     var userInfo = wx.getStorageSync('userInfo');//用户信息
     var is_sign=this.data.sports_info.is_sign;
     var cover=this.data.sports_info.cover;
+    var title=this.data.sports_info.title;
     var sports_id=this.data.sports_id;
     if(userInfo){
       if(state==0){
         if(is_sign==0){
           wx.navigateTo({
-            url: '../sports_event_sign/sports_event_sign?sports_id='+sports_id+'&cover='+cover,
+            url: '../sports_event_sign/sports_event_sign?sports_id='+sports_id+'&cover='+cover+'&title='+title,
           })
         }else{
           $Toast({

@@ -487,8 +487,18 @@ invite:function(e){
     app.login()
   }
 },
-
-
+//绑定手机号
+bindPhone:function(){
+  var userInfo = wx.getStorageSync('userInfo')
+  if(userInfo){
+    //绑定手机号页面
+    wx.navigateTo({
+      url: '../bind_phone/bind_phone',
+    })
+  }else{
+    app.login()
+  }
+},
   /**
    * 生命周期函数--监听页面隐藏
    */

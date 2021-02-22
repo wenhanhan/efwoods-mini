@@ -25,6 +25,7 @@
               <image wx:if="{{level==6&&login}}" src="/img/user/lv6.png"></image>
             </view>
           </navigator>
+          <icon bindtap="bindPhone" class='iconfont-info-set icon-info-shezhi'></icon>
         </view>
         <view class='user_info_bot' wx:if="{{identity==1&&login}}">
             <text hidden='{{!tag1}}'>{{tag1}}</text>
@@ -71,7 +72,7 @@
         <view class='base_info_line'></view>
         <view class='base_info_child'>
           <view class='child_num'>
-            <text>Lv{{level}}</text>
+            <text>LV{{level}}</text>
           </view>
           <view class='child_tags'>
             <text>级别</text>

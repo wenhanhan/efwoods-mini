@@ -150,6 +150,8 @@
   justify-content: flex-start;
   align-items: center;
   padding-left: 45rpx;
+  padding: 20rpx 0;
+  line-height: 185%;
 }
 /* 入驻教练样式 */
 .teacher,.agency_img_box{

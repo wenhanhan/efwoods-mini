@@ -5,7 +5,7 @@
   <view class="sports_info">
     <view class="sports_info_top">
       <view class="sports_title">
-        <view class="start_line"></view>
+        <view class="start_line"></view> 
         <text style="margin-left: 15rpx;">{{sports_info.title}}</text>
       </view>
       <view class="sports_time_address">
@@ -22,7 +22,7 @@
           <view class="sports_time_address_child">
             <image src="/img/sports/address.png"></image>
             <view class="sports_time_address_text">比赛地点</view>
-            <view>上海市</view>
+            <view>{{sports_info.city}}</view>
           </view>
       </view>
     </view>

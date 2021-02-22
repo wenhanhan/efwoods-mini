@@ -158,53 +158,6 @@
     </view>
   </view>
 </view>
-<!-- 好课推荐 -->
-<view class="recommend_course">
-  <view class="recommend_course_title">
-    <view class="recommend_course_title_left">
-      <view class="start_line"></view>
-      <text class='menu_text'>好课推荐</text>
-    </view>
-    <view class="fresh" bindtap="fresh">
-      <text>换一批</text>
-      <icon class='iconfont_fresh icon-caozuo-shuaxin'></icon>
-    </view>
-  </view>
-  <view class="recommend_course_box">
-    <view class="recommend_course_item" wx:for="{{favor_course}}" bindtap="course_des" data-courid="{{item.Id}}" data-courtype="{{item.courType}}" data-distance="{{item.distance}}">
-      <view class="recommend_course_item_left">
-        <image src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}}"></image>
-      </view>
-      <view class="recommend_course_item_right">
-        <view class="recommend_course_item_title">
-          {{item.courName}}
-        </view>
-        <view class="recommend_course_tag">
-          {{item.courAddressName}}/{{item.courTags}}
-        </view>
-        <view class="recommend_course_price">
-          ￥<text style="font-size:32rpx;font-weight:600">{{item.price}}</text>
-        </view>
-        <view class="recommend_course_socre">
-          <text>评分</text>
-            <block wx:for="{{item.star}}" wx:key="id">
-              <icon  class='iconfont_star icon-xingji3'></icon>
-            </block>
-            <block wx:for="{{5-item.star}}">
-              <icon  class='iconfont_star icon-xingji4'></icon>
-            </block>
-        </view>
-      </view>
-    <view class="recommend_course_distance">{{item.distance}}</view>
-    </view>
-    <view class='nodata' wx:if="{{favor_course.length==0}}">
-      <icon style="font-size:90rpx;" class='iconfont_resource icon-meiyouneirong'></icon>
-        <view class='tips' style="color:#d1cfcf">
-          <text>暂无课程资源～</text>
-        </view>
-    </view>
-  </view>
-</view>
 <!-- 热门动态 -->
 <view class="hot-trends">
   <view class="hot-trends-title">
@@ -269,6 +222,53 @@
         <text class="daily-exercise-title">{{item.title}}</text>
         <text class="daily-exercise-prop">{{item.belong}}·{{item.duration}}</text>
       </view>
+    </view>
+  </view>
+</view>
+<!-- 好课推荐 -->
+<view class="recommend_course">
+  <view class="recommend_course_title">
+    <view class="recommend_course_title_left">
+      <view class="start_line"></view>
+      <text class='menu_text'>好课推荐</text>
+    </view>
+    <view class="fresh" bindtap="fresh">
+      <text>换一批</text>
+      <icon class='iconfont_fresh icon-caozuo-shuaxin'></icon>
+    </view>
+  </view>
+  <view class="recommend_course_box">
+    <view class="recommend_course_item" wx:for="{{favor_course}}" bindtap="course_des" data-courid="{{item.Id}}" data-courtype="{{item.courType}}" data-distance="{{item.distance}}">
+      <view class="recommend_course_item_left">
+        <image src="https://icloudapi.cn/efire/public/uploads/suolue/thumb/{{item.courImg}}"></image>
+      </view>
+      <view class="recommend_course_item_right">
+        <view class="recommend_course_item_title">
+          {{item.courName}}
+        </view>
+        <view class="recommend_course_tag">
+          {{item.courAddressName}}/{{item.courTags}}
+        </view>
+        <view class="recommend_course_price">
+          ￥<text style="font-size:32rpx;font-weight:600">{{item.price}}</text>
+        </view>
+        <view class="recommend_course_socre">
+          <text>评分</text>
+            <block wx:for="{{item.star}}" wx:key="id">
+              <icon  class='iconfont_star icon-xingji3'></icon>
+            </block>
+            <block wx:for="{{5-item.star}}">
+              <icon  class='iconfont_star icon-xingji4'></icon>
+            </block>
+        </view>
+      </view>
+    <view class="recommend_course_distance">{{item.distance}}</view>
+    </view>
+    <view class='nodata' wx:if="{{favor_course.length==0}}">
+      <icon style="font-size:90rpx;" class='iconfont_resource icon-meiyouneirong'></icon>
+        <view class='tips' style="color:#d1cfcf">
+          <text>暂无课程资源～</text>
+        </view>
     </view>
   </view>
 </view>
